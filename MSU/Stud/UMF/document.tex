@@ -1,0 +1,529 @@
+ \documentclass[14pt]{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amssymb, amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathbbol}
+\theoremstyle{plain}
+\newtheorem{Thm}{Тh}
+\newtheorem{Lem}{Лемма}
+\newtheorem{St}{St}
+\newtheorem{Sled}{Следствие}
+
+\theoremstyle{definition}
+\newtheorem{Def}{Def}
+\newtheorem{Sample}{Пример}
+
+\author{Васильченко Д.Д., 306}
+\title{УМФ. Определения и формулировки}
+
+\begin{document}
+	\maketitle
+	\section{Уравнение теплопроводности}
+	\subsection{Классификация УРЧП}
+	\begin{Def}
+		Уравнение в частных производных 2-го порядка: 
+		$$
+		F(x, y, u(x,y), u_x(x,y), u_y(x,y), u_{xx}(x,y), u_{xy}(x,y), u_{yy}(x,y)) = 0
+		$$
+	\end{Def}
+	\begin{Def}
+		Квазилинейное уравнение в частных производных 2-го порядка: 
+		$$
+			a_{11}(x,y, u(x,y), u_x(x,y), u_y(x,y)) u_{xx} + 2a_{12} (x,y, u(x,y), u_x(x,y), u_y(x,y)) u_{xy} + $$
+			
+			$$+ a_{22}(x,y, u(x,y), u_x(x,y), u_y(x,y))u_{yy} + f(x,y, u(x,y), u_x(x,y), u_y(x,y)) = 0
+		$$
+	\end{Def}
+	\begin{Def}
+		Линейное уравнение в частных производных 2-го порядка:
+		$$
+			a_{11}(x,y) u_{xx} + 2a_{12}(x,y) + a_{22}(x,y) + f(x,y, u(x,y), u_x(x,y), u_y(x,y)) = 0
+		$$
+	\end{Def}
+	
+	\begin{Def}
+		Линейное УРЧП 2-порядка в точке $(x_0, y_0)$ называется: 
+		\begin{enumerate}
+			\item гиперболическим, если $a^2_{12} - a_{11}a_{22} > 0$
+			\item эллиптическим, если $a^2_{12} - a_{11}a_{22} < 0$
+			\item параболическим, если $a^2_{12} - a_{11}a_{22} = 0$
+		\end{enumerate}
+	\end{Def}
+	\subsection{Одномерное уравнение теплопроводности и задачи для него}
+		Уравнение в полуполосе c граничными условиями первого рода:
+		\begin{equation*}
+			\left\{ 
+			\begin{array}{ll} 
+				u_t = a^2 u_{xx} + f(x,t), \ 0 < x < l, t > 0\\
+				u(x,0) = \phi(x), 0 \leq x \leq l  \\
+				u(0,t) = \nu_1(t),  0 \leq t \\
+				u(l,t) = \nu_2(t), 0 \leq t \end{array}\right.
+		\end{equation*}
+	Уравнение в полуполосе c граничными условиями второго рода:
+	\begin{equation*}
+		\left\{ 
+		\begin{array}{ll} 
+			u_t = a^2 u_{xx} + f(x,t), \ 0 < x < l, t > 0\\
+			u(x,0) = \phi(x), 0 \leq x \leq l  \\
+			u_x(0,t) = \nu_1(t),  0 \leq t \\
+			u_x(l,t) = \nu_2(t), 0 \leq t \end{array}\right.
+	\end{equation*}
+	Уравнение на полупрямой:
+	\begin{equation*}
+	\left\{ 
+	\begin{array}{ll} 
+		u_t = a^2 u_{xx} + f(x,t), \ 0 < x, t > 0\\
+		u(x,0) = \phi(x), 0 \leq x  \\
+		u(0,t) = \nu_1(t),  0 \leq t  \end{array}\right.
+\end{equation*}
+	Уравнение на прямой
+		\begin{equation*}
+		\left\{ 
+		\begin{array}{ll} 
+			u_t = a^2 u_{xx} + f(x,t), \ x \in \mathbb{R}, t > 0\\
+			u(x,0) = \phi(x), x \in \mathbb{R}  \end{array}\right.
+	\end{equation*}
+	\subsection{Простейшая начально-краевая задача}
+		\begin{equation*}
+			\left\{ 
+			\begin{array}{ll} 
+				u_t = a^2 u_{xx}, \ 0 < x < l, 0 < t \leq \overline{T}  (1)\\ 
+				u(x,0) = \phi(x), 0 \leq x \leq l (2) \\ 
+				u(0,t) = 0,  0 \leq t\leq \overline{T} (3)\\
+				u(l,t) = 0, 0 \leq t \leq \overline{T} (4)\end{array}\right.
+		\end{equation*}
+		Область, в которой рассматривается задача:  $Q_{lT} = \{ (x,t): \ 0 < x < l, 0 < t \leq \overline{T}\}$
+		\begin{Def}
+			Функция $u(x,t)$ называется решением задачи (1) -(4), если $u(x,t) \in C^{2,1} (Q_{lT}), u(x,t) \in C(\overline{Q}_{lT})$ и удовлетворяет (1)-(4). 	
+		\end{Def}
+		Решение методом Фурье:
+		$$
+			u(x,t) = \sum\limits_{n=1}^{\infty} \left(\dfrac{2}{l} \int\limits_0^{l} \phi(s) \sin{\dfrac{\pi n}{l} s} ds \right) \sin{\dfrac{\pi n}{l} x} e^{-a^2 (\dfrac{\pi n}{l})^2 t}
+		$$
+		\begin{St}
+			Вспомогательные утверждения:
+			\begin{enumerate}
+				\item $f(x) \in C[0,l]$, $f(0) = f(l) = 0$, $\sum\limits_{n=1}^{\infty} f_n \sin{\dfrac{\pi n}{l} x}$, $f_n = \dfrac{2}{l} \int\limits_0^l f(x) \sin{\dfrac{\pi n}{l} x} dx$ - сходится равномерно на [0,l] $\Rightarrow$ $f(x) = \sum\limits_{n=1}^{\infty} f_n \sin{\dfrac{\pi n}{l} x}$
+				\item $f(x) \in C[0,l] \Rightarrow \sum\limits_{n=1}^{\infty} f^2_n \leq const$ 
+				\item $f(x) \in C[0,l] \Rightarrow \sum\limits_{n=1}^{\infty} \hat{f}^2_n \leq const, \ \hat{f}_n = \dfrac{2}{l} \int\limits_0^l f(x) \cos{\dfrac{\pi n}{l} x} dx$
+			\end{enumerate}
+		\end{St}
+		\begin{Thm}
+			(Существование решения) \newline
+			Если $\phi(x) \in C^1 [0,l]$ и $\phi(0) = \phi(l) = 0$, то функция $u(x,t)$, полученная методом Фурье является решением задачи (1)-(4)
+		\end{Thm}
+		\begin{Thm}
+			(Принцип максимума) \newline
+			Пусть $u(x,t) \in C^{2,1} (Q_{l, T}) \cap C(\overline{Q_{l,T}})$ и $u_t = a^2 u_{xx}$, тогда $\max\limits_{\Gamma} u(x,t) = \max\limits_{\overline{Q_{l,T}}} u(x,t), 	\min\limits_{\Gamma} u(x,t) = \min\limits_{\overline{Q_{l,T}}} u(x,t)$
+		\end{Thm}
+		\begin{St}
+			 (Единственность) \newline
+			 Пусть $u_i(x,t) \in C^{2,1} (Q_{l, T}) \cap C(\overline{Q_{l,T}})$ и $u_i$ удовлетворяет:
+			 		\begin{equation*}
+			 	\left\{ 
+			 	\begin{array}{ll} 
+			 		(u_i)_t = a^2 (u_i)_{xx}, \ 0 < x < l, 0 < t \leq \overline{T} \\
+			 		u_i(x,0) = \phi(x), 0 \leq x \leq l  \\
+			 		u_i(0,t) = \nu_1(t),  0 \leq t \leq \overline{T} \\
+			 		u_i(l,t) = \nu_2(t), 0 \leq t \leq \overline{T} \end{array}\right.
+			 \end{equation*}
+		  тогда $u_1(x,t) = u_2(x,t), \forall (x,t) \in \overline{Q}_{l, T}$
+		\end{St}
+		\begin{St}
+				(Позитивность) \newline
+				Пусть 	$u_i(x,t) \in C^{2,1} (Q_{l, T}) \cap C(\overline{Q_{l,T}})$ и $u_i$ удовлетворяет $(u_i)_t = a^2 (u_i)_{xx}$ в $Q_{l,T}$, тогда если $u_1(x,t) \geq u_2(x,t), \forall (x,t) \in \Gamma$, то $u_1(x,t) \geq u_2(x,t), \forall (x,t) \in \overline{Q}_{l, T}$
+		\end{St}
+		\begin{St}
+			(Устойчивость) \newline
+			Пусть 	$u_i(x,t) \in C^{2,1} (Q_{l, T}) \cap C(\overline{Q_{l,T}})$ и $u_i$ удовлетворяет
+					\begin{equation*}
+					\left\{ 
+					\begin{array}{ll} 
+						(u_i)_t = a^2 (u_i)_{xx}, \ 0 < x < l, 0 < t \leq \overline{T} \\
+						u_i(x,0) = \phi_i(x), 0 \leq x \leq l  \\
+						u_i(0,t) = \nu_{1i}(t),  0 \leq t \leq \overline{T} \\
+						u_i(l,t) = \nu_{2i}(t), 0 \leq t \leq \overline{T} \end{array}\right.
+				\end{equation*}
+			тогда  $|u_1(x,t) - u_2(x,t)| \leq \max{ \left( \max\limits_{[0,T]}{|\nu_{11} - \nu_{12}|}, \max\limits_{[0,T]}{|\nu_{21} - \nu_{22}|}, \max\limits_{[0,l]}{|\phi_1 - \phi_2|}\right)}$
+		\end{St}
+		\subsection{Единственность в общем случае}
+				\begin{equation*}
+				\left\{ 
+				\begin{array}{ll} 
+					u_t = a^2 u_{xx} + f(x,t), \ 0 < x < l, t > 0 (1)\\
+					u(x,0) = \phi(x), 0 \leq x \leq l  (2)\\
+					\alpha_1 u(0,t) - \beta_1 u_x(0,t) = \nu_1(t),  0 \leq t (3)\\
+					\alpha_2 u(l,t) + \beta_2 u_x(l,t)= \nu_2(t), 0 \leq t  (4) \end{array}\right.
+			\end{equation*}
+			$\alpha_i, \beta_i \geq 0, \ \alpha_i + \beta_i > 0$
+			\begin{Thm}
+				(Единственность)\newline
+				Пусть $u_i(x,t) \in C^{2,1} (Q_{l, T}) \cap C(\overline{Q_{l,T}})$ и дополнительно $\dfrac{\partial u_i}{\partial x} \in C(\overline{Q_{l,T}})$ и $u_i$ удовлетворяет (1)-(4), тогда $u_1(x,t) = u_2(x,t), \forall (x,t) \in \overline{Q_{l,T}}$
+			\end{Thm}
+		\subsection{Преобразования Фурье}
+			\begin{Def}
+				Пусть $f(x)$ кусочно гладкая и $\int\limits_{-\infty}^{\infty} f(x) dx < \infty$ (конечный), тогда преобразованием Фурье для $f(x)$ называется: $F(\xi) = \int\limits_{-\infty}^{\infty} f(x) e^{-i x\xi} dx$. \newline
+				Обратное преобразование Фурье: $f(x) = \dfrac{1}{2\pi} \int\limits_{-\infty}^{\infty} F(\xi) e^{i x \xi} d\xi$		
+			\end{Def}
+			\begin{Lem}
+				(Свойства ПФ)\newline
+				\begin{enumerate}
+					\item При сделаных предположениях на $f(x)$. $F(\xi)$ определена на $\xi \in \mathbb{R}$ и $|F(\xi)| = |\int\limits_{-\infty}^{\infty} f(x) e^{-i x\xi} dx| \leq \int\limits_{-\infty}^{\infty} |f(x)| dx$
+					\item  $F(\xi)$ непрерывна по $\xi$
+					\item $F(\xi) \to 0$, при $\xi \to \infty$
+					\item ИНтеграл в обратном ПФ следует понимать в смысле главного значения $f(x) = \dfrac{1}{2\pi} \lim\limits_{a \to \infty} \int\limits_{-a}^{a} F(\xi) e^{i \xi x} d\xi$
+				\end{enumerate}
+			\end{Lem}
+			\begin{Lem}
+				Пусть $f(x) \in C(\mathbb{R}))$ и $|f(x)| \to 0$, при $|x| \to \infty$, $\int\limits_{-\infty}^{\infty} |f(x)| dx, \int\limits_{-\infty}^{\infty} |f'(x)| dx $ - конечны, тогда $f(x) \leftrightarrow F(\xi)$ $\Rightarrow$ $f'(x) \leftrightarrow i\xi F(\xi)$
+			\end{Lem}
+			\begin{Sled}
+				Пусть $f(x) \in C^m(\mathbb{R})$, $|f^{(k)}(x)| \to 0$, при $|x| \to \infty$ и $\int\limits_{-\infty}^{\infty} |f^{(k)}(x)| dx $ - конечный, $k = 0, m$, тогда $f(x) \leftrightarrow F(\xi)$ $\Rightarrow$ $f^{(m)}(x) \leftrightarrow (i\xi)^m F(\xi)$
+			\end{Sled}
+			\textbf{Важные интегралы:}
+			\begin{enumerate}
+				\item Интеграл Эйлера-Пуассона: $\int\limits_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}$
+				\item Интеграл типа Эйлера-Пуассона: $\int\limits_{-\infty}^{\infty} e^{-\alpha x^2} \cos{\beta x} dx = \sqrt{\dfrac{\pi}{\alpha}} e^{-\dfrac{\beta^2}{4 \alpha}}$
+			\end{enumerate}
+		\subsection{Уравнение теплопроводности на прямой}
+			Формула Пуассона для решения
+					\begin{equation*}
+				\left\{ 
+				\begin{array}{ll} 
+					u_t = a^2 u_{xx} \ x \in \mathbb{R}, t > 0\\
+					u(x,0) = \phi(x), x \in \mathbb{R}  \end{array}\right.
+			\end{equation*}
+			$u(x,y) = \dfrac{1}{\sqrt{4\pi a^2 t}} \int\limits_{-\infty}^{\infty} e^{\dfrac{-(x-s)^2}{4a^2 t}} \phi(s) dx \ \ \ \  (P)$
+			
+			\begin{Thm}
+				Пусть $\phi \in C(\mathbb{R})$ и $|phi(x)| \leq M$, $\forall x \in \mathbb{R}$, $M = const$. Определим для $\forall(x,t) \in \mathbb{R} \times (0, +\infty)$ функцию $u(x,t)$ через формулу (P), тогда
+				\begin{enumerate}
+					\item $u \in C^{\infty} (\mathbb{R} \times (0, +\infty))$
+					\item $u(x,t)$ удовлевторяет уравнению теплопроводнсти $u_t = a^2 u_{xx}$ при $(x,t) \in \mathbb{R} \times (0, +\infty)$
+					\item $u(x,t) \to \phi(x_0)$ при $(x,t) \to (x_0, 0), \forall x_0 \in \mathbb{R}$, т.е. $\forall x_0 \in \mathbb{R} \forall \varepsilon > 0 \exists \delta(\varepsilon, x_0) > 0: \ |x - x_0| < \delta \ 0 < t < \delta \Rightarrow |u(x,t) - \phi(x_0)| < \varepsilon$
+				\end{enumerate}
+			\end{Thm}
+		\begin{Def}
+			Функция $p_a(x,t) = \dfrac{1}{\sqrt{4\pi a^2 t}} e^{\dfrac{-x^2}{4a^2 t}}$ называется функцией мгновенного источника тепла или фундаментальным решением УТ.
+		\end{Def}
+		\begin{Thm}
+			(усиленное сохранение позитивности)\newline
+			Пусть $\phi \in C(\mathbb{R})$ или кусочно непрерывна $0 \leq \phi(x) \leq M$, $M = const$, $\phi(x) \neq 0 \forall x \in \mathbb{R}$. Определим $u(x,t)$ по формулам (P), тогда $u(x,t) > 0$ при $\forall (x,t), t > 0$
+		\end{Thm}
+		\begin{Sled}
+			Предыдущая теорема указывает на эффект мгновенного распространения тепла: если где-то при t=0 было нагрето, то при t> 0 температура тела везде > 0, т.е. скорость распространения тепла бесконечна.
+		\end{Sled}
+		\begin{Thm}
+			(сохранение ограниченности) \newline
+			Пусть $\phi \in C(\mathbb{R})$ или кусочно непрерывна на $\mathbb{R}$ $|\phi(x)| \leq M$, $\forall x \in \mathbb{R}, M = const$. Определим $u(x,t)$ по формулам (P), тогда $|u(x,t)| \leq M$ всюду при $t > 0$.
+		\end{Thm}
+		\begin{Thm}
+			(принцип эксремума для УТ в полосе)\newline
+			Пусть $u(x,t)$ - решение $u_t = a^2 u_{xx}$ из класса $C^{2,1} (\mathbb{R} \times (0,T] ) \cap C(\mathbb{R} \times [0, T])$, ограничено в полуполосе $\mathbb{R} \times [0,T]$, тогда $\inf\limits_{\mathbb{R}} (u(x,0)) \leq u(x,t) \leq \sup\limits_{\mathbb{R}} (u(x,0))$ всюду в $\mathbb{R} \times [0,T]$
+		\end{Thm}
+		\subsection{Свертка}
+			\begin{Def}
+				Пусть $f_1, f_2$ - кусочно непрерывные и ограниченные на $\mathbb{R}$ функции, причём $\int\limits_{-\infty}^{\infty} |f_i| dx < \infty, i=1,2$, тогда свертка для $f_1, f_2$: $g(x) = \int\limits_{-\infty}^{\infty} f_1(x-s)f_2(x) ds, \forall x \in \mathbb{R}$ (обозначение $g = (f_1 * f_2)(x))$).
+			\end{Def}
+			\begin{Lem}
+				(Основное свойство свертки)\newline
+				Пусть $f_1(x) \leftrightarrow F_1(\xi), f_2(x) \leftrightarrow F_2(\xi)$ $\Rightarrow$ $(f_1*f_2) \leftrightarrow F_1(\xi)F_2(\xi)	$
+			\end{Lem}
+		\newpage
+	\section{Уравнение Лапласа}
+		\begin{Def}
+			Функция u называется гармонической в области $\Omega \subset \mathbb{R}^n$, если $\Delta u =0$ всюду в $\Omega$.
+		\end{Def}
+		\textbf{Внутренняя задача Дирихле:}
+		Пусть $u \in C^2(\Omega) \cap C(\overline{\Omega})$, $\phi \in C(\partial \Omega)$, область $\Omega$ ограничена, тогда Задача Дирихле:
+		\begin{equation*}
+			\left\{ 
+			\begin{array}{ll} 
+				\Delta u(x) = 0, x\in \Omega \\
+				u|_{\partial \Omega} = \phi \end{array}\right.
+		\end{equation*}
+		\textbf{Внешняя задача Дирихле:}
+			Пусть $u \in C^2(\Omega) \cap C(\overline{\Omega})$, $\phi \in C(\partial \Omega)$, область $\Omega = \mathbb{R}^n \ \overline{D}$, D - ограниченная область в $\mathbb{R}^n$, тогда Задача Дирихле:
+			\begin{equation*}
+				\left\{ 
+				\begin{array}{ll} 
+					\Delta u(x) = 0, x\in \Omega \\
+					u|_{\partial \Omega} = \phi \end{array}\right.
+			\end{equation*}
+		Тогда добавляется условие регулярности:
+		\begin{enumerate}
+			\item если n = 2, то $u(x) = \underline{O}(1), x \to \infty$
+			\item если $n \geq 3$, то $u(x) = \overline{O}(1), x \to \infty$
+		\end{enumerate}
+		
+		\begin{Thm}
+			Пусть $ u \in C^2(\Omega) \cap C(\overline{\Omega})$, $\Omega$ - ограниченная область в $\mathbb{R}^n$, $\Delta u = 0$, тогда $m = \min\limits_{\partial \Omega} u, M = \max\limits_{\partial \Omega} u $ $\Rightarrow$ $m \leq u(x) \leq M, \forall x \in \overline{\Omega}$
+		\end{Thm}
+		\begin{Sled}
+			(принцип позитивности)\newline
+			Пусть $ u \in C^2(\Omega) \cap C(\overline{\Omega})$, $\Omega$ - ограниченная область в $\mathbb{R}^n$, u - решение внутренней задачи Дирихле с $\phi$ и $\phi \geq 0, \forall x \in \partial \Omega$, тогда $u \geq 0, \forall x \in \overline{\Omega}$
+		\end{Sled}
+		\begin{Sled}
+			(единственность решения)\newline
+			Внутренняя задача Дирихле не может иметь больше одного решения при заданном $\phi \in C(\partial \Omega)$.
+		\end{Sled}
+		\begin{Sled}
+			(устойчивость решения)\newline
+			Пусть $u_1, u_2$ - решения внутренних задач Дирихле с функциями $\phi_1, \phi_2 \in C(\partial \Omega)$ и $| \phi_1 - \phi_2| < \varepsilon, \forall x \in \partial \Omega$, тогда $|u_1 - u_2| < \varepsilon, \forall x \in \overline{\Omega}$
+		\end{Sled}
+		\subsection{Элементы векторного анализа}
+			\begin{Def}
+				$u \in C^k(\overline{\Omega})$, если в $\Omega$ существует все частные производные порядков $ \leq k$ и эти частные производные непрерывно продолжаются на границы.
+			\end{Def}
+			\begin{Def}
+				Производная по направлению $\nu = \{\nu_1, \dots , \nu_n\}$:  $\dfrac{\partial u}{\partial \nu} = \dfrac{\partial}{\partial s} u(x + s \nu)|_{s=0} = \nu_1 \dfrac{\partial u}{\partial x_1} + \dots + \nu_n \dfrac{\partial u}{\partial x_n} = (\nu, \nabla u)$
+			\end{Def}
+			\textbf{Формула Остроградского-Гаусса:}
+			Пусть $\Omega$ - хорошая(гладкая, кусочно гладкая граница) область, $A \in C^1(\Omega)$, тогда
+			$$
+				\int\limits_{\partial \Omega} (A, \nu_y) d s_y = \int\limits_{\Omega} div(A) dx,
+			$$
+			здесь $A(x) = \{A_1(x), \dots, A_n(x)\}$ - векторное поле.\newline
+			$\Omega \in (GO)$ значит, что в области $\Omega$ для любой $A \in C^1(\overline{\Omega})$ справедлива формула Остроградского-Гаусса. 
+			\begin{Thm}
+				(Гаусса) \newline
+				Пусть $u \in C^2(\overline{\Omega})$, тогда $\nabla u \in C^1(\overline{\Omega})$ , $\Omega \in (GO)$
+				$$
+					\int\limits_{\partial \Omega} \dfrac{\partial u}{\partial \nu_y} d s_y = \int\limits_{\Omega} \Delta u(x) dx
+				$$
+			\end{Thm}
+			\begin{St}
+				(1-ая формула Грина)\newline
+				$u \in C^2(\overline{\Omega}), v \in C^1(\overline{\Omega})$, $\Omega \in (GO)$ тогда
+				$$\int\limits_{\partial \Omega} v \dfrac{\partial u}{\partial \nu_y} ds_y = \int\limits_{\Omega} v(x) \Delta u(x) dx + \int\limits_{\Omega} (\nabla v, \nabla u) dx$$
+			\end{St}
+		\begin{St}
+			(2-ая формула Грина)\newline
+			$u, v \in C^2(\overline{\Omega})$, $\Omega \in (GO)$тогда
+			$$\int\limits_{\partial \Omega} \left[v \dfrac{\partial u}{\partial \nu_y} - u \dfrac{\partial v}{\partial \nu_y}\right]  ds_y = \int\limits_{\Omega} (v \Delta u - u \Delta v) dx$$
+		\end{St}
+		\subsection{Применение формул в теории гармонических функций}
+			\begin{Thm}
+				(Единственность решения задачи Дирихле)\newline
+				$u\in C^2(\overline{\Omega})$, $\Omega \in (GO)$ и $u|_{\partial \Omega} =0$, $\Delta u = 0$ всюду в $\Omega$,   тогда $u(x) = 0 \forall x \in \overline{\Omega}$
+			\end{Thm}
+			\textbf{Задача Неймана:}\newline
+			$u \in C^2(\overline{\Omega}), \phi \in C(\partial \Omega)$
+			\begin{equation*}
+				\left\{ 
+				\begin{array}{ll} 
+					\Delta u(x) = 0, x\in \Omega \\
+					\dfrac{\partial u}{\partial \nu_y}|_{\partial \Omega} = \phi \end{array}\right.
+			\end{equation*}
+			\begin{Thm}
+				(Необходимое условие разрешимости задачи Неймана)\newline
+				$\Omega \in (GO)$, $u\in C^2(\overline{\Omega})$ и $\int\limits_{\partial \Omega} \phi(y) dy = 0$. (в классе $C^2(\overline{\Omega})$)
+			\end{Thm}
+			\begin{Thm}
+				(Неединственность решения)\newline
+				Пусть $u_1, u_2 \in C^2(\overline{\Omega})$, $\Omega \in (GO)$, $u_1, u_2$ - решения задачи Неймана c $\phi(x)$, тогда $u_2 = C + u_1, \forall x \in \overline{\Omega},  C = const$	
+			\end{Thm}
+		\subsection{Сферически симметричный случай}
+			$\omega_n$ - площадь единичной n-мерной сферы\newline
+			$\omega_n r^{n-1}$ - площадь n-мерной сферы радиуса r>0\newline
+			$\beta_n = \omega_n\dfrac{R^n}{n}$ - объём n-мерного шара радиуса R>0\newline
+			\textbf{Вид оператора Лапласа в симметричных координатах $\mathbb{R}^n$}
+			$$\Delta u = \dfrac{1}{r^{n-1}} \dfrac{\partial}{\partial r} \left( r^{n-1} \dfrac{\partial f}{\partial r}\right), \ \forall u = f(r)$$
+			\begin{Def}
+				Фундаментальным решением уравнения Лапласа в $\mathbb{R}^n$ называется функция:
+				\begin{equation*}
+				E(x) = 
+				\left\{
+				\begin{array}{lr}
+					\dfrac{1}{2\pi} \ln{|x|}, & \text{if } n = 2, \forall x \in \mathbb{R}^n \backslash \{0\}\\
+					\dfrac{-1}{\omega_n (n-2) |x|^{n-2}}, & \text{if} n \geq 3 , \forall x \in \mathbb{R}^n \backslash \{0\}
+				\end{array}
+				\right\}
+			\end{equation*}
+			\end{Def}
+			\begin{Lem}
+				(Свойства фундаментального решения) \newline
+				\begin{enumerate}
+					\item  $\Delta E = 0, \forall x \in \mathbb{R}^n \backslash \{0\}$
+					\item $\dfrac{\partial E}{\partial r} = \dfrac{1}{\omega_n r^{n-1}}$
+					\item $E(x) \to 0, x \to \infty, n \geq 3$
+					\item $E(x) \to -\infty, x \to 0+0$, но $ |x|^{n-1} E(x) \to 0, x\to 0+0$
+				\end{enumerate}		
+			\end{Lem}		
+			Закон обратных квадратов: $grad E(x) = \dfrac{1}{4\pi |x|^2} \dfrac{\overline{x}}{|x|}$ \newline
+			Связь с Ньютоновским потенциалом: $ \dfrac{-1}{4\pi}E_N = E(x)$, $E_N(x) = \dfrac{1}{|x|}$
+		\subsection{Фундаментальная формула Грина}
+		\begin{Thm}
+			Пусть $\Omega \subset \mathbb{R}^n$ - ограниченная область и $\Omega \in (GO)$. $u \in C^2(\overline{\Omega})$, $E(x-y)$ - фундаментальное решение, тогда $\forall x \in \Omega$ 
+			$$
+				u(x) = \int\limits_{\Omega} E(x-y) \Delta u(y) dy + \int\limits_{\partial \Omega} \left[\dfrac{\partial E(x-y)}{\partial \nu_y} u(y) - \dfrac{\partial u}{\partial \nu_y } E(x-y)\right] ds_y
+			$$	
+		\end{Thm}	
+		\begin{Sled}
+			Пусть $u \in C^2(\overline{\Omega})$ и $\Delta u = 0$ всюду в $\Omega$, тогда $\forall x \in \Omega$:
+			$$
+			u(x) = \int\limits_{\partial \Omega} \left[\dfrac{\partial E(x-y)}{\partial \nu_y} u(y) - \dfrac{\partial u}{\partial \nu_y } E(x-y)\right] ds_y
+			$$
+		\end{Sled}
+		\begin{Sled}
+			(Бесконечная дифференцируемость) \newline
+			Пусть $\Omega_0$ - произвольная область в $\mathbb{R}^n$, $u \in C^2(\overline{\Omega_0})$, $\Delta u = 0$ в $\Omega_0$, тогда $u$ - бесконечно дифференцируема в $\Omega_0$. 
+		\end{Sled}
+		\begin{Sled}
+			Значение гармонической фукнции $u$ в точке $x \in \Omega$ совпадает со средним значением $u$ на любой сфере, с центром в $x$:
+			$$
+				u(x) = \dfrac{1}{\omega r^{n-1}}\int\limits_{|x-y| = r} u(y) dy
+			$$			
+		\end{Sled}
+	\begin{Sled}
+		Значение гармонической фукнции $u$ в точке $x \in \Omega$ совпадает со средним значением $u$ на любом шаре, с центром в $x$:
+		$$
+		u(x) = \dfrac{1}{\beta_n R^n}\int\limits_{|y-x| \leq R} u(y) dy
+		$$			
+	\end{Sled}
+	\subsection{Функция Грина}
+		Положим $\Omega \subset \mathbb{R}^n$ ограниченная область и $\Omega \in (GO)$
+		\begin{Def}
+			Функция Грина: $G(x,y) = E(x-y) + g(x,y), \forall x, y \in \Omega, \ x \neq y$ с свойствами:
+			\begin{enumerate}
+				\item $g(\doteq, y) \in C^2(\overline{\Omega})$ и $\Delta_x g(x,y) = 0$ всюду в $\Omega$ $\forall y \in \Omega$ - фиксированный
+				\item $G(x,y) |_{x\in \partial \Omega} = 0$
+				\item $n \geq 3$ $|G(x,y)| \to 0, x \to \infty$, $n =2, G(x,y) \leq M = const, x \to \infty$
+			\end{enumerate}
+		\end{Def}
+		\begin{Thm}
+			(Симметричность функции Грина)\newline
+			Пусть  $\Omega \subset \mathbb{R}^n$ -  область и $\Omega \in (GO)$  и для неё существует функция Грина $G(x,y)$, тогда $G(x,y) = G(y,x), \forall x, y \in \Omega, x \neq y$
+		\end{Thm}
+		\subsection{Применение функции Грина в задаче Пуассона}
+		Задача для уравнения Пуассона:
+		\begin{equation*}
+					\left\{ 
+			\begin{array}{ll} 
+				\Delta u(x) = f(x), x\in \Omega\\
+				u(x) |_{x \in \partial \Omega} = \phi(x) \end{array}\right.
+		\end{equation*}
+		$f(x) \in C(\overline{\Omega}), \phi(x) \in C(\partial \Omega), u \in C^2(\overline{\Omega})$
+		\newline
+		\begin{Thm}
+			Пусть $\Omega \in \mathbb{R}^n$ - ограниченная область и $\Omega \in (GO)$. Пусть $u\in C^2(\overline{\Omega})$ является решением задача Дирихле, тогда справедлива разрешающая формула:
+			$$
+				u(x) = \int\limits_{\Omega} f(y) G(x,y) dy + \int\limits_{\partial \Omega} \phi(y) \dfrac{\partial G(x,y)}{\partial \nu_y} ds_y, 
+			$$
+			где $G(x,y)$ - формула Грина для области $\Omega$
+		\end{Thm}
+	
+		
+		\section{Уравнение колебаний струны}
+			\textbf{Уравнение колебания струны}
+				$$
+					u_{tt} = a^2 u_{xx} + f(x,t), \ a^2 = \dfrac{T}{\rho}, \ f(x,t) = \dfrac{F(x,t)}{\rho}, \ 0 \leq x \leq l, 0 < t
+				$$
+				Типовые граничные условия:
+				\begin{enumerate}
+					\item Закреплённый край $u(0,t) = 0$
+					\item Свободный край $u_x(0,t) = 0$ Обоснование: $-Tu_x(0,t) = 0$
+					\item Упругое закрепление: \begin{equation*}
+						\begin{cases}
+							u_x(0,t) - hu(0,t) = 0\\
+							u_x(l,t) + hu(l,t) = 0 , h = \dfrac{K}{T}
+						\end{cases}
+					\end{equation*}
+				\end{enumerate}
+			\textbf{Модельная задача о колебаниях струны с закреплёнными краями} 
+			\begin{equation*}
+						\left\{ 
+				\begin{array}{ll} 
+					u_{tt} = a^2 u_{xx}, \ 0 \leq x \leq l, t > 0\\
+					u(0,t) = u(l,t) = 0\\
+					u(x,0) = \phi(x), u_t(x,0) = \psi(x)  \end{array}\right.
+			\end{equation*}
+			Решение методом Фурье:
+			\begin{equation*}
+				u(x,t) = \sum\limits_{k=1}^{\infty} (A_k \cos{\dfrac{\pi k a}{l}t} + B_k \sin{\dfrac{\pi k a}{l}t} ) \sin{\dfrac{\pi k}{l}x} , 
+				A_k = \dfrac{2}{l}\int\limits_{0}^{l} \phi(s)\sin{\dfrac{\pi k}{l}s}ds, B_k = \dfrac{2}{\pi k a} \int\limits_{0}^{l} \psi(s)\sin{\dfrac{\pi k}{l}s}ds
+			\end{equation*}
+			\begin{Thm}
+				Пусть $\phi \in C^3[0,l], \psi \in C^2[0,l]$, причём \begin{enumerate}
+					\item $\phi(0) = \phi(l) = 0, \phi''(0) = \phi''(l) = 0$
+					\item $\psi(0) = \psi(l) = 0$
+				\end{enumerate}
+				Тогда $u \in C^{2,2} ([0,l] \times [0, +\infty))$ и функция u(x,t) удовлетворяет всем условиям задачи выше. 
+			\end{Thm}
+			\subsection{Канонические координаты}
+				\begin{equation*}
+					\begin{cases}
+						\xi = t - ax \\
+						\eta = t + ax
+					\end{cases}
+				\end{equation*}
+			Тогда уравнение $u_{tt} = a^2 u_{xx}$ в канонических координатах примет вид $ u_{\xi \eta} = 0$\newline
+			Общее решение уравнения колебаний представляется в следующем виде $u(x,t) = f(x - at) + g(x + at)$, где $f,g \in C^2$ - некоторые функции одного аргумена. \newline
+			Семейство прямых на плоскости $(x,t)$ 
+			\begin{equation*}
+				\left[ 
+				\begin{gathered} 
+					x - at = C_1, C_1 \in \mathbb{R} \\
+					x + at = C_2, C_2 \in \mathbb{R} \\
+				\end{gathered} 
+				\right.
+			\end{equation*}
+			это характеристики уравнения (1) (однородное уравнение колебаний струны). 
+			\begin{Thm}
+				Всякое решение $u(x,t)$ задачи (1)	представимо в виде суммы прямой и обратной волны. (т.к. $g(x+at)$ - обратная волна, $f(x-at)$ - прямая волна). 	
+			\end{Thm}
+			\subsection{Задача Коши для уравнения колебания струны}
+				\begin{equation*}
+				\left\{ 
+					\begin{array}{ll} 
+						u_{tt} = a^2 u_{xx}, \ x \in \mathbb{R}, t \geq 0\\
+						u(x,0) = \phi(x), u_t(x,0) = \psi(x)  \end{array}\right.
+				\end{equation*}
+				\textbf{Формулы Даламбера}(решение для задачи Коши)\newline
+				$$
+				u(x,t) = \dfrac{1}{2} \left(\phi(x + at) - \phi(x -at) \right) + \dfrac{1}{2a} \int\limits_{x - at}^{x + at} \phi(s) ds 
+				$$
+				\begin{Thm}
+					Пусть $\phi \in C^2(\mathbb{R})$, $\psi \in C^1(\mathbb{R})$ и $u = u(x,t)$ определяется формулой Даламбера $\Rightarrow$ $u\in C^{2,2}(\mathbb{R} \times [0, +\infty])$ и фукнция u является классическим решением задачи Коши. 	
+				\end{Thm}
+				\begin{Thm}
+					Устойчивость ???????	
+				\end{Thm}
+			\subsection{Неоднородное уравнение колебаний струны}
+				\begin{equation*}
+				\left\{ 
+					\begin{array}{ll} 
+						u_{tt} = a^2 u_{xx} + f(x,t), \ x \in \mathbb{R}, t \geq 0\\
+						u(x,0) = 0, u_t(x,0) = 0  \end{array}\right.
+				\end{equation*}
+				\begin{Def}
+					Вспомогательная функция $v(x,t; \alpha)$ такая что:
+					\begin{equation*}
+						\begin{cases}
+							v_{tt} = a^2 v_{xx}, x \in \mathbb{R}, t \geq \alpha \\
+							v|_{t = \alpha} = 0, v_t|_{t=\alpha} = f(x,\alpha)
+						\end{cases}	
+					\end{equation*}
+					\begin{equation*}
+						\begin{cases}
+							v_{tt}(x,t; \alpha) = a^2 v_{xx}(x,t; \alpha), x\in \mathbb{R}, t \geq \alpha\\
+							v(x, \alpha; \alpha) = 0, v_t(x, \alpha; \alpha) = 0
+						\end{cases}
+					\end{equation*}
+				\end{Def}
+				\begin{Def}
+					Интеграл Дюамеля от функции $v(x,t; \alpha)$: 
+					$$
+						u(x,t) = \int\limits_0^{t} v(x, t; \alpha) d\alpha
+					$$		
+				\end{Def}
+				\begin{Thm}
+					Пусть $f, f_x' \in C(\mathbb{R} \times [0, +\infty)$ $\Rightarrow$ интеграл Дюамеля дает классическое решение неоднородной задачи Коши:
+					$$
+						u(x,t) = \int\limits_{0}^{t} v(x, t; \alpha) d\alpha = \dfrac{1}{2a} \int\limits_{0}^{t} d\tau \int\limits_{x-a(t-\tau)}^{x + a(t- \tau)} f(s, \tau) ds
+					$$
+				\end{Thm}
+\end{document}
