@@ -91,7 +91,7 @@
 	Базис $\{\psi_i\}$ гильбертова простнаства $H$, получаемый из ортнормированного базиса с помощью ограниченного обратимого отображения  называется \textbf{базисом Рисса}.
 \end{definition}
 
-\section{Основная часть}
+\section{Постановка задачи}
 
 Рассмотрим краевую задачу для уравнения Лапласа
 \begin{equation}
@@ -110,68 +110,23 @@
 	u(x,y) \rightrightarrows 0, y \to \infty
 \end{equation}
 Аналогичная задача рассматривалась как вспомогательная с граничными условиями второго рода на боковых сторонах полуполосы и коэффициентом $\dfrac{1}{k}$ при $\dfrac{\partial u}{\partial y}$ в работе [1].
+\section{Теорема сущестоввания}
 \begin{theorem}
-    Решение задачи (2.1 - 2.4) существует и единственно, причём его можно представить в виде ряда
-    \begin{equation}
-    	u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
-    \end{equation}
+	Решение задачи (2.1 - 2.4) существует, причём его можно представить в виде ряда
+	\begin{equation}
+		u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
+	\end{equation}
 	где коэффициенты $A_n, \ n =0,1,2, \dots$ находятся из разложения
 	\begin{equation}
 		\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]} = \dfrac{\varphi(x)}{\sqrt2}
 	\end{equation}
 \end{theorem}
+
+
 \begin{proof}
-   	Докажем сперва единственность решения этой задачи. Пусть $u(x,y)$ - разность двух решений - решение задачи с $\varphi(x) \equiv 0$. \newline
-   	Введём обозначения $A_\varepsilon = (0, \varepsilon), A_R = (0, R), B_R = (\pi, R), B_\varepsilon = (\pi, \varepsilon)$. $D_{R\varepsilon}$ - прямоугольник $A_\varepsilon A_R B_R B_\varepsilon$. Справедливы следующие соотношения:
-   	\begin{equation*}
-   		0 = \iint\limits_{D_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy = 
-   	\end{equation*}
-   \begin{equation*}
-   =	\iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  - 
-   		- \iint\limits_{D_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right) + \iint\limits_{D_{R\varepsilon}} u_y u dx dy = 
-   	\end{equation*}
- 	\begin{equation*}
- 		= - \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy
- 		 - \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_y u dx - 
- 		 -\int\limits_{A_\varepsilon B_\varepsilon} \dfrac{u^2}{2} dx + \int\limits_{A_R B_R} \dfrac{u^2}{2} dx = 
- 	\end{equation*}
- 	\begin{equation*}
- 		= - \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy - 
- 		\int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) \left(u_y - u_x\right)u dx - \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_x dx - \int\limits_{A_\varepsilon B_\varepsilon}\dfrac{u^2}{2} dx +
- 	\end{equation*}
- 	\begin{equation*}
- 		+ \int\limits_{A_R B_R} \dfrac{u^2}{2}dx
- 	\end{equation*}
- 	Отсюда следует
- 	\begin{equation*}
- 	\iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{2}\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon)  =
- 	\end{equation*}
- 	\begin{equation*}
- 	= \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) \left(u_y - u_x\right)u dx + \dfrac12  \int\limits_{A_R B_R} u^2 dx \leq
- 	\end{equation*}
- 	\begin{equation*}
-	 		\leq \left(R - \varepsilon\right) \left[\int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx \right]^{\frac12} \left[\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx \right]^{\frac12} + \dfrac12 \int\limits_{A_RB_R} u^2 dx \leq
- 	\end{equation*}
- 	\begin{equation*}
- 		\leq \left(R - \varepsilon\right)^2 \int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx + \dfrac14 \int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac12 \int\limits_{A_RB_R} u^2 dx, 
- 	\end{equation*}
- 	\begin{equation*}
- 			\iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{4}\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon) \leq 
- 	\end{equation*}
- 	\begin{equation*}
- 		 \leq \left(R - \varepsilon\right)^2 \int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx  +\dfrac12 \int\limits_{A_RB_R} u^2 dx
- \end{equation*}
-	Устремим $\varepsilon \to 0 + 0$, тогда в силу неравенства $(a-b)^2 \leq 2a^2 + 2b^2$
-	\begin{equation*}
-		\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{A_\varepsilon B_\varepsilon} \left(u_y - u_x\right)^2 dx = 0
-	\end{equation*}
-	и получим соотношение
-	\begin{equation*}
-		\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + \dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{A_RB_R} u^2 dx
-	\end{equation*}
-	Устремим теперь $R \to \infty$, тогда $\int\limits_{A_RB_R} u^2 dx \to 0$, тем самым, это возможно только в случае $u(x,y) \equiv 0$ в $\overline{D}$. \newline
+   
 	
-	Докажем, теперь, существование решения задачи $(2.1) - (2.4)$. В силу основного результата работы $[2]$ система $\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Поэтому коэффициенты разложения в формуле (2.6) удовлетворяют неравенствам Бесселя
+	Докажем существование решения задачи $(2.1) - (2.4)$. В силу основного результата работы $[2]$ система $\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Поэтому коэффициенты разложения в формуле (2.6) удовлетворяют неравенствам Бесселя
 	\begin{equation*}
 		C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} , 0 < C_1 < C_2, 
 	\end{equation*}
@@ -200,12 +155,66 @@
 	\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq
 \end{equation*}
 \begin{equation*}
-\leq C_4 \sum\limits_{n=0}^{\infty} A_n^2 \left(n +\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 < \dfrac{\varepsilon}{2}
+\leq C_4 \sum\limits_{n=0}^{m} A_n^2 \left(n +\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 < \dfrac{\varepsilon}{2}
 \end{equation*}
 Это верно, если $0 < y < \delta$ (m зафиксировано в зависимости от N). Условие (2.3) выполнено. Теорема доказана.
 \end{proof}
 
-
+\section{Теорема единственности}
+\begin{theorem}
+	Решение задачи (2.1 - 2.4) единственно
+\end{theorem}
+\begin{proof}
+		Докажем единственность решения этой задачи. Пусть $u(x,y)$ - разность двух решений - решение задачи с $\varphi(x) \equiv 0$. \newline
+	Введём обозначения $A_\varepsilon = (0, \varepsilon), A_R = (0, R), B_R = (\pi, R), B_\varepsilon = (\pi, \varepsilon)$. $D_{R\varepsilon}$ - прямоугольник $A_\varepsilon A_R B_R B_\varepsilon$. Справедливы следующие соотношения:
+	\begin{equation*}
+		0 = \iint\limits_{D_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy = 
+	\end{equation*}
+	\begin{equation*}
+		=	\iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  - 
+		- \iint\limits_{D_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right) + \iint\limits_{D_{R\varepsilon}} u_y u dx dy = 
+	\end{equation*}
+	\begin{equation*}
+		= - \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy
+		- \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_y u dx - 
+		-\int\limits_{A_\varepsilon B_\varepsilon} \dfrac{u^2}{2} dx + \int\limits_{A_R B_R} \dfrac{u^2}{2} dx = 
+	\end{equation*}
+	\begin{equation*}
+		= - \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy - 
+		\int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) \left(u_y - u_x\right)u dx - \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_x dx - \int\limits_{A_\varepsilon B_\varepsilon}\dfrac{u^2}{2} dx +
+	\end{equation*}
+	\begin{equation*}
+		+ \int\limits_{A_R B_R} \dfrac{u^2}{2}dx
+	\end{equation*}
+	Отсюда следует
+	\begin{equation*}
+		\iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{2}\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon)  =
+	\end{equation*}
+	\begin{equation*}
+		= \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) \left(u_y - u_x\right)u dx + \dfrac12  \int\limits_{A_R B_R} u^2 dx \leq
+	\end{equation*}
+	\begin{equation*}
+		\leq \left(R - \varepsilon\right) \left[\int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx \right]^{\frac12} \left[\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx \right]^{\frac12} + \dfrac12 \int\limits_{A_RB_R} u^2 dx \leq
+	\end{equation*}
+	\begin{equation*}
+		\leq \left(R - \varepsilon\right)^2 \int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx + \dfrac14 \int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac12 \int\limits_{A_RB_R} u^2 dx, 
+	\end{equation*}
+	\begin{equation*}
+		\iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{4}\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon) \leq 
+	\end{equation*}
+	\begin{equation*}
+		\leq \left(R - \varepsilon\right)^2 \int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx  +\dfrac12 \int\limits_{A_RB_R} u^2 dx
+	\end{equation*}
+	Устремим $\varepsilon \to 0 + 0$, тогда в силу неравенства $(a-b)^2 \leq 2a^2 + 2b^2$
+	\begin{equation*}
+		\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{A_\varepsilon B_\varepsilon} \left(u_y - u_x\right)^2 dx = 0
+	\end{equation*}
+	и получим соотношение
+	\begin{equation*}
+		\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + \dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{A_RB_R} u^2 dx
+	\end{equation*}
+	Устремим теперь $R \to \infty$, тогда $\int\limits_{A_RB_R} u^2 dx \to 0$, тем самым, это возможно только в случае $u(x,y) \equiv 0$ в $\overline{D}$.
+\end{proof}
 \newpage
 \addcontentsline{toc}{section}{Список литературы}
 \vspace{-2.3cm}
