@@ -146,4 +146,17 @@
 	u_y(x,y) = - Im\  \dfrac{e^{\dfrac{+iz}{2}}}{\pi}  \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}} \sqrt{1 - e^{i2z}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
 \end{equation*}
 	\end{proof}
+	\newpage
+	
+	\subsection*{Замечание по поводу интегрального представления самого решения}
+	Трудности с получением интегрального представления решения задачи (1)-(4) Возникают в связи с тем, что в исходном разложении мы имеем коэффициенты $A_n\left(n+\dfrac12\right)$, а не $A_n$. Если попытаться прямо подставить интегральное представление в коэффициенты, то
+	\begin{equation*}
+		I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}}  \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m=0}^{\infty} \dfrac{e^{i(m+k)z} B_m}{m+k-\dfrac12}
+	\end{equation*}
+	Пока просуммировать эти ряды не удаётся\newline
+	В качестве второго подхода можно попытаться избавиться от $\left(n+\dfrac12\right)$ при помощи интегрирования, тогда получим
+	\begin{equation*}
+		\sum\limits_{n=0}^{\infty} A_n \sin{\left[\left(n+\dfrac12\right)x - \dfrac\pi4\right]} = \int\limits_0^x \dfrac{\varphi(t)}{\sqrt2}dt - \sum\limits_{n=0}^{\infty} \dfrac{A_n}{\sqrt2}
+	\end{equation*}
+	Но данная система синусов не образует базис Рисса.
 \end{document}
