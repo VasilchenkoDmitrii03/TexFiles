@@ -1,0 +1,140 @@
+\documentclass[10pt, a4paper]{extarticle}
+\usepackage[left=1cm,right=1cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage[russian]{babel}
+\usepackage{amsfonts, amssymb, amsmath, mathabx, dsfont}
+% theorems, lemmas, etc.
+\usepackage{amsthm}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}
+\newtheorem{corollary}{Следствие}
+\newtheorem{notabene}{Замечание}
+\newtheorem{definition}{Определение}
+
+% enumerating settings
+\numberwithin{equation}{section}
+\numberwithin{lemma}{section}
+\numberwithin{definition}{section}
+\numberwithin{notabene}{section}
+\numberwithin{corollary}{section}
+
+\begin{document}
+	\section*{Обобщение задачи}
+	\subsection*{Исходная задача}
+		Ранее была рассмотрена задача
+	\begin{equation}
+		\dfrac{\partial^2 u}{\partial x^2} +\dfrac{\partial^2 u}{\partial y^2} = 0
+	\end{equation}
+	В полуполосе $D = \{(x,y) \vert 0 < x < \pi, 0 < y\}$\newline
+	В классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$ \newline
+	с граничными условиями
+	\begin{equation}
+		u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0
+	\end{equation}
+	\begin{equation}
+		\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \left[\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2[0,\pi]
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, y \to \infty
+	\end{equation}
+	И была доказана теорема:
+	\begin{theorem}
+		Решение задачи (0.1 - 0.4) существует и единственно, причём его можно представить в виде ряда
+		\begin{equation}
+			u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
+		\end{equation}
+		где коэффициенты $A_n, \ n =0,1,2, \dots$ находятся из разложения
+		\begin{equation}
+			\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]} = \dfrac{\varphi(x)}{\sqrt2}
+		\end{equation}
+	\end{theorem}	
+	\newpage
+	\subsection*{Модифицированная задача}
+	Рассмотри теперь задачу с некоторым параметром $k \in (-\infty, -1) \cup [1, +\infty)$ в граничном условии (3). Итого получим задачу
+	\begin{equation*}
+		\dfrac{\partial^2 u}{\partial x^2} +\dfrac{\partial^2 u}{\partial y^2} = 0
+	\end{equation*}
+	В полуполосе $D = \{(x,y) \vert 0 < x < \pi, 0 < y\}$\newline
+	В классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$ \newline
+	с граничными условиями
+	\begin{equation*}
+		u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0
+	\end{equation*}
+	\begin{equation}
+		\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \dfrac{1}{k}\left[\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2[0,\pi]
+	\end{equation}
+	\begin{equation*}
+		u(x,y) \rightrightarrows 0, y \to \infty
+	\end{equation*}
+	Получим похожую теорему, но с небольшими отличиями.
+		\begin{theorem}
+		Решение задачи (0.1 - 0.4) существует и единственно, причём его можно представить в виде ряда
+		\begin{equation*}
+			u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
+		\end{equation*}
+		где коэффициенты $A_n, \ n =0,1,2, \dots$ находятся из разложения
+		\begin{equation}
+			\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi2 - \arctan{\dfrac{1}{k}}\right]} = \dfrac{k}{\sqrt{1+k^2}}\varphi(x)
+		\end{equation}
+	\end{theorem}	
+	\begin{proof}
+		Докозательство единственности решения задачи проводится аналогично докозательству исходной задачи. \newline
+		Перейдём к докозательству существования решения. \newline
+		Система $\{\sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi2 - \arctan{\dfrac{1}{k}}\right]}\}_{n=0}^{\infty}$ образует в $L_2(0,\pi)$ базис Рисса при $k \in (-\infty, -1) \cup (0, +\infty)$, поэтому справедливо двухстороннее неравенство Бесселя:
+		\begin{equation*}
+			C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 \leq 	C_2 \|\varphi \|_{L_2(0,\pi)} , \ 0 < C_1 < C_2,
+		\end{equation*}
+		Поэтому сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$, поэтому  равномерно сходится ряд (0.5). Очевидно, что функция (0.5) является решением задачи (0.1). Условие (0.4) выполняется т.к. $\sum\limits_{n=0}^{\infty} e^{-\left(n+\dfrac12\right)y} = \dfrac{e^{-1/2}}{1 - e^{-y}}$. Проверим выполнение условие (0.3).
+		Подставим функцию (0.8) в условие (0.7), тогда
+		\begin{equation*}
+			I(y) = \int\limits_0^\pi \dfrac{1}{k}\left[\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} +  \dfrac{\sqrt{1+k^2}}{k} \sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi2 - \arctan{\dfrac{1}{k}}\right]}\right]^2 dx = 
+		\end{equation*}
+		
+		\begin{equation*}
+			\begin{split}
+				= \int\limits_0^\pi \left[ \sum\limits_{n=0}^{\infty} \left( \left(n+\dfrac12\right) e^{-\left(n+\dfrac12\right)y} \left\{-\sin{\left(n+\dfrac12\right)x} - \cos{\left(n+\dfrac12\right)x} + 
+				+ \dfrac{\sqrt{1+k^2}}{k} \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi2 - \arctan{\dfrac{1}{k}}\right]}\right\} \right)
+				\right] dx
+			\end{split}
+		\end{equation*}
+		Рассмотрим подробнее выражение в фигурных скобках
+		\begin{equation*}
+			\left\{-e^{\dots} \sin{\left(n+\dfrac12\right)x} - e^{\dots} \cos{\left(n+\dfrac12\right)x} + 
+			+ \dfrac{\sqrt{1+k^2}}{k} \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi2 - \arctan{\dfrac{1}{k}}\right]}\right\} = 
+		\end{equation*}
+	\begin{equation*}
+		= \dfrac{\sqrt{1+k^2}}{k} e^{\dots} \left\{- \dfrac{1}{\sqrt{1 + k^2}}\sin{\left(n+\dfrac12\right)x} - \dfrac{k}{\sqrt{1 + k^2}} \cos{\left(n+\dfrac12\right)x} \right\}
+		+ \dfrac{\sqrt{1+k^2}}{k} \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi2 - \arctan{\dfrac{1}{k}}\right]} = 
+	\end{equation*}
+	Заметим, что $\dfrac{1}{\sqrt{1 + k^2}} = \sin{\left(\arctan{1/k}\right)}$ и $\dfrac{k}{\sqrt{1 + k^2}} = \cos{\left(\arctan{1/k}\right)}$, тогда получаем
+	\begin{equation*}
+		= \dfrac{\sqrt{1+k^2}}{k} e^{\dots}\left\{- \sin{\left(\arctan{1/k}\right)}\sin{\left(n+\dfrac12\right)x} - \cos{\left(\arctan{1/k}\right)} \cos{\left(n+\dfrac12\right)x} \right\}
+		+ \dfrac{\sqrt{1+k^2}}{k} \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi2 - \arctan{\dfrac{1}{k}}\right]} = 
+	\end{equation*}
+\begin{equation*}
+	= \dfrac{\sqrt{1+k^2}}{k} e^{\dots}\left\{- \cos{\left[\left(n + \dfrac12\right)x -\arctan{1/k} \right]} \right\}
+	+ \dfrac{\sqrt{1+k^2}}{k} \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi2 - \arctan{\dfrac{1}{k}}\right]} = 
+\end{equation*}
+\begin{equation*}
+	= \dfrac{\sqrt{1+k^2}}{k} e^{\dots}\left\{- \cos{\left[\left(n + \dfrac12\right)x -\arctan{1/k} \right]} \right\}
+	+ \dfrac{\sqrt{1+k^2}}{k} \cos{\left[\left(n +\dfrac12\right)x - \arctan{\dfrac{1}{k}}\right]} = 
+\end{equation*}
+\begin{equation*}
+	= \dfrac{\sqrt{1+k^2}}{k} \cos{\left[\left(n +\dfrac12\right)x - \arctan{\dfrac{1}{k}}\right]} \left(1 - e^{\dots} \right)
+\end{equation*}
+В итоге получаем
+	\begin{equation*}
+		I(y) = \dfrac{\sqrt{1+k^2}}{k} \int\limits_0^\pi \left[\sum\limits_{n=0}^{\infty} A_n \left(n+\dfrac12\right) \cos{\left[\left(n +\dfrac12\right)x - \arctan{\dfrac{1}{k}}\right]} \left( e^{-\left(	n+\dfrac12\right)y} - 1\right)  \right]^2 dx
+	\end{equation*}
+Оценим $I(y)$
+\begin{equation*}
+	I(y) \leq I_1(y) + I_2(y)	= \dfrac{2\sqrt{1+k^2}}{k} \int\limits_0^\pi \left[\sum\limits_{n=0}^{m} A_n \left(n+\dfrac12\right) \cos{\left[\left(n +\dfrac12\right)x - \arctan{\dfrac{1}{k}}\right]} \left( e^{-\left(	n+\dfrac12\right)y} - 1\right)  \right]^2 dx + 
+\end{equation*}
+\begin{equation*}
+		+ \dfrac{2\sqrt{1+k^2}}{k} \int\limits_0^\pi \left[\sum\limits_{n=m+1}^{\infty} A_n \left(n+\dfrac12\right) \cos{\left[\left(n +\dfrac12\right)x - \arctan{\dfrac{1}{k}}\right]} \left( e^{-\left(	n+\dfrac12\right)y} - 1\right)  \right]^2 dx 
+\end{equation*}
+Первое слагаемое в соответствии с неравенством Бесселя 
+
+\end{proof}
+\end{document}
