@@ -135,6 +135,14 @@
 		+ \dfrac{2\sqrt{1+k^2}}{k} \int\limits_0^\pi \left[\sum\limits_{n=m+1}^{\infty} A_n \left(n+\dfrac12\right) \cos{\left[\left(n +\dfrac12\right)x - \arctan{\dfrac{1}{k}}\right]} \left( e^{-\left(	n+\dfrac12\right)y} - 1\right)  \right]^2 dx 
 \end{equation*}
 Первое слагаемое в соответствии с неравенством Бесселя 
-
+	\begin{equation*}
+		I_1(y)  \leq C \sum\limits_{n=0}^{m} A_n^2 \left(n+\dfrac12\right) \left(e^{-\left(n+\dfrac12\right)y} - 1\right) < C \sum\limits_{n=0}^{m} A_n^2 \left(n+\dfrac12\right) < \varepsilon / 2
+	\end{equation*}
+Это верно при $0 < y < \delta$. m зафиксировано в зависимости от N. \newline
+Второе слагаемое также оценим через неравенство Бесселя.
+	\begin{equation*}
+		I_2(y) \leq C \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right) \left(e^{-\left(n+\dfrac12\right)y} - 1\right) < C \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right) < \varepsilon / 2
+	\end{equation*}
+Условие (0.7) выполнено. Теорема доказана.
 \end{proof}
 \end{document}
