@@ -1,0 +1,134 @@
+\documentclass[12pt, a4paper]{extarticle}
+
+\usepackage[russian]{babel}
+\usepackage{amsfonts, amssymb, amsmath, mathabx, dsfont}
+% theorems, lemmas, etc.
+\usepackage{amsthm}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}
+\newtheorem{corollary}{Следствие}
+\newtheorem{notabene}{Замечание}
+\newtheorem{definition}{Определение}
+
+% enumerating settings
+\numberwithin{equation}{section}
+\numberwithin{lemma}{section}
+\numberwithin{definition}{section}
+\numberwithin{notabene}{section}
+\numberwithin{corollary}{section}
+
+\begin{document}
+	\section*{Интегральное представление решения уравнения Лапласа}
+	Ранее была рассмотрена задача
+	\begin{equation}
+		\dfrac{\partial^2 u}{\partial x^2} +\dfrac{\partial^2 u}{\partial y^2} = 0
+	\end{equation}
+	В полуполосе $D = \{(x,y) \vert 0 < x < \pi, 0 < y\}$\newline
+	В классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$ \newline
+	с граничными условиями
+	\begin{equation}
+		u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0
+	\end{equation}
+	\begin{equation}
+		\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \left[\dfrac{1}{k}\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2[0,\pi]
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, y \to \infty
+	\end{equation}
+	И была доказана теорема:
+	\begin{theorem}
+		Решение задачи (2.1 - 2.4) существует и единственно, причём его можно представить в виде ряда
+		\begin{equation}
+			u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
+		\end{equation}
+		где коэффициенты $A_n, \ n =0,1,2, \dots$ находятся из разложения
+		\begin{equation}
+			\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi2 - \arctan{1/k} \right]} = \dfrac{k}{\sqrt{1+k^2}} \varphi(x)
+		\end{equation}
+	\end{theorem}
+	\newpage
+	Рассмотрим теперь интегральное представление решения этой задачи:
+	\begin{theorem}
+		Решение задачи (0.1)-(0.4) представимо в следующем виде:
+		\begin{equation}
+			u(x,y) = Im \ \dfrac{2e^{iz/2}}{\pi} \int\limits_0^\pi  \dfrac{\left(\sin{t/2}\right)^{1 - \gamma/\pi} \left(\cos{t/2}\right)^{\gamma/\pi}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \dfrac{\left(1 - e^{iz}\right)^{\gamma/\pi}}{\left(1 + e^{iz}\right)^{\gamma/\pi + \beta}} \Psi(t) dt
+		\end{equation}	
+	\end{theorem}	
+	\begin{proof}
+		Рассмотрим
+		\begin{equation*}
+			\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi2 - \arctan{1/k} \right]} = 
+		\end{equation*}
+		\begin{equation*}
+			=\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \cos{\left[\left(n +\dfrac12\right)x - \arctan{1/k} \right]} = 
+			 \dfrac{k}{\sqrt{1+k^2}} \varphi(x)
+		\end{equation*}
+		Проинтегрируем это равенство от 0 до x по x:
+		\begin{equation*}
+			\sum\limits_{n=0}^{\infty} A_n \sin{\left[\left(n +\dfrac12\right)x - \arctan{1/k} \right]} = \dfrac{1}{\sqrt{1+k^2}} \sum\limits_{n=0}^{\infty} A_n + \dfrac{k}{\sqrt{1+k^2}} \int\limits_0^x \varphi(\tau) d\tau = \Psi(x)
+		\end{equation*}
+		Система $\left\{\sin{\left[\left(n +\dfrac12\right)x - \arctan{1/k} \right]}		\right\}_{n=0}^{\infty}$ обзарует базис Рисса в $L_2(0,\pi)$ при $k\in (-\infty, 0) \cup (1, +\infty)$. Поэтому для коэффициентов $A_n$ справедливо разложение
+		\begin{equation*}
+				A_n = \int\limits_0^\pi h_{n+1}(t) \Psi(t) dt
+		\end{equation*}
+		\begin{equation*}
+			u(x,y) = \sum\limits_{n=0}^{\infty} \int\limits_0^\pi e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]} h_{n+1}(t) \Psi(t) dt
+		\end{equation*}
+	Обозначим $z = x + iy$
+		\begin{equation*}
+			u(x,y) = Im \  \sum\limits_{n=0}^{\infty} \int\limits_0^\pi e^{i\left(n+\dfrac12\right)z} h_{n+1}(t) \Psi(t) dt
+		\end{equation*}
+	Заменим индекс $m = n + 1$
+			\begin{equation*}
+			u(x,y) = Im \ e^{-iz/2} \sum\limits_{m=1}^{\infty} \int\limits_0^\pi e^{imz} h_{m}(t) \Psi(t) dt
+		\end{equation*}
+	\begin{equation*}
+		u(x,y) = Im \ e^{-iz/2} \int\limits_0^\pi \sum\limits_{m=1}^{\infty}  e^{imz} h_{m}(t) \Psi(t) dt
+	\end{equation*}
+	Введём новое обозначение:
+	\begin{equation*}
+		I(t,z) = \sum\limits_{m=1}^{\infty}  h_{m}(t)  e^{im z}
+	\end{equation*}
+	\begin{equation*}
+		I(t,z) =\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{n=1}^{\infty}   \sum\limits_{k=1}^n \sin{kt} B_{n-k} e^{inz} = 
+		\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{n=k}^{\infty} e^{inz} B_{n-k}
+	\end{equation*}
+	Введём новый индекс $m = n - k$
+	\begin{equation*}
+		I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m =0 }^{\infty} e^{i(m+k)z} B_{m} = 
+		\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} \sum\limits_{m =0 }^{\infty} e^{imz} B_{m}
+	\end{equation*}
+	Первый ряд можем вычислить по формуле суммы бесконечно убывающей геометрической прогрессии
+	\begin{equation*}
+		\sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} =  \sum\limits_{k=1}^{\infty} e^{ikz}\dfrac{1}{2i}\left(e^{ikt} - e^{-ikt}\right) = \dfrac1{2i} \left(\dfrac{1}{1 - e^{i(z+t)}} -  \dfrac{1}{1 - e^{i(z-t)}}\right) = 
+	\end{equation*}
+	\begin{equation*}
+		= \dfrac{1}{2i}  \dfrac{e^{i(z+t)} - e^{i(z-t)}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} =  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}
+	\end{equation*}
+	Рассмотрим второй ряд:
+	\begin{equation*}
+		\sum\limits_{l =0 }^{\infty} e^{ilz} B_{l} = \sum\limits_{l =0 }^{\infty} e^{ilz} \sum\limits_{m=0}^{l} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = \sum\limits_{m=0}^{\infty} \sum\limits_{l=m}^{\infty} e^{ilz} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = 
+	\end{equation*}
+	Введём новый индекс суммирования $k = l -m$
+	\begin{equation*}
+		\sum\limits_{m=0}^{\infty} \sum\limits_{k=0}^{\infty} e^{i(m+k)z} C^{k}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{k} = \sum\limits_{m=0}^{\infty} e^{imz} C^{m}_{-\gamma/\pi - \beta} \sum\limits_{k=0}^{\infty}  C^{k}_{\gamma/\pi} (-1)^k e^{ikz} = (1 + e^{iz})^{-\gamma/\pi - \beta} (1- e^{iz})^{\gamma/\pi} 
+	\end{equation*}
+	Собираем все решение:
+	\begin{equation*}
+		u(x,y) = Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi I(t,z) \Psi(t) dt
+	\end{equation*}
+	\begin{equation*}
+		u(x,y) = Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi   \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}}\dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} (1 + e^{iz})^{-\gamma/\pi - \beta} (1- e^{iz})^{\gamma/\pi}  \Psi(t) dt
+	\end{equation*}
+		В нашем случае $\beta = -1, \ \gamma = -2 \arctan{1/k}$. Оценим сходимость данного ряда: \newline Сперва рассмотрим следующий множитель
+	\begin{equation*}
+		\dfrac{(2\cos{t/2})^\beta  \sin{t}}{(\tan{t/2})^{\gamma/\pi}} = \dfrac{(\cos{t/2})^{\gamma/\pi}\sin{t}}{ 2\cos{t/2} * (\sin{t/2})^{\gamma/\pi}}
+		 = \dfrac{(\cos{t/2})^{\gamma/\pi}\sin{t/2} \cos{t/2}}{ \cos{t/2} * (\sin{t/2})^{\gamma/\pi}} = 
+	\end{equation*}
+\begin{equation*}
+	= \left(\sin{t/2}\right) ^{1 - \gamma/\pi}  (\cos{t/2})^{\gamma/\pi}
+\end{equation*}
+	 Рассмотрим показатели этих выражений: $\gamma = -2\arctan{1/k}$
+	\end{proof}
+\end{document}
