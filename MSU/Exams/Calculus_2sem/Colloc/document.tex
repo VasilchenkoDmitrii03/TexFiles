@@ -1,0 +1,54 @@
+\documentclass[9pt, a4paper]{extarticle}
+
+\usepackage[russian]{babel}
+\usepackage{amsfonts, amssymb, amsmath, mathabx, dsfont}
+% theorems, lemmas, etc.
+\usepackage{amsthm}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}
+\newtheorem{corollary}{Следствие}
+\newtheorem{notabene}{Замечание}
+\newtheorem{definition}{Определение}
+
+% enumerating settings
+\numberwithin{equation}{section}
+\numberwithin{lemma}{section}
+\numberwithin{definition}{section}
+\numberwithin{notabene}{section}
+\numberwithin{corollary}{section}
+\usepackage[left=30mm, top=20mm, right=15mm, bottom=20mm, nohead, footskip=10mm]{geometry}
+\begin{document}
+	\section*{Задачи. Коллоквиум 2 семестр}
+	\section{ Несобственные интегралы}
+	\begin{enumerate}
+		\item (5) 	Вычислить $\int\limits_B e^{-\dfrac{x}{2}} \dfrac{|\sin{x} - \cos{x}|}{\sqrt{\sin{x}}}dx$, 
+		где B - множество, на котором поднтегральное выражение имеет смысл
+		\item (5) 	Исследовать на сходимость в зависимости от $p_i, \ i = \overline{1,n}$: $\int\limits_{-\infty}^{\infty} \dfrac{dx}{\prod_{i=1}^n |x - a_i|^{p_i}}$
+		\item (4) Вычислить $\int\limits_0^{\infty} x^n e^{-x} dx$
+		\item (4) Исследовать на сходимость $\int\limits_{0}^{\infty} x^{p-1} e^{-x} dx$
+		\item (3) Вычислить $V.P. \ \int\limits_{-\infty}^{\infty} \dfrac{1+x}{1+x^2}dx$
+		\item (3) Исследовать на сходимость:  $\int\limits_{-\infty}^{+\infty} x^p dx$
+	\end{enumerate}
+	\section{Вычисление площадей}
+	\begin{enumerate}
+		\item (5) Вычислить площадь фигуры, ограниченной $x^3 + y^3 = 3axy$
+		\item (4) Вычислить площадь фигуры, ограниченной $ x = a(2\cos{t} - \cos{2t}), y = a (2\sin{t}  - \sin{2t})$
+		\item (4) Вычислить площадь фигуры, заключенной между $y^2 = 2px$ и $27py^2 = 8(x-p)^3$
+		\item (3) Вычислить площадь фигуры, ограниченной $r = a(1 + \cos{\varphi})$ 
+		\item (3) Вычислить площадь фигуры, заключенной между $y = 2x-x^2$ и $x + y = 0$
+	\end{enumerate}
+	\section{Вычисление длин дуг}
+	\begin{enumerate}
+		\item (5) Вычислить длину дуги, заданной $y^2 = \dfrac{x^3}{2a -x}$, $0 \leq x \leq \frac{5}{3}a$
+		\item (4) Вычислить длину дуги, заданной $\varphi = \dfrac{1}{2}\left(r + \dfrac1{r}\right)$, $1 \leq r \leq 3$
+		\item (3) Вычислить длину дуги, заданной $y = \ln{\cos{x}}$, $0 \leq x \leq a < \frac\pi2$
+	\end{enumerate}
+	\section{Вычисление объёма}
+	\begin{enumerate}
+		\item (5) Вычислить объём тела вращения вокруг осей Ox и Oy $x = a \sin{t}^3$, $y = b \cos{t}^3$
+		\item (4) Вычислить объём тела вращения вокруг осей Ox и Oy $ y = e^{-x}$, $ 0 \leq x < \infty$
+		\item (3) Вычислить объём тела вращения вокруг оси Ox $y = b\left(\dfrac{x}{a}\right)^{\frac23}$, $0 \leq x \leq a$
+		\item (3) Вычислить объём тела, ограниченного $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2} = 1$
+	\end{enumerate}
+\end{document}
