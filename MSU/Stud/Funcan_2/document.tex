@@ -1,0 +1,88 @@
+\documentclass[9pt, a4paper]{extarticle}
+
+\usepackage[russian]{babel}
+\usepackage{amsfonts, amssymb, amsmath, mathabx, dsfont}
+
+% theorems, lemmas, etc.
+\usepackage{amsthm}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}
+\newtheorem{corollary}{Следствие}
+\newtheorem{notabene}{Замечание}
+\newtheorem{definition}{Определение}
+
+% enumerating settings
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+
+\numberwithin{equation}{section}
+\numberwithin{lemma}{section}
+\numberwithin{definition}{section}
+\numberwithin{notabene}{section}
+\numberwithin{corollary}{section}
+\usepackage[left=30mm, top=20mm, right=15mm, bottom=20mm, nohead, footskip=10mm]{geometry}
+\begin{document}
+	\section{Гильбертовы пространства}
+	\subsection{Определение и простейшие свойства гильбертова пространства}
+	\begin{definition}
+		Полное евклидово (унитарное) бесконечномерное пространство называется Гильбертовым (обычно обозначается $H$)
+	\end{definition}
+	\begin{theorem}
+		Норма согласованная со скалярным произведением существует $\Leftrightarrow$ выполнено равенство $\|x+y\|^2 + \|x-y\|^2 = 2 \left(\|x\| + \|y\|\right)^2$
+	\end{theorem}
+	\subsection{Теорема об элементе с наименьшей нормой. Разложение гильбертова пространства
+		в прямую ортогональную сумму подпространств }
+	\begin{definition}
+		Множество называется выпуклым, если вместе с любой парой своих точек оно содержит и соединяющий их отрезок		
+	\end{definition}
+	\begin{theorem}
+		(об элементе с наименьшей нормой)\newline
+		Пусть $M$ - замкнутое выпуклое подмножество $H$, тогда в $M$ существует элемент с наименьшей нормой и он единственен.
+	\end{theorem}
+	\begin{definition}
+		Множество всех элементов $H$ ортогональных подмножеству $L$ называется ортогональным дополнением к $L$ (обозначается $L^\perp$)
+	\end{definition}
+	\begin{theorem}
+		(о разложении Гильбертова пространства в сумму)\newline
+		Пусть $L$ - замкнутое линейное подмножество $H$, тогда справедливо $H = L \oplus L^\perp$, т.е. $\forall x \in H \  \exists! \  x_1 \in L, x_2 \in L^\perp: \ x = x_1 + x_2$
+	\end{theorem}
+	\subsection{Теорема Рисса о представлении линейного ограниченного функционала}
+	\begin{lemma}
+		Пусть $f(x)$ - линейный ограниченный функционал над $H$ и $f \notequiv 0$, тогда $\dim{\left(\ker{f}\right)^\perp} = 1$
+	\end{lemma}
+	\begin{theorem}
+		(Рисса о представлении линейного ограниченного функционала)\newline
+		$\forall \ f(x) \in H^{*}$ $\exists! \ h \in H: \ f(x) = (x,h), \ \|f\| = \|h\|$
+	\end{theorem}
+	\subsection{Слабая сходимость}
+		Свойства слабо сходящихся последовательностей:
+		\begin{enumerate}
+			\item $x_n \rightharpoondown x_0 , \ \|x_n\| \to \|x_0\| \Rightarrow x_n \to x_0$
+			\item $x_n \rightharpoondown x \Rightarrow  \lowlim\limits_{n\to\infty} \|x_n\| \geq \|x\|$
+			\item (Лемма Кадеца) $x_n \rightharpoondown x \Rightarrow \exists \{n_k\}: \ \dfrac{x_{n_1} + \dots + x_{n_k}}{k} \to x$
+		\end{enumerate}
+	\subsection{Полные, замкнутые, ортонормированные системы}
+		\begin{definition}
+			Система называется замкнутой в $H$, если любой элемент из $H$ можно приблизить конечной линейной комбинацией из элементов системы с наперёд заданной точностью.
+		\end{definition}
+		\begin{definition}
+			Система $\left\{x_n\right\}_{n=1}^{\infty}$ называется полной, если из $(x,x_k) = 0, \forall k \in \mathbb{N}$ следует $x = 0$. 
+		\end{definition}
+		\begin{theorem}
+			В $H$ понятие замкнутости и полноты эквивалентны.		
+		\end{theorem}
+		\begin{theorem}
+				(Рисса-Фишера)\newline
+				Пусть $\{e_n\}$ - полная система и пусть задана $\{c_k\} \subset \mathbb{C}: \ \sum\limits_{k=1}^{\infty} |c_k|^2 < \infty$ $\Rightarrow$  $\exists! \ x\in H : \ (x,e_k) = c_k$ и $\sum\limits_{k=1}^{\infty} |c_k|^2 = \|x\|^2$
+		\end{theorem}
+		\subsection{Процесс ортогонализации}
+		\begin{theorem}
+			В сепарабельном $H$ существует полная ортонормированная система.			
+		\end{theorem}
+		\begin{theorem}
+			Все сепарабельные гильбертовы пространства изоморфны с изоментией между собой. 
+		\end{theorem}
+		\section{Пространства Соболева. Обобщённые решения краевых задач}
+		
+\end{document}

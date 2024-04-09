@@ -1,0 +1,162 @@
+\documentclass[12pt, a4paper]{extarticle}
+
+\usepackage[russian]{babel}
+\usepackage{amsfonts, amssymb, amsmath, mathabx, dsfont}
+% theorems, lemmas, etc.
+\usepackage{amsthm}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}
+\newtheorem{corollary}{Следствие}
+\newtheorem{notabene}{Замечание}
+\newtheorem{definition}{Определение}
+
+% enumerating settings
+\numberwithin{equation}{section}
+\numberwithin{lemma}{section}
+\numberwithin{definition}{section}
+\numberwithin{notabene}{section}
+\numberwithin{corollary}{section}
+
+\begin{document}
+	\section*{Интегральное представление решения уравнения Лапласа}
+	Ранее была рассмотрена задача
+	\begin{equation}
+		\dfrac{\partial^2 u}{\partial x^2} +\dfrac{\partial^2 u}{\partial y^2} = 0
+	\end{equation}
+	В полуполосе $D = \{(x,y) \vert 0 < x < \pi, 0 < y\}$\newline
+	В классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$ \newline
+	с граничными условиями
+	\begin{equation}
+		u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0
+	\end{equation}
+	\begin{equation}
+		\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \left[\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2[0,\pi]
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, y \to \infty
+	\end{equation}
+	И была доказана теорема:
+	\begin{theorem}
+		Решение задачи (2.1 - 2.4) существует и единственно, причём его можно представить в виде ряда
+		\begin{equation}
+			u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
+		\end{equation}
+		где коэффициенты $A_n, \ n =0,1,2, \dots$ находятся из разложения
+		\begin{equation}
+			\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]} = \dfrac{\varphi(x)}{\sqrt2}
+		\end{equation}
+	\end{theorem}
+	\newpage
+	Рассмотрим теперь интегральное представление производных решения этой задачи:
+	\begin{theorem}
+		Пусть $u(x,y)$ - решение задачи $(1)-(4)$, тогда $u_x, u_y$ представимы в виде
+		\begin{equation}
+				u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+		\end{equation}
+		\begin{equation}
+			u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+		\end{equation}
+	\end{theorem}
+	\begin{proof}:
+		\newline
+		Рассмотрим уравнение (6). Система синусов $\sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]}$ образует базис в $L_2(0,\pi)$. Поэтому для коэффициентов $A_n\left(n+\dfrac12\right)$ справедливо следующее представление:
+		\begin{equation*}
+			A_n\left(n+\dfrac12\right) = \int\limits_0^\pi h_{n+1}(t) \dfrac{\varphi(t)}{\sqrt2} dt, 
+	\end{equation*}
+	где
+	\begin{equation*}
+		h_n(t) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^n \sin{kt} B_{n-k}
+	\end{equation*}
+	Пусть $u(x,y)$ - решение задачи (1)-(4), тогда
+	\begin{equation*}
+		u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}
+	\end{equation*}
+	и соотвественно
+	\begin{equation*}
+		u_y(x,y) = -\sum\limits_{n=0}^{\infty} A_n \left(n +\dfrac12\right) e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}
+	\end{equation*}
+	Здесь как раз возникает нужный нам коэффициент $A_n \left(n+\dfrac12\right)$, поэтому
+	\begin{equation*}
+		u_y(x,y)  = - \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]} dt
+	\end{equation*}
+	$\sin{\left[\left(n + \dfrac12\right)x\right]} = Im \ e^{i\left(n + \dfrac12\right)x}$, поэтому
+	\begin{equation*}
+		u_y(x,y)  = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{-\left(n + \dfrac12\right)y} e^{i\left(n + \dfrac12\right)x} dt
+	\end{equation*}
+	Обозначим $z = x + iy$
+\begin{equation*}
+	u_y(x,y)  = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{i\left(n+\dfrac12\right) z}  dt
+\end{equation*}
+	Для дальнейших операций нам было бы удобно, чтобы суммирование начинолось от 1, а не 0, поэтому сделаем замену $m = n +1$
+	\begin{equation*}
+		u_y(x,y)  = -  Im \ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{i\left(m-\dfrac12\right) z}  dt
+	\end{equation*}
+	\begin{equation*}
+	u_y(x,y)  = -  Im \ e^{-\dfrac{iz}{2}}\ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{im z}  dt
+\end{equation*}
+	Поменяем местами знаки интергирования и суммирования
+	\begin{equation*}
+		u_y(x,y)  = -  Im \ e^{-\dfrac{iz}{2}}\  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  \sum\limits_{m=1}^{\infty}   h_{m}(t)  e^{im z}  dt
+	\end{equation*}
+	Введём новое обозначение:
+	\begin{equation*}
+		I(t,z) = \sum\limits_{m=1}^{\infty}  h_{m}(t)  e^{im z}
+	\end{equation*}
+	\begin{equation*}
+		I(t,z) =\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{n=1}^{\infty}   \sum\limits_{k=1}^n \sin{kt} B_{n-k} e^{inz} = 
+		\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{n=k}^{\infty} e^{inz} B_{n-k}
+	\end{equation*}
+	Введём новый индекс $m = n - k$
+	\begin{equation*}
+		I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m =0 }^{\infty} e^{i(m+k)z} B_{m} = 
+		\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} \sum\limits_{m =0 }^{\infty} e^{imz} B_{m}
+	\end{equation*}
+	Первый ряд можем вычислить по формуле суммы бесконечно убывающей геометрической прогрессии
+	\begin{equation*}
+		 \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} =  \sum\limits_{k=1}^{\infty} e^{ikz}\dfrac{1}{2i}\left(e^{ikt} - e^{-ikt}\right) = \dfrac1{2i} \left(\dfrac{1}{1 - e^{i(z+t)}} -  \dfrac{1}{1 - e^{i(z-t)}}\right) = 
+	\end{equation*}
+	\begin{equation*}
+		= \dfrac{1}{2i}  \dfrac{e^{i(z+t)} - e^{i(z-t)}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} =  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}
+	\end{equation*}
+	Рассмотрим второй ряд:
+	\begin{equation*}
+		\sum\limits_{l =0 }^{\infty} e^{ilz} B_{l} = \sum\limits_{l =0 }^{\infty} e^{ilz} \sum\limits_{m=0}^{l} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = \sum\limits_{m=0}^{\infty} \sum\limits_{l=m}^{\infty} e^{ilz} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = 
+	\end{equation*}
+	Введём новый индекс суммирования $k = l -m$
+	\begin{equation*}
+		\sum\limits_{m=0}^{\infty} \sum\limits_{k=0}^{\infty} e^{i(m+k)z} C^{k}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{k} = \sum\limits_{m=0}^{\infty} e^{imz} C^{m}_{-\gamma/\pi - \beta} \sum\limits_{k=0}^{\infty}  C^{k}_{\gamma/\pi} (-1)^k e^{ikz} = (1 + e^{iz})^{-\gamma/\pi - \beta} (1- e^{iz})^{\gamma/\pi} 
+	\end{equation*}
+	В нашем случае $\beta = -1, \gamma = \pi/2$, поэтому
+	\begin{equation*}
+		= (1 + e^{iz})^{1/2} (1- e^{iz})^{1/2} =\sqrt{1 - e^{i2z}} 
+	\end{equation*}
+	Собираем все решение:
+	\begin{equation*}
+		u_y(x,y) = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2} I(t,z) dt 
+	\end{equation*}
+	\begin{equation*}
+	u_y(x,y) = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt
+	\end{equation*}
+	Подставляя $\beta$ и $\gamma$ получим
+		\begin{equation*}
+		u_y(x,y) = - Im\  \dfrac{2}{\pi} e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{1}{2\cos{t/2} \sqrt{\tan{t/2}}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt
+	\end{equation*}
+	\begin{equation*}
+	u_y(x,y) = - Im\  \dfrac{e^{\dfrac{+iz}{2}}}{\pi}  \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}} \sqrt{1 - e^{i2z}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+\end{equation*}
+	\end{proof}
+	\newpage
+	
+	\subsection*{Замечание по поводу интегрального представления самого решения}
+	Трудности с получением интегрального представления решения задачи (1)-(4) Возникают в связи с тем, что в исходном разложении мы имеем коэффициенты $A_n\left(n+\dfrac12\right)$, а не $A_n$. Если попытаться прямо подставить интегральное представление в коэффициенты, то
+	\begin{equation*}
+		I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}}  \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m=0}^{\infty} \dfrac{e^{i(m+k)z} B_m}{m+k-\dfrac12}
+	\end{equation*}
+	Пока просуммировать эти ряды не удаётся\newline
+	В качестве второго подхода можно попытаться избавиться от $\left(n+\dfrac12\right)$ при помощи интегрирования, тогда получим
+	\begin{equation*}
+		\sum\limits_{n=0}^{\infty} A_n \sin{\left[\left(n+\dfrac12\right)x - \dfrac\pi4\right]} = \int\limits_0^x \dfrac{\varphi(t)}{\sqrt2}dt - \sum\limits_{n=0}^{\infty} \dfrac{A_n}{\sqrt2}
+	\end{equation*}
+	Но данная система синусов не образует базис Рисса.
+\end{document}

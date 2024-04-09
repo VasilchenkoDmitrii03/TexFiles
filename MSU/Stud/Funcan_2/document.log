@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  9 APR 2024 23:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  10 APR 2024 00:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -717,25 +717,25 @@ File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Info: Redefining \th on input line 21.
-LaTeX Info: Command `\dddot' is already robust on input line 21.
-LaTeX Info: Command `\ddddot' is already robust on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Info: Redefining \th on input line 25.
+LaTeX Info: Command `\dddot' is already robust on input line 25.
+LaTeX Info: Command `\ddddot' is already robust on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -771,12 +771,12 @@ LaTeX Info: Command `\ddddot' is already robust on input line 21.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
 
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -784,7 +784,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 [1
 
-{C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+{C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 (document.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -792,28 +792,33 @@ L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4786 strings out of 474435
- 71055 string characters out of 5742405
- 1939190 words of memory out of 5000000
- 27086 multiletter control sequences out of 15000+600000
- 567393 words of font info for 63 fonts, out of 8000000 for 9000
+ 4804 strings out of 474435
+ 71292 string characters out of 5742405
+ 1937190 words of memory out of 5000000
+ 27100 multiletter control sequences out of 15000+600000
+ 570700 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,5n,65p,278b,198s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\ma
-tha9.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi
-600\matha6.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public/matha
-bx/dpi540\mathx10.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
--t2a/dpi600\larm0900.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh
-/lh-t2a/dpi600\labx1095.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi5.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/User/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/User/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-Output written on document.pdf (2 pages, 102356 bytes).
+ 57i,5n,65p,358b,198s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi540\ma
+thx10.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\
+larm0900.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx
+/dpi600\matha6.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public/m
+athabx/dpi600\matha9.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh
+/lh-t2a/dpi600\lati0900.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour
+/lh/lh-t2a/dpi600\labx0900.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljf
+our/lh/lh-t2a/dpi600\labx1000.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/
+ljfour/lh/lh-t2a/dpi600\labx1095.pk><C:/Users/User/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/User/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/User/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/User/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/
+User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/
+Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb>
+Output written on document.pdf (1 page, 134480 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
+ 271 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
