@@ -1,0 +1,132 @@
+\documentclass[9pt, a4paper]{extarticle}
+
+\usepackage[russian]{babel}
+\usepackage{amsfonts, amssymb, amsmath, mathabx, dsfont}
+
+% theorems, lemmas, etc.
+\usepackage{amsthm}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}
+\newtheorem{corollary}{Следствие}
+\newtheorem{notabene}{Замечание}
+\newtheorem{definition}{Определение}
+\newtheorem{sample}{Пример}
+
+% enumerating settings
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+
+\numberwithin{equation}{section}
+\numberwithin{lemma}{section}
+\numberwithin{definition}{section}
+\numberwithin{notabene}{section}
+\numberwithin{corollary}{section}
+\usepackage[left=30mm, top=20mm, right=15mm, bottom=20mm, nohead, footskip=10mm]{geometry}
+
+\title{Системы уравнений "реакция-диффузия" в ограниченной области}
+\author{В.В. Нефедов, В.В. Тихомиров}
+\begin{document}
+	\maketitle
+	Рассматриваются задача динамики и предельного поведения репликторных систем. Основной целью исследования является изучение влияния фактора пространства на поведение распределённых систем. Рассмотрим общую постановку.\newline
+	Пусть в ограниченной области $\Omega \in \mathbb{R}^m$ задана система вида
+	\begin{equation}
+		\dfrac{\partial u(x,t)}{\partial t} = F(u) + D \Delta u(x,t),
+	\end{equation}
+	где $u(x,t) = \left(u_1(x,t), \dots, u_n(x,t)\right),\ x \in \Omega, \ t \geq 0,$ \newline $ F(u) = \left(f_1(u), \dots, f_n(u)\right),$\newline $D = \left\{d_{ij}\right\}_{i,j=\overline{1,n}}$ - симметрическая матрица, имеющая положительные собственные значения. \newline
+	В начальный момент времени заданы начальные условия
+	\begin{equation}
+		u(x,0) = \varphi(x) = \left(\varphi_1(x), \dots, \varphi_n(x)\right)
+	\end{equation}
+	и на границе $\Gamma$ области $\Omega$ заданы однородные условия Неймана
+	\begin{equation}
+		\left(\dfrac{\partial u}{\partial n}\right)_{x \in \Gamma} = 0 \Leftrightarrow \left(\dfrac{\partial u_i}{\partial n}\right)_{x \in \Gamma} = 0, \ i = \overline{1,n},
+	\end{equation}
+	здесь $\vec{n}$ -  внешняя нормаль к границе $\Gamma$.\newline
+	Системы (0.1)-(0.3) являются замкнутыми, когда потоки реагирующих компонент через границу области равны нулю. Эти системы получили название систем "реакция-диффузия". Вектор-функция $F(u)$ определяет реакцию компонентов, которая описывается динамической системой
+	\begin{equation*}
+		\dfrac{dv(t)}{dt} = F(v(t)).
+	\end{equation*}
+	Матрица $D$ описывает диффузионные потоки, возникающие в пространстве области $\Omega$. В классическом случае рассматриваются диагональные матрицы $D$. В этом случае не учитываются так называемые кросс-диффузионные потоки, когда диффузионный поток одной из компонент системы оказывает влияние на динамику другой компоненты. \newline
+	В этой работе будем рассматривать слабые решения $[1]$ задачи (0.1) - (0.3), которые являются элементами (при фиксированном $t$) пространства Соболева $H^1(\Omega)$ с нормой
+	\begin{equation*}
+		\|u\|_{H^1(\Omega)} = \left( \int\limits_{\Omega} \left(\sum\limits_{i=1}^{n} \left[u_i^2+\sum\limits_{k=1}^{n} \left(\dfrac{\partial u_i}{\partial x_k}\right)\right]\right) dx\right)^{1/2}, 
+	\end{equation*}
+	и при любых $x \in \Omega$ представляют гладкую функцию переменной $t \geq 0$.\newline
+	Класс таких фукнций, удовлетворяющих перечисленным выше требованиям, будем обозначать через $H^1(\Omega_t)$. В нашей работе мы не обсуждаем вопрос о существовании слабых решений. \newline
+	Введём следующее понятие.
+	\begin{definition}
+		Вектор-функция $v(x) \in H^1(\Omega)$ такая, что 
+		\begin{equation}
+			F(v) + D \Delta v(x) = 0, \ x \in \Omega, \ \left(\dfrac{\partial v}{\partial n}\right)_\Gamma = 0, 
+		\end{equation}
+		называется стационарным положением равновесия системы (0.1) - (0.3).
+	\end{definition}
+	Если положение равновесия $v(x) \neq const$, то его называют пространственно неоднородными. Задача об обтекании пространственно неоднородных равновесий сложна. Будем предполагать, что $v(x)$ пространственно однородное положение равновесие, то есть есть решение задачи
+	\begin{equation*}
+		F(v) = 0, \ \Delta v(x) = 0, \ \left(\dfrac{\partial v}{\partial n}\right)_\Gamma = 0.
+	\end{equation*}
+	Исследование таких положений равновесия дают информацию о предельном положении системы при $t \to \infty$. Как и в случае динамических систем введем аналог понятия устойчивости по Ляпунову стационарных положений равновесия.
+	\begin{definition}
+		Положение равновесия $v(x)$ системы (0.1)-(0.3) называется устойчивым по Ляпунову, если для любого $\varepsilon > 0$ существует $\delta > 0$ такое, что для любых решений $u(x,t)$ системы (0.1)-(0.3) c начальными даными $\varphi(x)$, такими, что $\|v(x) - \varphi(x)\|_{H^1(\Omega)} < \delta$ выполняется $\|v(x) - u(x,t)\|_{H^1(\Omega)} < \varepsilon$ для всех $t > 0$.
+	\end{definition}
+	Если, кроме того, выполняется условие $u(x,t) \to v(x)$ в пространстве $H^1(\Omega)$ при $t \to \infty$, то положение равновесия называется асимптотически устойчивым.\newline
+	Пусть далее $v(x)$ - пространственно-однородное положение равновесия системы (0.1)-(0.3). \newline
+	Рассмотрим матрицу Якоби вектор-функции $f$: $A = \left(\dfrac{\partial v}{\partial u}\right)\vert_{u=v}$.\newline
+	Исследование устойчивости положения равновесия можно осуществить с помощью аналога теоремы Ляпунова-Пуанкаре об устойчивости по первому приближению и оно сводится к исследованию спектра следующей задачи на собственные значения:
+	\begin{equation}
+		Az(x) + D \Delta z(x) = \lambda z(x), \ \left(\dfrac{\partial v}{\partial n}\right)_\Gamma = 0, \ z \in H^1(\Omega).
+	\end{equation}
+	Здесь $\delta_{ij}$ - символ Кронекера.\newline
+	Соответствующие собственные значения образуют неубывающую последовательность
+	\begin{equation*}
+		\mu_0 \leq \mu_1 \leq \mu_2 \leq \dots \leq \mu_n \leq \dots, \ \mu_n \to + \infty, \ t \to +\infty
+	\end{equation*}
+	Если для всех собственных значениий задачи (0.5) выполняется условие $Re\ \lambda_i > 0, \ i = 1, 2, \dots$, то положение равновесия является асимптотически устойчивым.Точную формулировку\newline
+	\section*{НЕ ХВАТАЕТ 5 СТРАНИЦЫ!!!!}
+	
+	
+	Соответствующие собственные значения образуют неубывающую последовательность
+	\begin{equation*}
+		\mu_0 \leq \mu_1 \leq \mu_2 \leq \dots \leq \mu_n \leq \dots, \ \mu_n \to + \infty, \ t \to +\infty
+	\end{equation*}
+	С учётом представления (0.7) исходная задача принимает вид 
+	\begin{equation*}
+		\left(B - \mu_k \Lambda\right) R^k = \lambda_k R^K, \ k = 1,2, \dots.
+	\end{equation*}
+	Если умножить это равенство скалярно в пространстве $L_2(\Omega)$ на функции $\varphi_i(x),\ i=1,2,\dots$ и воспользоваться соотношением (0.9), то получим матричные равенства для векторов $R^k$ в форме задач на собственные значения:
+	\begin{equation}
+		\left(B - \mu_k \Lambda\right) R^k = \lambda_k R^K, \ k = 1,2, \dots.
+	\end{equation}
+	Таким образом, задача об отыскании собственных значений континуальной системы (0.5) сводится к алгебраической задаче о собственных значений счетной последовательности  матриц вида
+	\begin{equation}
+		D_k = B - \mu_k \Lambda, \ k =1, 2, \dots .
+	\end{equation}
+	Есди для всех собственных значений задачи (0.10) выполняется условие $Re\ \lambda_k > 0, \ k =1,2,\dots, $ то пространственно-однородное положение равновесия $v$ системы (0.1)-(0.3) является устойчивым.\newline
+	Если же хотя бы для одного значения $k$ это условие не выполняется, то положение равновесия неустойчиво. \newline
+	
+	Рассмотрим несколько примеров применения сформулированных результатов к конкретным задачам.
+	\begin{sample}
+		Запишем уравнение Фишера-Колмогорова на интервале $(0,1)$ с однородными краевыми условиями Неймана
+		\begin{equation*}
+			\begin{cases}
+				\dfrac{\partial u(x,t)}{\partial t} = u(1-u) + d \dfrac{\partial^2 u}{\partial x^2}(x,t), \ 0 < x < 1,\\
+				u(x,0) = u_0(x), \ u_x(0,t) = u_x(l,t) = 0.
+			\end{cases}
+		\end{equation*}
+		Это уравнение имеет два пространственно-однородных положения равновесия $v_1(x) = 0$ и $v_2(x) = 1$. Второе положение равновесия определяется собственными функциями и собственными значениями задачи (0.8):
+		\begin{equation*}
+			\varphi_k(x) = \sqrt2 \cos{k\pi x}, \ \mu_k = \left(k\pi\right)^2, \ k = 0,1, 2, \dots .
+		\end{equation*}
+		Равенство (0.11) принимает вид
+		\begin{equation*}
+			\lambda_ = D_k = -1 -d\left(k\pi\right)^2, \ k =0,1 ,2,\dots
+		\end{equation*}
+		Следовательно, положение равновесия является асимптотически устойчивым. \newline
+		В случае $v_1(x) = 0$ из равенства (0.11) получим, что  $\lambda_k = 1 - d\left(k\pi\right)^2, \ k = 0,1,2,\dots.$\newline
+		Положение равновесия неустойчиво $\lambda_0  = 1 > 0$.
+	\end{sample}
+	
+	Рассмотрим ещё один пример системы типа реакция-диффузия. 
+	\section*{Далее 8 страница}
+\end{document}
