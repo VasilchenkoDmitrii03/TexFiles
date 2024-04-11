@@ -84,5 +84,70 @@
 			Все сепарабельные гильбертовы пространства изоморфны с изоментией между собой. 
 		\end{theorem}
 		\section{Пространства Соболева. Обобщённые решения краевых задач}
-		
+		\begin{definition}
+		Пространство Соболева: Рассмотрим пространсво $C^1[0,1]$ со скалярным произведением $(u,v)_w = \int\limits_0^1 uvdt + \int\limits_0^1 u'v'dt$ пополним это пространство по норме, тогда получим пространство Соболева $W_2^1(0,1)$.
+		\end{definition}
+		\begin{definition}
+			Рассмотрим  $\| u_n - u_m\|_{W_2^1(0,1)}$ - фундаментальная, тогда Обобщённой производной функции $u$ называется $\lim\limits_{n\to\infty} u'_n = v$
+		\end{definition}
+	
+		\begin{lemma}
+			Пусть $u(x) \in C^1[0,1]$, тогда $\|u\|_C \leq \sqrt2 \|u\|_{W_2^1(0,1)}$
+		\end{lemma}
+		\begin{theorem}
+			(Вложения)\newline
+			Пространство $W_2^1(0,1) \subset C(0,1)$, причем ограничено ($\exists M > 0: \ \|u\|_C \leq M \|u\|_{W_2^1(0,1)}$)
+		\end{theorem}
+		\begin{theorem}
+			Вложение $W_2^1(0,1) \subset C(0,1)$ компактно. 
+		\end{theorem}
+		\begin{corollary}
+			Из последовательности, ограниченной в $W_2^1(0,1) \subset C(0,1)$ можно выбрать подпоследовательность, сходяющуюся в $L_2[0,1]$.
+		\end{corollary}
+	\subsection{Обобщённые решения краевых задач}
+	Пространство $\dot{W}_2^1(0,1) $ - пространство Соболева, но функции дополнительно обращаются в 0 на концах отрезка.\newline 
+	\textbf{1-ая краевая задача}
+	\begin{equation}
+		\begin{cases}
+			\left(a(t) u'(t)\right)' - c(t) u(t) = - f(t), \\
+			u(0) = u(1) = 0, \\
+			0 < a_0 \leq a(t) \leq a1 < \infty, \\
+			0 \leq c_0 \leq c(t) \leq c1 < \infty, \\
+			f(t) \in L_2(0,1), \\
+			a(t), b(t) - \text{Ограниченные и измеримые на [0,1]}
+		\end{cases}		
+	\end{equation}
+	\begin{definition}
+		Обобщённым решением первой краевой задачи (2.1) называется функция $u \in \dot{W}_2^1(0,1)$, удовлетворяющая тождеству $\forall v \in \dot{W}_2^1(0,1)$
+		$$
+			\int_0^1 \left(a(t) u'(t) v'(t) + c(t) u(t) v(t) \right) dt = \int\limits_0^1 f(t)v(t)dt
+		$$
+	\end{definition}
+	\begin{theorem}
+		Обобщённое решение задачи (2.1) существует и единственно
+	\end{theorem}
+	\begin{lemma}
+		(Неравенство Пуанкаре)\newline
+		Пусть $u \in \dot{W}_2^1(0,1)$, тогда $\int\limits_0^1 u^2 dt \leq \int\limits (u')^2 dt$
+	\end{lemma}
+	\textbf{2-ая краевая задача}
+	\begin{equation}
+		\begin{cases}
+			\left(a(t) u'(t)\right)' - c(t) u(t) = - f(t), \\
+			u'(0) = u'(1) = 0, \\
+			0 < a_0 \leq a(t) \leq a1 < \infty, \\
+			0 < c_0 \leq c(t) \leq c1 < \infty, \\
+			f(t) \in L_2(0,1), \\
+			a(t), b(t) - \text{Ограниченные и измеримые на [0,1]}
+		\end{cases}		
+	\end{equation}
+	\begin{definition}
+		Обобщённым решением второй краевой задачи (2.2) называется функция $u \in \dot{W}_2^1(0,1)$, удовлетворяющая тождеству $\forall v \in \dot{W}_2^1(0,1)$
+		$$
+		\int_0^1 \left(a(t) u'(t) v'(t) + c(t) u(t) v(t) \right) dt = \int\limits_0^1 f(t)v(t)dt
+		$$
+	\end{definition}
+\begin{theorem}
+	Обобщённое решение задачи (2.2) существует и единственно
+\end{theorem}
 \end{document}
