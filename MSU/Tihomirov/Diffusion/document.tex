@@ -12,6 +12,7 @@
 \newtheorem{notabene}{Замечание}
 \newtheorem{definition}{Определение}
 \newtheorem{sample}{Пример}
+\newtheorem{result}{Вывод}
 
 % enumerating settings
 \DeclareMathOperator*\lowlim{\underline{lim}}
@@ -127,6 +128,85 @@
 		Положение равновесия неустойчиво $\lambda_0  = 1 > 0$.
 	\end{sample}
 	
-	Рассмотрим ещё один пример системы типа реакция-диффузия. 
-	\section*{Далее 8 страница}
+	Рассмотрим ещё один пример системы типа реакция-диффузия.
+	\begin{sample}
+		Исследуем влияние диффузии на поведение замкнутой системы "реакция-диффузия" общего вида при $t \to \infty$. Остановимся на случае $n=2$. Рассмотрим систему вида
+		\begin{equation}
+			\begin{cases}
+				u_t = f(u,v) + d_1 (u_{xx} + u_{yy}), \\
+				v_t = g(u,v) + d_2(v_{xx} + v_{yy}), \\
+				u = u(x,y,t), \ v = v(x,y,t), \ (x,y) \in \Gamma \subset \mathbb{R}^2
+			\end{cases}
+		\end{equation}
+		$d_1, d_2 > 0$ - коэффициенты диффузии. \newline
+		Функции $u$ и $v$ удовлетворяют условиям Неймана (случай замкнутой системы)
+		\begin{equation}
+			\dfrac{\partial u}{\partial n}\vert_{\Gamma} = 0, \ \dfrac{\partial v}{\partial n}\vert_{\Gamma} = 0
+		\end{equation}
+		На границе $\Gamma$ ограниченной замкнутой области $\Omega$ с начальными условиями
+		\begin{equation}
+			u(x,0) = 0, \ u(0,y) = 0, \ v(x,0) = 0, \ v(0,y) = 0.
+		\end{equation}
+		Ради определённости будем предполагать, что область $\Omega$ является квадратом: $\Omega = \{(x,y) \in \mathbb{R}^2 : \ 0 \leq x,y \leq 1\}$.\newline
+		Вектор-функция $F = \{f(u,v), g(u,v)\}$ определяет реакцию компонента системы (0.13)-(0.14), которая описывается динамической системой
+		\begin{equation}
+			\dfrac{dv(t)}{dt} = F(v(t)), \ v(t) = \{f,g\}.
+		\end{equation}
+		Матрица $diag\ (d_1, d_2)$ описывает диффузионные потоки, возникающие в области $\Omega \subset \mathbb{R}^2$. Решения системы (0.12)-(0.14) будем рассматривать в пространстве Соболева $H^1(\Omega)$.\newline
+		Для исследования поведения решений системы (0.12)-(0.14) при $t \to \infty$ воспользуемся энергетическими (вариационными) методом $[3]-[5]$. Для этого введем в рассмотрение (вариационную) функцию времени
+		\begin{equation}
+			S(t) = \dfrac12 \int_0^1 \int_0^1 \left(u_x^2 + u_y^2 + v_x^2 + v_y^2\right) dx dy, 
+		\end{equation}
+		которая играет роль энергии системы.\newline
+		Вычислим производную функции (0.15) с учётом (0.12)-(0.14), в результате получим 
+		\begin{equation}
+			\dfrac{dS(t)}{dt} = \int\limits_0^1 \int\limits_0^1 \left(u_x u_{xt} + v_xv_{xt} + u_yu_{ty} + v_yv_{yt}\right)dxdy.
+		\end{equation}
+		Формулу (0.16) можно представить в виде 
+		\begin{equation*}
+			S''(t) = S'_1(t) + S'_2(t), 
+		\end{equation*}
+		где 
+		\begin{equation}
+			S'_1(t) = \int\limits_0^1 \int\limits_0^1 \left[u_x\left(d_1 u_{xx}\right)_x + u_x\left(f_uu_x + f_vv_x\right)+v_x\left(d_2v_{xx}\right)_x + v_x \left(g_uu_x + g_vv_x\right)\right]dxdy 
+		\end{equation}
+		\begin{equation}
+			S'_2(t) = \int\limits_0^1 \int\limits_0^1 \left[u_y\left(d_1 u_{yy}\right)_y + u_y\left(f_uu_y + f_vv_y\right)+v_y\left(d_2v_{yy}\right)_y + v_y \left(g_uu_y + g_vv_y\right)\right]dxdy 
+		\end{equation}
+		Введём обозначения 
+		\begin{equation}
+			d = \min{(d_1, d_2)}, \ m = \max\limits_{u,v} \left[|f_u| + |f_v| + |g_u|, |g_v| + |f_v| + |g_u|\right]
+		\end{equation}
+	\end{sample}
+	\begin{theorem*}
+		Если $d > \frac{m}{\pi^2}$, то $\lim\limits_{t\to \infty} E(t) = 0, $ и поэтому все частные производные $u_x, v_x, u_y, v_y$ стремятся к нулю при $t \to \infty$, а само решение выходит на константу.
+	\end{theorem*}
+	\begin{proof}
+		Рассмотрим интеграл (0.17). После интегрирования по частям, с учётом краевых условий, запишем (0.17) в виде
+		\begin{equation*}
+			S'_1(t) = - \int\limits_0^1 \int\limits_0^1 \left(d_1 u_{xx}^2 + d_2 v_{xx}^2\right) dx dy + \int\limits_0^1 \int\limits_0^1 \left(f_u u_x^2 + g_vv_x^2 + \left(f_u + g_u\right)u_x v_x\right)dxdy,
+		\end{equation*}
+		тогда в силу обозначений (0.19) и неравенства Коши-Буняковского имеем 
+		\begin{equation}
+			S'_1(t) \leq -d \int\limits_0^1 \int\limits_0^1 \left(u_{xx} + v_{xx}\right)dx dy + m \int\limits_0^1\int\limits_0^1 \left(u_x^2 + v_x^2\right) dx dy
+		\end{equation}
+	так как $u_x(0) = 0, u_x(1) = 0$, то для первого из интегралов в правой части последнего неравенства справедливо неравенство Фридрихса, а потому справедливы неравенства
+	\begin{equation}
+		\int\limits_0^1 u_{xx}^2 dx \geq \pi^2 \int\limits_0^1 u_x^2 dx; \ \int\limits_0^1 v_{xx}^2 dx \geq \pi^2 \int\limits_0^1 v_x^2 dx.
+	\end{equation}	
+	Используя (0.20) и (0.21), получим оценку 
+	\begin{equation*}
+		S'_1(t) \leq \left(m - d\pi^2\right)S_1(t).
+	\end{equation*}
+	Из последнего неравенства заключаем, что если $d > \frac{m}{\pi^2}$, то $S'_1(t) < 0$. Поскольку $S_1(t) \geq 0$, то $\lim\limits_{t\to\infty} S_1(t) = 0$, и поэтому $u_x(x,y,t) \to 0$ и $v_x(x,y,t) \to 0$ при $t\to\infty$. \newline
+	Применяя аналогичные рассуждения в отношении интеграла (18) получаем соотношении $\lim\limits_{t\to\infty} S_2(t) = 0$, а следовательно и соотношение $\lim\limits_{t\to\infty} S(t) = 0$.Поэтому очевидно, что все частные производные $u_x, v_x, u_y, v_y$ стремятся к нулю при $t\to\infty$, а само решение выходит на константу. Теорема доказана.
+	\end{proof}
+	\begin{notabene}
+		Ясно, что полученный результат распространяется на случай системы (0.1)-(0.3), однако, этот результат не всегда удается использовать в конкертных случаях, так как вычисление постоянной $m$ зависит от априорных знаний о решении системы (0.12)-(0.14) (или системы (0.1) - (0.3))  и его производных.
+	\end{notabene}
+	\begin{result}
+		Предложенный метод $[3-4]$  позволяет сохранить устойчивость при достаточно больших коэффициентах диффузии. Такого вида устойчивости принято называть пространственно-диффузионной устойчивостью, даже в случае неустойчивой системы (при $\alpha= 0$).
+				
+	\end{result}
+	Литература:
 \end{document}
