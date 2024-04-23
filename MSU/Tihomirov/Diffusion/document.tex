@@ -83,10 +83,29 @@
 	\begin{equation*}
 		\mu_0 \leq \mu_1 \leq \mu_2 \leq \dots \leq \mu_n \leq \dots, \ \mu_n \to + \infty, \ t \to +\infty
 	\end{equation*}
-	Если для всех собственных значениий задачи (0.5) выполняется условие $Re\ \lambda_i > 0, \ i = 1, 2, \dots$, то положение равновесия является асимптотически устойчивым.Точную формулировку\newline
-	\section*{НЕ ХВАТАЕТ 5 СТРАНИЦЫ!!!!}
-	
-	
+	Если для всех собственных значениий задачи (0.5) выполняется условие $Re\ \lambda_i > 0, \ i = 1, 2, \dots$, то положение равновесия является асимптотически устойчивым.Точную формулировку этой теоремы можно найти в [2]. Рассмотрим линейное преобразование
+	\begin{equation*}
+		z(x) = C * w(x),
+	\end{equation*}
+	где C - матрица такая, что $C^TDC = \Lambda = diag \ (\lambda_1, \dots, \lambda_n)$. $C^T$ - транспонированная.\newline
+	С учётом преобразования система (0.5) принимает вид
+	\begin{equation}
+		Bw(x) + \Lambda \Delta w(x) = \lambda w(x), \ \left(\dfrac{\partial w}{\partial n}\right)_\Gamma = 0, \ w \in H^1(\Omega), 
+	\end{equation}
+	где $B = C^T A C$. Решение задачи (0.6) будем искать в виде
+	\begin{equation}
+		w^k(x) = R^k \varphi_k(x), \ k = 1, 2, \dots, 
+	\end{equation}
+	здесь $R^k$ - некоторый вектор из $\mathbb{R}^n$, а $\phi_k(x)$ - собственные функции следующей краевой задачи на собственные значения:
+	\begin{equation}
+		\Delta \varphi(x) = -\mu \varphi(x), \ \left(\dfrac{\partial \varphi}{\partial n}\right)_\Gamma = 0,   \ \varphi \in H^1(\Omega)
+	\end{equation}
+	Известно [3], что задача (0.7) имеент биортогональную систему собственных функций $\left\{ \varphi_k(x)\right\}_{k=1}^{\infty}$, которые образуют систему в $H^1(\Omega)$, причём
+	\begin{equation}
+		(\varphi_i(x), \varphi_j(x)) = \int\limits_\Omega \varphi_i(x) \varphi_j(x) dx = \delta_{ij}, \ i,j = 1, 2, \dots, 
+	\end{equation}
+	где $\delta_{ij}$ - символ Кронекера.\newline
+		
 	Соответствующие собственные значения образуют неубывающую последовательность
 	\begin{equation*}
 		\mu_0 \leq \mu_1 \leq \mu_2 \leq \dots \leq \mu_n \leq \dots, \ \mu_n \to + \infty, \ t \to +\infty
@@ -149,9 +168,9 @@
 		\end{equation}
 		Ради определённости будем предполагать, что область $\Omega$ является квадратом: $\Omega = \{(x,y) \in \mathbb{R}^2 : \ 0 \leq x,y \leq 1\}$.\newline
 		Вектор-функция $F = \{f(u,v), g(u,v)\}$ определяет реакцию компонента системы (0.13)-(0.14), которая описывается динамической системой
-		\begin{equation}
+		\begin{equation*}
 			\dfrac{dv(t)}{dt} = F(v(t)), \ v(t) = \{f,g\}.
-		\end{equation}
+		\end{equation*}
 		Матрица $diag\ (d_1, d_2)$ описывает диффузионные потоки, возникающие в области $\Omega \subset \mathbb{R}^2$. Решения системы (0.12)-(0.14) будем рассматривать в пространстве Соболева $H^1(\Omega)$.\newline
 		Для исследования поведения решений системы (0.12)-(0.14) при $t \to \infty$ воспользуемся энергетическими (вариационными) методом $[3]-[5]$. Для этого введем в рассмотрение (вариационную) функцию времени
 		\begin{equation}

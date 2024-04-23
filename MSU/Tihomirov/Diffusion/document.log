@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.19)  15 APR 2024 14:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.19)  23 APR 2024 16:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -799,12 +799,12 @@ D$\T2A/cmr/m/n/9 . ¬ этом слу-чае не учи-ты-ва-ют-с€ так на-зы-ва-е-мые кросс-д
 [1
 
 {C:/Users/demosfenn/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 85--87
+Underfull \hbox (badness 10000) in paragraph at lines 106--108
 
  []
 
 
-Overfull \hbox (15.52374pt too wide) in paragraph at lines 105--108
+Overfull \hbox (15.52374pt too wide) in paragraph at lines 124--127
 \T2A/cmr/m/n/9 ≈сди дл€ всех соб-ствен-ных зна-че-ний за-да-чи (0.10) вы-пол-н€
 -ет-с€ усло-вие $\OML/cmm/m/it/9 Re ^^U[] \U/matha/m/n/9 ° \OT1/cmr/m/n/9 0\OML
 /cmm/m/it/9 ;  k \U/matha/m/n/9 ^^P \OT1/cmr/m/n/9 1\OML/cmm/m/it/9 ; \OT1/cmr/
@@ -812,40 +812,39 @@ m/n/9 2\OML/cmm/m/it/9 ; [] ;$ \T2A/cmr/m/n/9 то пространственно-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--108
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
 
  []
 
 [2] [3] [4] (document.aux) ) 
 Here is how much of TeX's memory you used:
- 4820 strings out of 476374
- 72069 string characters out of 5786966
- 1869340 words of memory out of 5000000
- 25162 multiletter control sequences out of 15000+600000
- 528049 words of font info for 74 fonts, out of 8000000 for 9000
+ 4816 strings out of 476374
+ 72018 string characters out of 5786966
+ 1868340 words of memory out of 5000000
+ 25160 multiletter control sequences out of 15000+600000
+ 526415 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,62p,621b,220s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,8n,62p,621b,219s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/
-ljfour/lh/lh-t2a/dpi600\labx1095.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\f
-onts/pk/ljfour/lh/lh-t2a/dpi600\lati0900.pk> <C:\Users\demosfenn\AppData\Local\
-MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx0900.pk> <C:\Users\demosfenn\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi540\mathx10.pk> <C:\Users\demo
-sfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha6.pk> <C:
-\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\mat
-ha9.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi6
-00\larm0900.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-
-t2a/dpi600\larm1000.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfou
-r/lh/lh-t2a/dpi600\larm1200.pk><C:/Users/demosfenn/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/demosfenn/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/demosfenn/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/dem
-osfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C
-:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmr9.pfb><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb>
-Output written on document.pdf (4 pages, 176870 bytes).
+ljfour/lh/lh-t2a/dpi600\lati0900.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\f
+onts/pk/ljfour/lh/lh-t2a/dpi600\labx0900.pk> <C:\Users\demosfenn\AppData\Local\
+MiKTeX\fonts/pk/ljfour/public/mathabx/dpi540\mathx10.pk> <C:\Users\demosfenn\Ap
+pData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha6.pk> <C:\Users\d
+emosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha9.pk> 
+<C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm0
+900.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi6
+00\larm1000.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-
+t2a/dpi600\larm1200.pk><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/demosfenn/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/demosfenn/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/demosfenn/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/
+demosfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb
+><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+symbols/msbm10.pfb>
+Output written on document.pdf (4 pages, 174773 bytes).
 PDF statistics:
- 352 PDF objects out of 1000 (max. 8388607)
+ 338 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
