@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.19)  27 MAR 2024 18:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.19)  24 APR 2024 10:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-02>
 (C:\Users\demosfenn\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
-(C:\Users\demosfenn\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
-File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+(C:\Users\demosfenn\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -922,27 +922,27 @@ LaTeX Warning: Label `Моисеев Е.И.' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Info: Redefining \th on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Info: Redefining \th on input line 29.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -963,12 +963,12 @@ LaTeX Info: Redefining \th on input line 35.
 * \topmargin=-15.36449pt
 * \headheight=0.0pt
 * \headsep=0.0pt
-* \topskip=12.0pt
+* \topskip=11.0pt
 * \footskip=28.45274pt
-* \marginparwidth=35.0pt
+* \marginparwidth=50.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1004,17 +1004,17 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 ys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 35.
+Package hyperref Info: Link coloring OFF on input line 29.
  (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Info: Command `\dddot' is already robust on input line 35.
-LaTeX Info: Command `\ddddot' is already robust on input line 35.
+LaTeX Info: Command `\dddot' is already robust on input line 29.
+LaTeX Info: Command `\ddddot' is already robust on input line 29.
 <MSU_logo.png, id=23, 483.2235pt x 231.921pt>
 File: MSU_logo.png Graphic file (type png)
 <use MSU_logo.png>
-Package pdftex.def Info: MSU_logo.png  used on input line 39.
+Package pdftex.def Info: MSU_logo.png  used on input line 33.
 (pdftex.def)             Requested size: 281.68515pt x 135.19373pt.
  [1
 
@@ -1024,32 +1024,25 @@ go.png>] (main.toc)
 \openout4 = `main.toc'.
 
  [2]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
 
 
 (C:\Users\demosfenn\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
 
 
 (C:\Users\demosfenn\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-[3] [4]
-Overfull \hbox (2.8257pt too wide) detected at line 176
-\U/matha/m/n/12 ^^P [] [][] \OML/cmm/m/it/12 dxdy \U/matha/m/n/12 ^^@ [] [][] \
-OML/cmm/m/it/12 dxdy \U/matha/m/n/12 ^^A ^^A [] [] [] ^^@ [] \OML/cmm/m/it/12 u
-[]udxdy \U/matha/m/n/12 ^^P
- []
-
-[5] [6] [7
+[3] [4] [5] [6] [7
 pdfTeX warning (ext4): destination with the same identifier (name{cite.\320\234
 \320\276\320\270\321\201\320\265\320\265\320\262\040\320\ETC.}) has been alread
 y used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.234 \end{document}
+l.228 \end{document}
                     ] (main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1058,38 +1051,38 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 7B95F91BD1BC51D41B7B9C2A8D3023E6;895.
  ) 
 Here is how much of TeX's memory you used:
- 12994 strings out of 476374
- 202997 string characters out of 5786966
- 1866340 words of memory out of 5000000
- 33155 multiletter control sequences out of 15000+600000
- 526703 words of font info for 67 fonts, out of 8000000 for 9000
+ 12993 strings out of 476374
+ 203018 string characters out of 5786966
+ 1869340 words of memory out of 5000000
+ 33156 multiletter control sequences out of 15000+600000
+ 526723 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,76p,595b,552s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,76p,583b,524s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi4
 80\mathx10.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/public/
-mathabx/dpi720\mathb12.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/lj
-four/public/mathabx/dpi720\mathx10.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX
-\fonts/pk/ljfour/lh/lh-t2a/dpi600\labi1200.pk> <C:\Users\demosfenn\AppData\Loca
+mathabx/dpi657\mathb10.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/lj
+four/public/mathabx/dpi657\mathx10.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX
+\fonts/pk/ljfour/lh/lh-t2a/dpi600\labi1095.pk> <C:\Users\demosfenn\AppData\Loca
 l\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha8.pk> <C:\Users\demosfenn\A
-ppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha12.pk> <C:\Users
-\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati1200.pk> <
-C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx17
-28.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
-0\labx1200.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
-2a/dpi600\labx1440.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour
-/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/p
-k/ljfour/lh/lh-t2a/dpi600\larm1200.pk><C:/Users/demosfenn/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/demosfenn/AppData/
+ppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi657\matha10.pk> <C:\Users
+\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati1095.pk> <
+C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx14
+40.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
+0\labx1095.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
+2a/dpi600\labx1200.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour
+/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/p
+k/ljfour/lh/lh-t2a/dpi600\larm1095.pk><C:/Users/demosfenn/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/demosfenn/AppData/
 Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/demosf
 enn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/
 Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-r12.pfb><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+r10.pfb><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmr6.pfb><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmr8.pfb><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (7 pages, 226748 bytes).
+Output written on main.pdf (7 pages, 222313 bytes).
 PDF statistics:
- 470 PDF objects out of 1000 (max. 8388607)
+ 468 PDF objects out of 1000 (max. 8388607)
  26 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

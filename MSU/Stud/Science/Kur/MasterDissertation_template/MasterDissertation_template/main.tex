@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 11pt]{article}
 
 % paper settings (spacing, font etc.)
 \usepackage[T2A]{fontenc}
@@ -23,12 +23,6 @@
 \newtheorem{notabene}{Замечание}
 \newtheorem{definition}{Определение}
 
-% enumerating settings
-\numberwithin{equation}{section}
-\numberwithin{lemma}{section}
-\numberwithin{definition}{section}
-\numberwithin{notabene}{section}
-\numberwithin{corollary}{section}
 
 
 
@@ -112,7 +106,7 @@
 Аналогичная задача рассматривалась как вспомогательная с граничными условиями второго рода на боковых сторонах полуполосы и коэффициентом $\dfrac{1}{k}$ при $\dfrac{\partial u}{\partial y}$ в работе [1].
 \section{Теорема сущестоввания}
 \begin{theorem}
-	Решение задачи (2.1 - 2.4) существует, причём его можно представить в виде ряда
+	Решение задачи (1 - 4) существует, причём его можно представить в виде ряда
 	\begin{equation}
 		u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
 	\end{equation}
@@ -126,12 +120,12 @@
 \begin{proof}
    
 	
-	Докажем существование решения задачи $(2.1) - (2.4)$. В силу основного результата работы $[2]$ система $\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Поэтому коэффициенты разложения в формуле (2.6) удовлетворяют неравенствам Бесселя
+	Докажем существование решения задачи $(1) - (4)$. В силу основного результата работы $[2]$ система $\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Поэтому коэффициенты разложения в формуле (6) удовлетворяют неравенствам Бесселя
 	\begin{equation*}
 		C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} , 0 < C_1 < C_2, 
 	\end{equation*}
-а значит сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$ и сходится равномерно ряд (2.5). То, что функция (2.5) при $y > 0$ - решение уравнения (2.1), удовлетворяющее условиям (2.2) - это очевидно. В силу равенства $\sum\limits_{n=0}^{\infty} e^{-\left(n + \frac12\right)y} = \dfrac{e^{-y/2}}{1 - e^{-y}}$, также очевидно, что выполнено условие (2.4). Проверим выполнение условия (2.3).\newline
-Выразим функцию $\varphi(x)$ из представления (2.6) и подставим в условие (2.3)
+а значит сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$ и сходится равномерно ряд (5). То, что функция (5) при $y > 0$ - решение уравнения (1), удовлетворяющее условиям (2) - это очевидно. В силу равенства $\sum\limits_{n=0}^{\infty} e^{-\left(n + \frac12\right)y} = \dfrac{e^{-y/2}}{1 - e^{-y}}$, также очевидно, что выполнено условие (4). Проверим выполнение условия (3).\newline
+Выразим функцию $\varphi(x)$ из представления (6) и подставим в условие (3)
 \begin{equation*}
 	I(y) =  2 \int\limits_0^\pi \left[	\sum\limits_{n=0}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx
 \end{equation*}
@@ -157,31 +151,31 @@
 \begin{equation*}
 \leq C_4 \sum\limits_{n=0}^{m} A_n^2 \left(n +\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 < \dfrac{\varepsilon}{2}
 \end{equation*}
-Это верно, если $0 < y < \delta$ (m зафиксировано в зависимости от N). Условие (2.3) выполнено. Теорема доказана.
+Это верно, если $0 < y < \delta$ (m зафиксировано в зависимости от N). Условие (3) выполнено. Теорема доказана.
 \end{proof}
 
 \section{Теорема единственности}
 \begin{theorem}
-	Решение задачи (2.1 - 2.4) единственно
+	Решение задачи (1 - 4) единственно
 \end{theorem}
 \begin{proof}
-		Докажем единственность решения этой задачи. Пусть $u(x,y)$ - разность двух решений - решение задачи с $\varphi(x) \equiv 0$. \newline
+		Докажем единственность решения этой задачи. Пусть $u(x,y)$ - разность двух решений - решение задачи с $\varphi(x) \equiv 0$. Необходимо получить выражение, где слева будет входить модуль или чётная степень функции u, а справа будет 0.\newline
 	Введём обозначения $A_\varepsilon = (0, \varepsilon), A_R = (0, R), B_R = (\pi, R), B_\varepsilon = (\pi, \varepsilon)$. $D_{R\varepsilon}$ - прямоугольник $A_\varepsilon A_R B_R B_\varepsilon$. Справедливы следующие соотношения:
 	\begin{equation*}
 		0 = \iint\limits_{D_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy = 
 	\end{equation*}
 	\begin{equation*}
-		=	\iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  - 
+		=	\iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  
 		- \iint\limits_{D_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right) + \iint\limits_{D_{R\varepsilon}} u_y u dx dy = 
 	\end{equation*}
 	\begin{equation*}
 		= - \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy
-		- \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_y u dx - 
+		- \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_y u dx 
 		-\int\limits_{A_\varepsilon B_\varepsilon} \dfrac{u^2}{2} dx + \int\limits_{A_R B_R} \dfrac{u^2}{2} dx = 
 	\end{equation*}
 	\begin{equation*}
 		= - \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy - 
-		\int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) \left(u_y - u_x\right)u dx - \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_x dx - \int\limits_{A_\varepsilon B_\varepsilon}\dfrac{u^2}{2} dx +
+		\int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) \left(u_y - u_x\right)u dx - \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_x u dx - \int\limits_{A_\varepsilon B_\varepsilon}\dfrac{u^2}{2} dx +
 	\end{equation*}
 	\begin{equation*}
 		+ \int\limits_{A_R B_R} \dfrac{u^2}{2}dx
@@ -191,7 +185,7 @@
 		\iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{2}\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon)  =
 	\end{equation*}
 	\begin{equation*}
-		= \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) \left(u_y - u_x\right)u dx + \dfrac12  \int\limits_{A_R B_R} u^2 dx \leq
+		= \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) \left(u_x - u_y\right)u dx + \dfrac12  \int\limits_{A_R B_R} u^2 dx \leq
 	\end{equation*}
 	\begin{equation*}
 		\leq \left(R - \varepsilon\right) \left[\int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx \right]^{\frac12} \left[\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx \right]^{\frac12} + \dfrac12 \int\limits_{A_RB_R} u^2 dx \leq
