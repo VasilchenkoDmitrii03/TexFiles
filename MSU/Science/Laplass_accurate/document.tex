@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt]{article}
+\documentclass[a4paper, 9pt]{article}
 
 % paper settings (spacing, font etc.)
 \usepackage[T2A]{fontenc}
@@ -23,75 +23,13 @@
 \newtheorem{notabene}{Замечание}
 \newtheorem{definition}{Определение}
 
+% enumerating settings
 
-
+\title{Об одной задаче для уравнения Лапласа со смешанными граничными условиями}
+\author{Капустин Н.Ю., Васильченко Д.Д.}
 
 \begin{document}
-	
-	\begin{figure}
-		\begin{center}
-			\includegraphics[width=0.6\linewidth]{MSU_logo.png}
-		\end{center}
-	\end{figure}
-	
-	\begin{center}
-		Московский государственный университет им. М.В.\,Ломоносова\\
-		Факультет вычислительной математики и кибернетики\\
-		Кафедра функционального анализа и его применений\\
-		
-		\vspace{12ex}
-		
-		\large{Васильченко Дмитрий Дмитриевич}
-		
-		\bigskip
-		
-		\large{
-			\bf Об одной задаче для уравнения Лапласа со смешанными граничными условиями
-		}
-		
-		\vspace{12ex}
-		\normalsize{Курсовая работа}
-	\end{center}
-	
-	\vspace{12ex}
-	
-	\begin{flushright}
-		{\bf Научный руководитель:}\\ д.ф.-м.н., профессор\\ Капустин Н.Ю.
-	\end{flushright}
-	
-	\vspace{15ex}
-	
-	\begin{center} Москва, 2024 \end{center}
-	
-	\thispagestyle{empty}
-	\newpage
-	\tableofcontents
-	\newpage
-	
-	\section{Введение}
-	Пусть X - линейной нормированное пространство. Рассмотрим базовые определения:
-	\begin{definition}
-		Система $\{x_n\}_{n=1}^{\infty}$ элементов X называется замкнутой, если $\forall x \in X$ $\forall \varepsilon > 0$ $\exists \alpha_1, \dots, \alpha_n:$ $\| x - \alpha_1 x_1 - \dots - \alpha_n x_n\| < \varepsilon$
-	\end{definition}
-	\begin{definition}
-			Система $\{x_n\}_{n=1}^{\infty}$ элементов X называется минимальной, если никакой элемент этой системы нельзя с наперёд заданной точностью приблизить конечной линейной комбинацией из других элементов этой системы.
-	\end{definition}
-	\begin{definition}
-		Последовательность $\{\varphi_i\}_{i=1}^{\infty}$ векторов банахова пространства $B$ называется \textbf{базисом} этого пространства, если каждый элемент $x \in B$ разлагается единственным образом в ряд $$
-		x = \sum\limits_{j=1}^{\infty} c_j \varphi_j
-		$$
-	\end{definition}
-	\begin{definition}
-		Две последовальности $\{x_j\}$ и $\{\omega_j\}$ с элементами из Гильбертова пространства $H$ называются \textbf{биортогональными}, если $$
-		(x_j, \omega_k) = \delta_{jk}, \ j, k \in \mathbb{N}
-		$$
-	\end{definition}
-	\begin{definition}
-		Базис $\{\psi_i\}$ гильбертова простнаства $H$, получаемый из ортнормированного базиса с помощью ограниченного обратимого отображения  называется \textbf{базисом Рисса}.
-	\end{definition}
-	
-	\section{Постановка задачи}
-	
+	\maketitle
 	Рассмотрим краевую задачу для уравнения Лапласа
 	\begin{equation}
 		\dfrac{\partial^2 u}{\partial x^2} +\dfrac{\partial^2 u}{\partial y^2} = 0
@@ -109,7 +47,7 @@
 		u(x,y) \rightrightarrows 0, y \to \infty
 	\end{equation}
 	Аналогичная задача рассматривалась как вспомогательная с граничными условиями второго рода на боковых сторонах полуполосы и коэффициентом $\dfrac{1}{k}$ при $\dfrac{\partial u}{\partial y}$ в работе [1].
-	\section{Теорема сущестоввания}
+	
 	\begin{theorem}
 		Решение задачи (1 - 4) существует, причём его можно представить в виде ряда
 		\begin{equation}
@@ -124,44 +62,41 @@
 	
 	\begin{proof}
 		
-		
 	Докажем существование решения задачи $(1) - (4)$. В силу основного результата работы $[2]$ система $\left\{\sin\left[\left(n+\beta/2\right)x + \gamma/2\right]\right\}_{n=1}^{\infty}$ образует базис Рисса в пространствен $L_2(0,\pi)$, если $-\dfrac12 < \gamma/\pi < \dfrac32$ и $-\dfrac32 < \gamma/\pi + \beta < \dfrac12$ . В нашем случае $\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$ т.к. $\gamma = \pi/2$, $\beta=-1$. Поэтому коэффициенты разложения в формуле (6) удовлетворяют неравенствам Бесселя
-		\begin{equation*}
-			C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} , 0 < C_1 < C_2, 
-		\end{equation*}
-		а значит сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$ и сходится равномерно ряд (5). То, что функция (5) при $y > 0$ - решение уравнения (1), удовлетворяющее условиям (2) - это очевидно. В силу равенства $\sum\limits_{n=0}^{\infty} e^{-\left(n + \frac12\right)y} = \dfrac{e^{-y/2}}{1 - e^{-y}}$, также очевидно, что выполнено условие (4). Проверим выполнение условия (3).\newline
-		Выразим функцию $\varphi(x)$ из представления (6) и подставим в условие (3)
-		\begin{equation*}
-			I(y) =  2 \int\limits_0^\pi \left[	\sum\limits_{n=0}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx
-		\end{equation*}
-		Докажем, что $I(y) \to 0$ при $y \to 0+0$. 
-		\begin{equation*}
-			I(y) \leq 4\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx + 
-		\end{equation*}
-		\begin{equation*}
-			+ 4\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx
-		\end{equation*}
-		В силу левой части неравенства Бесселя имеем оценку
-		\begin{equation*}
-			\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq 
-		\end{equation*}
-		\begin{equation*}
-			\leq  C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 \leq C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 < \dfrac{\varepsilon}{2}
-		\end{equation*}
-		Это верно $\forall \varepsilon > 0$, если $m \geq N =N(\varepsilon)$\newline
-		Во втором слагаемом мы имеем дело с конечным числом элементов, поэтому:
-		\begin{equation*}
-			\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq
-		\end{equation*}
-		\begin{equation*}
-			\leq C_4 \sum\limits_{n=0}^{m} A_n^2 \left(n +\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 < \dfrac{\varepsilon}{2}
-		\end{equation*}
-		Это верно, если $0 < y < \delta$ (m зафиксировано в зависимости от N). Условие (3) выполнено. Теорема доказана.
+	\begin{equation*}
+		C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} , 0 < C_1 < C_2, 
+	\end{equation*}
+	а значит сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$ и сходится равномерно ряд (5). То, что функция (5) при $y > 0$ - решение уравнения (1), удовлетворяющее условиям (2) - это очевидно. В силу равенства $\sum\limits_{n=0}^{\infty} e^{-\left(n + \frac12\right)y} = \dfrac{e^{-y/2}}{1 - e^{-y}}$, также очевидно, что выполнено условие (4). Проверим выполнение условия (3).\newline
+	Выразим функцию $\varphi(x)$ из представления (6) и подставим в условие (3)
+	\begin{equation*}
+		I(y) =  2 \int\limits_0^\pi \left[	\sum\limits_{n=0}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx
+	\end{equation*}
+	Докажем, что $I(y) \to 0$ при $y \to 0+0$. 
+	\begin{equation*}
+		I(y) \leq 4\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx + 
+	\end{equation*}
+	\begin{equation*}
+		+ 4\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx
+	\end{equation*}
+	В силу левой части неравенства Бесселя имеем оценку
+	\begin{equation*}
+		\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq 
+	\end{equation*}
+	\begin{equation*}
+		\leq  C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 \leq C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 < \dfrac{\varepsilon}{2}
+	\end{equation*}
+	Это верно $\forall \varepsilon > 0$, если $m \geq N =N(\varepsilon)$\newline
+	Во втором слагаемом мы имеем дело с конечным числом элементов, поэтому:
+	\begin{equation*}
+		\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq
+	\end{equation*}
+	\begin{equation*}
+		\leq C_4 \sum\limits_{n=0}^{m} A_n^2 \left(n +\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 < \dfrac{\varepsilon}{2}
+	\end{equation*}
+	Это верно, если $0 < y < \delta$ (m зафиксировано в зависимости от N). Условие (3) выполнено. Теорема доказана.
 	\end{proof}
-	
-	\section{Теорема единственности}
 	\begin{theorem}
-		Решение задачи (1 - 4) единственно
+		Решение задачи (1- 4) единственно
 	\end{theorem}
 	\begin{proof}
 		Докажем единственность решения этой задачи. Пусть $u(x,y)$ - разность двух решений - решение задачи с $\varphi(x) \equiv 0$. Необходимо получить выражение, где слева будет входить модуль или чётная степень функции u, а справа будет 0.\newline
@@ -221,7 +156,7 @@
 		Рассмотрим следующее неравенство: \begin{math}
 			\left(2ar -b\right)^2 \geq 0 \Rightarrow 4a^2 r^2 - 4 abr + b^2 \geq 0 \Rightarrow ab \leq r a^2 + \frac{b}{4r}
 		\end{math}
-	\newline
+		\newline
 		Возьмём $ a = \left[ \left(R - \varepsilon \right) \int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx \right]^{\frac12}$, $ b = \left[\left(R - \varepsilon\right)\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx \right]^{\frac12}$, $ r = R - \varepsilon$, тогда
 		
 		\begin{equation*}
@@ -243,7 +178,106 @@
 		\end{equation*}
 		Устремим теперь $R \to \infty$, тогда  в силу условия (4) $\int\limits_{A_RB_R} u^2 dx \to 0$, тем самым, это возможно только в случае $u(x,y) \equiv 0$ в $\overline{D}$.
 	\end{proof}
-	\newpage
+	
+	\begin{theorem}
+		Пусть $u(x,y)$ - решение задачи $(1)-(4)$, тогда $u_x, u_y$ представимы в виде
+		\begin{equation}
+			u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+		\end{equation}
+		\begin{equation}
+			u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+		\end{equation}
+	\end{theorem}
+		\begin{proof}:
+		\newline
+		Рассмотрим уравнение (6). Система синусов $\sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]}$ образует базис в $L_2(0,\pi)$. Поэтому для коэффициентов $A_n\left(n+\dfrac12\right)$ справедливо следующее представление:
+		\begin{equation*}
+			A_n\left(n+\dfrac12\right) = \int\limits_0^\pi h_{n+1}(t) \dfrac{\varphi(t)}{\sqrt2} dt, 
+		\end{equation*}
+		где
+		\begin{equation*}
+			h_n(t) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^n \sin{kt} B_{n-k}
+		\end{equation*}
+		Пусть $u(x,y)$ - решение задачи (1)-(4), тогда
+		\begin{equation*}
+			u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}
+		\end{equation*}
+		и соотвественно
+		\begin{equation*}
+			u_y(x,y) = -\sum\limits_{n=0}^{\infty} A_n \left(n +\dfrac12\right) e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}
+		\end{equation*}
+		Здесь как раз возникает нужный нам коэффициент $A_n \left(n+\dfrac12\right)$, поэтому
+		\begin{equation*}
+			u_y(x,y)  = - \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]} dt
+		\end{equation*}
+		$\sin{\left[\left(n + \dfrac12\right)x\right]} = Im \ e^{i\left(n + \dfrac12\right)x}$, поэтому
+		\begin{equation*}
+			u_y(x,y)  = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{-\left(n + \dfrac12\right)y} e^{i\left(n + \dfrac12\right)x} dt
+		\end{equation*}
+		Обозначим $z = x + iy$
+		\begin{equation*}
+			u_y(x,y)  = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{i\left(n+\dfrac12\right) z}  dt
+		\end{equation*}
+		Для дальнейших операций нам было бы удобно, чтобы суммирование начинолось от 1, а не 0, поэтому сделаем замену $m = n +1$
+		\begin{equation*}
+			u_y(x,y)  = -  Im \ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{i\left(m-\dfrac12\right) z}  dt
+		\end{equation*}
+		\begin{equation*}
+			u_y(x,y)  = -  Im \ e^{-\dfrac{iz}{2}}\ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{im z}  dt
+		\end{equation*}
+		Поменяем местами знаки интергирования и суммирования
+		\begin{equation*}
+			u_y(x,y)  = -  Im \ e^{-\dfrac{iz}{2}}\  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  \sum\limits_{m=1}^{\infty}   h_{m}(t)  e^{im z}  dt
+		\end{equation*}
+		Введём новое обозначение:
+		\begin{equation*}
+			I(t,z) = \sum\limits_{m=1}^{\infty}  h_{m}(t)  e^{im z}
+		\end{equation*}
+		\begin{equation*}
+			I(t,z) =\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{n=1}^{\infty}   \sum\limits_{k=1}^n \sin{kt} B_{n-k} e^{inz} = 
+			\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{n=k}^{\infty} e^{inz} B_{n-k}
+		\end{equation*}
+		Введём новый индекс $m = n - k$
+		\begin{equation*}
+			I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m =0 }^{\infty} e^{i(m+k)z} B_{m} = 
+			\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} \sum\limits_{m =0 }^{\infty} e^{imz} B_{m}
+		\end{equation*}
+		Первый ряд можем вычислить по формуле суммы бесконечно убывающей геометрической прогрессии
+		\begin{equation*}
+			\sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} =  \sum\limits_{k=1}^{\infty} e^{ikz}\dfrac{1}{2i}\left(e^{ikt} - e^{-ikt}\right) = \dfrac1{2i} \left(\dfrac{1}{1 - e^{i(z+t)}} -  \dfrac{1}{1 - e^{i(z-t)}}\right) = 
+		\end{equation*}
+		\begin{equation*}
+			= \dfrac{1}{2i}  \dfrac{e^{i(z+t)} - e^{i(z-t)}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} =  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}
+		\end{equation*}
+		Рассмотрим второй ряд:
+		\begin{equation*}
+			\sum\limits_{l =0 }^{\infty} e^{ilz} B_{l} = \sum\limits_{l =0 }^{\infty} e^{ilz} \sum\limits_{m=0}^{l} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = \sum\limits_{m=0}^{\infty} \sum\limits_{l=m}^{\infty} e^{ilz} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = 
+		\end{equation*}
+		Введём новый индекс суммирования $k = l -m$
+		\begin{equation*}
+			\sum\limits_{m=0}^{\infty} \sum\limits_{k=0}^{\infty} e^{i(m+k)z} C^{k}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{k} = \sum\limits_{m=0}^{\infty} e^{imz} C^{m}_{-\gamma/\pi - \beta} \sum\limits_{k=0}^{\infty}  C^{k}_{\gamma/\pi} (-1)^k e^{ikz} = (1 + e^{iz})^{-\gamma/\pi - \beta} (1- e^{iz})^{\gamma/\pi} 
+		\end{equation*}
+		В нашем случае $\beta = -1, \gamma = \pi/2$, поэтому
+		\begin{equation*}
+			= (1 + e^{iz})^{1/2} (1- e^{iz})^{1/2} =\sqrt{1 - e^{i2z}} 
+		\end{equation*}
+		Собираем все решение:
+		\begin{equation*}
+			u_y(x,y) = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2} I(t,z) dt 
+		\end{equation*}
+		\begin{equation*}
+			u_y(x,y) = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt
+		\end{equation*}
+		Подставляя $\beta$ и $\gamma$ получим
+		\begin{equation*}
+			u_y(x,y) = - Im\  \dfrac{2}{\pi} e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{1}{2\cos{t/2} \sqrt{\tan{t/2}}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt
+		\end{equation*}
+		\begin{equation*}
+			u_y(x,y) = - Im\  \dfrac{e^{\dfrac{+iz}{2}}}{\pi}  \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}} \sqrt{1 - e^{i2z}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+		\end{equation*}
+		Теорема доказана.
+	\end{proof}
+	
 	\addcontentsline{toc}{section}{Список литературы}
 	\vspace{-2.3cm}
 	\renewcommand{\refname}{\begin{center}
@@ -258,5 +292,4 @@
 		\bibitem{Моисеев Е.И.} \textit{Моисеев Е.И.} О базисности одной системы синусов ~// Дифференциальные уравнения, \textbf{1987} Т. 23. №1. С.177-189
 		
 	\end{thebibliography}
-	
 \end{document}
