@@ -6,7 +6,7 @@
 \usepackage[english, russian]{babel}
 \usepackage{indentfirst}
 \usepackage{setspace}\onehalfspacing
-\usepackage[left=30mm, top=20mm, right=15mm, bottom=20mm, nohead, footskip=10mm]{geometry}
+\usepackage[left=30mm, top=20mm, right=30mm, bottom=20mm, nohead, footskip=10mm]{geometry}
 
 \usepackage{graphicx}   % include images
 \usepackage{hyperref}   % hyperreferences in a rendered document
@@ -27,42 +27,46 @@
 
 \title{Об одной задаче для уравнения Лапласа со смешанными граничными условиями}
 \author{Капустин Н.Ю., Васильченко Д.Д.}
-
+\date{}
 \begin{document}
-	\maketitle
+	УДК 517.956
+	\begin{center}		
+		\LARGE{
+		 Об одной задаче для уравнения Лапласа со смешанными граничными условиями
+		}
+		\newline
+		\large{Капустин Н.Ю., Васильченко Д. Д.}
+		
+	\end{center}
 	Рассмотрим краевую задачу для уравнения Лапласа
 	\begin{equation}
-		\dfrac{\partial^2 u}{\partial x^2} +\dfrac{\partial^2 u}{\partial y^2} = 0
+		\dfrac{\partial^2 u}{\partial x^2}(x,y) +\dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
 	\end{equation}
-	В полуполосе $D = \{(x,y) \vert 0 < x < \pi, 0 < y\}$\newline
-	В классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$ \newline
+	в полуполосе $D = \{(x,y) :\  0 < x < \pi, y > 0\}$\newline
+	в классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$ \newline
 	с граничными условиями
 	\begin{equation}
-		u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0
+		u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0, \ y > 0, 
 	\end{equation}
 	\begin{equation}
-		\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \left[\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2[0,\pi]
+		\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \left[\dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2(0,\pi) , 
 	\end{equation}
 	\begin{equation}
-		u(x,y) \rightrightarrows 0, y \to \infty
+		u(x,y) \rightrightarrows 0, y \to +\infty. 
 	\end{equation}
-	Аналогичная задача рассматривалась как вспомогательная с граничными условиями второго рода на боковых сторонах полуполосы и коэффициентом $\dfrac{1}{k}$ при $\dfrac{\partial u}{\partial y}$ в работе [1].
-	
-	\begin{theorem}
-		Решение задачи (1 - 4) существует, причём его можно представить в виде ряда
+	Аналогичная задача изучалась как вспомогательная с граничными условиями второго рода на боковых сторонах полуполосы и коэффициентом $\dfrac{1}{k}$ при $\dfrac{\partial u}{\partial y}(x,y),\ |k| > 1$ в работе [1].
+	\par
+	\textbf{Теорема 1.} \textit{Решение задачи (1 - 4) существует, причём его можно представить в виде ряда}
 		\begin{equation}
 			u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
 		\end{equation}
-		где коэффициенты $A_n, \ n =0,1,2, \dots$ находятся из разложения
+		\textit{где коэффициенты $A_n, \ n =0,1,2, \dots$ находятся из разложения}
 		\begin{equation}
 			\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]} = \dfrac{\varphi(x)}{\sqrt2}
 		\end{equation}
-	\end{theorem}
 	
-	
-	\begin{proof}
-		
-	Докажем существование решения задачи $(1) - (4)$. В силу основного результата работы $[2]$ система  $\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Поэтому коэффициенты разложения в формуле (6) удовлетворяют неравенствам Бесселя
+	\par
+	Доказательство. Докажем существование решения задачи $(1) - (4)$. В силу основного результата работы $[2]$ система  $\left\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\right\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Поэтому коэффициенты разложения в формуле (6) удовлетворяют неравенствам Бесселя
 	\begin{equation*}
 		C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} , 0 < C_1 < C_2, 
 	\end{equation*}
@@ -94,19 +98,17 @@
 		\leq C_4 \sum\limits_{n=0}^{m} A_n^2 \left(n +\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 < \dfrac{\varepsilon}{2}
 	\end{equation*}
 	Это верно, если $0 < y < \delta$ (m зафиксировано в зависимости от N). Условие (3) выполнено. Теорема доказана.
-	\end{proof}
-	\begin{theorem}
-		Решение задачи (1- 4) единственно
-	\end{theorem}
-	\begin{proof}
-		Докажем единственность решения этой задачи. Пусть $u(x,y)$ - разность двух решений - решение задачи с $\varphi(x) \equiv 0$. .\newline
+	\par
+		\textbf{Теорема 2.} \textit{Решение задачи (1- 4) единственно}
+	\par
+		Доказательство. Докажем единственность решения этой задачи. Пусть $u(x,y)$ - разность двух решений - решение задачи с $\varphi(x) \equiv 0$.
 		Введём обозначения $A_\varepsilon = (0, \varepsilon), A_R = (0, R), B_R = (\pi, R), B_\varepsilon = (\pi, \varepsilon)$. $D_{R\varepsilon}$ - прямоугольник $A_\varepsilon A_R B_R B_\varepsilon$. Справедливы следующие соотношения:
 		\begin{equation*}
 			0 = \iint\limits_{D_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy = 
 		\end{equation*}
 		\begin{equation*}
 			=	\iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  
-			- \iint\limits_{D_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right) + \iint\limits_{D_{R\varepsilon}} u_y u dx dy = 
+			- \iint\limits_{D_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right)dxdy + \iint\limits_{D_{R\varepsilon}} u_y u dx dy = 
 		\end{equation*}
 		\begin{equation*}
 			= - \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy
@@ -147,28 +149,25 @@
 		\begin{equation*}
 			\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + \dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{A_RB_R} u^2 dx
 		\end{equation*}
-		Устремим теперь $R \to \infty$, тогда $\int\limits_{A_RB_R} u^2 dx \to 0$, тем самым, это возможно только в случае $u(x,y) \equiv 0$ в $\overline{D}$.
-	\end{proof}
-	
-	\begin{theorem}
-		Пусть $u(x,y)$ - решение задачи $(1)-(4)$, тогда $u_x, u_y$ представимы в виде
+		Устремим теперь $R \to \infty$, тогда $\int\limits_{A_RB_R} u^2 dx \to 0$, тем самым, это возможно только в случае $u(x,y) \equiv 0$ в $\overline{D}$. Теорема доказана.
+		\par
+		\textbf{Теорема 3.} \textit{Пусть $u(x,y)$ - решение задачи $(1)-(4)$, тогда $u_x, u_y$ представимы в виде}
 		\begin{equation}
-			u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+			u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt, 
 		\end{equation}
 		\begin{equation}
-			u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+			u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt.
 		\end{equation}
-	\end{theorem}
-		\begin{proof}:
-		\newline
-		Рассмотрим уравнение (6). Система синусов $\sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]}$ образует базис в $L_2(0,\pi)$. Поэтому для коэффициентов $A_n\left(n+\dfrac12\right)$ справедливо следующее представление:
+		\par
+		Доказательство. Рассмотрим равенство (6). Система синусов $\left\{\sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]}\right\}_{n=0}^{\infty}$ образует базис в $L_2(0,\pi)$. Поэтому для коэффициентов $A_n\left(n+\dfrac12\right)$ справедливо следующее представление [2]:
 		\begin{equation*}
 			A_n\left(n+\dfrac12\right) = \int\limits_0^\pi h_{n+1}(t) \dfrac{\varphi(t)}{\sqrt2} dt, 
 		\end{equation*}
 		где
 		\begin{equation*}
-			h_n(t) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^n \sin{kt} B_{n-k}
+			h_n(t) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^n \sin{kt} B_{n-k}, \ B_{l} = \sum\limits_{m=0}^{l} C_{\gamma/\pi}^{l-m} C_{-\gamma / \pi -l}^{m} (-1)^{l-m}, \ C_l^n = \dfrac{l(l-1)\dots (l-n+1)}{n!}. 
 		\end{equation*}
+		\par
 		Пусть $u(x,y)$ - решение задачи (1)-(4), тогда
 		\begin{equation*}
 			u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}
@@ -181,7 +180,8 @@
 		\begin{equation*}
 			u_y(x,y)  = - \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]} dt
 		\end{equation*}
-		$\sin{\left[\left(n + \dfrac12\right)x\right]} = Im \ e^{i\left(n + \dfrac12\right)x}$, поэтому
+		Учитывая равенство
+		$\sin{\left[\left(n + \dfrac12\right)x\right]} = Im \ e^{i\left(n + \dfrac12\right)x}$, запишем формулу
 		\begin{equation*}
 			u_y(x,y)  = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{-\left(n + \dfrac12\right)y} e^{i\left(n + \dfrac12\right)x} dt
 		\end{equation*}
@@ -189,12 +189,13 @@
 		\begin{equation*}
 			u_y(x,y)  = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{i\left(n+\dfrac12\right) z}  dt
 		\end{equation*}
-		Для дальнейших операций нам было бы удобно, чтобы суммирование начинолось от 1, а не 0, поэтому сделаем замену $m = n +1$
+		\par
+		Для дальнейших выкладок нам было бы удобно, чтобы суммирование начинолось от 1, а не 0, поэтому сделаем замену $m = n +1$
 		\begin{equation*}
-			u_y(x,y)  = -  Im \ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{i\left(m-\dfrac12\right) z}  dt
+			u_y(x,y)  = -  Im \ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{i\left(m-\dfrac12\right) z}  dt = 
 		\end{equation*}
 		\begin{equation*}
-			u_y(x,y)  = -  Im \ e^{-\dfrac{iz}{2}}\ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{im z}  dt
+			 = -  Im \ e^{-\dfrac{iz}{2}}\ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{im z}  dt .
 		\end{equation*}
 		Поменяем местами знаки интергирования и суммирования
 		\begin{equation*}
@@ -205,13 +206,13 @@
 			I(t,z) = \sum\limits_{m=1}^{\infty}  h_{m}(t)  e^{im z}
 		\end{equation*}
 		\begin{equation*}
-			I(t,z) =\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{n=1}^{\infty}   \sum\limits_{k=1}^n \sin{kt} B_{n-k} e^{inz} = 
-			\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{n=k}^{\infty} e^{inz} B_{n-k}
+			I(t,z) =\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{n=1}^{\infty}   \sum\limits_{k=1}^n \sin{kt} B_{n-k} e^{inz} = 
+			\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{n=k}^{\infty} e^{inz} B_{n-k}
 		\end{equation*}
-		Введём новый индекс $m = n - k$
+		и новый индекс $m = n - k$
 		\begin{equation*}
-			I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m =0 }^{\infty} e^{i(m+k)z} B_{m} = 
-			\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} \sum\limits_{m =0 }^{\infty} e^{imz} B_{m}
+			I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m =0 }^{\infty} e^{i(m+k)z} B_{m} = 
+			\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} \sum\limits_{m =0 }^{\infty} e^{imz} B_{m}
 		\end{equation*}
 		Первый ряд можем вычислить по формуле суммы бесконечно убывающей геометрической прогрессии
 		\begin{equation*}
@@ -224,32 +225,36 @@
 		\begin{equation*}
 			\sum\limits_{l =0 }^{\infty} e^{ilz} B_{l} = \sum\limits_{l =0 }^{\infty} e^{ilz} \sum\limits_{m=0}^{l} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = \sum\limits_{m=0}^{\infty} \sum\limits_{l=m}^{\infty} e^{ilz} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = 
 		\end{equation*}
+		\par
 		Введём новый индекс суммирования $k = l -m$
 		\begin{equation*}
-			\sum\limits_{m=0}^{\infty} \sum\limits_{k=0}^{\infty} e^{i(m+k)z} C^{k}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{k} = \sum\limits_{m=0}^{\infty} e^{imz} C^{m}_{-\gamma/\pi - \beta} \sum\limits_{k=0}^{\infty}  C^{k}_{\gamma/\pi} (-1)^k e^{ikz} = (1 + e^{iz})^{-\gamma/\pi - \beta} (1- e^{iz})^{\gamma/\pi} 
-		\end{equation*}
-		В нашем случае $\beta = -1, \gamma = \pi/2$, поэтому
-		\begin{equation*}
-			= (1 + e^{iz})^{1/2} (1- e^{iz})^{1/2} =\sqrt{1 - e^{i2z}} 
-		\end{equation*}
-		Собираем все решение:
-		\begin{equation*}
-			u_y(x,y) = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2} I(t,z) dt 
+			\sum\limits_{m=0}^{\infty} \sum\limits_{k=0}^{\infty} e^{i(m+k)z} C^{k}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{k} = \sum\limits_{m=0}^{\infty} e^{imz} C^{m}_{-\gamma/\pi - \beta} \sum\limits_{k=0}^{\infty}  C^{k}_{\gamma/\pi} (-1)^k e^{ikz} = (1 + e^{iz})^{-\gamma/\pi - \beta} (1- e^{iz})^{\gamma/\pi} =
 		\end{equation*}
 		\begin{equation*}
-			u_y(x,y) = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt
+			= (1 + e^{iz})^{1/2} (1- e^{iz})^{1/2} =\sqrt{1 - e^{i2z}},
 		\end{equation*}
-		Подставляя $\beta$ и $\gamma$ получим
+		так как в нашем случае $\beta = -1, \ \gamma = \pi/2$.
+		Окончательно получаем формулу
 		\begin{equation*}
-			u_y(x,y) = - Im\  \dfrac{2}{\pi} e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{1}{2\cos{t/2} \sqrt{\tan{t/2}}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt
+			u_y(x,y) = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2} I(t,z) dt =
 		\end{equation*}
 		\begin{equation*}
-			u_y(x,y) = - Im\  \dfrac{e^{\dfrac{+iz}{2}}}{\pi}  \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}} \sqrt{1 - e^{i2z}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+			 = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt =
 		\end{equation*}
+		\begin{equation*}
+			 = - Im\  \dfrac{2}{\pi} e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{1}{2\cos{t/2} \sqrt{\tan{t/2}}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt, 
+		\end{equation*}
+		т.е. представление:
+		\begin{equation*}
+			u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{iz}{2}}  \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}} }{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt.
+		\end{equation*}
+	 	Рассуждая аналогично, получим представление
+	 		\begin{equation}
+	 			u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt.
+	 		\end{equation}
 		Теорема доказана.
-	\end{proof}
 	\newpage
-	\addcontentsline{toc}{section}{Список литературы}
+	\addcontentsline{toc}{section}{Литература}
 	\vspace{-2.3cm}
 	\renewcommand{\refname}{\begin{center}
 			{\normalsize \rm СПИСОК ЛИТЕРАТУРЫ} \end{center}}
@@ -258,7 +263,7 @@
 		
 		\selectlanguage{russian}
 		
-		\bibitem{Моисеев Е.И.} \textit{Моисеев Т.Е.} \textit{Вафадорова Г.О.} Об интегральном представлении задачи Неймана-Трикоми для уравнения Лаврентьева-Бицадзе ~// Дифференциальные уравнения, \textbf{2015} Т. 51. №8. С.1070-1075
+		\bibitem{Моисеев Е.И.} \textit{Моисеев Е.И.} \textit{Моисеев Т.Е.} \textit{Вафадорова Г.О.} Об интегральном представлении задачи Неймана-Трикоми для уравнения Лаврентьева-Бицадзе ~// Дифференциальные уравнения, \textbf{2015} Т. 51. №8. С.1070-1075
 		
 		\bibitem{Моисеев Е.И.} \textit{Моисеев Е.И.} О базисности одной системы синусов ~// Дифференциальные уравнения, \textbf{1987} Т. 23. №1. С.177-189
 		

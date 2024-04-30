@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  25 APR 2024 00:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  30 APR 2024 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -927,11 +927,11 @@ LaTeX Info: Redefining \th on input line 31.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(85.35826pt, 469.47049pt, 42.67912pt)
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
 * v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=469.47049pt
+* \textwidth=426.79135pt
 * \textheight=731.23584pt
 * \oddsidemargin=13.08827pt
 * \evensidemargin=13.08827pt
@@ -986,13 +986,13 @@ Package hyperref Info: Link coloring OFF on input line 31.
 
 LaTeX Info: Command `\dddot' is already robust on input line 31.
 LaTeX Info: Command `\ddddot' is already robust on input line 31.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 42.
 
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
 
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1001,13 +1001,29 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-[3] [4] [5] [6
+Overfull \hbox (9.32253pt too wide) detected at line 169
+\OML/cmm/m/it/10 h[]\U/matha/m/n/10 p\OML/cmm/m/it/10 t\U/matha/m/n/10 q ^^P []
+[] [] [] []\OML/cmm/m/it/10 B[];  B[] \U/matha/m/n/10 ^^P [] \OML/cmm/m/it/10 C
+[]C[]\U/matha/m/n/10 p^^A\OT1/cmr/m/n/10 1\U/matha/m/n/10 q[]\OML/cmm/m/it/10 ;
+  C[] \U/matha/m/n/10 ^^P []\OML/cmm/m/it/10 :
+ []
+
+[3] [4]
+Overfull \hbox (29.664pt too wide) detected at line 232
+[] [] \OML/cmm/m/it/10 e[]C[]C[]\U/matha/m/n/10 p^^A\OT1/cmr/m/n/10 1\U/matha/m
+/n/10 q[] ^^P [] \OML/cmm/m/it/10 e[]C[] [] C[]\U/matha/m/n/10 p^^A\OT1/cmr/m/n
+/10 1\U/matha/m/n/10 q[]\OML/cmm/m/it/10 e[] \U/matha/m/n/10 ^^P p\OT1/cmr/m/n/
+10 1 \U/matha/m/n/10 ^^@ \OML/cmm/m/it/10 e[]\U/matha/m/n/10 q[]p\OT1/cmr/m/n/1
+0 1 \U/matha/m/n/10 ^^A \OML/cmm/m/it/10 e[]\U/matha/m/n/10 q[] ^^P
+ []
+
+[5] [6
 pdfTeX warning (ext4): destination with the same identifier (name{cite.\320\234
 \320\276\320\270\321\201\320\265\320\265\320\262\040\320\ETC.}) has been alread
 y used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.266 \end{document}
+l.271 \end{document}
                     ] (document.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1018,16 +1034,16 @@ L3 programming layer <2024-02-20>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: CC646739339F3664AA9DD7189D47A4D0;182.
+(rerunfilecheck)             Checksum: 136A4E85B1BBB7D6B2C79B9F7CF8D1DB;126.
  ) 
 Here is how much of TeX's memory you used:
- 13250 strings out of 474435
- 202548 string characters out of 5742405
- 1947190 words of memory out of 5000000
- 35371 multiletter control sequences out of 15000+600000
- 576411 words of font info for 87 fonts, out of 8000000 for 9000
+ 13191 strings out of 474435
+ 201563 string characters out of 5742405
+ 1950190 words of memory out of 5000000
+ 35329 multiletter control sequences out of 15000+600000
+ 568625 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,79p,588b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,7n,79p,588b,462s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi420\ma
 thx10.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\
 lati1000.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi6
@@ -1036,9 +1052,9 @@ abx/dpi600\mathb10.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/publ
 ic/mathabx/dpi600\mathx10.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfo
 ur/public/mathabx/dpi600\matha7.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/p
 k/ljfour/public/mathabx/dpi600\matha10.pk> <C:\Users\User\AppData\Local\MiKTeX\
-fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1000.pk> <C:\Users\User\AppData\Local\MiKT
-eX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\User\AppData\Local\M
-iKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1728.pk><C:/Users/User/AppData/Local
+fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\User\AppData\Local\MiKT
+eX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1728.pk> <C:\Users\User\AppData\Local\M
+iKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1000.pk><C:/Users/User/AppData/Local
 /Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppDa
 ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Use
 r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Us
@@ -1046,9 +1062,9 @@ ers/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb
 ><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 r5.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmr7.pfb>
-Output written on document.pdf (6 pages, 179697 bytes).
+Output written on document.pdf (6 pages, 178998 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 20 named destinations out of 1000 (max. 500000)
+ 355 PDF objects out of 1000 (max. 8388607)
+ 18 named destinations out of 1000 (max. 500000)
  9 words of extra memory for PDF output out of 10000 (max. 10000000)
 
