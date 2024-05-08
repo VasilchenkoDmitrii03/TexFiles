@@ -150,4 +150,72 @@
 \begin{theorem}
 	Обобщённое решение задачи (2.2) существует и единственно
 \end{theorem}
+\section{Компактные (вполне непрерывные) операторы в гильбертовом пространстве}
+\subsection{Сопряженный оператор}
+	\begin{definition}
+		Оператор B называется сопряжённым к оператору A, если $\forall x, y \in H: \ (Ax, y) = (x, By)$
+	\end{definition}
+	\begin{theorem}
+		Пусть A - линейный ограниченный оператор, тогда $\exists! A^*$ - линейный и ограниченный и $\|A\| = \|A^*\|$
+	\end{theorem}
+\subsection{Вполне непрерывные операторы}
+	\begin{definition}
+		Оператор A называется вполне непрерывным, если слабосходяющуюся последовательность переводит в сильно сходяющуюся.
+	\end{definition}
+	\begin{lemma}
+		Пусть A - линейный ограниченный, тогда из $x_n \rightharpoondown x$ следует $Ax_n  \rightharpoondown  Ax$
+	\end{lemma}
+	\begin{definition}
+		Пусть A - вполне непрерывный, тогда $A^*$ - вполне непрерывный
+	\end{definition}
+\subsection{Компактный оператор}
+	\begin{definition}
+		Оператор A называется компактным, если ограниченное множество переводит в предкомпактное.
+	\end{definition}
+	\begin{theorem}
+		Оператор A - компактный $\Leftarrow$ он вполне непрерывен. 
+	\end{theorem}
+\subsection{Приближение компактных операторов}
+	\begin{theorem}
+		Пусть A - ограниченный, $A_n$ - вполне непрерывны и $\|A_n\| \to \|A\|$, тогда A - компактный. 	
+	\end{theorem}
+	\begin{lemma}
+		Пусть A - компактный, тогда $\exists z \in H: \|z\| = 1$ и $\|Az\| = \|A\|$.
+	\end{lemma}
+	\begin{theorem}
+		Пусть $\{e_n\}_{n=1}^\infty$ - ОНБ в сепарабельном H. $P_nx  = \sum\limits_{k=1}^{n} (x,e_k) e_k$. Пусть A - компактный, тогда $\|A - P_nAP_n\| \to 0$.
+	\end{theorem}
+\section{Теория Фредгольма для вполне непрерывных операторов}
+\subsection{Третья теорема фредгольма}
+	Будем рассматривать оператор $T = E - A$, где A - вполне непрерывный.
+	\begin{theorem}
+		$\exists a > 0: \ \|Tx\| \geq a \|x\|, \forall x \perp \ker{T}$
+	\end{theorem}
+	\begin{theorem}
+		$R(T)$ - замкнуто
+	\end{theorem}
+	\begin{theorem}
+		Пусть B - линейный ограниченный оператор, тогда справедливо разложение $H = \ker B \oplus \overline{R(B^*)} = \ker B^* \oplus \overline{R(B)}$
+	\end{theorem}
+	\begin{theorem}
+		(III - Фредгольма) \newline
+		Уравнение $Tx = y$ разрешимо $\Leftrightarrow$ $y \perp \ker T^*$
+	\end{theorem}
+\subsection{Первая теорема Фредгольма}
+	\begin{theorem}
+		$def\ T = \dim\ker T < \infty$ 
+	\end{theorem}
+	\begin{theorem}
+		(о стабилизации ядер)\newline
+		$\exists N \in \mathbb{N}: $ $\ker T \subset \ker T^2 \subset \dots \subset \ker T^N = \ker T^{N+1} = \dots$
+	\end{theorem}
+	\begin{theorem}
+		(I - Фредгольма) \newline
+		Уравнение $Tx = y$ разрешимо при $\forall$ правой части $\Leftrightarrow$ $\ker{T} = \emptyset$
+	\end{theorem}
+\subsection{Вторая теорема Фредгольма}
+	\begin{theorem}
+		(II - Фредгольма) \newline
+		$def\ T = def\ T^* < \infty$
+	\end{theorem}
 \end{document}

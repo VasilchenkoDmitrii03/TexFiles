@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.19)  11 APR 2024 12:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.19)  8 MAY 2024 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -791,37 +791,37 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/demosfenn/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-[2] (document.aux) ) 
+[2] [3] (document.aux) ) 
 Here is how much of TeX's memory you used:
  4785 strings out of 476374
  71663 string characters out of 5786966
- 1864340 words of memory out of 5000000
+ 1865340 words of memory out of 5000000
  25129 multiletter control sequences out of 15000+600000
  526527 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,9n,62p,401b,209s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/p
-ublic/mathabx/dpi600\mathb9.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/
-pk/ljfour/public/mathabx/dpi540\mathx10.pk> <C:\Users\demosfenn\AppData\Local\M
-iKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm0900.pk> <C:\Users\demosfenn\AppData
-\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha6.pk> <C:\Users\demosf
-enn\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha9.pk> <C:\U
-sers\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati0900.p
-k> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
-bx0900.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/d
-pi600\labx1000.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
-lh-t2a/dpi600\labx1095.pk><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/demosfenn/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/demosfenn/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/demosfe
-nn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Us
-ers/demosfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6
-.pfb><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmr9.pfb><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (2 pages, 157641 bytes).
+ 57i,9n,62p,401b,215s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfo
+ur/public/mathabx/dpi600\mathb9.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fo
+nts/pk/ljfour/public/mathabx/dpi540\mathx10.pk> <C:\Users\demosfenn\AppData\Loc
+al\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm0900.pk> <C:\Users\demosfenn\App
+Data\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha6.pk> <C:\Users\de
+mosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\matha9.pk> <
+C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati09
+00.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
+0\labx0900.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
+2a/dpi600\labx1000.pk> <C:\Users\demosfenn\AppData\Local\MiKTeX\fonts/pk/ljfour
+/lh/lh-t2a/dpi600\labx1095.pk><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/demosfenn/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/demosfenn/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/dem
+osfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C
+:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr6.pfb><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr9.pfb><C:/Users/demosfenn/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb>
+Output written on document.pdf (3 pages, 171556 bytes).
 PDF statistics:
- 329 PDF objects out of 1000 (max. 8388607)
+ 356 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
