@@ -91,14 +91,14 @@
 \begin{equation}
 	\dfrac{\partial^2 u}{\partial x^2} +\dfrac{\partial^2 u}{\partial y^2} = 0
 \end{equation}
-В полуполосе $D = \{(x,y) \vert 0 < x < \pi, 0 < y\}$\newline
+В полуполосе $D = \{(x,y): 0 < x < \pi, y > 0\}$\newline
 В классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$ \newline
 с граничными условиями
 \begin{equation}
 	u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0
 \end{equation}
 \begin{equation}
-	\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \left[\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2[0,\pi]
+	\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \left[\dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x} (x,y) + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2(0,\pi)
 \end{equation}
 \begin{equation}
 	u(x,y) \rightrightarrows 0, y \to \infty
@@ -106,7 +106,7 @@
 Аналогичная задача рассматривалась как вспомогательная с граничными условиями второго рода на боковых сторонах полуполосы и коэффициентом $\dfrac{1}{k}$ при $\dfrac{\partial u}{\partial y}$ в работе [1].
 \section{Теорема сущестоввания}
 \begin{theorem}
-	Решение задачи (1 - 4) существует, причём его можно представить в виде ряда
+	Решение задачи (1)- (4) существует, причём его можно представить в виде ряда
 	\begin{equation}
 		u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
 	\end{equation}
@@ -119,11 +119,10 @@
 
 \begin{proof}
    
-	
-	Докажем существование решения задачи $(1) - (4)$. В силу основного результата работы $[2]$ система $\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Поэтому коэффициенты разложения в формуле (6) удовлетворяют неравенствам Бесселя
-	\begin{equation*}
-		C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} , 0 < C_1 < C_2, 
-	\end{equation*}
+Докажем существование решения задачи $(1) - (4)$. В силу основного результата работы $[2]$ система  $\left\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\right\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Поэтому коэффициенты разложения в формуле (6) удовлетворяют неравенствам Бесселя
+\begin{equation*}
+	C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} , 0 < C_1 < C_2, 
+\end{equation*}
 а значит сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$ и сходится равномерно ряд (5). То, что функция (5) при $y > 0$ - решение уравнения (1), удовлетворяющее условиям (2) - это очевидно. В силу равенства $\sum\limits_{n=0}^{\infty} e^{-\left(n + \frac12\right)y} = \dfrac{e^{-y/2}}{1 - e^{-y}}$, также очевидно, что выполнено условие (4). Проверим выполнение условия (3).\newline
 Выразим функцию $\varphi(x)$ из представления (6) и подставим в условие (3)
 \begin{equation*}
@@ -149,9 +148,9 @@
 	\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq
 \end{equation*}
 \begin{equation*}
-\leq C_4 \sum\limits_{n=0}^{m} A_n^2 \left(n +\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 < \dfrac{\varepsilon}{2}
+	\leq C_4 \sum\limits_{n=0}^{m} A_n^2 \left(n +\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 < \dfrac{\varepsilon}{2}
 \end{equation*}
-Это верно, если $0 < y < \delta$ (m зафиксировано в зависимости от N). Условие (3) выполнено. Теорема доказана.
+	Это верно, если $0 < y < \delta$ (m зафиксировано в зависимости от N). Условие (3) выполнено. Теорема доказана.
 \end{proof}
 
 \section{Теорема единственности}
@@ -159,14 +158,14 @@
 	Решение задачи (1 - 4) единственно
 \end{theorem}
 \begin{proof}
-		Докажем единственность решения этой задачи. Пусть $u(x,y)$ - разность двух решений - решение задачи с $\varphi(x) \equiv 0$. .\newline
+	Докажем единственность решения этой задачи. Пусть $u(x,y)$ - разность двух решений - решение задачи с $\varphi(x) \equiv 0$.
 	Введём обозначения $A_\varepsilon = (0, \varepsilon), A_R = (0, R), B_R = (\pi, R), B_\varepsilon = (\pi, \varepsilon)$. $D_{R\varepsilon}$ - прямоугольник $A_\varepsilon A_R B_R B_\varepsilon$. Справедливы следующие соотношения:
 	\begin{equation*}
 		0 = \iint\limits_{D_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy = 
 	\end{equation*}
 	\begin{equation*}
 		=	\iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  
-		- \iint\limits_{D_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right) + \iint\limits_{D_{R\varepsilon}} u_y u dx dy = 
+		- \iint\limits_{D_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right)dxdy + \iint\limits_{D_{R\varepsilon}} u_y u dx dy = 
 	\end{equation*}
 	\begin{equation*}
 		= - \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy
@@ -199,7 +198,7 @@
 	\begin{equation*}
 		\leq \left(R - \varepsilon\right)^2 \int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx  +\dfrac12 \int\limits_{A_RB_R} u^2 dx
 	\end{equation*}
-	Устремим $\varepsilon \to 0 + 0$, тогда в силу неравенства $(a-b)^2 \leq 2a^2 + 2b^2$
+	Устремим $\varepsilon \to 0 + 0$, тогда в силу (3)
 	\begin{equation*}
 		\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{A_\varepsilon B_\varepsilon} \left(u_y - u_x\right)^2 dx = 0
 	\end{equation*}
@@ -207,10 +206,10 @@
 	\begin{equation*}
 		\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + \dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{A_RB_R} u^2 dx
 	\end{equation*}
-	Устремим теперь $R \to \infty$, тогда $\int\limits_{A_RB_R} u^2 dx \to 0$, тем самым, это возможно только в случае $u(x,y) \equiv 0$ в $\overline{D}$.
+	Устремим теперь $R \to \infty$, тогда $\int\limits_{A_RB_R} u^2 dx \to 0$, тем самым, это возможно только в случае $u(x,y) \equiv 0$ в $\overline{D}$. Теорема доказана. 
 \end{proof}
 \newpage
-\addcontentsline{toc}{section}{Список литературы}
+\addcontentsline{toc}{section}{Литература}
 \vspace{-2.3cm}
 \renewcommand{\refname}{\begin{center}
 {\normalsize \rm СПИСОК ЛИТЕРАТУРЫ} \end{center}}

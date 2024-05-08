@@ -3,6 +3,6 @@
 \contentsline {section}{\numberline {2}Постановка задачи}{3}{section.2}%
 \contentsline {section}{\numberline {3}Теорема сущестоввания}{3}{section.3}%
 \contentsline {section}{\numberline {4}Теорема единственности}{5}{section.4}%
-\contentsline {section}{Список литературы}{7}{theorem.2}%
+\contentsline {section}{Литература}{7}{theorem.2}%
 \babel@toc {russian}{}\relax 
 \babel@toc {russian}{}\relax 
