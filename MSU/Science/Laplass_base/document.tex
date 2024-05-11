@@ -25,7 +25,7 @@
 
 % enumerating settings
 
-\title{Об одной задаче для уравнения Лапласа со смешанными граничными условиями}
+\title{О краевой задаче для уравнения Лапласа со смешанными граничными условиями в полуполосе}
 \author{Капустин Н.Ю., Васильченко Д.Д.}
 \date{}
 \begin{document}
@@ -41,10 +41,9 @@
 	\par
 	Рассмотрим краевую задачу для ура внения Лапласа
 	\begin{equation}
-		\dfrac{\partial^2 u}{\partial x^2}(x,y) +\dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+		\dfrac{\partial^2 u}{\partial x^2} +\dfrac{\partial^2 u}{\partial y^2} = 0
 	\end{equation}
-	в полуполосе $D = \{(x,y) :\  0 < x < \pi, y > 0\}$\newline
-	в классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$ \newline
+	в полуполосе $D = \{(x,y) :\  0 < x < \pi, y > 0\}$	в классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$ \newline
 	с граничными условиями
 	\begin{equation}
 		u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0, \ y > 0, 
@@ -55,102 +54,117 @@
 	\begin{equation}
 		u(x,y) \rightrightarrows 0, y \to +\infty. 
 	\end{equation}
-	Аналогичная задача изучалась как вспомогательная с граничными условиями второго рода на боковых сторонах полуполосы и коэффициентом $\dfrac{1}{k}$ при $\dfrac{\partial u}{\partial y}(x,y),\ |k| > 1$ в работе [1].
+	В работе будут доказаны теоремы существования и единственности решения
+	этой задачи, а также получены интегральные представления для частных
+	производных решения первого порядка.
+	
+	Аналогичная задача изучалась как вспомогательная при изучении задачи Трикоми-Неймана
+	для уравнения Лаврентьева-Бицадзе с граничными условиями второго рода на боковых сторонах
+	полуполосы и коэффициентом $\dfrac{1}{k}$ при
+	$\dfrac{\partial u}{\partial y}(x,y), \vert k\vert>1 $ в статье [1].
+	На линии изменения типа ставилось условие склеивания нормальных производных
+	по Франклю. Случай $k=1$ (классическая задача с непрерывным градиентом)
+	не рассматривалась и теорема единственности для вспомогательной задачи
+	не доказывалась.
+	
+	На задачу Трикоми с эллиптической частью в виде полуполосы обратил внимание
+	А.В. Бицадзе в связи с математическим моделированием плоскопараллельных
+	движений газа. В данном случае построение решения конформным отображением
+	приводится к краевой задаче для определения аналитической функции в верхней
+	полуплоскости [2, стр. 327]. На основании известной формулы Шварца [2, стр. 315]
+	А.В. Бицадзе было выписано в квадратурах решение этой краевой задачи. 
+	
+	В работе [3] получено интегральное представление регулярного решения задачи для уравнения Лапласа
+	в полукруге с краевым условием первого рода на полуокружности и двумя различными
+	краевыми условиями типа наклонной производной на двух прямолинейных участках границы.
 	\par
 	\textbf{Теорема 1.} \textit{Решение задачи (1 - 4) существует, причём его можно представить в виде ряда}
 		\begin{equation}
 			u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
 		\end{equation}
-		\textit{где коэффициенты $A_n, \ n =0,1,2, \dots$ находятся из разложения}
+		\textit{где коэффициенты $A_n, \ n =0,1,2, \dots$ определяются из разложения}
 		\begin{equation}
-			\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]} = \dfrac{\varphi(x)}{\sqrt2}
+			\sum\limits_{n=0}^{\infty} B_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]} = \dfrac{\varphi(x)}{\sqrt2}, \ A_n = \dfrac{B_n}{n+\dfrac12}
 		\end{equation}
 	
 	\par
-	Доказательство. Докажем существование решения задачи $(1) - (4)$. В силу основного результата работы $[2]$ система  $\left\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\right\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Поэтому коэффициенты разложения в формуле (6) удовлетворяют неравенствам Бесселя
+	Доказательство. Докажем существование решения задачи $(1) - (4)$. В силу основного результата работы $[2]$ система  $\left\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\right\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Разложим $\dfrac{\varphi(x)}{\sqrt2}$ по этой системе, коэффициенты разложения в формуле (6) удовлетворяют неравенствам Бесселя
 	\begin{equation*}
 		C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} , 0 < C_1 < C_2, 
 	\end{equation*}
-	а значит сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$ и сходится равномерно ряд (5). То, что функция (5) при $y > 0$ - решение уравнения (1), удовлетворяющее условиям (2) - это очевидно. В силу равенства $\sum\limits_{n=0}^{\infty} e^{-\left(n + \frac12\right)y} = \dfrac{e^{-y/2}}{1 - e^{-y}}$, также очевидно, что выполнено условие (4). Проверим выполнение условия (3).\newline
-	Выразим функцию $\varphi(x)$ из представления (6) и подставим в условие (3)
+	где $C_1, C_2$ не зависят от $\varphi$. Следовательно сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$ и сходится равномерно ряд (5). Дифференцировать ряд (5) по x в $D$ можно так как каждая из функций $A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}$ имеет в области $D$ производную, сам ряд (5) сходится равномерно и ряд производных 
+	\begin{equation*}
+		\sum\limits_{n=0}^{\infty} B_n e^{-\left(n + \dfrac12\right)y} \cos{\left[\left(n + \dfrac12\right)x\right]}
+	\end{equation*}
+	 сходится равномерно в $D$. Аналогично можно показать, что (5) можно дважды дифференцировать по x и y. То, что функция (5) при $y>0$ - решение (1), удовлетворяющее условиям (2) проверятся подстановкой. Условие (4) выполняется так как  $\sum\limits_{n=0}^{\infty} e^{-\left(n + \frac12\right)y} = \dfrac{e^{-y/2}}{1 - e^{-y}}$. Проверим выполнение условия (3).\newline
+	Согласно разложению (6), условие (3) принимает вид
 	\begin{equation*}
 		I(y) =  2 \int\limits_0^\pi \left[	\sum\limits_{n=0}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx
 	\end{equation*}
 	Докажем, что $I(y) \to 0$ при $y \to 0+0$. 
 	\begin{equation*}
-		I(y) \leq 4\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx + 
+		I(y) \leq I_1(y) + I_2(y)
+	\end{equation*}
+	Зафиксируем  $\forall \varepsilon > 0$. В силу левой части неравенства Бесселя имеем оценку
+	\begin{equation*}
+		I_2(y) =  \int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq 
 	\end{equation*}
 	\begin{equation*}
-		+ 4\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx
+		\leq  C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 \leq C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 < \dfrac{\varepsilon}{2},
 	\end{equation*}
-	В силу левой части неравенства Бесселя имеем оценку
-	\begin{equation*}
-		\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq 
-	\end{equation*}
-	\begin{equation*}
-		\leq  C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 \leq C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 < \dfrac{\varepsilon}{2}
-	\end{equation*}
-	Это верно $\forall \varepsilon > 0$, если $m \geq N =N(\varepsilon)$\newline
+	если  $m$ достаточно велико.\newline
 	Во втором слагаемом мы имеем дело с конечным числом элементов, поэтому:
 	\begin{equation*}
-		\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq
+		I_1(y) = \int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq
 	\end{equation*}
 	\begin{equation*}
 		\leq C_4 \sum\limits_{n=0}^{m} A_n^2 \left(n +\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 < \dfrac{\varepsilon}{2}
 	\end{equation*}
-	Это верно, если $0 < y < \delta$ (m зафиксировано в зависимости от N). Условие (3) выполнено. Теорема доказана.
+	при $0 < y < \delta$, если $\delta$ достаточно мало. Условие (3) выполнено. Теорема доказана.
 	\par
 		\textbf{Теорема 2.} \textit{Решение задачи (1- 4) единственно}
 	\par
-		Доказательство. Докажем единственность решения этой задачи. Пусть $u(x,y)$ - разность двух решений - решение задачи с $\varphi(x) \equiv 0$.
-		Введём обозначения $A_\varepsilon = (0, \varepsilon), A_R = (0, R), B_R = (\pi, R), B_\varepsilon = (\pi, \varepsilon)$. $D_{R\varepsilon}$ - прямоугольник $A_\varepsilon A_R B_R B_\varepsilon$. Справедливы следующие соотношения:
+		Доказательство. Докажем единственность решения этой задачи. Пусть $u(x,y)$ - решение однородной задачи.
+		Введём обозначения $C_\varepsilon = (0, \varepsilon), C_R = (0, R), D_R = (\pi, R), D_\varepsilon = (\pi, \varepsilon)$. $\prod_{R\varepsilon}$ - прямоугольник $C_\varepsilon C_R D_R D_\varepsilon$. Справедливы следующие соотношения:
 		\begin{equation*}
-			0 = \iint\limits_{D_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy = 
+			0 = \iint\limits_{\prod_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy = 
 		\end{equation*}
 		\begin{equation*}
-			=	\iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  
-			- \iint\limits_{D_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right)dxdy + \iint\limits_{D_{R\varepsilon}} u_y u dx dy = 
+			=	\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  
+			- \iint\limits_{\prod_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right)dxdy + \iint\limits_{\prod_{R\varepsilon}} u_y u dx dy = 
 		\end{equation*}
 		\begin{equation*}
-			= - \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy
-			- \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_y u dx 
-			-\int\limits_{A_\varepsilon B_\varepsilon} \dfrac{u^2}{2} dx + \int\limits_{A_R B_R} \dfrac{u^2}{2} dx = 
+			= - \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy - 
+			\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_y - u_x\right)u dx - \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon\right) u_x u dx - \int\limits_{C_\varepsilon D_\varepsilon}\dfrac{u^2}{2} dx +
 		\end{equation*}
 		\begin{equation*}
-			= - \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy - 
-			\int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) \left(u_y - u_x\right)u dx - \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_x u dx - \int\limits_{A_\varepsilon B_\varepsilon}\dfrac{u^2}{2} dx +
-		\end{equation*}
-		\begin{equation*}
-			+ \int\limits_{A_R B_R} \dfrac{u^2}{2}dx
+			+ \int\limits_{C_R D_R} \dfrac{u^2}{2}dx
 		\end{equation*}
 		Отсюда следует
 		\begin{equation*}
-			\iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{2}\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon)  =
+			\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_x - u_y\right)u dx + \dfrac12  \int\limits_{C_R D_R} u^2 dx \leq
 		\end{equation*}
 		\begin{equation*}
-			= \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) \left(u_x - u_y\right)u dx + \dfrac12  \int\limits_{A_R B_R} u^2 dx \leq
+			\leq \left(R - \varepsilon\right) \left[\int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - u_x\right)^2 dx \right]^{\frac12} \left[\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx \right]^{\frac12} + \dfrac12 \int\limits_{C_RD_R} u^2 dx \leq
 		\end{equation*}
 		\begin{equation*}
-			\leq \left(R - \varepsilon\right) \left[\int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx \right]^{\frac12} \left[\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx \right]^{\frac12} + \dfrac12 \int\limits_{A_RB_R} u^2 dx \leq
+			\leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - u_x\right)^2 dx + \dfrac14 \int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +\dfrac12 \int\limits_{C_RD_R} u^2 dx, 
 		\end{equation*}
 		\begin{equation*}
-			\leq \left(R - \varepsilon\right)^2 \int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx + \dfrac14 \int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac12 \int\limits_{A_RB_R} u^2 dx, 
+			\iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{4}\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon) \leq 
 		\end{equation*}
 		\begin{equation*}
-			\iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{4}\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon) \leq 
-		\end{equation*}
-		\begin{equation*}
-			\leq \left(R - \varepsilon\right)^2 \int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx  +\dfrac12 \int\limits_{A_RB_R} u^2 dx
+			\leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - u_x\right)^2 dx  +\dfrac12 \int\limits_{C_RD_R} u^2 dx
 		\end{equation*}
 		Устремим $\varepsilon \to 0 + 0$, тогда в силу (3)
 		\begin{equation*}
-			\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{A_\varepsilon B_\varepsilon} \left(u_y - u_x\right)^2 dx = 0
+			\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{C_\varepsilon D_\varepsilon} \left(u_y - u_x\right)^2 dx = 0
 		\end{equation*}
 		и получим соотношение
 		\begin{equation*}
-			\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + \dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{A_RB_R} u^2 dx
+			\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + \dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{C_RD_R} u^2 dx
 		\end{equation*}
-		Устремим теперь $R \to \infty$, тогда $\int\limits_{A_RB_R} u^2 dx \to 0$, тем самым, это возможно только в случае $u(x,y) \equiv 0$ в $\overline{D}$. Теорема доказана.
+		Устремим теперь $R \to \infty$, тогда $\int\limits_{C_RD_R} u^2 dx \to 0$, тем самым, это возможно только в случае $u(x,y) \equiv 0$ в $\overline{D}$. Теорема доказана.
 		\par
 		\textbf{Теорема 3.} \textit{Пусть $u(x,y)$ - решение задачи $(1)-(4)$, тогда $u_x, u_y$ представимы в виде}
 		\begin{equation}
@@ -188,12 +202,10 @@
 		\end{equation*}
 		Обозначим $z = x + iy$
 		\begin{equation*}
-			u_y(x,y)  = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{i\left(n+\dfrac12\right) z}  dt
+			u_y(x,y)  = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{i\left(n+\dfrac12\right) z}  dt = \vert m = n + 1 \vert = 
 		\end{equation*}
-		\par
-		Для дальнейших выкладок нам было бы удобно, чтобы суммирование начинолось от 1, а не 0, поэтому сделаем замену $m = n +1$
 		\begin{equation*}
-			u_y(x,y)  = -  Im \ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{i\left(m-\dfrac12\right) z}  dt = 
+			 = -  Im \ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{i\left(m-\dfrac12\right) z}  dt = 
 		\end{equation*}
 		\begin{equation*}
 			 = -  Im \ e^{-\dfrac{iz}{2}}\ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{im z}  dt .
@@ -215,12 +227,8 @@
 			I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m =0 }^{\infty} e^{i(m+k)z} B_{m} = 
 			\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} \sum\limits_{m =0 }^{\infty} e^{imz} B_{m}
 		\end{equation*}
-		Первый ряд можем вычислить по формуле суммы бесконечно убывающей геометрической прогрессии
 		\begin{equation*}
-			\sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} =  \sum\limits_{k=1}^{\infty} e^{ikz}\dfrac{1}{2i}\left(e^{ikt} - e^{-ikt}\right) = \dfrac1{2i} \left(\dfrac{1}{1 - e^{i(z+t)}} -  \dfrac{1}{1 - e^{i(z-t)}}\right) = 
-		\end{equation*}
-		\begin{equation*}
-			= \dfrac{1}{2i}  \dfrac{e^{i(z+t)} - e^{i(z-t)}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} =  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}
+			\sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} =  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}
 		\end{equation*}
 		Рассмотрим второй ряд:
 		\begin{equation*}
@@ -250,13 +258,14 @@
 			u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{iz}{2}}  \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}} }{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt.
 		\end{equation*}
 	 	Рассуждая аналогично, получим представление
-	 		\begin{equation}
+	 		\begin{equation*}
 	 			u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt.
-	 		\end{equation}
+	 		\end{equation*}
 		Теорема доказана.
 	\par
 	Работа выполнена при финансовой поддержке Министерства науки и высшего образования Российской Федерации в рамках реализации программы Московского центра фундаментальной и прикладной математики по соглашению № 075-15-2022-284.
-	\newpage
+	\newline
+	\newline
 	\addcontentsline{toc}{section}{Литература}
 	\vspace{-2.3cm}
 	\renewcommand{\refname}{\begin{center}
@@ -270,5 +279,8 @@
 		
 		\bibitem{Моисеев Е.И.} \textit{Моисеев Е.И.} О базисности одной системы синусов ~// Дифференциальные уравнения, \textbf{1987} Т. 23. №1. С.177-189
 		
+		\bibitem{Бицадзе А.В.} \textit{Бицадзе А.В.} Некоторые классы уравнений в частных производных.~// М., Наука,\textbf{1981}, 448 стр. 
+		\bibitem{Моисеев Т. Е.} \textit{Моисеев Т. Е.} Об интегральном представлении решения уравнения Лапласа со
+		смешанными краевыми условиями ~// Дифференциальные уравнения, \textbf{2011}, т. 47, №10, с.1446-1451. 
 	\end{thebibliography}
 \end{document}
