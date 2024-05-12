@@ -218,4 +218,93 @@
 		(II - Фредгольма) \newline
 		$def\ T = def\ T^* < \infty$
 	\end{theorem}
+\subsection{Общее операторное уравнение. Альтернатива Фредгольма}
+	\begin{equation*}
+		(A - \lambda E) x = y, \ \lambda \neq 0 \in \mathbb{C}, \ A - \text{вп. непр.}
+	\end{equation*}
+	можем переписать в виде
+	\begin{equation*}
+		(E - \tilde{A}) x = \tilde{y}, \ \tilde{y} = -y / \lambda, \ \tilde{A}= - A / \lambda
+	\end{equation*}
+	\begin{theorem}
+		Уравнение $	(A - \lambda E) x = y$ разрешимо для любой правой части $\Leftrightarrow$ $\ker{A - \lambda E} = \{0\}$
+	\end{theorem}
+	\begin{theorem}
+		$def (A - \lambda E) = def (A^* - \overline{\lambda} E) < \infty$
+	\end{theorem}
+	\begin{theorem}
+		Уравнение $	(A - \lambda E) x = y$ разрешимо $\Leftrightarrow$ $y \perp \ker{A^* - \overline{\lambda} E}.$
+	\end{theorem}
+	\begin{theorem}
+		(Альтернатива Фредгольма)\newline
+		Либо уравнение $	(A - \lambda E) x = y$ разрешимо для любой правой части, либо $\ker{A - \lambda E} \neq \{0\}$
+	\end{theorem}
+\section{Спектральная теория линейный ограниченных операторов}
+\subsection{Спектр оператора}
+$X$ - банахово.
+	\begin{definition}
+		Точка $\lambda \in \mathbb{C}$ называется регулярной точкой оператора A, если 
+		\begin{enumerate}
+			\item $\ker{(A - \lambda E)} = \{0\}$
+			\item $R(A - \lambda E) = X$
+			\item $\exists (A - \lambda E)^{-1}$ - ограниченный и определённый на всем X. 
+		\end{enumerate}
+	\end{definition}
+	\begin{definition}
+		Множество регулярных точек оператора A обозначаем $\rho(A)$
+	\end{definition}
+	\begin{definition}
+		$\sigma(A) = \mathbb{C} \backslash \rho(A)$  - спектр оператора A. 
+	\end{definition}
+	\begin{theorem}
+		Пусть $A$ - ограниченный оператор и $|\lambda| > \|A\|$ $\Rightarrow$  $\lambda \in \rho(A)$. 
+	\end{theorem}
+	\begin{definition}
+		$R_A(\lambda) = (A - \lambda E) ^{-1}$ - резольвента оператора A. 
+	\end{definition}
+	\begin{theorem}
+		Пусть $A$ - ограниченный оператор, $\lambda \in \rho(A)$, $|\Delta| < \dfrac{1}{\|R_A(\lambda)\|}$ $\Rightarrow$ $\lambda + \Delta \in \rho(A)$.  
+	\end{theorem}
+	\begin{theorem}
+		(Тождество Гильберта)\newline
+		Если A - ограниченный и $\lambda, \mu \in \rho(A)$, то 
+		$R_A(\lambda) - R_A(\mu) = (\lambda - \mu) R_A(\lambda) R_A(\mu)$
+	\end{theorem}
+	\begin{theorem}
+		H - гильбертово. Пусть $A: H \to H$ - линейный ограниченный оператор, тогда $\sigma(A) \neq \emptyset$.		
+	\end{theorem}
+\subsection{Спектр вполне непрерывного оператора}
+	\begin{definition}
+		(Классификация точек спектра) \newline
+		Пусть $\lambda \in \sigma(A)$, тогда
+		\begin{enumerate}
+			\item Если $\ker{(A - \lambda E)} \neq \{0\}$, то $\lambda$ приндалжеит точечному спектру $\sigma_p(A)$.
+			\item Если $\ker{(A - \lambda E)} = \{0\}$, $R(A - \lambda E) \neq X$, но $\overline{R(A - \lambda E)} = X$, то $\lambda$ принадлежит непрерывному спектру $\sigma_c(A)$.
+			\item Если $\ker{(A - \lambda E)} = \{0\}$, $R(A - \lambda E) \neq X$ и $\overline{R(A - \lambda E)} \neq X$, то $\lambda$ принадлежит остаточному спектру $\sigma_r(A)$.
+		\end{enumerate}	
+	\end{definition}
+	\begin{theorem}
+		Пусть A - вполне непрерывный оператор и $\lambda \neq 0  \in \sigma(A)$, тогда $\lambda \in \sigma_p(A)$.
+	\end{theorem}
+	\begin{theorem}
+		Если $\dim{H} = \infty$ и $A$ - вполне непрерывный, то $0 \in \sigma(A)$. 	
+	\end{theorem}
+	\begin{theorem}
+		Пусть A - вполне непрерывный оператор, тогда если в спектре $\sigma(A)$ есть последовательность $\lambda_n$, то $\lambda_n \to 0$. 
+	\end{theorem}
+	
+\subsection{Спектр самосопрожяенного оператора}
+	$H$ - гильбретово. $A: H \to H$ - линейный ограниченный самосопряженный. 
+	\begin{theorem}
+		Пусть A - ограниченный самосопряженный оператор, тогда $\|A\| = \sup\limits_{\|x\| = 1} (Ax, x) = \mu$. 
+	\end{theorem}
+	\begin{theorem}
+		Ограниченный линейный оператор A - самоспряженный $\Leftrightarrow$ $Im \ (Ax, x) = 0, \forall x \in X$
+	\end{theorem}
+	\begin{theorem}
+		Пусть A ограниченный линейный самосопряженный оператор, тогда $\sigma(A) \subset \mathbb{R}$
+	\end{theorem}
+	\begin{lemma}
+		Собственные вектора $A$ отвечающие различным собственным значениям ортгональны. 
+	\end{lemma}
 \end{document}
