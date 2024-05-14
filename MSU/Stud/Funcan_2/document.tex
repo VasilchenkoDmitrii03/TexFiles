@@ -29,7 +29,7 @@
 		Полное евклидово (унитарное) бесконечномерное пространство называется Гильбертовым (обычно обозначается $H$)
 	\end{definition}
 	\begin{theorem}
-		Норма согласованная со скалярным произведением существует $\Leftrightarrow$ выполнено равенство $\|x+y\|^2 + \|x-y\|^2 = 2 \left(\|x\| + \|y\|\right)^2$
+		Норма согласованная со скалярным произведением существует $\Leftrightarrow$ выполнено равенство $\|x+y\|^2 + \|x-y\|^2 = 2 \left(\|x\|^2 + \|y\|^2\right)$
 	\end{theorem}
 	\subsection{Теорема об элементе с наименьшей нормой. Разложение гильбертова пространства
 		в прямую ортогональную сумму подпространств }
@@ -142,7 +142,7 @@
 		\end{cases}		
 	\end{equation}
 	\begin{definition}
-		Обобщённым решением второй краевой задачи (2.2) называется функция $u \in \dot{W}_2^1(0,1)$, удовлетворяющая тождеству $\forall v \in \dot{W}_2^1(0,1)$
+		Обобщённым решением второй краевой задачи (2.2) называется функция $u \in W_2^1(0,1)$, удовлетворяющая тождеству $\forall v \in W_2^1(0,1)$
 		$$
 		\int_0^1 \left(a(t) u'(t) v'(t) + c(t) u(t) v(t) \right) dt = \int\limits_0^1 f(t)v(t)dt
 		$$
@@ -150,6 +150,36 @@
 \begin{theorem}
 	Обобщённое решение задачи (2.2) существует и единственно
 \end{theorem}
+\subsection{Обобщённое решение краевых задач для уравнений в частных производных}
+\textbf{1-ая краевая задача}\newline
+$D \subset \mathbb{R}^n$ - ограниченная область. 
+\begin{equation}
+	\begin{cases}
+		\sum\limits_{i,j=1}^n \dfrac{\partial }{\partial x_j} \left(a_{ij}(x) \dfrac{\partial u}{\partial x_i}\right) - c(x)u(x) = - f(x) \\
+		u\vert_{\sigma D} = 0, \\
+		a_0 \|\xi\| \leq \sum\limits_{i,j=1}^{n} a_{ij}(x) |\xi_i| |\xi_j| \leq a_1 \|\xi\| \\ 	
+		0 < a_0 \leq a(x) \leq a1 < \infty, \\
+		0 \leq c_0 \leq c(x) \leq c1 < \infty, \\
+		f(x) \in L_2(D), \\
+		a(x), b(x) - \text{Ограниченные и измеримые на D}
+	\end{cases}		
+\end{equation}
+$\dot{W}_2^1(D)$ - аналогично функции обращаются в 0 на границе.
+\begin{definition}
+	Обобщённым решением второй краевой задачи (2.3) называется функция $u \in \dot{W}_2^1(D)$, удовлетворяющая тождеству $\forall v \in \dot{W}_2^1(D)$
+	$$
+	\int_D \left(\sum\limits_{i,j = 1}^n a_{ij}(x) \dfrac{\partial u}{\partial x_i} \dfrac{\partial v}{\partial x_i} + c(x) u(x) v(x) \right) dx = \int\limits_D f(x)v(x)dx
+	$$
+\end{definition}
+\begin{lemma}
+	(Неравенство Пуанкаре)\newline
+	$u(x) \in \dot{W}_2^1(D)$, тогда справедливо $\int_D u^2(x) dx  \leq C \int_D (\nabla u)^2 dx$, $C$ зависит только от области.
+\end{lemma}
+\begin{theorem}
+	Обобщённое решение задачи (2.3) существует и единственно.
+\end{theorem}
+\textbf{2-ая краевая задача}\newline
+Все аналогично, только на границе $\dfrac{\partial u}{\partial n}|_{\sigma D} = 0$ и $c_0 > 0$. 
 \section{Компактные (вполне непрерывные) операторы в гильбертовом пространстве}
 \subsection{Сопряженный оператор}
 	\begin{definition}
@@ -319,4 +349,20 @@ $X$ - банахово.
 		(Гильберта-Шмидта)\newline
 		В замыкании образа оператора A содержится полная ортноромированная система собственных векторов, отвечающих $\lambda \neq 0$
 	\end{theorem}
+\subsection{Теорема Гильберта-Шмидта для интегрального оператора}
+	Пусть $Ax(t) = \int_D K(t,s) x(s) ds$ - интегральный оператор.
+	\begin{enumerate}
+		\item $K(t,s) = \overline{K(s,t)}$
+		\item D - ограниченная область
+		\item $\int_D |K(t,s)|^2 ds \leq C , \forall t \in D$
+	\end{enumerate}
+	\begin{theorem}
+		Если $y = Ax$, то ряд по собственным функциям A сходится абсолютно и равномерно в D к функции $y(t)$. 
+	\end{theorem}
+\section{Нелинейные операторы. Теорема Шаудера о неподвижной точке}
+\subsection{Теорема Брауэра о неподвижной точке}
+ \begin{theorem}
+ 	(Брауэра)\newline
+ 	Любое непрерывное отображение замкнутого шара в себя в конечномерном нормированном пространстве имеет неподвижную точку. 
+ \end{theorem}
 \end{document}
