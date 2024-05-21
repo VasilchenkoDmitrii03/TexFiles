@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  11 MAY 2024 15:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  21 MAY 2024 21:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -998,7 +998,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (8.38382pt too wide) in paragraph at lines 61--69
+Overfull \hbox (8.38382pt too wide) in paragraph at lines 62--70
 []\T2A/cmr/m/n/10 Аналогичная за-да-ча изу-ча-лась как вспо-мо-га-тель-ная при 
 изу-че-нии за-да-чи Трикоми-Неймана
  []
@@ -1006,13 +1006,13 @@ Overfull \hbox (8.38382pt too wide) in paragraph at lines 61--69
 [1
 
 {C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (30.12502pt too wide) in paragraph at lines 94--96
+Overfull \hbox (30.12502pt too wide) in paragraph at lines 95--97
 \T2A/cmr/m/n/10 Диф-фе-рен-ци-ро-вать ряд (5) по x в $\OML/cmm/m/it/10 D$ \T2A/
 cmr/m/n/10 мож-но так как каж-дая из функ-ций $\OML/cmm/m/it/10 A[]e[] [] []$
  []
 
 [2] [3]
-Overfull \hbox (9.32253pt too wide) detected at line 184
+Overfull \hbox (9.32253pt too wide) detected at line 185
 \OML/cmm/m/it/10 h[]\U/matha/m/n/10 p\OML/cmm/m/it/10 t\U/matha/m/n/10 q ^^P []
 [] [] [] []\OML/cmm/m/it/10 B[];  B[] \U/matha/m/n/10 ^^P [] \OML/cmm/m/it/10 C
 []C[]\U/matha/m/n/10 p^^A\OT1/cmr/m/n/10 1\U/matha/m/n/10 q[]\OML/cmm/m/it/10 ;
@@ -1020,7 +1020,7 @@ Overfull \hbox (9.32253pt too wide) detected at line 184
  []
 
 [4]
-Overfull \hbox (29.664pt too wide) detected at line 241
+Overfull \hbox (29.664pt too wide) detected at line 242
 [] [] \OML/cmm/m/it/10 e[]C[]C[]\U/matha/m/n/10 p^^A\OT1/cmr/m/n/10 1\U/matha/m
 /n/10 q[] ^^P [] \OML/cmm/m/it/10 e[]C[] [] C[]\U/matha/m/n/10 p^^A\OT1/cmr/m/n
 /10 1\U/matha/m/n/10 q[]\OML/cmm/m/it/10 e[] \U/matha/m/n/10 ^^P p\OT1/cmr/m/n/
@@ -1029,7 +1029,7 @@ Overfull \hbox (29.664pt too wide) detected at line 241
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 266--273
+Underfull \hbox (badness 10000) in paragraph at lines 267--274
 
  []
 
@@ -1039,7 +1039,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cite.\320\234
 y used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.286 \end{document}
+l.287 \end{document}
                     ] (document.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1049,48 +1049,38 @@ L3 programming layer <2024-02-20>
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `document.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `document.out':
-(rerunfilecheck)             Before: 136A4E85B1BBB7D6B2C79B9F7CF8D1DB;126
-(rerunfilecheck)             After:  70A81B567762FBE4DC0C7A3289FF2D0C;126.
+Package rerunfilecheck Info: File `document.out' has not changed.
+(rerunfilecheck)             Checksum: 70A81B567762FBE4DC0C7A3289FF2D0C;126.
  ) 
 Here is how much of TeX's memory you used:
- 13195 strings out of 474435
- 201780 string characters out of 5742405
+ 13194 strings out of 474435
+ 201768 string characters out of 5742405
  1946190 words of memory out of 5000000
  35331 multiletter control sequences out of 15000+600000
  568625 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,7n,79p,620b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{equation.0.9} has been referenced but does not exis
-t, replaced by a fixed one
-
- <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi420\math
-x10.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
-ti1000.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600
-\labx1000.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathab
-x/dpi600\mathb10.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public
-/mathabx/dpi600\mathx10.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour
-/public/mathabx/dpi600\matha7.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/
-ljfour/public/mathabx/dpi600\matha10.pk> <C:\Users\User\AppData\Local\MiKTeX\fo
-nts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\User\AppData\Local\MiKTeX
-\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1728.pk> <C:\Users\User\AppData\Local\MiK
-TeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1000.pk><C:/Users/User/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/User/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/User
-s/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5
-.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmr7.pfb>
-Output written on document.pdf (6 pages, 181092 bytes).
+ <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi420\ma
+thx10.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\
+lati1000.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi6
+00\labx1000.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public/math
+abx/dpi600\mathb10.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/publ
+ic/mathabx/dpi600\mathx10.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfo
+ur/public/mathabx/dpi600\matha7.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/p
+k/ljfour/public/mathabx/dpi600\matha10.pk> <C:\Users\User\AppData\Local\MiKTeX\
+fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\User\AppData\Local\MiKT
+eX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1728.pk> <C:\Users\User\AppData\Local\M
+iKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1000.pk><C:/Users/User/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Use
+r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Us
+ers/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb
+><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r5.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmr7.pfb>
+Output written on document.pdf (6 pages, 181081 bytes).
 PDF statistics:
- 363 PDF objects out of 1000 (max. 8388607)
- 20 named destinations out of 1000 (max. 500000)
+ 362 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
  9 words of extra memory for PDF output out of 10000 (max. 10000000)
 
