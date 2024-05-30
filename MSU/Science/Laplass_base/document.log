@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  21 MAY 2024 21:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3) (preloaded format=pdflatex 2024.3.16)  30 MAY 2024 13:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -998,11 +998,6 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (8.38382pt too wide) in paragraph at lines 62--70
-[]\T2A/cmr/m/n/10 Аналогичная за-да-ча изу-ча-лась как вспо-мо-га-тель-ная при 
-изу-че-нии за-да-чи Трикоми-Неймана
- []
-
 [1
 
 {C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
@@ -1011,8 +1006,18 @@ Overfull \hbox (30.12502pt too wide) in paragraph at lines 95--97
 cmr/m/n/10 мож-но так как каж-дая из функ-ций $\OML/cmm/m/it/10 A[]e[] [] []$
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
+
+ []
+
 [2] [3]
-Overfull \hbox (9.32253pt too wide) detected at line 185
+Overfull \hbox (9.32253pt too wide) detected at line 194
 \OML/cmm/m/it/10 h[]\U/matha/m/n/10 p\OML/cmm/m/it/10 t\U/matha/m/n/10 q ^^P []
 [] [] [] []\OML/cmm/m/it/10 B[];  B[] \U/matha/m/n/10 ^^P [] \OML/cmm/m/it/10 C
 []C[]\U/matha/m/n/10 p^^A\OT1/cmr/m/n/10 1\U/matha/m/n/10 q[]\OML/cmm/m/it/10 ;
@@ -1020,7 +1025,7 @@ Overfull \hbox (9.32253pt too wide) detected at line 185
  []
 
 [4]
-Overfull \hbox (29.664pt too wide) detected at line 242
+Overfull \hbox (29.664pt too wide) detected at line 248
 [] [] \OML/cmm/m/it/10 e[]C[]C[]\U/matha/m/n/10 p^^A\OT1/cmr/m/n/10 1\U/matha/m
 /n/10 q[] ^^P [] \OML/cmm/m/it/10 e[]C[] [] C[]\U/matha/m/n/10 p^^A\OT1/cmr/m/n
 /10 1\U/matha/m/n/10 q[]\OML/cmm/m/it/10 e[] \U/matha/m/n/10 ^^P p\OT1/cmr/m/n/
@@ -1029,7 +1034,7 @@ Overfull \hbox (29.664pt too wide) detected at line 242
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 267--274
+Underfull \hbox (badness 10000) in paragraph at lines 273--280
 
  []
 
@@ -1039,7 +1044,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cite.\320\234
 y used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.287 \end{document}
+l.293 \end{document}
                     ] (document.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1053,13 +1058,13 @@ Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: 70A81B567762FBE4DC0C7A3289FF2D0C;126.
  ) 
 Here is how much of TeX's memory you used:
- 13194 strings out of 474435
- 201768 string characters out of 5742405
+ 13198 strings out of 474435
+ 201810 string characters out of 5742405
  1946190 words of memory out of 5000000
- 35331 multiletter control sequences out of 15000+600000
- 568625 words of font info for 60 fonts, out of 8000000 for 9000
+ 35333 multiletter control sequences out of 15000+600000
+ 570236 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,7n,79p,620b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,7n,79p,618b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi420\ma
 thx10.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\
 lati1000.pk> <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi6
@@ -1078,7 +1083,7 @@ ers/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb
 ><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 r5.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmr7.pfb>
-Output written on document.pdf (6 pages, 181081 bytes).
+Output written on document.pdf (6 pages, 181115 bytes).
 PDF statistics:
  362 PDF objects out of 1000 (max. 8388607)
  19 named destinations out of 1000 (max. 500000)
