@@ -358,4 +358,159 @@
 			\item $\forall u \in U: \ \dfrac\ae2 \|u - u_*\|^2 \leq J(u) - J(u_*)$
 		\end{enumerate}
 	\end{theorem}
+\section{Метрическая проекция точки на выпуклое замкнутое множество в гильбертовом пространстве, её свойства. Примеры}
+	\begin{definition}
+		Пусть $U \subset H$. Проекцией элемента $u \in H$ на множество $U$ называется $w \in U$: $\|w - u\| = \inf\limits_{v\in U} \|v - u\|$
+	\end{definition}
+	\begin{theorem}
+		(существование и единственность и свойства проекции)\newline
+		Пусть $U$ - выпуклое и замкнутое, тогда
+		\begin{enumerate}
+			\item $\forall u \in H \ \exists! w = P_uu$.
+			\item $w = P_uu \Leftrightarrow (w-u, v- w) \geq 0, \forall v \in U$. 
+		\end{enumerate}
+	\end{theorem}
+	\begin{theorem}
+		(о нестрогой сжимаемости)\newline
+		Пусть $U$ - выпуклое и замкнутое мноежство $\Rightarrow$  $\forall u, v \in H \ \ \|P_uu - P_uv\| \leq \|u - v\|$. 
+	\end{theorem}
+	\begin{sample}
+		$U = B_R(0)$, $u \in H, w = P_uu$, $w = \begin{cases}
+			u, u \in U \\
+			\dfrac{u}{\|u\|}R, u \notin U
+		\end{cases}		$. Проверим свойство: ссли $u \in U$ то очевидно, пусть $u \notin U$, тогда $(	\dfrac{u}{\|u\|}R - u, v - 	\dfrac{u}{\|u\|}R) = \left(\dfrac{R}{\|u\|} -1\right) (u, v - 	\dfrac{u}{\|u\|}R)$. Первое слагаемое неположительно, второе тоже т.к. $\|v\| \leq R$. Поэтому условие выполняется. 
+	\end{sample}
+	\begin{sample}
+		$U = \{u \in L_2(a,b) \vert \alpha(t) \leq u(t) \leq \beta(t), \alpha(t), \beta(t) \in L_2(a,b)\}$,  $\|u(t) - h(t)\|_{L_2}^2 = \int\limits_a^b |u(t) - h(t)|^2 dt \to \inf$ \newline
+		$P_Uh = \begin{cases}
+			h(t), \alpha(t) \leq h(t) \leq \beta(t) \\
+			\beta(t), \beta(t) \leq h(t) \\
+			\alpha(t), h(t) \leq \alpha(t)
+		\end{cases}$
+	\end{sample}
+	
+\section{Градиентный метод. Метод проекции градиента. Их сходимость}
+	Решаем задачу $J(u) \to \inf$ в гильбертовом пространстве. Многие методы решения укладываются в итерационную схему:
+	\begin{equation}
+		u_{k+1} = u_k + \alpha_k p_k
+	\end{equation}
+	$u_0$ - задано, $\alpha_k$ - шаг, $p_k$ - поправление шага. 
+	\begin{enumerate}
+		\item $p_k = -J'(u_k)$ - наискорейшее локальное убывание 
+		\item $\alpha_k$ можно выбирать например так: $\alpha_k \in (\text{Argmin}_{\alpha \in \mathbb{R}} J(u_k + \alpha p_k))$
+		\item $u_0$ хочется выбрать как можно ближе к $u_*$. 
+		\item Правило останова: \begin{enumerate}
+			\item малость градиента $\|J'(u_k)\| \leq \varepsilon$ -строгий
+			\item $\dfrac{\|u_{k+1} -u_k \|}{\|u_k\|} \leq \varepsilon$ -слабый
+			\item $\dfrac{|J(u_{k+1}) - J(u_k)|}{|J(u_k)|}\leq \varepsilon$ - самый слабый
+		\end{enumerate}
+	\end{enumerate}
+	\subsection*{Градиентный метод}
+		Его имеет смысл применять к задачам вида $J(u) \to \inf, \ u\in U\subset H, \ J(u) \in C^1(H)$\newline
+		Представляет из себя итерационный процесс $u_{k+1} = u_k - \alpha_k J'(u_k), \ \alpha_k > 0, \ k = 0, 1, 2, \dots$
+		Выбор длины шага можно делать по-разному:
+		\begin{enumerate}
+			\item константный шаг (проблемы: зацикливание, перескок)
+			\item метод дробления: сначала задаем $\alpha_*$б потом $\alpha_k = \dfrac{\alpha_*}{2^m}, \ m = 0, 1, 2, \dots$. На каждом шаге проверяется будет ли $J(u_k - \dfrac{\alpha_*}{2^m}J'(u_k)) < J(u_k)$ и в качестве m берется первый, при котором выполняется это неравенство.
+			\item метод скорейшего спуска: выбираем $\alpha$ для оптимального убывания.
+		\end{enumerate}
+		\begin{sample}
+			$J(u) = \dfrac12 x^2 + \dfrac14 y^4 - \dfrac12 y^2 \to \inf, \ u \in \mathbb{R}^2$. Очевидно, что $J_* = - \dfrac14$, $U_* = \{(0,1), (0, -1)\}$. Решим с помощью градиентного метода: $J'(u) = (x, y^3 - y)$\newline
+			$u_0 = (1, -1)$, $\alpha_k = \dfrac12$. $J'(u_0) = (1, 0)$ $u_1 = (\dfrac12 , -1)$, $u_2 = (\dfrac14 , -1), \dots, u_k = (2^{-k}, -1)$. 	
+		\end{sample}
+	\subsection*{Метод проекции градиента}
+		Отличается тем, что теперь ищем оптимум не во всем пространстве, а на $U \neq H$. Тогда в какой-то момент значение функционала в точке, не принадлежащей множесту $U$ неопределено. Исправляем так:\newline
+		$u_{k+1} = P_u(u_k - \alpha_k J'(u_k)), \ \alpha_k > 0, k =0, 1, 2, \dots$.
+		\begin{theorem*}
+			(о сходимост МПГ)\newline
+			Пусть $U$ - выпуклое, замкнутое множество из $H$ и $J(u) \in C^1(U)$ и градиент $J(u)$ удовлетворяет условию Липшица с константой $L > 0$ на $U$. Пусть $J(u)$ сильно выпуклый на $U$ с константой $\ae >0$ и коэффициенты $\alpha_k  = \alpha \in (0, \dfrac{2\ae}{L^2})$. Тогда при $\forall$ начальном условии последовательность $u_k$ сходится к решению $u_*$ и справедлива оценка: $\|u_k-u_*\| \leq q^k\|u_0 - u_*\|, \ q = \sqrt{1 - 2 \ae\alpha + \alpha^2 L^2}$
+		\end{theorem*}
+	\subsection*{Метод скорейшего спуска}
+	$\alpha_k = \text{Argmin}_{\alpha \geq 0} J(u_k - \alpha J'(u_k))$. 
+	\begin{sample}
+		$J(u) = \|u\|^2$, $J'(u) = 2 u$. Пусть $u_0 \in H$, тогда $ u_1 = u_0 - \alpha J'(u_0) = u_0 - 2 \alpha u_0 = (1- 2\alpha) u_0$. $J(u_0 - \alpha J'(u_0)) = \|(1- 2\alpha )u_0)\|^2 = (1-2\alpha)^2 \|u_0\|^2 \Rightarrow \alpha_0 = \dfrac12$
+	\end{sample}
+\section{Метод Ньютона. Его сходимость}
+	Решение задачи условной минимизации: $J(u) \to \inf_{u\in U}, \ U \neq H$. \newline
+	Идея: Пусть уже известно k-ое приближение $u_k \in U$. Берем квадратичную часть приращения $J(u) - J(u_k) = J_k(u) + \overline{o}(\|u- u_k\|^2)$, где $J_k(u) = (J'(u_k), u - u_k) + \dfrac12 (J''(u_k)(u-u_k), u-u_k), \ u\in U$. И вычисляем $u_{k+1} = \text{Argmin}_{u\in U} J_k(u)$
+	
+	\begin{theorem}
+		(О сходимости метода Ньютона)\newline
+		Пусть U - выпуклое замкнутое множество, $\text{int} U \neq \emptyset$, $J(u)$ сильно выпукла с константой $\ae >0$ на $U$, $J(u) \in C^2(U)$, $J''(u)$ удовлетворяет на $U$ условию Липшица с константой $L> 0$. Пусть начальное приближение удовлетворяет условию $\|u_0 - u_*\| < \dfrac{2\ae}{L}$, $u_*$ -решение задачи и $(J''(u) \xi, \xi) \geq \ae \|\xi\|^2$. Тогда метода Ньютона порождает последовательность $\{u_k\}:\ \|u_k - u_*\| \leq \dfrac{2\ae}{L}q^{2^k}$, $q = \dfrac{L \|u_0 -u_*\|}{2\ae} < 1$
+	\end{theorem}
+\section{Метод покоординатного спуска}
+	В предыдущих методов нам требовалось вычислять градиент и гессиан функционала, но зачастую функционал не обладает нужной гладкостью. Рассмотрим этот метод для задаче минимизации без ограничений в конечномерном пространстве $J(u) \to \inf_{u\in \mathbb{R}^n}$. $\{e_i\}_{i=1}^{i=n}$ - базис. В дальнейшем будет использоваться бесконечный базис, поэтом доопределим $p_0 = e_1, p_1 = e_2, \dots, p_{n-1} = e_n, p_n = e_1, \dots, p_{2n-1}= e_n, \dots$ (циклически повторяются). \newline
+	Перед запуском метода выбираем $u_0 \in \mathbb{R}^n$, стартовый шаг $\alpha_0 > 0$ и коэффициент дробления шага $\lambda \in (0,1)$. Пусть найдено k-е приближение $u_k$ и текущее значение шага $\alpha_k > 0$. Найдем следующее приближение. Вычислим $u = u_k + \alpha_k p_k$
+	\begin{enumerate}
+		\item Если $J(u_k + \alpha_k p_k) < J(u_k)$, то $u_{k+1} = u_k + \alpha_k p_k$, $\alpha_{k+1} = \alpha_k$ и процесс продолжается со следующим по порядку базисным направлением $p_{k+1}$. 
+			\item Если $J(u_k - \alpha_k p_k) < J(u_k)$, то $u_{k+1} = u_k - \alpha_k p_k$, $\alpha_{k+1} = \alpha_k$ и процесс продолжается со следующим по порядку базисным направлением $p_{k+1}$. Будем называть $k+1$-ую итерацию удачной, если переход от $u_k$ к $u_{k+1}$ произошёл по этому или предыдущему пункту.
+		\item Если $J(u_k + \alpha_k p_k) \geq J(u_k)$, то итерация неудачная. В процессе вычислений ведётся подсчёт числа неудачных итераций, случившихся подряд. Если их число вместе с текущей не достигло $n$, то полагают $u_{k+1} = u_k$, $\alpha_{k+1} = \alpha_k$ и переходят к следующему базисному направлению. Иначе происходит дробление шага $\alpha_k$ с коэффициентом $\lambda: \alpha_{k+1} = \lambda \alpha_k$.
+	\end{enumerate}
+	\begin{theorem}
+		(о сходимости МПС)  \newline
+		Пусть $J(u)$ выпуклый, $J(u) \in C^1(\mathbb{R}^n)$, $u_0$ -начальное приближение,  множество Лебега $M_{J(u_0)} = \{u \in \mathbb{R}^n \vert J(u) \leq J(u_0)\}$ ограниченно. Тогда $\lim\limits_{k\to\infty} J(u_k) = J_*, \lim\limits_{k\to\infty} \rho(u_k, u_*) = 0$.		
+	\end{theorem}
+	\begin{sample}
+		$J\in C^1(\mathbb{R}^n)$ - существенно. $J(u) = (x-1)^2 + (y-1)^2 + 2 |x-y| -2$. $J_* = -2$, $U_* = \{(1,1)\}$. Функционал не дифференцируем в $x=y$. Пусть $u_0 = (0,0)$, тогда все $u_k = (0,0)$. Все шаги неудачные. 
+	\end{sample}
+\section{Метод штрафных функций и его сходимость}
+	Позволяет решать задачи с большим количеством ограничений. Нарушая эти ограничения получаем "штрафы". \newline
+	$H$ - гильбретово, $J(u) \to \inf_{u\in U}, U\subset H$, $U = \{u \in U_0 \vert g_1(u) \leq 0, \dots, g_m(u) \leq 0, g_{m+1}(u) =0, \dots g_{m+s}(u) = 0\}$ Функции $g_j$ как раз задают ограничения. Неструктурированные ограничения, задаываемые множеством $U_0$ считаем "терпимыми" и обязуемся их не нарушать. \newline
+	Будем использовать одни из самых распространённых штрафов: за нарушение неравенств будем применять индивидуальные штрафы типа срезки: $g_i^+ (u) = max{g_i(u), 0}$. За нарушения равенств будетм испльзовать модули $g_i^+ = |g_i(u)|$. Из индивидуальных штрафов собирается общий $P(u) = \sum\limits_{i=1}^{m+s} (g_i^+(u))^{P_i}, \ P_i \geq 1, \ i =\overline{1, m+s}$\newline
+	Свойства штрафов:
+	\begin{enumerate}
+		\item $P(u) \geq 0$
+		\item $u\in U \Leftrightarrow \begin{cases} u\in U_0 \\ P(u) = 0 \end{cases} \Leftrightarrow \begin{cases} u\in U_0 \\ g_i^+(u) = 0 , i = \overline{1, m+s}\end{cases}$
+		
+	\end{enumerate}
+	Общий штраф добавляется к исходному функционалу $J(u)$ и получаем следующую задачу: 
+	\begin{equation*}
+		\Phi_k(u) = J(u) + A_kP(u) \to \inf_{u \in U_0}
+	\end{equation*}
+	Задача на терпимом множестве. $\Phi_{k*} = \inf\limits_{u\in U_0} \Phi_k(u) \leq \Phi_k(u_k) \leq \Phi_{k*} + \varepsilon_k, \ \varepsilon_k > 0$. 
+	\begin{definition}
+		$\{P_k(u)\}$ - штрафная функция множества $U$ на множестве $U_0$, если
+		\begin{enumerate}
+			\item $P_k(u)$ определена на $U_0$ и неотрицательна на $U_0$
+			\item $\lim\limits_{k\to\infty} P_k(u) = \begin{cases}
+				0, u\in U\\
+				+\infty, u \in U_0 \backslash U
+			\end{cases}$
+		\end{enumerate}
+	\end{definition}
+	
+	\begin{theorem*}
+		(Теорема о сходимости МШФ)\newline
+		Пусть H-гильбертово пространство, множество $U_0 \subset H$ слабо замкнут в $H$, исходная функция $J(u)$ и все индивидуальные штрафы $g_i^+(u)$ слабо полунепрерывны снизу на $U_0$. Пусть также нижняя грань $J(u)$ на $U_0$ конечна, а $\delta$ - расширение $U(\delta) = \{u\in U_0 \vert g_i^+(u) \leq \delta , i =\overline{1, m+s}\}$ допустимого множества  $U$ при некотором $\delta$. Тогда если $A_k \to +\infty$ и $ \varepsilon_k \to 0$, то для элементов $u_k$ имеет место сходимость по функционалу $J(u_k) \to J_*$, а у самой последовательности $\{u_k\}_{k=1}^\infty$ имеется слабый в H предльные точки, причем каждая из них принадлежит $U_*$. 
+	\end{theorem*}
+	\begin{sample}
+		$J(u) = x^2 + xy + y^2  \to \inf$, $U = \{u \in \mathbb{R}^2 \vert x+y=2\}$, $J_* =3$, $u* = (1,1)$. \newline
+		$\Phi_k(u) = J(u) + A_kP(u) = x^2 +xy+y^2 + k (|x+y-2)^2, k \in \mathbb{N}$. \newline
+		$\Phi_k'(u) = 0 \Rightarrow \left(\begin{matrix}
+			2x+y+2k(x+y-2)\\
+			x+2y+2k(x+y-2)
+		\end{matrix}\right) = \left(\begin{matrix}
+		0\\ 0
+		\end{matrix}\right)$\newline
+		$u_k =(x_k, y_k): \ x_k= y_k= \dfrac{4k}{3+4k}\to 1$ $u_* = (1,1)$.
+	\end{sample}
+\section{Правило множителей Лагранжа}
+ 	Та же задача, что и в предыдущем пункте. \newline
+ 	Введём функцию Лагранжа $L(u, \lambda) = \lambda_0 J(u) + \sum\limits_{i=1}^s \lambda_j g_j(u), \ u \in U_0, \lambda = (\lambda_0, \dots, \lambda_s), \lambda_j \geq 0$. 
+ 	
+	\begin{theorem}
+		(Правило множителей Лагранжа)\newline
+		Пусть $U_0$ - выпуклое замкнутое множество, $u_* \in U$ - точка локального минимума $J(u)$. $g_i(u)$ - непрерывно дифференцируемы в окрестности $u_*$.Тогда $\exists \overline{\lambda^*} = (\lambda_0^*, \dots, \lambda_s^*): ,  \overline{\lambda^*} \neq 0$. $\lambda_j \geq 0, j = \overline{0,m}$. $(\dfrac{dL}{du}(u_*,  \overline{\lambda^*}) , u - u_*) \geq 0, \forall u \in U_0, \ \lambda_j^*g_j(u_*) = 0, j = \overline{1, m}$. L - выпукла по $u$. Тогда $u_* \in \text{Agrmin }_{u \in U_0} L(u,  \overline{\lambda^*})$
+	\end{theorem}
+\section{Теорема Куна-Такера}
+	Задача как в предыдущем билете. \newline
+		Введём функцию Лагранжа $L(u, \lambda) = \lambda_0 J(u) + \sum\limits_{i=1}^s \lambda_j g_j(u), \ u \in U_0, \lambda = (\lambda_0, \dots, \lambda_s), \lambda_j \geq 0$. И возьмём $\lambda_0 = 1$.  \newline
+		$\Lambda_0 = \{\lambda = (\lambda_1, \dots, \lambda_s) \vert \lambda_1 \geq 0, \dots , \lambda_m \geq 0\}$
+	\begin{definition}
+		Точку $(u_*, \lambda^*) \in U_0 \times \Lambda_0$ называют седловой точкой функции Лагранжа, если $L(u_*, \lambda) \leq L(u_*, \lambda^*) \leq L(u, \lambda^*), \ \forall u \in U_0, \forall \lambda \in \Lambda_0$.
+	\end{definition}
+	\begin{theorem}
+		(достаточное услоиве оптимальности)\newline
+		Пусть функции $J(u), g_i(u), i=\overline{1,s}$ определены и конечны на $U_0$. Пусть $(u_*, \lambda^*)$ - седловая точка функции $L(u, \lambda)$. Тогда $u_* \in U_*$, $J(u_*) = J_* = L(u_*, \lambda^*)$.	
+	\end{theorem}
 \end{document}
