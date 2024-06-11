@@ -1,0 +1,351 @@
+\documentclass[11pt,twoside]{article}
+\usepackage[cp1251]{inputenc}
+\usepackage{amssymb,amsmath,amscd}
+\usepackage{fancyheadings}
+\usepackage[russian]{babel}
+\usepackage{bm}
+\textwidth=165mm
+\oddsidemargin=-4.4mm
+\evensidemargin=-4.4mm
+\textheight=234mm
+\topmargin=-16.6mm
+\headheight=5.0mm
+\headsep=6.6mm
+\footskip=8.1mm
+\renewcommand{\baselinestretch}{0.9}
+\usepackage{graphicx}
+\makeatother
+\usepackage{wrapfig}
+\newcommand{\GOD}{2024}
+\newcommand{\UDK}[1]{\noindent{\footnotesize\sl УДК #1}}
+\newcommand{\Nazva}[1]{\begin{center}\baselineskip=6.0mm{\Large\textbf{#1}}\end{center}\vspace*{0.5mm}}
+\newcommand{\Avtor}[1]{\centerline{\large\textbf{\copyright~\GOD~г. \ #1}}\vspace*{-4.0mm}}
+\newcommand{\AVTOR}{~}
+\newcommand{\NAZVA}{~}
+\newcommand{\lit}[3]{\vspace*{0.7mm}\par\noindent\makebox[5.2mm][r]{#1.~}\parbox[t]{159.8mm}{{\textit{#2}}~{#3}}\hspace*{-1.6mm}}
+\mathsurround=2pt
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\begin{document}
+
+\renewcommand{\abstractname}{}
+
+\centerline{\large\textbf{НАЗВАНИЕ РУБРИКИ}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% НАЗВАНИЕ РУБРИКИ вставить из следующего списка:
+%
+% ОБЫКНОВЕННЫЕ ДИФФЕРЕНЦИАЛЬНЫЕ УРАВНЕНИЯ
+% УРАВНЕНИЯ С ЧАСТНЫМИ ПРОИЗВОДНЫМИ
+% ИНТЕГРАЛЬНЫЕ УРАВНЕНИЯ
+% ОПТИМАЛЬНОЕ УПРАВЛЕНИЕ
+% ТЕОРИЯ УПРАВЛЕНИЯ
+% ЧИСЛЕННЫЕ МЕТОДЫ
+% УРАВНЕНИЯ В КОНЕЧНЫХ РАЗНОСТЯХ
+% ОБЗОРНЫЕ СТАТЬИ
+% КРАТКИЕ СООБЩЕНИЯ
+% ХРОНИКА
+% НЕКРОЛОГ
+% ЛЮДИ НАУКИ
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{2mm}
+\hrule
+\vspace{2mm}
+
+% УДК
+\UDK{517.956}
+% Название статьи
+\Nazva{О КРАЕВОЙ ЗАДАЧЕ ДЛЯ УРАВНЕНИЯ ЛАПЛАСА СО СМЕШАННЫМИ ГРАНИЧНЫМИ УСЛОВИЯМИ В ПОЛУПОЛОСЕ}
+% Авторы
+\Avtor{ Н.Ю.~Капустин, Д.Д.~Васильченко}
+% Сокращенное название для колонтитула
+\renewcommand{\NAZVA}{ОБ ОДНОЙ ЗАДАЧЕ ГЕЛЛЕРСТЕДТА}
+% Фамилии авторов для колонтитула
+\renewcommand{\AVTOR}{КАПУСТИН, ВАСИЛЬЧЕНКО}
+
+\thispagestyle{empty}
+
+% Текст аннотации
+\begin{abstract}\noindent
+	В работе доказаны теоремы существования и единственности решения
+уравнения Лапласа со смешанными граничными условиями в полуполосе, а также получены интегральные представления для частных
+производных решения.
+\medskip\\
+DOI: % Необходимый номер DOI поставит редакция журнала
+\end{abstract}
+\bigskip
+Рассмотрим краевую задачу для уравнения Лапласа
+\begin{equation}
+	\dfrac{\partial^2 u}{\partial x^2} +\dfrac{\partial^2 u}{\partial y^2} = 0
+\end{equation}
+в полуполосе $D = \{(x,y) :\  0 < x < \pi, y > 0\}$	в классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$\newline
+с граничными условиями
+\begin{equation}
+	u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0, \ y > 0, 
+\end{equation}
+\begin{equation}
+	\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \left[\dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2(0,\pi) , 
+\end{equation}
+\begin{equation}
+	u(x,y) \rightrightarrows 0, y \to +\infty. 
+\end{equation}
+
+
+Аналогичная задача рассматривалась как вспомогательная при изучении задачи Трикоми-Неймана
+для уравнения Лаврентьева-Бицадзе с граничными условиями второго рода на боковых сторонах
+полуполосы и коэффициентом $\dfrac{1}{k}$ при
+$\dfrac{\partial u}{\partial y}(x,y), \vert k\vert>1, $ в статье [1].
+На линии изменения типа ставилось условие склеивания нормальных производных
+по Франклю. Случай $k=1$ (классическая задача с непрерывным градиентом)
+не рассматривался и теорема единственности для вспомогательной задачи
+не доказывалась.
+
+На задачу Трикоми с эллиптической частью в виде полуполосы обратил внимание
+А.В. Бицадзе в связи с математическим моделированием плоскопараллельных
+движений газа. В данном случае построение решения конформным отображением
+приводится к краевой задаче относительно аналитической функции в верхней
+полуплоскости [2, стр. 327]. На основании известной формулы Шварца [2, стр. 315]
+А.В. Бицадзе было выписано в квадратурах решение этой краевой задачи. 
+
+В работе [4] получено интегральное представление регулярного решения задачи для уравнения Лапласа
+в полукруге с краевым условием первого рода на полуокружности и двумя различными
+краевыми условиями типа наклонной производной на двух прямолинейных участках границы.
+	\par
+\textbf{Теорема 1.} \textit{Решение задачи (1 - 4) существует, причём его можно представить в виде ряда}
+\begin{equation}
+	u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
+\end{equation}
+\textit{где коэффициенты $A_n, \ n =0,1,2, \dots$ определяются из разложения}
+\begin{equation}
+	\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]} = \dfrac{\varphi(x)}{\sqrt2}.
+\end{equation}
+
+\par	
+Доказательство. Докажем существование решения задачи $(1 - 4)$. В силу основного результата работы $[2]$ система  $\left\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\right\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Разложим $\dfrac{\varphi(x)}{\sqrt2}$ по этой системе. Коэффициенты разложения в формуле (6) удовлетворяют неравенствам Бесселя
+\begin{equation*}
+	C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} ,\ 0 < C_1 < C_2, 
+\end{equation*}
+где $C_1, C_2$ не зависят от $\varphi$. Следовательно сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$ и сходится равномерно ряд (5). Дифференцировать ряд (5) по x в $D$ можно так как каждая из функций $A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}$ имеет в области $D$ производную, сам ряд (5) сходится равномерно и ряд производных 
+\begin{equation*}
+	\sum\limits_{n=0}^{\infty} A_n \left(n+\dfrac12\right)e^{-\left(n + \dfrac12\right)y} \cos{\left[\left(n + \dfrac12\right)x\right]}
+\end{equation*}
+сходится равномерно в $D$. Аналогично можно показать, что (5) можно дважды дифференцировать по x и y. Функция (5) является решением уравнения (1) и удовлетворяет граничному условию (2). Условие (4) выполняется так как  $\sum\limits_{n=0}^{\infty} e^{-\left(n + \frac12\right)y} = \dfrac{e^{-y/2}}{1 - e^{-y}}$. Проверим выполнение условия (3).\newline
+
+Согласно разложению (6), условие (3) принимает вид
+\begin{equation*}
+	I(y) =  2 \int\limits_0^\pi \left[	\sum\limits_{n=0}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx
+\end{equation*}
+Докажем, что $I(y) \to 0$ при $y \to 0+0$. Запишем
+\begin{equation*}
+	I(y) \leq I_1(y) + I_2(y), \text{ где}
+\end{equation*}
+\begin{equation*}
+	I_1(y) = 4\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx, 
+\end{equation*}
+\begin{equation*}
+	I_2(y) = 4\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx.
+\end{equation*}
+Зафиксируем  $\forall \varepsilon > 0$. В силу левой части неравенства Бесселя имеем оценку
+\begin{equation*}
+	I_2(y) =  4\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq 
+\end{equation*}
+\begin{equation*}
+	\leq  C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 \leq C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 < \dfrac{\varepsilon}{2},
+\end{equation*}
+если  $m$ достаточно велико.\newline
+
+Во втором слагаемом мы имеем дело с конечным числом элементов, поэтому:
+\begin{equation*}
+	I_1(y) = 4\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq
+\end{equation*}
+\begin{equation*}
+	\leq C_4 \sum\limits_{n=0}^{m} A_n^2 \left(n +\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 < \dfrac{\varepsilon}{2}
+\end{equation*}
+при $0 < y < \delta$, если $\delta$ достаточно мало. Условие (3) выполнено. Теорема доказана.
+\par
+\textbf{Теорема 2.} \textit{Решение задачи (1- 4) единственно}
+\par
+Доказательство. Докажем единственность решения этой задачи. Пусть $u(x,y)$ - решение однородной задачи.
+Введём обозначения $C_\varepsilon = (0, \varepsilon), C_R = (0, R), D_R = (\pi, R), D_\varepsilon = (\pi, \varepsilon)$. $\prod_{R\varepsilon}$ - прямоугольник $C_\varepsilon C_R D_R D_\varepsilon$. Справедливы следующие соотношения:
+\begin{equation*}
+	0 = \iint\limits_{\prod_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy = 
+\end{equation*}
+\begin{equation*}
+	=	\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  
+	- \iint\limits_{\prod_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right)dxdy + \iint\limits_{\prod_{R\varepsilon}} u_y u dx dy = 
+\end{equation*}
+\begin{equation*}
+	= - \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy - 
+	\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_y - u_x\right)u dx - \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon\right) u_x u dx - \int\limits_{C_\varepsilon D_\varepsilon}\dfrac{u^2}{2} dx +
+\end{equation*}
+\begin{equation*}
+	+ \int\limits_{C_R D_R} \dfrac{u^2}{2}dx
+\end{equation*}
+Отсюда следует
+\begin{equation*}
+	\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_x - u_y\right)u dx + \dfrac12  \int\limits_{C_R D_R} u^2 dx \leq
+\end{equation*}
+\begin{equation*}
+	\leq \left(R - \varepsilon\right) \left[\int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - u_x\right)^2 dx \right]^{\frac12} \left[\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx \right]^{\frac12} + \dfrac12 \int\limits_{C_RD_R} u^2 dx \leq
+\end{equation*}
+\begin{equation*}
+	\leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - u_x\right)^2 dx + \dfrac14 \int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +\dfrac12 \int\limits_{C_RD_R} u^2 dx, 
+\end{equation*}
+\begin{equation*}
+	\iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{4}\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon) \leq 
+\end{equation*}
+\begin{equation*}
+	\leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - u_x\right)^2 dx  +\dfrac12 \int\limits_{C_RD_R} u^2 dx
+\end{equation*}
+В силу (3)
+\begin{equation*}
+	\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{C_\varepsilon D_\varepsilon} \left(u_y - u_x\right)^2 dx = 0
+\end{equation*}
+отсюда вытекает соотношение
+\begin{equation*}
+	\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + \dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{C_RD_R} u^2 dx
+\end{equation*}
+Устремим теперь $R \to \infty$, тогда $\int\limits_{C_RD_R} u^2 dx \to 0$, отсюда $u(x,y) \equiv 0$ в $\overline{D}$. Теорема доказана.
+\par
+
+	\textbf{Теорема 3.} \textit{Пусть $u(x,y)$ - решение задачи $(1)-(4)$, тогда $u_x, u_y$ представимы в виде}
+\begin{equation}
+	u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt, 
+\end{equation}
+\begin{equation}
+	u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt,
+\end{equation}
+где $z = x + iy$. 
+\par
+Доказательство. Рассмотрим равенство (6). Система синусов $\left\{\sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]}\right\}_{n=0}^{\infty}$ образует базис в $L_2(0,\pi)$. Поэтому для коэффициентов $A_n\left(n+\dfrac12\right)$ справедливо следующее представление [2]:
+\begin{equation*}
+	A_n\left(n+\dfrac12\right) = \int\limits_0^\pi h_{n+1}(t) \dfrac{\varphi(t)}{\sqrt2} dt, 
+\end{equation*}
+где
+\begin{equation*}
+	h_n(t) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^n \sin{kt} B_{n-k}, \ B_{l} = \sum\limits_{m=0}^{l} C_{\gamma/\pi}^{l-m} C_{-\gamma / \pi -l}^{m} (-1)^{l-m}, \ C_l^n = \dfrac{l(l-1)\dots (l-n+1)}{n!}. 
+\end{equation*}
+\par
+Пусть $u(x,y)$ - решение задачи $(1 -4)$, тогда
+\begin{equation*}
+	u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}
+\end{equation*}
+и соотвественно
+\begin{equation*}
+	u_y(x,y) = -\sum\limits_{n=0}^{\infty} A_n \left(n +\dfrac12\right) e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}=
+\end{equation*}
+\begin{equation*}
+	= - \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]} dt, 
+\end{equation*}
+или
+\begin{equation*}
+	u_y(x,y) = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{-\left(n + \dfrac12\right)y} e^{i\left(n + \dfrac12\right)x} dt = 
+\end{equation*}
+\begin{equation*}
+	= -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{i\left(n+\dfrac12\right) z}  dt = \vert m = n + 1 \vert = 
+\end{equation*}
+\begin{equation*}
+	= -  Im \ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{i\left(m-\dfrac12\right) z}  dt = 
+\end{equation*}
+\begin{equation*}
+	= -  Im \ e^{-\dfrac{iz}{2}}\ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{im z}  dt .
+\end{equation*}
+Поменяем местами знаки интергирования и суммирования
+\begin{equation*}
+	u_y(x,y)  = -  Im \ e^{-\dfrac{iz}{2}}\  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  \sum\limits_{m=1}^{\infty}   h_{m}(t)  e^{im z}  dt
+\end{equation*}
+Введём новое обозначение:
+\begin{equation*}
+	I(t,z) = \sum\limits_{m=1}^{\infty}  h_{m}(t)  e^{im z}
+\end{equation*}
+\begin{equation*}
+	I(t,z) =\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{n=1}^{\infty}   \sum\limits_{k=1}^n \sin{kt} B_{n-k} e^{inz} = 
+	\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{n=k}^{\infty} e^{inz} B_{n-k}
+\end{equation*}
+и новый индекс $m = n - k$
+\begin{equation*}
+	I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m =0 }^{\infty} e^{i(m+k)z} B_{m} = 
+	\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} \sum\limits_{m =0 }^{\infty} e^{imz} B_{m}
+\end{equation*}
+\begin{equation*}
+	\sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} =  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}
+\end{equation*}
+Рассмотрим второй ряд:
+\begin{equation*}
+	\sum\limits_{l =0 }^{\infty} e^{ilz} B_{l} = \sum\limits_{l =0 }^{\infty} e^{ilz} \sum\limits_{m=0}^{l} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = \sum\limits_{m=0}^{\infty} \sum\limits_{l=m}^{\infty} e^{ilz} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = 
+\end{equation*}
+\par
+Введём новый индекс суммирования $k = l -m$
+\begin{equation*}
+	\sum\limits_{m=0}^{\infty} \sum\limits_{k=0}^{\infty} e^{i(m+k)z} C^{k}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{k} = \sum\limits_{m=0}^{\infty} e^{imz} C^{m}_{-\gamma/\pi - \beta} \sum\limits_{k=0}^{\infty}  C^{k}_{\gamma/\pi} (-1)^k e^{ikz} = (1 + e^{iz})^{-\gamma/\pi - \beta} (1- e^{iz})^{\gamma/\pi} =
+\end{equation*}
+\begin{equation*}
+	= (1 + e^{iz})^{1/2} (1- e^{iz})^{1/2} =\sqrt{1 - e^{i2z}},
+\end{equation*}
+так как в нашем случае $\beta = -1, \ \gamma = \pi/2$.
+Окончательно получаем формулу
+\begin{equation*}
+	u_y(x,y) = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2} I(t,z) dt =
+\end{equation*}
+\begin{equation*}
+	= - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt =
+\end{equation*}
+\begin{equation*}
+	= - Im\  \dfrac{2}{\pi} e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{1}{2\cos{t/2} \sqrt{\tan{t/2}}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt, 
+\end{equation*}
+т.е. представление:
+\begin{equation*}
+	u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{iz}{2}}  \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}} }{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt.
+\end{equation*}
+Рассуждая аналогично, получим представление
+\begin{equation*}
+	u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt.
+\end{equation*}
+Теорема доказана.
+\par
+	Работа выполнена при финансовой поддержке Министерства науки и высшего образования Российской Федерации в рамках реализации программы Московского центра фундаментальной и прикладной математики по соглашению № 075-15-2022-284.
+	\bigskip
+	
+	\begin{center}{СПИСОК ЛИТЕРАТУРЫ}\end{center}{\small
+	\lit{1}{Моисеев Е.И., Моисеев Т.Е., Вафадорова Г.О.}{Об интегральном представлении задачи Неймана-Трикоми для уравнения Лаврентьева-Бицадзе ~// Дифференциальные уравнения, \textbf{2015} Т. 51. №8. С.1070-1075}
+	\lit{2}{Моисеев Е.И.} {О базисности одной системы синусов ~// Дифференциальные уравнения, \textbf{1987} Т. 23. №1. С.177-189}
+	\lit{3}{Бицадзе А.В.} {Некоторые классы уравнений в частных производных.~// М., Наука,\textbf{1981}, 448 стр. }
+	\lit{4}{Моисеев Т. Е.}{Об интегральном представлении решения уравнения Лапласа со
+		смешанными краевыми условиями ~// Дифференциальные уравнения, \textbf{2011}, т. 47, №10, с.1446-1451. }
+		
+		\newpage
+		
+		УДК 517.956
+		
+		\vskip 24pt  Н.Ю. Капустин, Д.Д. Васильченко О краевой задаче для уравнения Лапласа со смешанными граничными условиями в полуполосе // Дифференциальные уравнения
+		
+		
+		\vskip 10pt
+		
+		В работе доказаны теоремы существования и единственности решения
+	уравнения Лапласа со смешанными граничными условиями в полуполосе, а также получены интегральные представления для частных
+	производных решения.
+		
+		\vskip 10pt
+		
+		Библиогр. 8 назв.
+		
+		
+		
+		\vskip 30pt
+		
+		
+		
+		Капустин Николай Юрьевич
+		
+		Московский государственный университет им. М.В.Ломоносова.
+		Факультет Вычислительной математики и кибернетики. \LARGE{\textbf{Уточнить!!!}}
+		
+		Васильченко Дмитрий Дмитриевич
+		
+		\LARGE{\textbf{Уточнить!!!}}
+		
+\end{document}

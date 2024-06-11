@@ -1,0 +1,361 @@
+\documentclass[9pt, a4paper]{extarticle}
+
+\usepackage[russian]{babel}
+\usepackage{amsfonts, amssymb, amsmath, mathabx, dsfont}
+
+% theorems, lemmas, etc.
+\usepackage{amsthm}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem*{theorem}{Теорема}
+\newtheorem*{lemma}{Лемма}
+\newtheorem*{corollary}{Следствие}
+\newtheorem*{notabene}{Замечание}
+\newtheorem*{definition}{Определение}
+\newtheorem*{sample}{Пример}
+
+% enumerating settings
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+
+\usepackage[left=30mm, top=20mm, right=15mm, bottom=20mm, nohead, footskip=10mm]{geometry}
+\title{Методы оптимизации}
+\date{}
+\begin{document}
+	\maketitle
+	\section{Теорема Вейерштрасса (метрический вариант).}
+	Задача: Минимизировать функционал $J(u)$ по множеству $U \subset X$, $X - \text{метрическое}$. \newline
+	$J_* = \inf\limits_{u \in U} J(u)$, $J(u_*) = J_*$, $U_* = \{u \in U \vert J(u) = J_*\}$
+	\begin{definition}
+		Функционал $J(u)$ на $U$ называется полунепревным снизу (сверху), если $\forall {u_n} \subset U: \ \rho(u_n, u_0) \to 0  \Rightarrow$ $J(u_0) \leq \lowlim_{n\to\infty} J(u_n)$ $\left( J(u_0) \geq \uplim_{n\to\infty}J(u_n)\right)$
+	\end{definition}
+	\begin{definition}
+		Последовательность $\{u_n\} \subset U$ называется минимизирующей, если $\exists J(u_n) \to J_*$
+	\end{definition}
+	\begin{definition}
+		Последовательность $\{u_n\} \subset U$ сходится к множеству $K \subset U$, если $\inf\limits_{u \in K} \rho(u_n, u) \to 0$
+	\end{definition}
+	\begin{theorem}
+		(Теорема Вейерштрасса метрический вариант)\newline
+		 Пусть $U$ - компкатное множество, $J(u)$ - полунепрервный снизу, тогда 
+		 \begin{enumerate}
+		 	\item $J_* > -\infty$
+		 	\item $U_*$ - непустое компактное множество
+		 	\item Любая минимизирующая последовательность $\{u_n\}$ сходится к $U_*$
+		 \end{enumerate}
+	\end{theorem}
+\section{Слабый вариант теоремы Вейерштрасса. Применение к задаче минимазции квадратичного функционала.}	
+	$H$ - гильбертово пространство.
+	\begin{definition}
+	Функционал $J(u)$ на $U$ называется слабо полунепревным снизу (сверху), если $\forall {u_n} \subset U: \ u_n \rightharpoondown u_0  \Rightarrow$ $J(u_0) \leq \lowlim_{n\to\infty} J(u_n)$ $\left( J(u_0) \geq \uplim_{n\to\infty}J(u_n)\right)$
+	\end{definition}
+	\begin{notabene}
+		Из слабой полунепрервыности следует сильная полунепрерывность
+	\end{notabene}
+	\begin{definition}
+		Последовательность $\{u_n\} \subset H$ слабо сходится к множеству $K \subset H$, если любая слабая предельная точка $\{u_n\}$ принадлежит $K$.
+	\end{definition}
+	\begin{definition}
+		Множество $U \in H$ называется выпуклым, если $\forall u, v \in U, \ \forall \alpha \in [0,1]: \alpha u + (1-\alpha) v \in U$. 
+	\end{definition}
+	\begin{definition}
+		Функционал $J(u)$ называется выпуклым на выпуклом $U$, если $\forall u, v \in U, \ \forall \alpha \in [0,1]: \ J(\alpha u + (1-\alpha)v) \leq \alpha J(u) + (1-\alpha) J(v)$.
+	\end{definition}
+	\begin{lemma}
+		Пусть $U$ - выпуклое замкнутое ограниченное множество, тогда $U$ - слабокомпактное множество. 
+	\end{lemma}
+	\begin{lemma}
+		Пусть $J(U)$ полунепрерывный снизу и выпуклый на $U$, тогда он слабо полунепрерывный снизу.
+	\end{lemma}
+	\begin{theorem*}
+	(Слабый вариант теоремы Вейерштрасса)\newline
+	Пусть $U \subset X$ - замкнутое ограниченное выпуклое множество, $J(u)$ - выпуклый и полунепрерывный на $U$, тогда 
+	\begin{enumerate}
+		\item $J_* > -\infty$
+		\item $U_*$ - непустое замкнутое ограниченное выпуклое множество
+		\item Любая минимизирующая последовательность $\{u_n\}$ слабо сходится к $U_*$
+	\end{enumerate}
+	\end{theorem*}
+	\subsection*{Квадратичный функционал}
+	Функионал $J(u) = \|Au - f\|_F^2$, $A: H \to F$ - линейный ограниченный оператор, $f \in F$. Исследуем его свойства:
+	\begin{enumerate}
+		\item $J(u)$ непрерывный в силу непрерывности A и непрерывности нормы.
+		\item Проверим выпуклость $J(u)$: $J(\alpha u + (1-\alpha) v) = \|A\left(\alpha u + (1-\alpha) v\right) - f\|^2 = \|\alpha(Au - f) + (1 - \alpha) (Av - f) \|^2 \leq$ \newline
+		$\leq \left(\|\alpha(Au - f)\| + \|(1 - \alpha) (Av - f) \| \right)^2 \leq \{x^2 \text{выпукла}\} \leq |\alpha| \|(Au - f)\|^2 + |1 - \alpha| \| Av - f\|^2$
+		\item Полунепрерывный снизу
+		\item В общем случае не является слабо полунепрерывным т.к. если $A = I, f = 0$, то на последовательности ортонормированных векторов слабой сходимости не будет.
+		\item Слабо полунепрерывен снизу, т.к. полунепрерывен снизу и выпуклый.
+	\end{enumerate}
+\section{Существование решения задач минимизации терминального и интегрального квадратичных функционалов на решениях линейной системы ОДУ }
+	Рассматриваем задачу
+	\begin{equation*}
+		\begin{cases}
+			\dot{x}(t) = D(t) x(t) + B(t) u(t) + y(t), \ t \in (0, T) \\ 
+			x(0) = x_0
+		\end{cases}
+	\end{equation*}
+	$u(t)$ - функция управления \newline
+	Размерности: $x(t): n\times 1, \ D(t): n \times n, \ B(t) : n \times r, \ u(t): r\times 1, \ y(t): n \times 1$ \newline
+	Базово предполагаем, что $D(t), B(t) \in L_\infty(0,T); \ u \in L_2(0,T); \ x_0 \in \mathbb{R}^n$\newline
+	Надо найти пару $x(t) \in AC[0,T], u(t) \in L_2(0,T)$. $AC$ - абослютная непревность: 1) п.в. на $[0,T]$ существует производная; 2) верна формула Ньютона-Лейбница
+	\begin{definition}
+		Решением Задачи Коши по Каратеодори называется функция $x(t) \in AC[0,1]$ такая, что уравнение выполняется п.в., а граничное условие выполняется в классическом смысле. 
+	\end{definition}
+	\begin{definition}
+		Альтернативным решением называется функция $x(t) \in AC[0,1]$ такая, что выполняется интегральное соотношение: $x(t) = x_0 + \int\limits_0^t \left[D(t) x(t) + B(t) u(t) + y(t)\right] dt,\  \forall t \in [0,T]$
+	\end{definition}
+	\begin{theorem}
+		Пусть $D(t), B(t) \in L_\infty(0,T), \ u, y(t) \in L_2(0,T)$ тогда существует и единственно решение Задачи Коши. 
+	\end{theorem}
+	\begin{theorem}
+		(о существовании решения задачи ОУ линейной системы)\newline
+			Пусть $D(t), B(t) \in L_\infty(0,T)$, U - слабый компакт, тогда 
+					 \begin{enumerate}
+				\item $J_* > -\infty$
+				\item $U_* \neq \emptyset$
+				\item Любая минимизирующая последовательность $\{u_n\}$ слабо в $L_2(0,T)$ сходится к $U_*$
+			\end{enumerate}
+	\end{theorem}
+\section{Существование реения задачи об оптимальном нагреве стержня}
+	Рассматривается задача:
+	\begin{equation*}
+		\begin{cases}
+			y_t = y_{xx} , x \in (0, l), t \in (0, t)\\
+			y_x\vert_{x=0} = 0 \\
+			y_x + y\vert_{x = l} = u(t) \\
+			y\vert_{t=0} = 0
+		\end{cases}
+	\end{equation*}
+	Решение: $y = y(t; x)$. Рассмотрим функционал $J(u) = \int\limits_0^l \left(y(T, x, u) - f(x)\right)^2 dx$. Значение именно в $t = T$, то есть в конце процессса. Минимизируем этот функционал. По сути $y(T, x, u) = Au$, тогда $J(u) = \|Au - f\|_{L_2(0,l)}^2$.\newline
+	Пусть $y(t, x)$ - дважды гладкая функция, а $U$ - замкнутое ограниченное выпуклое множество. 
+	\begin{theorem}
+		(о существовании решения обратной задачи)\newline
+		Пусть $U$ - слабый компакт в $L_2(0,T)$, тогда 
+		\begin{enumerate}
+			\item $J_* > \infty$
+			\item $U_* \neq \emptyset$
+			\item Любая минимизирующая последовательность слабо сходится к $U_*$  в $L_2(0,T)$. 
+		\end{enumerate}
+	\end{theorem}
+\section{Дифференцирование по Фреше. Применение к квадратичному функционалу}
+	Пусть $F: X \to Y$, $X,Y$ - банаховы.
+	\begin{definition}
+		Оператор $A:X \to Y$ называется производной по Фреше оператора $F$ в т. $x \in X$, если $F(x+h) - F(x) = Ah + \overline{o}(\|h\|_X)$ при $\|h\|_X \to 0$
+	\end{definition}
+	\begin{lemma}
+		Производная по Фреше определяется единственным образом
+	\end{lemma}
+	\begin{definition}
+		Оператор $F''$ называется второй производной по Фреше от оператора $F$ в т. $x \in X$, если $F'(x+h) - F'(x) = F''h + \overline{o}(\|h\|_X)$ при $\|h\|_x \to 0$. 
+	\end{definition}
+	
+	\begin{definition}
+			Оператор $F$ дифференицируем на множестве $U \subset X$, если он определён на множестве $M: U \subset M$ и $\exists F'(u), \forall u \in U$. 
+	\end{definition}
+	\subsection*{Градиент и Гессиан}
+	Рассматриваем Гильбертово пространство $H$
+	\begin{definition}
+		Функционал $F'$ называется градиентом функционала $F$, в т. $x \in H$, если $F(x + h) - F(x) = (F'(x), h) + \overline{o}(\|x\|_H)$
+	\end{definition}
+	\begin{definition}
+		Функционал $F''(x)$ называется гессианом функционала $F$, в т. $x \in H$, если $F'(x + h) - F'(x) = F''(x)h + \overline{o}(\|x\|_H)$
+	\end{definition}
+	Найдем градиент и гессиан функционала $J(u) = \|Au - f\|_F^2$: \newline
+	$J(u+h) - J(u) = \|A(u+h) - f\|^2 - \|Au - f\|^2 = \|(Au - f) + Ah\|^2 - \|Au - f\|^2 = \|Au - f\|^2 + \|Ah\|^2 + 2 (Au - f, Ah) - \|Au -f\|^2 = (Au - f, Ah) + \|Ah\|^2$. Покажем, что  $\|Ah\|^2 \leq \|A\|^2 \|h\|^2 = \underline{O}(\|h\|^2) = \overline{o}(\|h\|)$. \newline
+	В итоге $J'(u) = 2 A^*(Au - f)$.\newline
+	$J'(u+h) - J'(u) = 2A^*A h$ $\Rightarrow$ $J''(u) = 2A^*A$.
+	
+\section{Необходимое условие локального минимума}
+	\begin{theorem*}
+		Пусть $U$ - выпуклое множество в $H$, $u_* \in U$ -локальный минимум $J(u)$ на $U$ и существует $J'(u_*)$ $\Rightarrow$ $(J'(u_*), u - u_*) \geq 0, \ \forall u \in U$. 
+	\end{theorem*}
+	\begin{theorem*}
+		Пусть $U$ - выпуклое множество в $H$, $u_* \in \text{int}U_*$ и  существует $J'(u_*)$ $\Rightarrow$ $(J'(u_*), u - u_*) = 0, \ \forall u \in U$. 
+	\end{theorem*}
+	\begin{sample}
+		$J(u) = u$, $u \in [1,2] \subset \mathbb{R}$. Понятно, что $u_* = 1$, $J_* = 1$, $J'(u) = I, \Rightarrow (J'(u_*), u- u_*) = (1, u - 1) \geq 0$ т.к. $u \in [1,2]$.
+	\end{sample}
+	\begin{sample}
+		Сложный и непонятный
+		
+	\end{sample}
+\section{Градиент терминального граничного функционала}
+	Рассматриваем задачу
+	\begin{equation*}
+		\begin{cases}
+			\dot{x}(t) = D(t) x(t) + B(t) u(t), \ t \in (0, T) \\ 
+			x(0) = 0
+		\end{cases}
+	\end{equation*}
+	Рассматриваем оператор $Au(t) = x(t)$ - сопоставляет решение функции управления. Функционал $J(u) = \|Au- f\|^2$, $J'(u) = 2A^*(Au - f)$. Необходимо найти $A^*$, т.е. $(Au, v) = (u, A^*v)$\newline
+	Домножим уравнение скалярно на $\psi(t)$ и проинтегрируем от 0 до T \newline
+	\begin{math}
+		\int\limits_0^T ( \psi(t), \dot{x}(t)) dt = \int\limits_0^T (\psi(t), D(t)x(t) + B(t)u(t)) dt \\
+		(\psi(t), x(t))\vert_0^T  - \int\limits_0^T (\dot{\psi}(t), x(t)) dt= \int\limits_0^T (\psi(t), Au(t)) dt \\
+		(\psi(T), x(T))- \int\limits_0^T (\dot{\psi}(t), x(t)) dt = \int\limits_0^T (\psi(t), Au(t)) dt , \  \text{Потребуем  $v(t) = \psi(t)$} \\
+		(v, Au) = \int\limits_0^T (\dot{\psi}(t), x(t)) dt +  \int\limits_0^T (\psi(t), D(t)x(t) + B(t) u(t)) dt\\
+		(v, Au) = \int\limits_0^T (\dot{\psi}(t), x(t)) dt +  \int\limits_0^T \left[ (D^T \psi(t), x(t)) + (B^T \psi(t), u(t)) \right] dt \\
+		(v, Au) = \int\limits_0^T (\dot\psi(t) + D^T \psi(t), x(t)) dt + \int\limits_0^T (B^T(t)\psi(t), u(t))dt, \ \text{Потребуем $\dot\psi(t) + D^T \psi(t) = 0$}
+	\end{math}
+	\newline
+	Тогда $(v, Au) = \int\limits_0^T (B^T(t)\psi(t), u(t))dt $$\Rightarrow  (A^*v)(t) = B^T(t) \psi(t)$.  $\psi(t)$ определяется из двойственной задачи. 
+		\begin{equation*}
+		\begin{cases}
+			\dot\psi(t) = -D^T(t)\psi(t) \\
+			\psi(t) = v(t)
+		\end{cases}
+	\end{equation*}
+	
+\section{Градиент интегрального квадратичного функционала}
+	Рассматриваем задачу
+	\begin{equation*}
+		\begin{cases}
+			\dot{x}(t) = D(t) x(t) + B(t) u(t), \ t \in (0, T) \\ 
+			x(0) = 0
+		\end{cases}
+	\end{equation*}
+	$J_I(u) = \int\limits_0^T |x(t; u) - f(x)|^2 dt$, $Au = x(t; u)$, $J_I(u) = \|Au - f\|_{L_2}^2$, $J_I' = 2A^*(Au - f)$. Надо искать  $A^*$\newline
+	Нам подойдёт $A^* v = B^T \psi(t; v)$, где 
+	\begin{equation*}
+		\begin{cases}
+			\dot{\psi}(t) = -D^T(t) \psi(t) -v(t), \ t \in (0, T) \\ 
+			\psi(T) = 0
+		\end{cases}
+	\end{equation*}
+	Проверим это:
+	\begin{math}
+		(Au, c)_{L_2} = \int\limits_0^T x(t;u) v(t) dt = \int\limits_0^T x(t; u) \left[-\dot{\psi}(t) - D^T(t) \psi(t)\right]dt = -\int\limits_0^T x(t;u)\dot{\psi}(t) dt - \int\limits_0^T x(t;u) D^T(t)\psi(t)dt = \\
+		- x(t;u)\psi(t) \vert_{t=0}^{t=T} + \int\limits_0^T \dot{x}(t;u)\psi(t)dt - \int\limits_0^T x(t;u) D^T(t)\psi(t)dt = \int\limits_0^T\left[D(t) x(t) + B(t) u(t) \right]\psi(t) dt- \int\limits_0^T x(t;u) D^T(t)\psi(t)dt = \\
+		=\int\limits_0^T B(t) \psi(t) u(t) dt = (u(t), B^T \psi)_{L_2}
+	\end{math}
+\section{Градиент функционала в задаче о нагреве стержня}
+	Рассматриваем задачу
+	\begin{equation*}
+		\begin{cases}
+			y_t = y_{xx} , x \in (0, l), t \in (0, t)\\
+			y_x\vert_{x=0} = 0 \\
+			y_x + y\vert_{x = l} = u(t) \\
+			y\vert_{t=0} = 0
+		\end{cases}
+	\end{equation*}
+	Рассмотрим Функционал $J(u) = \int\limits_0^l |y(T, x; u) - f(x)|^2 dx$, $Au = y(T, x; u)$ тогда $J(u) = \|Au - f\|_{L_2}^2$, $J'(u) = 2A^* (Au - f)$. Нужно найти $A*$.\newline
+	Умножим уравнение на $\psi(t,x)$ и проитнегрируем по $Q = (0, T) \times (0,l)$. \newline
+	\begin{math}
+		\iint\limits_Q \left[y_{xx} - y_t\right] \psi dt dx = \int\limits_0^T \left[ \int\limits_0^l y_{xx} \psi dx\right] dt - \int\limits_0^l \left[\int\limits_0^T y_t \psi dt\right]dx = \{\text{По частям}\} = \int\limits_0^T\left[y_x\psi \vert_{x=0}^{x = l} - y\psi_x\vert_{x=0}^{x=l} + \int\limits_0^l y \psi_{xx} dx\right]dt - \int\limits_0^l \left[ y\psi \vert_{t=0}^{t=T} - \int\limits_0^T y \psi_t dt \right]dx =\int\limits_0^T y_x\psi \vert_{x=0}^{x = l} dt - \int\limits_0^T y\psi_x\vert_{x=0}^{x=l} dt - \int\limits_0^l  y\psi \vert_{t=0}^{t=T} dx + \iint\limits_Q y\left(\psi_{xx} + \psi_{t}\right) dt dx =  \\
+		= \{\text{Требуем $\psi_{xx} + \psi_{t} = 0$ в Q и $\psi_x\vert_{x=0} = 0$, много что обнуляется из-за граничных условий} \} = \\
+	    = \int\limits_0^T \left[y_x(t, l)\psi(t,l)  \right] dt  - \int\limits_0^T y(t, l) \psi_x(t, l) dt - \int\limits_0^l \left[y(T, x)\psi(T,x)\right] dx = \int\limits_0^T \left[u(t) - y(t,l) \right] \psi(t,l) dt  - \int\limits_0^T y(t, l) \psi_x(t, l) dt - (Au, v)_{L_2} = \\
+	   	= (u, \psi \vert_{x=l})_{L_2} - \int\limits_0^T \left[\psi(t,l) + \psi_x(t,l)\right] y(t,l)dt - (Au, v)_{L_2} = \{\text{Потребовали, чтобы $\psi(T,x) = v(x)$ и $(\psi_x + \psi) \vert_{x=l}= 0$}\} = \\
+	   	=  (u, \psi \vert_{x=l})_{L_2}  - (Au, v)_{L_2} = 0
+	\end{math}\newline
+	Получили, что $A^*v = \psi\vert_{x=l}$, где 
+		\begin{equation*}
+		\begin{cases}
+			\psi_t = -\psi_{xx} , x \in (0, l), t \in (0, t)\\
+			\psi_x\vert_{x=0} = 0 \\
+			\psi_x + \psi\vert_{x = l} = 0 \\
+			\psi\vert_{t=T} = v
+		\end{cases}
+	\end{equation*}
+\section{Выпуклые функции и функционалы. Теоремы о локальном минимимуме, о множестве Лебега, о касательной плоскости. Критерий оптимальности. Примеры}
+	\begin{definition}
+		Множество $U \in H$ называется выпуклым, если $\forall u, v \in U, \ \forall \alpha \in [0,1]: \alpha u + (1-\alpha) v \in U$. 
+	\end{definition}
+	\begin{definition}
+		Функционал $J(u)$ называется строго выпуклым на выпуклом $U$, если $\forall u, v \in U, \ \forall \alpha \in [0,1]: \ J(\alpha u + (1-\alpha)v) <  \alpha J(u) + (1-\alpha) J(v)$.
+	\end{definition}
+	\begin{definition}
+		Функционал $J(u)$ называется сильно выпуклым на выпуклом $U$ с константой $\ae > 0$, если $\forall u, v \in U, \ \forall \alpha \in [0,1]: \ J(\alpha u + (1-\alpha)v) \leq  \alpha J(u) + (1-\alpha) J(v) - \dfrac\ae2 \alpha(1-\alpha) \|u-v\|^2$.
+	\end{definition}
+	\begin{sample}
+		Функционал $J(u) = \|Au - f\|$ является выпуклым.
+	\end{sample}
+	Свойства строгой выпуклости:
+	\begin{enumerate}
+		\item $J_1(u), J_2(u)$ - строго выпуклы на $U$ и $\alpha_1, \alpha_2 >0$ $\Rightarrow$ $\alpha_1 J_1(u) + \alpha_2 J_2(u)$ строго выпулый на $U$. 
+		\item $J_1(u)$ - строго выпуклый, $J_2(u)$ - выпуклый на $U$ $\Rightarrow$ $J_1(u) + J_2(u)$ - строго выпуклый на $U$. 
+	\end{enumerate}
+	\begin{theorem}
+		(о локальном минимуме)\newline
+		$J(u)$ - выпуклый на $U$ $\Rightarrow$ точка локального минимума - точка глобального минимума.
+	\end{theorem}
+	\begin{theorem}
+		(о множестве Лебега)\newline
+		$J(u)$ - выпуклый на $U$ $\Rightarrow$ множество $L_c = \{u \in U \vert J(u) \leq c\}$ - замкнуто $\forall c \in \mathbb{R}$. 
+	\end{theorem}
+	Обратное неверно т.к. $J(u) = u^3, \ u\in \mathbb{R}, \ L_c = (-\infty, \sqrt[3]{c}]$
+	\begin{lemma}
+		Пусть $U$ - выпуклое, $J(u)$ - выпуклый на $U$, тогда $U_*$ - замкнуто.
+	\end{lemma}
+	\begin{lemma}
+			Пусть $U$ - выпуклое, $J(u)$ - строго выпуклый на $U$, тогда $U_*$ содержит одну точку или $U_* = \emptyset$.
+	\end{lemma}
+	\begin{sample}
+		$U_* = \emptyset$: \newline
+		\begin{enumerate}
+			\item $J(u) = u, \ u \in \mathbb{R} \Rightarrow J_* = - \infty, U_* = \emptyset$.
+			\item $J(u) = e^{-u}, \ u \in \mathbb{R} \Rightarrow J_* = 0, U_* = \emptyset$.
+		\end{enumerate}
+	\end{sample}
+	\begin{theorem}
+		(о касательной плоскости)\newline
+		Пусть $U$ - выпуклое, $J(u)$ сильно выпуклый на $U$ c $\ae > 0$ и в точке $v$ $\exists J'(v)$ $\Rightarrow$ $J(u) \geq J(v) + (J'(v), u - v) + \dfrac\ae2 \|u-v\|^2, \forall u \in H$. 
+	\end{theorem}
+	\begin{theorem}
+		(критерий оптимальности)\newline
+		Пусть $U$ - выпуклое, $J(u)$ выпуклый на $U$ и $\exists J'(u_*)$ $\Rightarrow$ $u_* \in U_* \Leftrightarrow \text{выполнено } (J'(u_*), u -u_*) \geq 0, \forall u \in U$. 
+	\end{theorem}
+	\begin{sample}
+		Решить уравнение $Au = f$, $A \in L(H \to H), A = A^*$. Эквивалентна задаче минизации функционала  $J(u) = (Au, u) - 2(u,f) \to min$. $J'(u_*) = 0, \ (A + A^*) u_* = 2f \Rightarrow Au_* = f$
+	\end{sample}
+\section{Критерий выпуклости функций и функционалов. Выпуклость квадртичного функционала}
+	\begin{theorem}
+		(критерий выпуклости)\newline
+		Пусть $U$ - выпуклое, $J(u) \in C^1(U)$, тогда следующие утверждения эквивалентны
+		\begin{enumerate}
+			\item $J(u)$ выпуклый
+			\item $J(u) > J(v) + (J'(v), u - v), \forall u,v \in U$
+			\item $(J'(u) - J'(v), u-v) \geq 0, \forall u, v \in U$
+		\end{enumerate}
+	\end{theorem}
+	Выпуклость квадратичного доказана в первом билете. 
+\section{Сильно выпуклые функции и функционалы, их свойства. Критерии сильной выпуклости функций и функционалов}
+	\begin{definition}
+		Функционал $J(u)$ называется сильно выпуклым на выпуклом $U$ с константой $\ae > 0$, если $\forall u, v \in U, \ \forall \alpha \in [0,1]: \ J(\alpha u + (1-\alpha)v) \leq  \alpha J(u) + (1-\alpha) J(v) - \dfrac\ae2 \alpha(1-\alpha) \|u-v\|^2$.
+	\end{definition}
+		Свойства сильно выпуклости:
+	\begin{enumerate}
+		\item $J_1(u), J_2(u)$ - сильно выпуклы на $U$ и $\alpha_1, \alpha_2 >0$ $\Rightarrow$ $\alpha_1 J_1(u) + \alpha_2 J_2(u)$ сильно выпулый на $U$. 
+		\item $J_1(u)$ - сильно выпуклый, $J_2(u)$ - выпуклый на $U$ $\Rightarrow$ $J_1(u) + J_2(u)$ - сильно выпуклый на $U$. 
+	\end{enumerate}
+	\begin{theorem}
+		(критерий сильной выпуклости)\newline
+		Пусть $U$ - выпукло, $J \in C^1(U)$, тогда $J(u)$ сильно выпуклый на $U$ с константой $\ae > 0$ $\Leftrightarrow$ $(J'(u) - J'(v), u -v) \geq \ae \|u - v\|^2, \forall u, v \in U$. 		
+	\end{theorem}
+	\begin{theorem*}
+		(второй критерий сильной выпуклости)\newline
+		Пусть $U$ - выпукло, $J \in C^2(U)$, $\text{int} U \neq \emptyset$, тогда $J(u)$ сильно выпуклый на $U$ с константой $\ae > 0$ $\Leftrightarrow$ $(J''(u)h, h)\geq \ae\|h\|, \forall u \in U, h \in H$.
+	\end{theorem*}
+	\begin{sample}
+		$J(u) = \|u\|^2$, $J'(u) = 2u$, $J''(u)= 2I$, $(J''(u)h, h) =  2 \|h\|^2 \geq \ae \|h\|^2 \Rightarrow \ae = 2$ 
+	\end{sample}
+	\begin{sample}
+		$J(u) = x^2 + 2xy + y^2 + z^2$, $u \in \mathbb{R}^3$.
+		\begin{equation*}
+			J''(u) = \left(\begin{matrix}
+				2,2,0\\
+				2,2,0\\
+				0,0,2
+			\end{matrix} \right)
+		\end{equation*}
+		Найдем собственные значения: $\lambda_1 = 0, \lambda_2 = 2, \lambda_3 = 4$. По критерию положительно опредленных матриц, все с.з. неотрицательны, значит матрица положительна определена: $(J''(u)h, h) \geq 0$. Но $J(u)$ не является сильно выпуклым т.к. при $\lambda_1$ значение ровно 0. 
+	\end{sample}
+	
+\section{Теорема Вейерштрасса для сильно выпуклых функционалов}
+	\begin{theorem}
+		Пусть $U$ - выпуклое, замкнутое, $J(u)$ сильно выпуклый на $U$ с $\ae > 0$ и полунепрерывный снизу на $U$, тогда
+		\begin{enumerate}
+			\item $J_* > - \infty$
+			\item $U_* = \{u_*\} \neq \emptyset$
+			\item $\forall u \in U: \ \dfrac\ae2 \|u - u_*\|^2 \leq J(u) - J(u_*)$
+		\end{enumerate}
+	\end{theorem}
+\end{document}
