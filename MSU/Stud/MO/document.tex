@@ -169,7 +169,7 @@
 		Пусть $U$ - выпуклое множество в $H$, $u_* \in U$ -локальный минимум $J(u)$ на $U$ и существует $J'(u_*)$ $\Rightarrow$ $(J'(u_*), u - u_*) \geq 0, \ \forall u \in U$. 
 	\end{theorem*}
 	\begin{theorem*}
-		Пусть $U$ - выпуклое множество в $H$, $u_* \in \text{int}U_*$ и  существует $J'(u_*)$ $\Rightarrow$ $(J'(u_*), u - u_*) = 0, \ \forall u \in U$. 
+		Пусть $U$ - выпуклое множество в $H$, $u_* \in \text{int}U$ - локальный минимум и  существует $J'(u_*)$ $\Rightarrow$ $(J'(u_*), u - u_*) = 0, \ \forall u \in U$. 
 	\end{theorem*}
 	\begin{sample}
 		$J(u) = u$, $u \in [1,2] \subset \mathbb{R}$. Понятно, что $u_* = 1$, $J_* = 1$, $J'(u) = I, \Rightarrow (J'(u_*), u- u_*) = (1, u - 1) \geq 0$ т.к. $u \in [1,2]$.
@@ -279,11 +279,11 @@
 	\end{theorem}
 	\begin{theorem}
 		(о множестве Лебега)\newline
-		$J(u)$ - выпуклый на $U$ $\Rightarrow$ множество $L_c = \{u \in U \vert J(u) \leq c\}$ - замкнуто $\forall c \in \mathbb{R}$. 
+		$J(u)$ - выпуклый на $U$ $\Rightarrow$ множество $L_c = \{u \in U \vert J(u) \leq c\}$ -выпукло $\forall c \in \mathbb{R}$. 
 	\end{theorem}
 	Обратное неверно т.к. $J(u) = u^3, \ u\in \mathbb{R}, \ L_c = (-\infty, \sqrt[3]{c}]$
 	\begin{lemma}
-		Пусть $U$ - выпуклое, $J(u)$ - выпуклый на $U$, тогда $U_*$ - замкнуто.
+		Пусть $U$ - выпуклое, $J(u)$ - выпуклый на $U$, тогда $U_*$ - выпуклое.
 	\end{lemma}
 	\begin{lemma}
 			Пусть $U$ - выпуклое, $J(u)$ - строго выпуклый на $U$, тогда $U_*$ содержит одну точку или $U_* = \emptyset$.
@@ -436,7 +436,7 @@
 	
 	\begin{theorem}
 		(О сходимости метода Ньютона)\newline
-		Пусть U - выпуклое замкнутое множество, $\text{int} U \neq \emptyset$, $J(u)$ сильно выпукла с константой $\ae >0$ на $U$, $J(u) \in C^2(U)$, $J''(u)$ удовлетворяет на $U$ условию Липшица с константой $L> 0$. Пусть начальное приближение удовлетворяет условию $\|u_0 - u_*\| < \dfrac{2\ae}{L}$, $u_*$ -решение задачи и $(J''(u) \xi, \xi) \geq \ae \|\xi\|^2$. Тогда метода Ньютона порождает последовательность $\{u_k\}:\ \|u_k - u_*\| \leq \dfrac{2\ae}{L}q^{2^k}$, $q = \dfrac{L \|u_0 -u_*\|}{2\ae} < 1$
+		Пусть U - выпуклое замкнутое множество, $\text{int} U \neq \emptyset$, $J(u)$ сильно выпукла с константой $\ae >0$ на $U$, $J(u) \in C^2(U)$, $J''(u)$ удовлетворяет на $U$ условию Липшица с константой $L> 0$. Пусть начальное приближение удовлетворяет условию $\|u_0 - u_*\| < \dfrac{2\ae}{L}$, $u_*$ -решение задачи . Тогда метода Ньютона порождает последовательность $\{u_k\}:\ \|u_k - u_*\| \leq \dfrac{2\ae}{L}q^{2^k}$, $q = \dfrac{L \|u_0 -u_*\|}{2\ae} < 1$
 	\end{theorem}
 \section{Метод покоординатного спуска}
 	В предыдущих методов нам требовалось вычислять градиент и гессиан функционала, но зачастую функционал не обладает нужной гладкостью. Рассмотрим этот метод для задаче минимизации без ограничений в конечномерном пространстве $J(u) \to \inf_{u\in \mathbb{R}^n}$. $\{e_i\}_{i=1}^{i=n}$ - базис. В дальнейшем будет использоваться бесконечный базис, поэтом доопределим $p_0 = e_1, p_1 = e_2, \dots, p_{n-1} = e_n, p_n = e_1, \dots, p_{2n-1}= e_n, \dots$ (циклически повторяются). \newline
@@ -456,7 +456,7 @@
 \section{Метод штрафных функций и его сходимость}
 	Позволяет решать задачи с большим количеством ограничений. Нарушая эти ограничения получаем "штрафы". \newline
 	$H$ - гильбретово, $J(u) \to \inf_{u\in U}, U\subset H$, $U = \{u \in U_0 \vert g_1(u) \leq 0, \dots, g_m(u) \leq 0, g_{m+1}(u) =0, \dots g_{m+s}(u) = 0\}$ Функции $g_j$ как раз задают ограничения. Неструктурированные ограничения, задаываемые множеством $U_0$ считаем "терпимыми" и обязуемся их не нарушать. \newline
-	Будем использовать одни из самых распространённых штрафов: за нарушение неравенств будем применять индивидуальные штрафы типа срезки: $g_i^+ (u) = max{g_i(u), 0}$. За нарушения равенств будетм испльзовать модули $g_i^+ = |g_i(u)|$. Из индивидуальных штрафов собирается общий $P(u) = \sum\limits_{i=1}^{m+s} (g_i^+(u))^{P_i}, \ P_i \geq 1, \ i =\overline{1, m+s}$\newline
+	Будем использовать одни из самых распространённых штрафов: за нарушение неравенств будем применять индивидуальные штрафы типа срезки: $g_i^+ (u) = \max{(g_i(u), 0)}$. За нарушения равенств будетм испльзовать модули $g_i^+ = |g_i(u)|$. Из индивидуальных штрафов собирается общий $P(u) = \sum\limits_{i=1}^{m+s} (g_i^+(u))^{P_i}, \ P_i \geq 1, \ i =\overline{1, m+s}$\newline
 	Свойства штрафов:
 	\begin{enumerate}
 		\item $P(u) \geq 0$
@@ -481,7 +481,7 @@
 	
 	\begin{theorem*}
 		(Теорема о сходимости МШФ)\newline
-		Пусть H-гильбертово пространство, множество $U_0 \subset H$ слабо замкнут в $H$, исходная функция $J(u)$ и все индивидуальные штрафы $g_i^+(u)$ слабо полунепрерывны снизу на $U_0$. Пусть также нижняя грань $J(u)$ на $U_0$ конечна, а $\delta$ - расширение $U(\delta) = \{u\in U_0 \vert g_i^+(u) \leq \delta , i =\overline{1, m+s}\}$ допустимого множества  $U$ при некотором $\delta$. Тогда если $A_k \to +\infty$ и $ \varepsilon_k \to 0$, то для элементов $u_k$ имеет место сходимость по функционалу $J(u_k) \to J_*$, а у самой последовательности $\{u_k\}_{k=1}^\infty$ имеется слабый в H предльные точки, причем каждая из них принадлежит $U_*$. 
+		Пусть H-гильбертово пространство, множество $U_0 \subset H$ слабо замкнут в $H$, исходная функция $J(u)$ и все индивидуальные штрафы $g_i^+(u)$ слабо полунепрерывны снизу на $U_0$. Пусть также нижняя грань $J(u)$ на $U_0$ конечна, а $\delta$ - расширение $U(\delta) = \{u\in U_0 \vert g_i^+(u) \leq \delta , i =\overline{1, m+s}\}$ допустимого множества  $U$ при некотором $\delta$ ограниченно в $H$. Тогда если $A_k \to +\infty$ и $ \varepsilon_k \to 0$, то для элементов $u_k$ имеет место сходимость по функционалу $J(u_k) \to J_*$, а у самой последовательности $\{u_k\}_{k=1}^\infty$ имеется слабый в H предльные точки, причем каждая из них принадлежит $U_*$. 
 	\end{theorem*}
 	\begin{sample}
 		$J(u) = x^2 + xy + y^2  \to \inf$, $U = \{u \in \mathbb{R}^2 \vert x+y=2\}$, $J_* =3$, $u* = (1,1)$. \newline
@@ -512,5 +512,106 @@
 	\begin{theorem}
 		(достаточное услоиве оптимальности)\newline
 		Пусть функции $J(u), g_i(u), i=\overline{1,s}$ определены и конечны на $U_0$. Пусть $(u_*, \lambda^*)$ - седловая точка функции $L(u, \lambda)$. Тогда $u_* \in U_*$, $J(u_*) = J_* = L(u_*, \lambda^*)$.	
+	\end{theorem}
+	\begin{theorem}
+		(Куна-Такера)\newline
+		Пусть $U_0$ - выпуклое замкнутое множество из $\mathbb{R}^n$. Пусть в функции Лагранжа $U = \{u\in U_0 \vert g_1(u) \leq 0, \dots , g_m(u) \leq 0\}$. Функции $J(u), g_i(u), i = \overline{1,m}$ -выпуклы на $U_0$, $J_* > -\infty$, $U_* \neq \emptyset$. Пусть $\exists \overline{u} \in U: \ g_1(\overline{u}) < 0, \dots, g_m(\overline{u}) < 0$ (условие слейтера). Тогда $\forall u_* \in U_* \ \exists \lambda^* \in \Lambda_0 = \{\lambda \in \mathbb{R}^m \vert \lambda_1 \geq 0, \dots, \lambda_m \geq 0\} = \mathbb{R}_+^m$ , такакя, что пара $(u_*, \lambda^*)$ -седловая точка функции Лагранжа.
+	\end{theorem}
+\section{Двойственная задача. Её свойства}
+	Решаем задачу $J(u) \to \inf_{u\in U}, U\subset H$, $U = \{u \in U_0 \vert g_1(u) \leq 0, \dots, g_m(u) \leq 0, g_{m+1}(u) =0, \dots g_{m+s}(u) = 0\}$. Ранее была сформулированно достаточное условие оптимальности.\newline
+	Введём функцию $\chi(u) = \sup\limits_{\lambda \in \Lambda_0} L(u, \lambda), u \in U_0$. Теперь рассматриваем задачу 
+	$\chi(u) \to \inf\limits_{u\in U_0}$. Эта задача эквивалентна исходной и $\chi_* = \inf\limits_{U_0} \chi(u) = \inf\limits_UJ(u) = J_*$\newline
+	Двойственная задача:\newline
+	\begin{math}
+		\psi(\lambda) = \inf\limits_{u \in U_0} L(u, \lambda), \ \lambda \in \Lambda_0 \\
+		\psi(\lambda) \to \sup\limits_{\Lambda_0}
+	\end{math}
+	\newline обозначим $\psi^* = \sup\limits_{\Lambda_0} \psi(\lambda), \Lambda^* = \{\lambda \in \Lambda_0\vert \psi(\lambda) = \psi^*\}$
+	\begin{lemma}
+		Всегда верно неравенство $\psi(\lambda) \leq \psi^* \leq \chi_* = J_* \leq \chi(u), \forall u \in U_0, \forall \lambda \in \Lambda_0$
+	\end{lemma}
+	\begin{theorem*}
+	Для того, чтобы $\psi^* = \chi_*, \ U_* \neq \emptyset, \ \Lambda_0 \neq \emptyset$ необходимо и достаточно, чтобы функция Лагранжа $L(u, \lambda)$ имела седло. Множество седловых точек $\{(u_*, \lambda^*)\} = U_* \times \lambda^*$
+	\end{theorem*}
+\section{Каноническая и общая задачи линейного программирования. Их эквивалентность}
+	Постановка задачи: \newline
+	$(c,u) \to \inf\limits_U$, $U = \{u \in \mathbb{R}^n \vert A_1 u \leq b_1, A_2 u  = b_2\}$ - выпуклый многогранник. 
+	\newline
+	Каноническая задача:
+	\newline
+	$(c,u) \to \inf\limits_U$, $U = \{u \in \mathbb{R}^n \vert Au = b\}$ - канонический многогранник. 
+	\newline
+	Эти задачи эквивалентны.
+	\begin{definition}
+		Точка v называется угловой точкой множества $U$, если представление $v = \alpha v_1 + (1-\alpha) v_2, \ \alpha \in (0,1)$ для $\forall v_1, v_2 \in U$ возможно только если $v_1 = v_2$, т.е. не является внутренней точкой никакого отрезка, принадлежащего $U$
+	\end{definition}
+\section{Критерий угловой точки в канонической задаче линейного программирования}
+		\begin{definition}
+		Точка v называется угловой точкой множества $U$, если представление $v = \alpha v_1 + (1-\alpha) v_2, \ \alpha \in (0,1)$ для $\forall v_1, v_2 \in U$ возможно только если $v_1 = v_2$, т.е. не является внутренней точкой никакого отрезка, принадлежащего $U$
+	\end{definition}
+	\begin{theorem}
+			(Критерий угловой точки канонического многогранника)\newline
+			Пусть $U$ - канонический многогранник, тогда $v$ - угловая точка $\Leftrightarrow$ 
+			\begin{enumerate}
+				\item $\exists$ $B(v) = \{j_1, \dots , j_r\} \subset \overline{1,n}, \  r= \text{rang} A: \ A_{j_1} v_{j_1}+ \dots + A_{j_r} v_{j_r} = b$
+				\item $\{A_j\}\{j \in B(v)\}$ - линейно независимы
+				\item $v_j = 0, j \notin B(v)$. 
+			\end{enumerate}
+			Если все полученные координаты $v_{i_j}> 0$, то это вырожденная угловая точка. 
+	\end{theorem}
+	\begin{sample}
+		Найти угловую точку $U = \{ u = (u^1, \dots, u^n) \geq 0: \ u^1 + u^2 + 3u^3 + u^4 = 3, u^1 - u^2 + u^3 + 2u^4 = 1\} $. Получаем матрицу $A = \left( \begin{matrix}1& 1&  3&  1 \\ 1&  -1&  1&  2  \end{matrix}\right)$, $b = \left(\begin{matrix}3 \\ 1\end{matrix}\right)$. Ранг матрицы равен 2. Нужно перебрать 6 вариантов:
+		\begin{enumerate}
+			\item $B = \{1,2\}$ $A_1, A_2$ - лнз, v нужно искать в виде $(*, *, 0, 0)$ Таким обрзаом $\left(\begin{matrix}
+				1 & 1\\ 1& -1
+			\end{matrix}\right) v = b$. Отсюда $v = (2, 1, 0, 0)$
+			\item $B = \{1,3\}$ $A_1, A_3$ - лнз, v нужно искать в виде $(*, 0, *, 0)$ Таким обрзаом $\left(\begin{matrix}
+				1 & 3\\ 1& 1
+			\end{matrix}\right) v = b$. Отсюда $v = (0, 0, 1, 0)$
+			\item $B = \{1,4\}$ $A_1, A_4$ - лнз, v нужно искать в виде $(*, 0, 0, *)$ Таким обрзаом $\left(\begin{matrix}
+				1 & 1\\ 1& 2
+			\end{matrix}\right) v = b$. Отсюда $v = (5, 0, 0, -2)$. Не подходит, все координаты должны быть неотрицательны.
+			\item $v = (0,0,1,0)$
+			\item $v = (0, \frac53, 0, \frac43)$
+			\item $v = (0,0,1,0)$
+		\end{enumerate}
+	\end{sample}
+\section{Симплекс-метод для канонической задачи ЛП}
+	Приведенная форма к угловой точке каноничесской задачи ЛП.\newline Пусть $U \neq \empty$ и нам уже известна одна угловая точка $v, B(v) = (j_1, \dots, j_r), C(v) = (A_{j_1}, \dots, A_{j_r})$. Наша ближайшая цель перейти от текущей угловой точки к следующей. Это и будет 1 шаг симплекс метода. Для этого нужно перейти к приведенной форме задачи ЛП. \newline
+	\begin{math}
+		\overline{v} = \left(\begin{matrix}v_{j_1} \\ \dots \\ v_{j_r}\end{matrix}\right), \overline{u} = \left(\begin{matrix}u_{j_1} \\ \dots \\ u_{j_r}\end{matrix}\right), \overline{c} = \left(\begin{matrix}c_{j_1} \\ \dots \\ c_{j_r}\end{matrix}\right)
+	\end{math} Тогда по критерию угловой точки $\sum\limits_{i=1}^{m=r} A_{j_i} v{j_i} = B \overline{v} = b \Rightarrow \overline{v}= B^{-1} b \geq 0$ Тогда можно записать эту систему в виде $\sum\limits_{i=1}^r A_{ji} v{j_i} + \sum\limits_{j \in B(v)} A_j u_j = B\overline{u} + \sum\limits_{j\in B(v)} A_j u_j $ Если домножить слева на $B^{-1}(v)$, то $\overline{u} + \sum\limits_{j \in B(v)} B^{-1}(v)A_j u_j = B^{-1}(v)b = \overline{v}$. Полученная система эквивалентна исходной $Au = b$. Теперь преобразуем функционал $J(u) = (c,u) = \sum\limits_{i=1}^n c_ju_j = (\overline{u}, \overline{c}) + \sum\limits_{j \notin B(v)} c_ju_j = (\overline{c}, \overline{v} - \sum\limits_{j \notin B(v)} (B^{-1}A_j)u_j) + \sum\limits_{j\notin B(v)} c_j u_j = (\overline{c}, \overline{v}) - \sum\limits_{j\notin B(v)} (\overline{c}, B^{-1}A_j)u_j + \sum\limits_{j \notin B(v)} c_j u_j = (\overline{c}, \overline{v}) - \sum\limits_{j \notin B(v)} ( (\overline{c}, B^{-1}A_j) - c_j)u_j = J(v) - \sum\limits_{j \notin B(v)} \Delta_j u_j$, $\Delta_j =  ( (\overline{c}, B^{-1}A_j) - c_j)$
+	\subsubsection*{Описание одного шага симплекс-метода}
+	Положим $u_j = 0$, $j \notin B, j \notin k \Rightarrow J(u) = J(v) - \Delta_k u_k \to \inf, \ u_{j_i} = v_{j_i}  - \xi_{ik} u_k, \ i = \overline{1,r}$\newline
+	Условие $u \geq 0$ $\Rightarrow$ $u_{j_i} \geq 0, u_k \geq 0; u_j = 0, j \notni B, j\notin k$. Мы хотим перейти от $(v, B(v))$ к новой точке $u = w$ за счёт выбора такого $u_k, k \notin B$, чтобы новая точкая имела вид $w = \{w_{j_i} = v_{j_i} - \xi_{i_k}, \ i = \overline{1,r}, w_k = u_k, ; w_j = 0, j\notin B(v), j \notin k\} \in U$. 
+	\begin{enumerate}
+		\item $\Delta_j = (\overline{c}, \xi_j) - c_j \leq 0, \forall j \notin B(v) \Rightarrow c_j \geq (\overline{c}, \xi_j), \forall j \notin B(v)$. В этом случае $J(u) = J(v) - \sum\limits_{j \notin B(v)} \Delta_j u_j \geq J(v)$. В этом случае $J(v) = J_*, v \in U_*$ - решение задачи.
+		\item $\exists \Delta_k > 0$ при некоторых $k \notin B$, причем $\xi_k = B^{-1} A_k \leq 0$ю В этом случае при выборе $u_k >0$ получаем $J(w) > J(v)$ В этом случае $J_* = - \infty$. 
+		\item $\exists \Delta_k > 0$ при некоторых $k \notin B$ и для каждого такого k найдется норме $i \in {1, \dots, r}$ такой, что $\xi_{ik} = (B^{-1}A_k) > 0$. Иначе говоря, множество индексов $I_k(v) = \{i: i = \overline{1,r}, \xi_{ik} > 0\} \neq \emptyset$ для всех $k \notin B$, для любого $\Delta_k > a$. A
+	\end{enumerate}
+\section{Симплекс таблица: её преобразование на одном шаге симплекс метода}
+	
+\section{Градиент в задаче оптимального управления со свободным правым концом}
+	$J(u) = \int\limits_0^T f^0 (x(t), u(t), t) dt + g^0(x(T))$, $x(t)$ - решение задачи Коши $\dot{x}(t)  = f(x(t), u(t), t), x(0) = x_0$. 
+	\begin{definition}
+		Непрерывная функция x(t) называется решением задачи Коши, если $x(t) = x_0 + \int\limits_0^T f(x(\tau), u(\tau), \tau) d \tau$, $x(t;u)$ - траектория, соответствующая управлению $u$. 
+	\end{definition}
+	Ищем градиент по определению: $J(u+h) - J(u) = (J'(u), h) + \overline{o}(\|h\|)$. Работаем в $L_2(0,T)$. \newline
+	\begin{math}
+		J(u+h) - J(u) = \int\limits_0^T (J'(u)(t), h(t))_{\mathbb{R}^r} dt + \overline{o}(\|h\|)
+	\end{math}
+	\begin{theorem}
+		(существование градиента)\newline
+		Пусть $f, f_x', f_u', f^0, f_x^0, f_u^0$ непрерывны по $(x,u,t)$ на $\mathbb{R}^n \times \mathbb{R}^r \times[0,T]$ и удовлетворяют условию Липшица по (x,u) на этом же множестве.Тогда функция $J(u) \in C^1(L_2(0,T))$ причем $J'(u) = -\dfrac{\partial H}{\partial u} \vert_{x = x(t;u), u = u(t), \psi = \psi(t;u)}$. $H$ - функция Гамильтона-Понтрягина  $H = H(x,t,u, \psi) = -f^0(x,u,t) + (\psi, f(x,u,t))$, где $\psi(t,u)$ - решение Задачи Коши $\dot{\psi} = - \dfrac{\partial H}{\partial x}, \psi(T) = - \dfrac{\partial g^0}{\partial x}\vert_{x = x(T; u)}$
+	\end{theorem}
+\section{Принцип максимума Понтрягина в задаче оптимального управления со свободным правым концом}
+	$J(u) = \int\limits_0^T f^0 ()x(t), u(t), t) dt + g^0(x(T))$, $x(t)$ - решение задачи Коши $\dot{x}(t)  = f(x(t), u(t), t), x(0) = x_0$. Задача $J(u) \to \inf$\newline
+	$U = \{u \in L_2(0,T) \vert u(t) \in V \subset \mathbb{R}^2, \text{п.в. } t\in (0,T)\}$ - геометрическое ограничение
+	\begin{definition}
+		$u \in U$ называется оптимальным управлением, если $J(u) = J_* = \inf\limits_{u \in U} J(u)$. Функция $x = x(t) = x(t; u)$ называется соответствующей оптимальнйо траекторией.
+	\end{definition}
+	\begin{theorem}
+		(Принцип максимума Понтрягина)\newline
+			Пусть $f, f_x',  f^0, f_x^0, g^0, g_x^0$ непрерывны по совокупности переменных, $(x(t), u(t))$ - оптимальная пара (оптимальный процесс). $H(x,u, t, \psi) = - f^0(x,u,t) + (\psi, f(x,u,t))$ - функция Гамильтона-Понтрягина. $\psi(t)$ - решение сопряженной системы $\dot{\psi} = - \dfrac{\partial H}{\partial x}, \psi(T) = - \dfrac{\partial g^0}{\partial x}\vert_{x = x(T; u)}$. Тогда $H(x(t), u(t), t, \psi(t)) = \max\limits_{v \in U} H(x(t), v, t, \psi(t))$ п.в. на $(0,T)$.
 	\end{theorem}
 \end{document}
