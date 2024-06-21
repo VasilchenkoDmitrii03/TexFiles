@@ -188,4 +188,52 @@
 				Сходимость ряда. \newline
 				$\sum\limits_{n=1}^{\infty} \left(\dfrac{\sin{nx}}{n}\right)' = \sum\limits_{n=1}^{\infty}  \cos{nx}$ - расходится в прострнастве $E$. Посмотрим в пространстве $K'$: $\left(\left(\sum\limits_{n=1}^{N} \dfrac{\sin{nx}}{N}\right)', \varphi\right) = \left(\sum\limits_{n=1}^{N}  \cos{nx}, \varphi\right) = -(\sum\limits_{n=1}^N \dfrac{\sin{nx}}{n}, \varphi') = - \int\limits_{\mathbb{R}} \sum\limits_{n=1}^N \dfrac{\sin{nx}}{n} \varphi' dx  \to  - \int\limits_{\mathbb{R}} \sum\limits_{n=1}^\infty \dfrac{\sin{nx}}{n} \varphi' dx = -(f(x), \varphi'(x)) = (f'(x), \varphi)$. В пространстве $K'$ ряд $\sum\limits_{n=1}^{\infty} \cos{nx} = -\dfrac12 + \pi\sum\limits_{k=-\infty}^{+\infty} \delta(x - 2\pi k)$ 
 			\end{sample}
+			\begin{sample}
+				$y = \ln{|x|} \in E$, но $y' \notin E$, а что в $K'$? \newline
+				$((\ln{|x|})', \varphi) = -(\ln{|x|}, \varphi') = - \int\limits_{-\infty}^{\infty} \ln{|x|} \varphi'(x) dx = - \lim\limits_{\varepsilon \to 0 + 0} \left(\int\limits_{-\infty}^{-\varepsilon} \ln{|x|} \varphi' dx + \int\limits_{\varepsilon}^{\infty}  \ln{|x|} \varphi'dx \right) = $ \newline
+				$=  - \lim\limits_{\varepsilon \to 0 + 0} \left(\ln{|x|}\varphi(x) \vert_{-\infty}^{-\varepsilon} - \int\limits_{-\infty}^{-\varepsilon} \dfrac{1}{x} \varphi dx + \ln{|x|}\varphi\vert_{\varepsilon}^{\infty} - \int\limits_{\varepsilon}^{\infty}  \dfrac{1}{x} \varphi dx \right) 
+				=  - \lim\limits_{\varepsilon \to 0 + 0} \left(\ln{\varepsilon} \varphi(-\varepsilon) - \ln{\varepsilon}\varphi(\varepsilon) - \int\limits_{|x| \geq \varepsilon} \dfrac{\varphi(x)}{x} dx\right) = $ \newline
+				$= - \lim\limits_{\varepsilon \to 0 + 0} \left(\ln{\varepsilon} \varphi'(x) \left(-2\varepsilon\right) - \int\limits_{|x| \geq \varepsilon} \dfrac{\varphi(x)}{x} dx\right) = \lim\limits_{\varepsilon \to 0 + 0} \int\limits_{|x| \geq \varepsilon} \dfrac{\varphi(x)}{x} dx = \mathrm{v.p.} \int\limits_{-\infty}^{\infty} \dfrac{\varphi(x)}{x}dx = (\dfrac{1}{x}, \varphi)$. Поэтому $(\ln{|x|})' = \dfrac{1}{x}$  в $K'$. 
+			\end{sample}
+			\begin{sample}
+				Пусть $y = x_+^\lambda, \lambda \in (-1, 0)$, $x_+^\lambda = \begin{cases}
+					x^\lambda, \ x > 0 \\
+					0, x \leq 0
+				\end{cases}	 \in E $. Что проихсодит в $K'$? \newline
+				$((x_+^\lambda)', \varphi) = - (x_+^\lambda, \varphi') = - \int\limits_{-\infty}^{\infty} x_+^\lambda \varphi'(x) dx = - \int\limits_0^\infty x^\lambda \varphi'(x) dx = -\lim\limits_{\varepsilon \to 0 +0} \int\limits_{\varepsilon}^{\infty} x^\lambda \varphi'(x) dx =  -\varepsilon^\lambda \varphi(\varepsilon) - \int\limits_{\varepsilon}^{\infty} \lambda x^{\lambda -1} \varphi(x) dx =  -\varepsilon^\lambda \varphi(\varepsilon) - \int\limits_{\varepsilon}^{\infty} \lambda x^{\lambda -1} (\varphi(x) - \varphi(0)) dx - \int\limits_{\varepsilon}^{\infty} \lambda x^{\lambda -1} \varphi(0) dx = \varepsilon^\lambda (\varphi(0) - \varphi(\varepsilon)) - \int\limits_{\varepsilon}^{\infty} \lambda x^{\lambda -1} (\varphi(x) - \varphi(0))dx \to - \int\limits_0^\infty \lambda x^{\lambda -1} (\varphi(x) - \varphi(0))dx$\newline
+				В итоге $(x_+^\lambda)': \varphi(x) \to \int\limits_0^\infty \lambda x^{\lambda -1} (\varphi(x) - \varphi(0))dx$ в $K'$.
+			\end{sample}
+		\subsection*{Предельный переход в $K'$}
+			Рассмотрим $\{f_n\}, f_n \in K', f \in K'$
+			\begin{definition}
+				$f_n \to f$ в  $K'$, если $(f_n, \varphi) \to (f, \varphi), \forall \varphi \in K$
+			\end{definition}
+			Пусть $f_n, f \in E, n \geq 1, f_n \rightrightarrows f$ в среднем на $[a,b]$ ($f_n,f$ сосредоточены на $[a,b]$). $|(f_n-f, \varphi)| = |\int\limits_{-\infty}^{\infty} (f_n-f)\varphi dx | \leq \{\text{КБШ}\} \leq \left(\int\limits_a^b (f_n-f)^2dx\right)^{1/2} \left(\int\limits_a^b \varphi^2 dx\right)^{1/2} \to 0$. То есть следует сходимость в $K'$.
+			\begin{lemma}
+				Пределом регулярных функций может быть сингулярная		
+			\end{lemma}
+			\begin{proof}
+				$f_n(x) = \begin{cases}
+					\dfrac{n}{2}, \ x \in [-\dfrac{1}{n}, \dfrac{1}{n}]\\
+					0, \ |x| > \dfrac{1}{n}
+				\end{cases}$\newline
+				$(f_n(x), \varphi(x)) = \dfrac{n}{2} \int\limits_{-1/n}^{1/n} \varphi(x)dx = \{\text{формула среднего}\} = \dfrac{n}{2} \varphi(\xi) \dfrac{2}{n} \to \varphi(0) = (f(x), \varphi(x)) $ $\Rightarrow$  $f_n(x) \to \delta(x)$ в $K'$.
+			\end{proof}
+		\subsection*{Масса материальной точки}
+		\subsection*{Плоскость электрического диполя}
+		\subsection*{Первообразная обобщённых функций}
+			Рассмотрим уравнение $y' = 0$ в $K'$ (1).
+			\begin{lemma}
+				В пространстве $K'$ уравнение (1) имеет решение $y = \mathrm{const}$.
+			\end{lemma}
+			\begin{proof}
+				$(y', \varphi) = -(y, \varphi') =0 (2)$. (2) определяет решение уравнения на пробных функциях, которые являются производными от других пробных функций $\psi(x) \in K$, $\psi(x) \geq 0$ - не может быть пробной так как пробные функции не являются монотонными. Обозначим пространство $K_0 = \{\varphi_0(x) \in K \vert \exists \varphi_1(x) - \text{пробная}: \varphi_0(x) = \varphi_1'(x)\}, K_0\subset K$
+			\end{proof}
+			\begin{lemma}
+				$\varphi_0(x) \in K_0 \Leftrightarrow \int\limits_{-\infty}^{\infty} \varphi_0(x) dx = 0$
+			\end{lemma}
+			\begin{proof}
+				$\Leftarrow:$ Пусть $\varphi_1(x) = \int\limits_{-\infty}^{x}\varphi_0(t) dt \Rightarrow \varphi_1(x) \in C^\infty, \ \varphi_1'(x) = \varphi_0(x)$. Пусть $\varphi_0$ сосредоточена на $[a,b]$, тогда $\int\limits_{-\infty}^{x}\varphi_0(t) dt = \varphi_{-\infty}^{\infty} \varphi_0(t)dt  = 0$ при $x > b$. \newline
+				$\Rightarrow:$ $\varphi_0 \in K_0, \ \exists \varphi_1: \varphi_0 = \varphi_1'$. $\int\limits_{$
+			\end{proof}
 \end{document}
