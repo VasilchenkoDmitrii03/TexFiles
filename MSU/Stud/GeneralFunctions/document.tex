@@ -1,0 +1,191 @@
+\documentclass[9pt, a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage{amsfonts, amssymb, amsmath, mathabx, dsfont}
+
+% theorems, lemmas, etc.
+\usepackage{amsthm}
+\newtheorem*{theorem}{Теорема}
+\newtheorem*{lemma}{Лемма}
+\newtheorem*{corollary}{Следствие}
+\newtheorem*{notabene}{Замечание}
+\newtheorem*{definition}{Определение}
+\newtheorem*{sample}{Пример}
+
+% enumerating settings
+\DeclareMathOperator*\lowlim{\underline{lim}}
+\DeclareMathOperator*\uplim{\overline{lim}}
+
+\usepackage[left=10mm, top=20mm, right=10mm, bottom=20mm, nohead, footskip=10mm]{geometry}
+\title{Обобщённые функции}
+\author{Ломов И.С.}
+\date{}
+\begin{document}
+\maketitle
+\section*{Элементарная теория обобщённых функций}
+	\subsection*{Основные функции в $\mathbb{R}^1$}
+		\begin{definition}
+			Под основной функцией понимают любую вещественную функцию,  финитную на $\mathbb{R}$ и определенную на $\mathbb{R}$ и непрерывную вместе с любой производной конечного порядка на $\mathbb{R}$.
+		\end{definition}
+		Если $\varphi = 0$ вне $[a,b]$, то говорят, что $\varphi$ сосредоточена на $[a,b]$. В этом случае $[a,b]$ - носитель $\varphi(x)$. $\mathrm{supp} \varphi(x) = \overline{\{x: \varphi(x) \neq 0\}}$.
+		Пространство финитных функций является линейным, проверяется тривиально.
+		\subsubsection*{Предельный переход в $K$}
+			Пусть $\varphi_n$ - последовательность основных функций.
+			\begin{definition}
+				$\varphi_n(x) \to 0$ в $K$, если все $\varphi_n(x)$ сосредоточены на одном отрезке, последовательность $\varphi_n(x) \rightrightarrows 0$ при $n \to \infty$ на этом отрезке и $\forall k \in \mathbb{N}\ \varphi_n^{(k)} \rightrightarrows 0$ при $n \to \infty$  
+			\end{definition}
+			Очевидно, что $\varphi_n \to \varphi$ в $K$, если $ \varphi \in K$ и  $\varphi_n - \varphi \to 0$ в $K$.
+			\begin{sample}
+				"Шапочка"\newline
+				\begin{equation*}
+					\varphi(x; a) = \begin{cases}
+						e^{-\dfrac{a^2}{a^2 - x^2}}, \ |x| \leq a \\
+						0, \ |x| > a
+					\end{cases}
+				\end{equation*}
+				Пусть $\varphi_n = \dfrac1{n} \varphi(x;a) \to 0 $ в $K$, но если возьмем $\varphi_n = \dfrac{1}{n} \varphi(\dfrac{x}{n}, a)$, то сходимости не будет т.к. функции сосредоточены на разных отрезках.
+			\end{sample}
+			\begin{sample}
+				"Срезка"\newline
+				\begin{equation*}
+					1_R(x) = \begin{cases}
+						1, \ |x| \leq R\\
+						0, \ |x| > 3R \\
+						\text{монотонно убывает}, x \in [-3R, -R] \\
+						\text{Монотонно возрастает}, x \in [R, 3R]
+					\end{cases}
+				\end{equation*}
+				Пусть $g(x) \in C^\infty(\mathbb{R}) \Rightarrow g(x)1_R(x) \in K$. В этом случае на $x \in [-R, R] \Rightarrow g(x)1_R(x) = g(x)$.\newline
+				Более общая срезка:
+				\begin{equation*}
+					\omega_\varepsilon(x) = \begin{cases}
+						C_\varepsilon e^{-\dfrac{\varepsilon^2}{\varepsilon^2 - x^2}}, \ |x| \leq \varepsilon \\
+						0, \ |x| > \varepsilon
+					\end{cases}
+				\end{equation*}
+				$C_\varepsilon$ выбираем из условия $\int \omega_\varepsilon(x) dx = 1$.
+			\end{sample}
+			\begin{lemma}
+				$\exists \eta(x) \in K$, такая, что $\forall x: \ 0 \leq \eta(x) \leq 1$; $x \in G_\varepsilon = (a- \varepsilon, b + \varepsilon)$; $G = (a,b)$ и $\eta(x) = \begin{cases}
+					1, \ x \in G_\varepsilon \\
+					0, \ x \notin G_\varepsilon
+				\end{cases}$
+			\end{lemma}
+			\begin{proof}
+				Пусть $\chi(x)$ - характеристическая функция множества $G_{2\varepsilon}$, то есть индикатор. Пусть $\eta(x) = \int_{\mathbb{R}} \chi(x) \omega_\varepsilon(x-y) dy$. Покажем, что эта функция принадлежит класса $C^\infty$. $\eta(x) = \int\limits_{G_{2\varepsilon}} \omega_{\varepsilon}(x-y) dy = \int\limits_{a-2\varepsilon}^{b + 2\varepsilon} \omega_{\varepsilon}(x-y) dy = \int\limits_{x - (b + 2\varepsilon)}^{x - (a - 2\varepsilon)} \omega_\varepsilon(t) dt = \{\omega_\varepsilon \in C^\infty\}$. Поэтому $\eta(x) \in C^\infty (\mathbb{R})$.\newline
+				Проверим условие $0 \leq \eta(x) \leq 1$. Функция $\omega_\varepsilon$ неотрицательная, поэтому левая оценка выполнена, а правая оценка выполняется благодаря выбору константы $C_\varepsilon$ так как $\int\limits_{x - (b + 2\varepsilon)}^{x - (a - 2\varepsilon)} \omega_\varepsilon(t) dt \leq \int\limits_{\mathbb{R}} \omega_\varepsilon(t) dt  = 1$. В итоге $0 \leq \eta(x) \leq 1$.\newline
+				Остаётся проверить последнее условие: Пусть $|y-x| \leq \varepsilon \Rightarrow x - \varepsilon \leq y \leq x + \varepsilon$, тогда $\eta(x) = \int\limits_{x - \varepsilon}^{x+\varepsilon} \chi(y) \omega_\varepsilon(x-y) dy = \begin{cases}
+					\int\limits_{x-\varepsilon}^{x+\varepsilon} \omega_\varepsilon(x-y)dy = \int\limits_{-\varepsilon}^{\varepsilon} \omega_\varepsilon dy = 1, \ x \in G_\varepsilon \subset G_{2\varepsilon} \\
+					0, \ x \notin G_\varepsilon, \text{потому что индикатор обращатеся в ноль}
+				\end{cases}$
+				Если $a=b=0, \varepsilon = R \Rightarrow \eta(x) = 1_R(x)$.
+			\end{proof}
+			\begin{theorem}
+				(неметризуемость пространства $K$)\newline
+				$\nexists \rho$ такой, что если $\varphi_n \to \varphi$ в $K$, то $\rho(\varphi_n, \varphi) \to 0$.
+			\end{theorem}
+			\begin{proof}
+				Известна теорема о метрических пространствах: если есть в метрическом пространстве счётное число последовательностей 
+				$\begin{matrix}
+					\varphi_1^{(1)} & \varphi_2^{(1)} & \dots & \varphi_n^{(1)} & \to & \varphi^{(1)} \\
+					\varphi_1^{(2)} & \varphi_2^{(2)} & \dots & \varphi_n^{(2)} & \to & \varphi^{(2)}\\
+					\dots & \dots & \dots & \dots & \dots & \dots \\
+					\varphi_1^{(m)} & \varphi_2^{(m)} & \dots & \varphi_n^{(m)} & \to & \varphi^{(m)}\\
+					\dots & \dots & \dots & \dots & \dots & \dots \\
+				\end{matrix}$
+				таких, что $\varphi^{(m)} \to \varphi$ при $m\to \infty$, то $\exists \{\varphi_{n_m}^{(m)}\}$ - сходящаяся к $\varphi$ при $n \to \infty$. Рассмотрим контрпример: $\varphi_n^{(m)}(x) = \dfrac{1}{n}\varphi(\dfrac{x}{m};a )$. Для любого фиксированного $m$ $\varphi_n^{(m)} (x) \to 0$ в $K$.Но если взять последовательность $\varphi_{n_m}^{(m)}(x) \to \dfrac{1}{n_m}\varphi(\dfrac{1}{m}; a)$, то не будет общего носителя.
+			\end{proof}
+		\subsection*{Обобщённые функции в $\mathbb{R}^1$}
+			\begin{definition}
+				$E$ - множество обычных вещественных функций, определенных на $\mathbb{R}$, локально интегрируемых.
+			\end{definition}
+			Пусть $f(x) \in E$, ставим в соответствие функционал на множестве $K$: $(f, \varphi) = \int\limits_{\mathbb{R}} f(x) \varphi(x) dx \ (1)$.\newline
+			Функционал (1) очевидно является линейным, его непрерывность следует из $\{\varphi_n(x)\} \subset K$, $\varphi_n(x) \to 0$ в $K$ $\Rightarrow (f, \varphi_n) \to 0$. 
+			\begin{lemma}
+				Существуют линейные непрерывные функционалы на $K$, которые не представимы в виде (1).
+			\end{lemma}
+			\begin{proof}
+				$\delta(x)$ - дельта-функция Дирака: $\delta(x): \varphi(x) \to \varphi(0)$. Покажем, что этот функционал не представим в виде (1). Пусть $\exists f(x) \in E: \int\limits_{\mathbb{R}} f(x)\varphi(x) dx = \varphi(0), \forall \varphi \in K$. Пусть $\varphi(x) = \varphi(x; a)$, тогда $\int\limits_{\mathbb{R}} f(x) \varphi(x) dx = \int\limits_{-a}^{a} f(x) e^{-\dfrac{a^2}{a^2 - x^2}} dx \leq \int\limits_{-a}^{a} |f(x)| dx \to 0 $ при $a \to 0$. Но $\varphi(0; a) = \dfrac{1}{e}$.Поэтому данный функционал в виде (1) не представим.
+			\end{proof}
+			\begin{definition}
+				Обобщённой функцией (распределением) назовем любой линейный непрерывный функционал на множестве $K$. Если функционал представим в виде (1), то он регулярный, иначе сингулярный.
+			\end{definition}
+			$K'$ - множество всех обобщённых функций над $K$. \newline
+			Любой обычной функции $f(x)$ отвечает обобщённая функция, определяемая по формуле (1) $f(x) = \mathrm{const}: \ (c,\varphi) = c \int\limits_{\mathbb{R}} \varphi(x) dx$. $f(x): \forall x \to f(x)$ почти всюду. $f: \forall \varphi \to (f, \varphi)$. Не можем говорить про равенство в точке, но можем говорить об эквивалентности на $(a,b)$.
+			\subsubsection*{Сингулярные функции}
+				\begin{enumerate}
+					\item $\delta(x)$.
+					\item $\delta(x - a), \forall a \in \mathbb{R}$.
+					\item $\delta'(x)$
+					\item $f(x) = \dfrac{1}{x} \notin E$
+				\end{enumerate}
+			Пусть $f_1, f_2 \in K'$ равны, если $(f_1, \varphi) = (f_2, \varphi), \forall \varphi \in K$, не являются равными, если $\exists \varphi \in K: (f_1, \varphi) \neq (f_2, \varphi)$.
+			Класс $K$ достаточно широк, чтобы различать непрерывные функции: 
+			\begin{lemma}
+				Пусть $f_1(x), f_2(x) \in E$ - различные непрерывные функции, тогда $f_1, f_2$ -различные обобщённые функции.
+			\end{lemma}
+			\begin{proof}
+				Нужно показать, что $\exists \varphi_0: (f_1, \varphi_0) \neq (f_2, \varphi_0)$. Рассмотрим $f(x) = f_1(x) - f_2(x)$, тогда $\exists x_0: f(x_0) \neq 0$ и $\exists [\alpha, \beta]:\ x_0 \in [\alpha, \beta]$ на этом отрезке функция $f(x)$ сохраняет знак. Рассмотрим $\varphi_0(x) = \begin{cases}
+					e^{-\dfrac{1}{(\beta-x)(x-\alpha)}}, \ x \in [\alpha, \beta] \\
+					0, \ x \in \mathbb{R} \backslash [\alpha, \beta]
+				\end{cases} $. Заметим, что $\varphi_0 \in K$. $\int\limits_{\mathbb{R}} f(x) \varphi_0(x) dx = \int\limits_{\alpha}^{\beta} f(x) e^{-\dfrac{1}{(\beta-x)(x-\alpha)}} dx  > 0$ т.к. $f(x)$ - сохраняет знак, а экспонента строго положительна, поэтому $f_1 \neq f_2$.
+			\end{proof}
+			Пусть $p \geq 0$, целое число
+			\begin{definition}
+				Обобщённая функция $f$ имеет порядок сингулярности  $\leq p$, если её можно представить в следующем виде: 
+				\begin{equation*}
+					(f,\varphi) = \sum\limits_{k=0}^{p} \int\limits_{\mathbb{R}} f_k(x) \varphi^{(k)}(x) dx = \sum\limits_{k=0}^{p} (f_k(x), \varphi^{(k)}(x)), \forall \varphi \in K,  \eqno{(1)}
+				\end{equation*}
+				где $f_1(x), \dots, f_p(x) \in E$
+			\end{definition}
+			\begin{sample}
+				$f(x) \in E$, тогда регулярная $\Rightarrow p = 0$.
+			\end{sample}
+			\begin{sample}
+				$\delta(x)$. Рассмотрим функцию Хевисайда $\theta(x)  =\begin{cases}
+					1, x \geq 0 \\
+					0, x < 0
+				\end{cases} \in E$. $(\theta(x), \varphi(x)) = \int\limits_{-\infty}^{\infty} \theta(x) \varphi(x) dx = \int\limits_{0}^{\infty} \varphi(x) dx$ \newline
+				$(\delta(x), \varphi(x)) = \varphi(0)  = - \int\limits_{0}^{\infty} \varphi'(x) dx = \int\limits_{-\infty}^{\infty} - \theta(x) \varphi'(x) dx$. Поэтому порядок сингурлярности $\delta(x)$ равен 1, а для $\delta'(x)$ $p \leq 2$.
+			\end{sample}
+	\subsection*{Действие с обобщёнными функциями}
+		\subsubsection*{Сложение}
+			Сложение и умножение на вещественное число: $\forall f_1, f_2 \in K', \ \forall \alpha_1, \alpha_2 \in \mathbb{R}: \ (\alpha_1f_1+\alpha_2f_2, \varphi) = \alpha_1(f_1, \varphi)+\alpha_2(f_2, \varphi) \Rightarrow \alpha_1f_1+\alpha_2f_2 \in k'$
+		\subsubsection*{Умножение на бесконечно дифференцируемую функцию}
+			$\forall f \in k', \ \forall \alpha(x) \in C^\infty (\mathbb{R})$. 
+			\begin{enumerate}
+				\item $f = f(x) \in E \Rightarrow (\alpha(x)f(x), \varphi(x)) = \int\limits_{\mathbb{R}} \alpha(x)f(x)\varphi(x) dx = (f(x), \alpha(x)\varphi(x))$ т.к. $\alpha(x)\varphi(x) \in K$.
+				\item $f \in K'$ $(\alpha(x)f, \varphi) = (f, \alpha(x)\varphi) \Rightarrow \alpha(x) f \in K'$ т.к. функционал линейный и непрерывный.
+			\end{enumerate}
+		\subsubsection*{Дифференциорвание}
+			$\forall f \in K': \ f':(f', \varphi) = -(f, \varphi'), \forall \varphi \in K$. Пусть $\varphi_n \to 0$ в $K$, тогда $\varphi_n' \to 0 $ в $K$ $\Rightarrow (f, \varphi_n') \to 0$ т.к. $f$-непрерывный функционал $\Rightarrow$  $(f', \varphi_n) \to 0$, то есть  $f'$ - линейный непрерывный функционал $f' \in K$.
+			
+			Свойства производной:
+			\begin{enumerate}
+				\item $(f'', \varphi) = (f, \varphi'')$, $(f^{(n)}, \varphi) = (-1)^n(f, \varphi^{(n)})$
+				\item $\forall \alpha_1, \alpha_2 \in \mathbb{R}, \forall f_1, f_2 \in K'$ $((\alpha_1f_1 + \alpha_2f_2)', \varphi) = -(\alpha_1f_1 + \alpha_2f_2, \varphi') = -\alpha_1(f_1, \varphi') - \alpha_2(f_2, \varphi') = \alpha_1(f_1', \varphi) + \alpha_2(f_2', \varphi)$. То есть $(\alpha_1f_1 + \alpha_2f_2)' = \alpha_1 f_1' + \alpha_2 f_2'$
+				\item $\alpha(x) \in C^\infty (\mathbb{R}), f \in K'$ $((\alpha(x) f)', \varphi) = - (\alpha(x)f, \varphi') = -(f, \alpha(x) \varphi') = - (f, \alpha(x) \varphi' + \alpha'(x)\varphi - \alpha'(x) \varphi) = -(f, (\alpha \varphi)') + (f, \alpha'\varphi) = (f', \alpha \varphi) + (\alpha' f, \varphi) = (\alpha f'+ \alpha' f, \varphi), \forall \varphi \in K$. То есть $((\alpha(x)f)', \varphi) = (\alpha'f+\alpha f', \varphi)$
+			\end{enumerate}
+			\begin{sample}
+				$\theta(x)$: $(\theta'(x), \varphi) = -(\theta(x), \varphi'(x)) = -\int\limits_0^{\infty} \varphi'(x) dx = \varphi(0) \Rightarrow \theta'(x) = \delta(x)$.
+			\end{sample}
+			\begin{sample}
+				$\delta(x)$: $(\delta'(x), \varphi(x)) = - (\delta(x), \varphi'(x)) = - \int\limits_{\mathbb{R}} \delta(x) \varphi'(x) = - \varphi'(0)$. Получается, что $\delta': \varphi(x)  \to -\varphi'(0)$.
+			\end{sample}
+			\begin{sample}
+				Пусть $f(x)$ - кусочно абсолютно непрерывная функция, $x_1, \dots, x_n$ - точки разрыва. $h_1, \dots, h_n$ - скачки в точках разрыва $f(x_i+0) - f(x_i-0) = h_i$. Чему равна производная такой функции? \newline
+				Введём $f_1(x) = f(x) - \sum\limits_{k=1}^{n} h_k \theta(x-x_k)$ - убрали скачки и сделали непрерывной. $f_1(x)$ -абсолютно непрерынвая функция и $\exists f_1'(x)$ п.в. совпадает с $f'(x)$.
+				$f'(x) = f_1'(x) + \sum\limits_{k=1}^n h_k \delta(x-x_k)$ в $K$.
+			\end{sample}
+			\begin{sample}
+				Рассмотрим ряд $\sum\limits_{n=1}^{\infty} \dfrac{\sin{nx}}{n} = f(x) = \begin{cases}
+					\dfrac{\pi - x}{2}, \ x\in (0, \pi]\\
+					0,\ x = 0\\
+					-\dfrac{\pi+x}{2}, \ x \in [ - \pi, 0)
+				\end{cases}$ Это $2\pi$ -периодическая функция. По полученной ранее формуле получаем, что $f' = -\dfrac{1}{2} + \pi \sum\limits_{k=-\infty}^{\infty} \delta(x - 2\pi k)$
+			\end{sample}
+			\begin{sample}
+				Сходимость ряда. \newline
+				$\sum\limits_{n=1}^{\infty} \left(\dfrac{\sin{nx}}{n}\right)' = \sum\limits_{n=1}^{\infty}  \cos{nx}$ - расходится в прострнастве $E$. Посмотрим в пространстве $K'$: $\left(\left(\sum\limits_{n=1}^{N} \dfrac{\sin{nx}}{N}\right)', \varphi\right) = \left(\sum\limits_{n=1}^{N}  \cos{nx}, \varphi\right) = -(\sum\limits_{n=1}^N \dfrac{\sin{nx}}{n}, \varphi') = - \int\limits_{\mathbb{R}} \sum\limits_{n=1}^N \dfrac{\sin{nx}}{n} \varphi' dx  \to  - \int\limits_{\mathbb{R}} \sum\limits_{n=1}^\infty \dfrac{\sin{nx}}{n} \varphi' dx = -(f(x), \varphi'(x)) = (f'(x), \varphi)$. В пространстве $K'$ ряд $\sum\limits_{n=1}^{\infty} \cos{nx} = -\dfrac12 + \pi\sum\limits_{k=-\infty}^{+\infty} \delta(x - 2\pi k)$ 
+			\end{sample}
+\end{document}
