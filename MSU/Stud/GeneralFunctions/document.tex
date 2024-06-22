@@ -256,4 +256,61 @@
 				$(y', \varphi) = -(y, \varphi') = (f, \varphi) = (f, \int\limits_{-\infty}^{x} \varphi'(\xi) d\xi)$\newline
 				$(y, \varphi') = (f, - \int\limits_{-\infty}^{x} \varphi'(\xi) d\xi), \ \forall \varphi \in K (3)$. Пусть $\varphi_1(x) \in K, \ \int\limits_{-\infty}^{\infty} \varphi_1(x) dx = 1$, $\forall \varphi \in K: \ \varphi(x) = \varphi_1(x) \int\limits_{-\infty}^{\infty} \varphi(x) dx + \varphi_0(x)$. Определим функционал $y_0$ по действию на $\varphi_0(x)$. $(y_0, \varphi) = (y, \varphi_0) = (f, - \int\limits_{-\infty}^{\infty} \varphi_0(\xi) d\xi)$, $y_0$ - частное решение (2) или неопределенный интеграл функции $f$. $(y, \varphi) = (y_1, \varphi_1) \int\limits_{-\infty}^{\infty} \varphi dx + (y, \varphi_0) \Rightarrow$ решение уравнения (2) $\exists$ в $K'$ и записывается в виде $y = y_0 + C$. 
 			\end{proof}
+			\begin{sample}
+				Решить уравнение $y'+y = \theta(x)$ в $K'$.\newline
+				$y = z e^{-x}, y' = z'e^{-x} - z e^{-x}$, тогда наше уравнение: $z'e^{-x} = \theta(x)$, $z' = \theta(x) e^{x}$. По формуле, полученной выше: $(z_0, \varphi) = (z, \varphi_0) = (f, -\int\limits_{-\infty}^{x} \varphi_0(\xi) d\xi) = (\theta(x) e^x, - \int\limits_{-\infty}^{x} \varphi_0(\xi) d\xi) = -\int\limits_0^{\infty}e^x \int\limits_{-\infty}^{x} \varphi_0(\xi) d\xi dx = -e^x \int\limits_{\infty}^{x} \varphi_0 d\xi \vert_{x=0}^\infty + \int\limits_0^{\infty} e^x \varphi_0(x) dx = \{\varphi_0 \in K_0: \int\limits_{-\infty}^{\infty} \varphi_0 dx\xi = 0\} = \int\limits_{\infty}^{0} \varphi_0 d\xi + \int\limits_0^{\infty} e^x \varphi_0(x) dx = \int\limits_{-\infty}^{\infty} \varphi_0 d\xi + \int\limits_0^\infty (e^x - 1) \varphi_0 dx = \int\limits_{-\infty}^{\infty} \theta(x) (e^x - 1) \varphi_0(x) dx$. Поэтому $z_0(x) = \theta(x)(e^x -1) \Rightarrow z(x) = \theta(x) (e^x -1) + C$, $y = \theta(x) (1 - e^{-x}) + Ce^{-x}$
+			\end{sample}
+	\subsection*{Обобщённые функции в $\mathbb{R}^n$}
+		\begin{definition}
+			Функция называется обычной, если она определена на $\mathbb{R}^n$, принимает вещественные значения, интегрируема (по Лебегу) по любому n-мерному брусу.
+		\end{definition}
+		Множество всех обычных функций: $E = E_n = E(\mathbb{R}^n)$
+		\begin{definition}
+			Функция называется пробной (основной), если бесконечно дифференцируема в $\mathbb{R}^n$ и равна 0 вне некоторого бруса.
+		\end{definition}
+		Наименьшее замкнутое множество в $\mathbb{R}^n$ вне которого пробная функция равна нулю называется её носителем.  Множестов пробных функция $K = K_n$. 
+			\begin{definition}
+				$\{\varphi_n\}, \varphi_n \in K_n, \varphi_n \to 0$ при $n\to\infty$ в $K_n$, если все $\varphi_n$ сосредоточена на одном брусе и $\varphi_n \rightrightarrows 0 $ в $K_n$ вместе со всеми производными.		
+			\end{definition}
+		\begin{definition}
+			Обобщённой функцией назовём любой линейный непрерывный функционал на пространстве $K_n$. Если $f \in E_n$, то она поражадает функционал $(f, \varphi) = \int\limits_{\mathbb{R}^n} f\varphi dx (1)$. Тогда $f$ - регулярная обобщённая функция.
+		\end{definition}
+		\begin{notabene}
+			Существуют функционалы не представимые в виде (1). Например $\delta(x): (\delta, \varphi) = \varphi(0)$
+		\end{notabene}
+		\begin{definition}
+			Обобщённая функция $f \in K_n'$ имеет порядок синуглярности $\leq p$, если она представима в виде: 
+			\begin{equation*}
+				(f,\varphi) = \sum\limits_{|k| \leq p} f_k(x) D^k \varphi(x) dx  = \sum\limits_{|k| \leq p} (f_k, D^k \varphi) (2), 
+			\end{equation*}
+			где $k = (k_1, \dots, k_n), |k| = k_1 + \dots + k_n, D^k = \dfrac{\partial^{|k|}}{\partial x_1^{k_1} \dots \partial x_n^{k_n}}$
+		\end{definition}
+		\subsubsection*{Действия с обобщёнными функциям}
+			\begin{enumerate}
+				\item $\forall \alpha_1, \alpha_2 \in \mathbb{R}, \forall f_1, f_2 \in K_n'$ $\Rightarrow$ $(\alpha_1 f_1 + \alpha_2 f_2, \varphi) = \alpha_1(f_1, \varphi) + \alpha_2(f_2, \varphi)$
+				\item $\forall f \in K_n', \alpha(x) \in C^\infty(\mathbb{R}^n)$ $\Rightarrow$ $(\alpha(x)f, \varphi) = (f, \alpha(x) \varphi)$
+				\item Предельный переход. $\{f_\nu\}, f_\nu \in K_n', f \in K_n'$, $f_\nu \to f$ в $K_n'$, если $(f_\nu, \varphi) \to (f_0, \varphi), \ \forall \varphi \in K_n$. 
+				\item $(D^kf, \varphi) = (-1)^{|k|} (f, D^k\varphi)$
+			\end{enumerate}
+		\subsubsection*{Примеры на дифференциорование}
+			\begin{sample}
+				$(\dfrac{\partial^2f}{\partial x \partial y}, \varphi) = (f,\dfrac{\partial^2\varphi}{\partial y \partial x})= (f,\dfrac{\partial^2\varphi}{\partial x \partial y}) = (\dfrac{\partial^2f}{\partial y \partial x}, \varphi)$. То есть для обобщённых функций также смешанные производные совпадают.
+			\end{sample}
+			\begin{sample}
+				\begin{definition}
+					Обычная $g(x) \in E_n$ называется обобщённой производной по Соболеву от функции (обычной) $f$ на множестве $G$, если $\forall \varphi \in C^\infty(G)$, сосредточенной строго внутри $G$ выполнено $(-1)^{|k|} \int\limits_G g(x)\varphi(x) dx = \int\limits_G f(x) D^k \varphi(x) dx \Rightarrow g(x) = D^k f$ в $K'$.
+				\end{definition}
+			\end{sample}
+			\begin{sample}
+				$\theta(x) = \begin{cases}
+					1, \ x_1, \dots, x_n \geq 0 \\
+					0, \ \mathbb{R}^n \backslash \{x_1, \dots, x_n \geq 0\}
+				\end{cases}$\newline
+				$(\dfrac{\partial^n \theta}{\partial x_1 \dots \partial x_n}, \varphi(x)) = (-1)^n (\theta, \dfrac{\partial^n \varphi}{\partial x_1 \dots \partial x_n}) = (-1)^n \int\limits_{x_1, \dots, x_n \geq 0} \dfrac{\partial^n \varphi}{\partial x_1 \dots \partial x_n} dx_1 \dots dx_n = \varphi(0,\dots, 0) = (\delta(x), \varphi)$
+			\end{sample}
+			\begin{sample}
+				Оператор Лапласа от сферических функций: \newline
+				$\Delta f = r^{p-2} p(p+n-2)$ это верно в $K'$, если все функции из $E$.\newline
+				При $p-2 > -n$ все верно в $K_n'$. Пусть $p= 2-n, n=2$
+			\end{sample}
 \end{document}
