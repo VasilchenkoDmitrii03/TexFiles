@@ -70,19 +70,19 @@
 
 % Текст аннотации
 \begin{abstract}\noindent
-	В работе доказаны теоремы существования и единственности решения
+	\par В работе доказаны теоремы существования и единственности решения задачи для
 уравнения Лапласа со смешанными граничными условиями в полуполосе, а также получены интегральные представления для частных
 производных решения.
 \medskip\\
 DOI: % Необходимый номер DOI поставит редакция журнала
 \end{abstract}
 \bigskip
+
 Рассмотрим краевую задачу для уравнения Лапласа
 \begin{equation}
 	\dfrac{\partial^2 u}{\partial x^2} +\dfrac{\partial^2 u}{\partial y^2} = 0
 \end{equation}
-в полуполосе $D = \{(x,y) :\  0 < x < \pi, y > 0\}$	в классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$\newline
-с граничными условиями
+в полуполосе $D = \{(x,y) :\  0 < x < \pi, y > 0\}$	в классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$ с граничными условиями:
 \begin{equation}
 	u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0, \ y > 0, 
 \end{equation}
@@ -124,21 +124,17 @@ $u_y'(x,y), \vert k\vert>1, $ в статье [1].
 \end{equation}
 
 \par	
-Доказательство. Докажем существование решения задачи $(1 - 4)$. В силу основного результата работы $[2]$ система  $\left\{\sin{\left[\left(n + 1/2\right)x + \pi/ 4\right]}\right\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Разложим $\varphi(x)/ \sqrt2$ по этой системе. Коэффициенты разложения в формуле (6) удовлетворяют неравенствам Бесселя
+\textbf{Доказательство.} Докажем существование решения задачи $(1 - 4)$. В силу основного результата работы $[2]$ система  $\left\{\sin{\left[\left(n + 1/2\right)x + \pi/ 4\right]}\right\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$. Разложим $\varphi(x)/ \sqrt2$ по этой системе. Коэффициенты разложения в формуле (6) удовлетворяют неравенствам Бесселя
 \begin{equation*}
 	C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} ,\ 0 < C_1 < C_2, 
 \end{equation*}
-где $C_1, C_2$ не зависят от $\varphi$. Следовательно сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$ и сходится равномерно ряд (5). Дифференцировать ряд (5) по x в $D$ можно так как каждая из функций $A_n e^{-\left(n + 1/2\right)y} \sin{\left[\left(n + 1/2\right)x\right]}$ имеет в области $D$ производную, сам ряд (5) сходится равномерно и ряд производных 
-\begin{equation*}
-	\sum\limits_{n=0}^{\infty} A_n \left(n+\dfrac12\right)e^{-\left(n + \dfrac12\right)y} \cos{\left[\left(n + \dfrac12\right)x\right]}
-\end{equation*}
-сходится равномерно в $D$. Аналогично можно показать, что (5) можно дважды дифференцировать по x и y. Функция (5) является решением уравнения (1) и удовлетворяет граничному условию (2) по построению. Условие (4) выполняется так как  $\sum\limits_{n=0}^{\infty} e^{-\left(n + 1/2\right)y} = e^{-y/2} / (1 - e^{-y})$. Проверим выполнение условия (3).\newline
+где $C_1, C_2$ не зависят от $\varphi$. Следовательно, сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$ и сходится равномерно ряд (5). Функция (5) является решением уравнения (1) и удовлетворяет граничным условиям (2) по построению. Условие (4) выполняется, так как  $\sum\limits_{n=0}^{\infty} e^{-\left(n + 1/2\right)y} = e^{-y/2} / (1 - e^{-y})$. Проверим выполнение условия (3).\newline
 
 Согласно разложению (6), условие (3) принимает вид
 \begin{equation*}
 	I(y) =  2 \int\limits_0^\pi \left[	\sum\limits_{n=0}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx.
 \end{equation*}
-Докажем, что $I(y) \to 0$ при $y \to 0+0$. Запишем
+Докажем, что $I(y) \to 0$ при $y \to 0+0$. Запишем неравенство
 \begin{equation*}
 	I(y) \leq I_1(y) + I_2(y), \text{ где}
 \end{equation*}
@@ -148,7 +144,7 @@ $u_y'(x,y), \vert k\vert>1, $ в статье [1].
 \begin{equation*}
 	I_2(y) = 4\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx.
 \end{equation*}
-Зафиксируем  $\forall \varepsilon > 0$. В силу левой части неравенства Бесселя имеем оценку
+Зафиксируем  произвольное число $\varepsilon > 0$. В силу левой части неравенства Бесселя имеем оценку
 \begin{equation*}
 	I_2(y) =  4\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq 
 \end{equation*}
@@ -168,7 +164,7 @@ $u_y'(x,y), \vert k\vert>1, $ в статье [1].
 \par
 \textbf{Теорема 2.} \textit{Решение задачи (1- 4) единственно}
 \par
-Доказательство. Докажем единственность решения этой задачи. Пусть $u(x,y)$ - решение однородной задачи.
+\textbf{Доказательство.} Докажем единственность решения этой задачи. Пусть $u(x,y)$ - решение однородной задачи.
 Введём обозначения $C_\varepsilon = (0, \varepsilon), C_R = (0, R), D_R = (\pi, R), D_\varepsilon = (\pi, \varepsilon)$. $\prod_{R\varepsilon}$ - прямоугольник $C_\varepsilon C_R D_R D_\varepsilon$. Справедливы следующие соотношения:
 \begin{equation*}
 	0 = \iint\limits_{\prod_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy = 
@@ -184,7 +180,7 @@ $u_y'(x,y), \vert k\vert>1, $ в статье [1].
 \begin{equation*}
 	+ \int\limits_{C_R D_R} \dfrac{u^2}{2}dx.
 \end{equation*}
-Отсюда следует
+Отсюда следует цепочка неравенств
 \begin{equation*}
 	\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_x - u_y\right)u dx + \dfrac12  \int\limits_{C_R D_R} u^2 dx \leq
 \end{equation*}
@@ -200,11 +196,11 @@ $u_y'(x,y), \vert k\vert>1, $ в статье [1].
 \begin{equation*}
 	\leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - u_x\right)^2 dx  +\dfrac12 \int\limits_{C_RD_R} u^2 dx.
 \end{equation*}
-В силу (3)
+В силу (3) имеет место равенство
 \begin{equation*}
-	\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{C_\varepsilon D_\varepsilon} \left(u_y - u_x\right)^2 dx = 0
+	\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{C_\varepsilon D_\varepsilon} \left(u_y - u_x\right)^2 dx = 0,
 \end{equation*}
-отсюда вытекает соотношение
+откуда вытекает соотношение
 \begin{equation*}
 	\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + \dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{C_RD_R} u^2 dx.
 \end{equation*}
@@ -220,7 +216,7 @@ $u_y'(x,y), \vert k\vert>1, $ в статье [1].
 \end{equation}
 где $z = x + iy$. 
 \par
-Доказательство. Рассмотрим равенство (6). Система синусов $\left\{\sin{\left[\left(n +1/2\right)x + \pi/4\right]}\right\}_{n=0}^{\infty}$ образует базис в $L_2(0,\pi)$. Поэтому для коэффициентов $A_n\left(n+1/2\right)$ справедливо следующее представление [2]:
+\textbf{Доказательство.} Рассмотрим равенство (6). Система синусов $\left\{\sin{\left[\left(n +1/2\right)x + \pi/4\right]}\right\}_{n=0}^{\infty}$ образует базис в $L_2(0,\pi)$. Поэтому для коэффициентов $A_n\left(n+1/2\right)$ справедливо следующее представление [2]:
 \begin{equation*}
 	A_n\left(n+\dfrac12\right) = \int\limits_0^\pi h_{n+1}(t) \dfrac{\varphi(t)}{\sqrt2} dt, 
 \end{equation*}
@@ -268,7 +264,7 @@ $u_y'(x,y), \vert k\vert>1, $ в статье [1].
 и новый индекс $m = n - k$
 \begin{equation*}
 	I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m =0 }^{\infty} e^{i(m+k)z} B_{m} = 
-	\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} \sum\limits_{m =0 }^{\infty} e^{imz} B_{m}
+	\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} \sum\limits_{m =0 }^{\infty} e^{imz} B_{m},
 \end{equation*}
 \begin{equation*}
 	\sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} =  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}
@@ -292,7 +288,7 @@ $u_y'(x,y), \vert k\vert>1, $ в статье [1].
 	= - \mathrm{Im}\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt =
 \end{equation*}
 \begin{equation*}
-	= - \mathrm{Im}\  \dfrac{2}{\pi} e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{1}{2\cos{t/2} \sqrt{\tan{t/2}}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt, 
+	= - \mathrm{Im}\  \dfrac{2}{\pi} e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{1}{2\cos{t/2} \sqrt{\tg{t/2}}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt, 
 \end{equation*}
 т.е. представление:
 \begin{equation*}
@@ -310,7 +306,7 @@ $u_y'(x,y), \vert k\vert>1, $ в статье [1].
 	\begin{center}{СПИСОК ЛИТЕРАТУРЫ}\end{center}{\small
 	\lit{1}{Моисеев Е.И., Моисеев Т.Е., Вафадорова Г.О.}{Об интегральном представлении задачи Неймана-Трикоми для уравнения Лаврентьева-Бицадзе ~// Дифференциальные уравнения, \textbf{2015} Т. 51. №8. С.1070-1075}
 	\lit{2}{Моисеев Е.И.} {О базисности одной системы синусов ~// Дифференциальные уравнения, \textbf{1987} Т. 23. №1. С.177-189}
-	\lit{3}{Бицадзе А.В.} {Некоторые классы уравнений в частных производных.~// М., Наука,\textbf{1981}, 448 стр. }
+	\lit{3}{Бицадзе А.В.} {Некоторые классы уравнений в частных производных.~ М., Наука,\textbf{1981}, 448 стр. }
 	\lit{4}{Моисеев Т. Е.}{Об интегральном представлении решения уравнения Лапласа со
 		смешанными краевыми условиями ~// Дифференциальные уравнения, \textbf{2011}, т. 47, №10, с.1446-1451. }
 		
