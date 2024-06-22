@@ -234,6 +234,26 @@
 			\end{lemma}
 			\begin{proof}
 				$\Leftarrow:$ Пусть $\varphi_1(x) = \int\limits_{-\infty}^{x}\varphi_0(t) dt \Rightarrow \varphi_1(x) \in C^\infty, \ \varphi_1'(x) = \varphi_0(x)$. Пусть $\varphi_0$ сосредоточена на $[a,b]$, тогда $\int\limits_{-\infty}^{x}\varphi_0(t) dt = \varphi_{-\infty}^{\infty} \varphi_0(t)dt  = 0$ при $x > b$. \newline
-				$\Rightarrow:$ $\varphi_0 \in K_0, \ \exists \varphi_1: \varphi_0 = \varphi_1'$. $\int\limits_{$
+				$\Rightarrow:$ $\varphi_0 \in K_0, \ \exists \varphi_1: \varphi_0 = \varphi_1'$. $\int\limits_{-\infty}^{\infty} \varphi_0 dx = \int\limits_{-\infty}^{\infty} \varphi_1' dx = \varphi_1 \vert_a^b$. Рассмотрим $\forall \varphi_1 \in K: \int\limits_{-\infty}^{\infty} \varphi_1 dx =1, \varphi_1 \in K \backslash K_0$. Рассмотрим $\forall \varphi \in K$, представим в виде $\varphi(x) = \varphi_0(x) + \varphi_1(x) * \int\limits_{-\infty}^{\infty} \varphi(x) dx, \forall \varphi \in K$, здесь $\varphi_0$ - проекция $\varphi$ на $K_0$, а $\varphi_1(x) * \int\dots$ - проекция на $K \backslash K_0$. Получается, что $\mathrm{dim} (K \backslash K_0) = 1$.\newline
+				$(y, \varphi) = (y, \varphi_0) + (y_1, \varphi_0)\int\limits_{-\infty}^{\infty} \varphi(x) dx$. Пусть $(y, \varphi_1) = c_1$ - произвольная постоянная. $(y, \varphi) = c_1 \int\limits_{-\infty}^{\infty} \varphi(x) dx = (c_1, \varphi), \forall \varphi \in K$. То есть $y = c_1$ в $K'$. 
+			\end{proof}
+			\begin{sample}
+				$\lim\limits_{A \to \infty} \dfrac{1}{\pi} \dfrac{\sin{Ax}}{x}	 = ?$\newline
+				$(\dfrac{1}{\pi} \dfrac{\sin{Ax}}{x}, \varphi(x)) = \dfrac1\pi \int\limits_{-\infty}^{\infty} \dfrac{\sin{Ax}}{x}\varphi(x) dx = \{\pm \varphi(0)\} = 
+				\dfrac1\pi \int\limits_{-\infty}^{\infty} \dfrac{\sin{Ax}}{x} \varphi(0) dx + \dfrac1\pi \int\limits_{-\infty}^{\infty} \dfrac{\sin{Ax}}{x} (\varphi(x) -\varphi(0)) dx = $\newline$=\varphi(0) + \dfrac1\pi \int\limits_{-a}^{a} \dfrac{\sin{Ax}}{x} (\varphi(x) -\varphi(0)) dx + \int\limits_{|x| \geq a} \varphi(0) \dfrac{\sin{Ax}}{x}dx = \varphi(0) + \dfrac{1}{\pi} \int\limits_{-a}^{a} \varphi'(\xi) \sin{Ax} dx+\int\limits_{|x| \geq a} \varphi(0) \dfrac{\sin{Ax}}{x}dx$\newline
+				$\int\limits_{|x| \geq a} \varphi(0) \dfrac{\sin{Ax}}{x}dx$ - хвост сходящегося ряда, поэтому стремится к нулю. \newline
+				$\dfrac{1}{\pi} \int\limits_{-a}^{a} \varphi'(\xi) \sin{Ax} dx = -\dfrac1{A} \varphi' \cos{Ax} \vert_{-a}^a + \dfrac{1}{A} \int\limits_{-a}^{a} \varphi''(x) \cos{Ax} dx \to 0$ при $A \to + \infty$.\newline
+				Получили, что $\lim\limits_{A \to \infty} \dfrac{1}{\pi} \dfrac{\sin{Ax}}{x} = \delta(x)$ в $K'$.
+			\end{sample}
+			\begin{sample}
+				$\lim\limits_{A \to \infty} \sin{Ax} = 0$. Проверяется аналогично предыдущему пункту.
+			\end{sample}
+			Рассматриваем уравнение $y' = f, \ f \in K' (2)$.
+			\begin{lemma}
+				$\forall f \in K'$ уравнение (2) имеет решение в $K'$.
+			\end{lemma}
+			\begin{proof}
+				$(y', \varphi) = -(y, \varphi') = (f, \varphi) = (f, \int\limits_{-\infty}^{x} \varphi'(\xi) d\xi)$\newline
+				$(y, \varphi') = (f, - \int\limits_{-\infty}^{x} \varphi'(\xi) d\xi), \ \forall \varphi \in K (3)$. Пусть $\varphi_1(x) \in K, \ \int\limits_{-\infty}^{\infty} \varphi_1(x) dx = 1$, $\forall \varphi \in K: \ \varphi(x) = \varphi_1(x) \int\limits_{-\infty}^{\infty} \varphi(x) dx + \varphi_0(x)$. Определим функционал $y_0$ по действию на $\varphi_0(x)$. $(y_0, \varphi) = (y, \varphi_0) = (f, - \int\limits_{-\infty}^{\infty} \varphi_0(\xi) d\xi)$, $y_0$ - частное решение (2) или неопределенный интеграл функции $f$. $(y, \varphi) = (y_1, \varphi_1) \int\limits_{-\infty}^{\infty} \varphi dx + (y, \varphi_0) \Rightarrow$ решение уравнения (2) $\exists$ в $K'$ и записывается в виде $y = y_0 + C$. 
 			\end{proof}
 \end{document}
