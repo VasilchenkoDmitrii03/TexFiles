@@ -22,14 +22,14 @@
 \date{}
 \begin{document}
 \maketitle
-\section*{Элементарная теория обобщённых функций}
-	\subsection*{Основные функции в $\mathbb{R}^1$}
+\section{Элементарная теория обобщённых функций}
+	\subsection{Основные функции в $\mathbb{R}^1$}
 		\begin{definition}
 			Под основной функцией понимают любую вещественную функцию,  финитную на $\mathbb{R}$ и определенную на $\mathbb{R}$ и непрерывную вместе с любой производной конечного порядка на $\mathbb{R}$.
 		\end{definition}
 		Если $\varphi = 0$ вне $[a,b]$, то говорят, что $\varphi$ сосредоточена на $[a,b]$. В этом случае $[a,b]$ - носитель $\varphi(x)$. $\mathrm{supp} \varphi(x) = \overline{\{x: \varphi(x) \neq 0\}}$.
 		Пространство финитных функций является линейным, проверяется тривиально.
-		\subsubsection*{Предельный переход в $K$}
+		\subsubsection{Предельный переход в $K$}
 			Пусть $\varphi_n$ - последовательность основных функций.
 			\begin{definition}
 				$\varphi_n(x) \to 0$ в $K$, если все $\varphi_n(x)$ сосредоточены на одном отрезке, последовательность $\varphi_n(x) \rightrightarrows 0$ при $n \to \infty$ на этом отрезке и $\forall k \in \mathbb{N}\ \varphi_n^{(k)} \rightrightarrows 0$ при $n \to \infty$  
@@ -95,7 +95,7 @@
 				\end{matrix}$
 				таких, что $\varphi^{(m)} \to \varphi$ при $m\to \infty$, то $\exists \{\varphi_{n_m}^{(m)}\}$ - сходящаяся к $\varphi$ при $n \to \infty$. Рассмотрим контрпример: $\varphi_n^{(m)}(x) = \dfrac{1}{n}\varphi(\dfrac{x}{m};a )$. Для любого фиксированного $m$ $\varphi_n^{(m)} (x) \to 0$ в $K$.Но если взять последовательность $\varphi_{n_m}^{(m)}(x) \to \dfrac{1}{n_m}\varphi(\dfrac{1}{m}; a)$, то не будет общего носителя.
 			\end{proof}
-		\subsection*{Обобщённые функции в $\mathbb{R}^1$}
+		\subsection{Обобщённые функции в $\mathbb{R}^1$}
 			\begin{definition}
 				$E$ - множество обычных вещественных функций, определенных на $\mathbb{R}$, локально интегрируемых.
 			\end{definition}
@@ -112,7 +112,7 @@
 			\end{definition}
 			$K'$ - множество всех обобщённых функций над $K$. \newline
 			Любой обычной функции $f(x)$ отвечает обобщённая функция, определяемая по формуле (1) $f(x) = \mathrm{const}: \ (c,\varphi) = c \int\limits_{\mathbb{R}} \varphi(x) dx$. $f(x): \forall x \to f(x)$ почти всюду. $f: \forall \varphi \to (f, \varphi)$. Не можем говорить про равенство в точке, но можем говорить об эквивалентности на $(a,b)$.
-			\subsubsection*{Сингулярные функции}
+			\subsubsection{Сингулярные функции}
 				\begin{enumerate}
 					\item $\delta(x)$.
 					\item $\delta(x - a), \forall a \in \mathbb{R}$.
@@ -148,16 +148,16 @@
 				\end{cases} \in E$. $(\theta(x), \varphi(x)) = \int\limits_{-\infty}^{\infty} \theta(x) \varphi(x) dx = \int\limits_{0}^{\infty} \varphi(x) dx$ \newline
 				$(\delta(x), \varphi(x)) = \varphi(0)  = - \int\limits_{0}^{\infty} \varphi'(x) dx = \int\limits_{-\infty}^{\infty} - \theta(x) \varphi'(x) dx$. Поэтому порядок сингурлярности $\delta(x)$ равен 1, а для $\delta'(x)$ $p \leq 2$.
 			\end{sample}
-	\subsection*{Действие с обобщёнными функциями}
-		\subsubsection*{Сложение}
+	\subsection{Действие с обобщёнными функциями}
+		\subsubsection{Сложение}
 			Сложение и умножение на вещественное число: $\forall f_1, f_2 \in K', \ \forall \alpha_1, \alpha_2 \in \mathbb{R}: \ (\alpha_1f_1+\alpha_2f_2, \varphi) = \alpha_1(f_1, \varphi)+\alpha_2(f_2, \varphi) \Rightarrow \alpha_1f_1+\alpha_2f_2 \in k'$
-		\subsubsection*{Умножение на бесконечно дифференцируемую функцию}
+		\subsubsection{Умножение на бесконечно дифференцируемую функцию}
 			$\forall f \in k', \ \forall \alpha(x) \in C^\infty (\mathbb{R})$. 
 			\begin{enumerate}
 				\item $f = f(x) \in E \Rightarrow (\alpha(x)f(x), \varphi(x)) = \int\limits_{\mathbb{R}} \alpha(x)f(x)\varphi(x) dx = (f(x), \alpha(x)\varphi(x))$ т.к. $\alpha(x)\varphi(x) \in K$.
 				\item $f \in K'$ $(\alpha(x)f, \varphi) = (f, \alpha(x)\varphi) \Rightarrow \alpha(x) f \in K'$ т.к. функционал линейный и непрерывный.
 			\end{enumerate}
-		\subsubsection*{Дифференциорвание}
+		\subsubsection{Дифференциорвание}
 			$\forall f \in K': \ f':(f', \varphi) = -(f, \varphi'), \forall \varphi \in K$. Пусть $\varphi_n \to 0$ в $K$, тогда $\varphi_n' \to 0 $ в $K$ $\Rightarrow (f, \varphi_n') \to 0$ т.к. $f$-непрерывный функционал $\Rightarrow$  $(f', \varphi_n) \to 0$, то есть  $f'$ - линейный непрерывный функционал $f' \in K$.
 			
 			Свойства производной:
@@ -203,7 +203,7 @@
 				$((x_+^\lambda)', \varphi) = - (x_+^\lambda, \varphi') = - \int\limits_{-\infty}^{\infty} x_+^\lambda \varphi'(x) dx = - \int\limits_0^\infty x^\lambda \varphi'(x) dx = -\lim\limits_{\varepsilon \to 0 +0} \int\limits_{\varepsilon}^{\infty} x^\lambda \varphi'(x) dx =  -\varepsilon^\lambda \varphi(\varepsilon) - \int\limits_{\varepsilon}^{\infty} \lambda x^{\lambda -1} \varphi(x) dx =  -\varepsilon^\lambda \varphi(\varepsilon) - \int\limits_{\varepsilon}^{\infty} \lambda x^{\lambda -1} (\varphi(x) - \varphi(0)) dx - \int\limits_{\varepsilon}^{\infty} \lambda x^{\lambda -1} \varphi(0) dx = \varepsilon^\lambda (\varphi(0) - \varphi(\varepsilon)) - \int\limits_{\varepsilon}^{\infty} \lambda x^{\lambda -1} (\varphi(x) - \varphi(0))dx \to - \int\limits_0^\infty \lambda x^{\lambda -1} (\varphi(x) - \varphi(0))dx$\newline
 				В итоге $(x_+^\lambda)': \varphi(x) \to \int\limits_0^\infty \lambda x^{\lambda -1} (\varphi(x) - \varphi(0))dx$ в $K'$.
 			\end{sample}
-		\subsection*{Предельный переход в $K'$}
+		\subsection{Предельный переход в $K'$}
 			Рассмотрим $\{f_n\}, f_n \in K', f \in K'$
 			\begin{definition}
 				$f_n \to f$ в  $K'$, если $(f_n, \varphi) \to (f, \varphi), \forall \varphi \in K$
@@ -219,9 +219,9 @@
 				\end{cases}$\newline
 				$(f_n(x), \varphi(x)) = \dfrac{n}{2} \int\limits_{-1/n}^{1/n} \varphi(x)dx = \{\text{формула среднего}\} = \dfrac{n}{2} \varphi(\xi) \dfrac{2}{n} \to \varphi(0) = (f(x), \varphi(x)) $ $\Rightarrow$  $f_n(x) \to \delta(x)$ в $K'$.
 			\end{proof}
-		\subsection*{Масса материальной точки}
-		\subsection*{Плоскость электрического диполя}
-		\subsection*{Первообразная обобщённых функций}
+		\subsection{Масса материальной точки}
+		\subsection{Плоскость электрического диполя}
+		\subsection{Первообразная обобщённых функций}
 			Рассмотрим уравнение $y' = 0$ в $K'$ (1).
 			\begin{lemma}
 				В пространстве $K'$ уравнение (1) имеет решение $y = \mathrm{const}$.
@@ -260,7 +260,7 @@
 				Решить уравнение $y'+y = \theta(x)$ в $K'$.\newline
 				$y = z e^{-x}, y' = z'e^{-x} - z e^{-x}$, тогда наше уравнение: $z'e^{-x} = \theta(x)$, $z' = \theta(x) e^{x}$. По формуле, полученной выше: $(z_0, \varphi) = (z, \varphi_0) = (f, -\int\limits_{-\infty}^{x} \varphi_0(\xi) d\xi) = (\theta(x) e^x, - \int\limits_{-\infty}^{x} \varphi_0(\xi) d\xi) = -\int\limits_0^{\infty}e^x \int\limits_{-\infty}^{x} \varphi_0(\xi) d\xi dx = -e^x \int\limits_{\infty}^{x} \varphi_0 d\xi \vert_{x=0}^\infty + \int\limits_0^{\infty} e^x \varphi_0(x) dx = \{\varphi_0 \in K_0: \int\limits_{-\infty}^{\infty} \varphi_0 dx\xi = 0\} = \int\limits_{\infty}^{0} \varphi_0 d\xi + \int\limits_0^{\infty} e^x \varphi_0(x) dx = \int\limits_{-\infty}^{\infty} \varphi_0 d\xi + \int\limits_0^\infty (e^x - 1) \varphi_0 dx = \int\limits_{-\infty}^{\infty} \theta(x) (e^x - 1) \varphi_0(x) dx$. Поэтому $z_0(x) = \theta(x)(e^x -1) \Rightarrow z(x) = \theta(x) (e^x -1) + C$, $y = \theta(x) (1 - e^{-x}) + Ce^{-x}$
 			\end{sample}
-	\subsection*{Обобщённые функции в $\mathbb{R}^n$}
+	\subsection{Обобщённые функции в $\mathbb{R}^n$}
 		\begin{definition}
 			Функция называется обычной, если она определена на $\mathbb{R}^n$, принимает вещественные значения, интегрируема (по Лебегу) по любому n-мерному брусу.
 		\end{definition}
@@ -285,7 +285,7 @@
 			\end{equation*}
 			где $k = (k_1, \dots, k_n), |k| = k_1 + \dots + k_n, D^k = \dfrac{\partial^{|k|}}{\partial x_1^{k_1} \dots \partial x_n^{k_n}}$
 		\end{definition}
-		\subsubsection*{Действия с обобщёнными функциям}
+		\subsubsection{Действия с обобщёнными функциям}
 			\begin{enumerate}
 				\item $\forall \alpha_1, \alpha_2 \in \mathbb{R}, \forall f_1, f_2 \in K_n'$ $\Rightarrow$ $(\alpha_1 f_1 + \alpha_2 f_2, \varphi) = \alpha_1(f_1, \varphi) + \alpha_2(f_2, \varphi)$
 				\item $\forall f \in K_n', \alpha(x) \in C^\infty(\mathbb{R}^n)$ $\Rightarrow$ $(\alpha(x)f, \varphi) = (f, \alpha(x) \varphi)$
@@ -310,7 +310,38 @@
 			\end{sample}
 			\begin{sample}
 				Оператор Лапласа от сферических функций: \newline
-				$\Delta f = r^{p-2} p(p+n-2)$ это верно в $K'$, если все функции из $E$.\newline
-				При $p-2 > -n$ все верно в $K_n'$. Пусть $p= 2-n, n=2$
+				$\Delta = \sum\limits_{j=1}^n \dfrac{\partial^2}{\partial x_j^2}$, $f(r), \ r = \sqrt{\sum\limits_{m=1}^n x_m^2}$, $\dfrac{\partial r}{\partial x_j} = \dfrac12 \dfrac{2x_j}{r} = \dfrac{x_j}{r}$, $\dfrac{\partial f}{\partial x_j} = f'(r) \dfrac{\partial r}{\partial x_j} = f'(r) \dfrac{x_j}{r}$, $\dfrac{\partial^2 f}{\partial x_j^2} = f''(r) \dfrac{x_j^2}{r^2} + f'(r) \dfrac{r - \dfrac{x_j^2}{r}}{r^2} = f''(r) \dfrac{x_j^2}{r^2} + f'(r) \dfrac{r^2 - x_j^2}{r^3}$\newline
+				$\Delta f(r) = f''(r) + f'(r) \dfrac{r^2n - r^2}{r^3} = f''(r) + f'(r) \dfrac{n-1}{r}$. Пусть теперь $f(r) = r^p$, тогда $\Delta f(r) = r^{p-2} p(p+n -2) \ \ (1)$.
 			\end{sample}
+	\subsection{Формула Грина}
+		\begin{equation*}
+			\int\limits_G \Delta f \varphi d \sigma = \int\limits_G f \Delta \varphi d \sigma + \int\limits_{\Gamma= \delta G} \left(f \dfrac{\partial \varphi}{\partial n} - \varphi \dfrac{\partial f}{\partial n}\right) d\sigma_p
+		\end{equation*}		
+		$G: \varepsilon \leq r \leq a, \ a: \varphi(x) = 0$ вне $|x| \leq a$.\newline
+		\begin{math}
+			\int\limits_{r \geq \varepsilon} \dfrac{\Delta \varphi}{r^{n-2}} dx = \int\limits_{r \geq \varepsilon} \varphi \left(\dfrac{1}{r^{n-2}}\right)dx - \int\limits_{r = \varepsilon} \dfrac{\partial \varphi}{\partial r} \dfrac{1}{r^{n-2}} d\sigma + \int\limits_{r=\varepsilon} \varphi \dfrac{\partial}{\partial r} \left(\dfrac{1}{r^{n-2}}\right) d\sigma
+		\end{math}\newline
+		$\Delta \dfrac{1}{r^{n-2}} = 0$ из (1).\newline
+		\begin{math}
+				\int\limits_{r = \varepsilon} \dfrac{\partial \varphi}{\partial r} \dfrac{1}{r^{n-2}} d\sigma = \dfrac{1}{\varepsilon^{n-2}} \int\limits_{r = \varepsilon} \dfrac{\partial \varphi}{\partial r} d \sigma \to 0 \text{ при } \varepsilon \to 0
+		\end{math} 
+		так как $\dfrac{\partial\varphi}{\partial r}$ ограниченно\newline
+		\begin{math}
+			\int\limits_{r = \varepsilon} \varphi \dfrac{\partial}{\partial r}\left(\dfrac{1}{r^{n-2}}\right) d\sigma = \left\{\dfrac{\partial}{\partial r}\left(\dfrac{1}{r^{n-2}}\right) = \dfrac{-(n-2)r^{n-3}}{r^{2(n-2)}} = \dfrac{-(n-2)}{r^{n-1}} \right\} = - \dfrac{(n-2)}{\varepsilon^{n-1}} \int\limits_{r = \varepsilon} \varphi d\sigma	= - \dfrac{(n-2) \Omega_n}{\varepsilon^{n-1} \Omega_n} \int\limits_{r = \varepsilon} \varphi d\sigma	\\
+			= \left\{ \dfrac{1}{\varepsilon^{n-1} \Omega_n} \int\limits_{r = \varepsilon} \varphi d\sigma = S_\varepsilon[\varphi] - \text{ среднее значение функции на сфере}\right\} = -(n-2) \Omega_n S_\varepsilon[\varphi] \to -(n-2) \Omega_n \varphi(0) = \\
+			= (-(n-2)\Omega_n \delta(x), \varphi(x)), \ \forall \varphi \in K_n
+		\end{math}\newline
+		В итоге получили, что $\Delta \dfrac{1}{r^{n-2}} = -(n-2) \Omega_n \delta(x), n > 2$. При $n =3: \ \Delta \dfrac{1}{r} = - 4 \pi \delta(x)$ и имеет первый порядок сингулярности.
+	\subsection{Дифференциальный оператор}
+		\begin{definition}
+			Пусть  $P(x_1, \dots, x_n)$ - многочлен относительно переменных $x_1, \dots, x_n$. Рассмотрим дифференциальный оператор $P(\dfrac{\partial }{\partial dx}) = P(\dfrac{\partial}{\partial x_1}, \dots, \dfrac{\partial}{\partial x_n})$. Обобщённая функция $E(x)$ называется фундаментальным решением оператор  $P(\dfrac{\partial }{\partial dx})$, если она является решением уравнения  $P(\dfrac{\partial }{\partial dx})  E(x) = \delta(x)$ 
+		\end{definition}
+		\begin{notabene}
+			Для оператора Лапласа $E(x) = - \dfrac{1}{(n-2)\Omega_n} \dfrac{1}{r^{n-2}}, \forall n > 2$.
+		\end{notabene}
+		\begin{sample}
+			$P\theta(x) = \delta(x)$, функция хевисайда является фундаментольной для  $P(\dfrac{\partial }{\partial dx}) = \dfrac{\partial^n}{\partial x_1 \dots \partial x_n}$
+		\end{sample}
+\section{Преобразование Фурье и свертка обобщённых функций}
+	
 \end{document}
