@@ -386,4 +386,15 @@
 			$|\varphi(x)| \leq \dfrac{1}{2\pi} \int\limits_{-\infty}^{\infty} \dfrac{\tilde{C}}{1 + |\sigma|^2} e^{a|\tau|} e^{\tau x} d \sigma = \tilde{\tilde{C}} e^{a|\tau| + \tau x}$, $\tilde{\tilde{C}}$ не зависит от $\tau$.\newline
 			Пусть $x > a, a - x < 0$, пусть $\tau < 0$ $\Rightarrow \tau = - |\tau|$, $|\varphi(x)|  \leq \tilde{\tilde{C}} e^{|\tau| (a-x)} \to 0 \text{ при } \tau \to \infty$, аналогично для $ x < -a$, то есть показали, что $\mathrm{supp} \varphi(x) \subset [-a,a]$.
 		\end{proof}
+		\begin{definition}
+			Обозначим через $Z$ множество всех целых функций $\psi(s)$, допускающих оценки (1).
+		\end{definition}
+		Тогда по доказанной выше теореме преобразование Фурье это измофорфизм между $K$ и $Z$. На $Z$ определяем $Z'$ также как делали это ранее (множество линейных ограниченных функционалов).
+	\subsection{Операции в пространствах $Z$, $Z'$}
+		\subsubsection{Пространство $Z$}
+			Можно умножать $\psi(s) \in Z$ на функции $G(s)$ -целые, для которых справедлива оценка $|G(s)| \leq C(1 + |s|^m) e^{\sigma |\tau|}$, $\tau = \mathrm{Im}s$, для некоторого $m =0, 1,2, \dots$, $ b \geq 0, b \in \mathbb{R}$. $G(s)\psi(s) \in Z$ так как $|G(s) \psi(s) | \leq C(1 + |s|^m) e^{b|\tau|} |\psi(s)| \leq \tilde{C} e^{(b+a) |\tau|}$.
+			\newline
+			Операциям в $K$ отвечают двойственные операции в $Z$. \newline
+			Производная: $F[\varphi^{(q)}(x)] = (-is)^q F[\varphi(x)] = (-is)^1 \psi(s)$. Обратно $\dfrac{\partial }{\partial s}\psi(s) = \int\limits_{-a}^{a} (ix) \varphi(x) e^{isx} dx$. Операции дифференцирования в $Z$ отвечает операция умножения на $(ix)$ в $K$ и так как $(ix)^q \varphi(x) \in K$, то операция не выводит за пределы $K$ $\Rightarrow$  $\psi^{(q)}(s) \in Z$.\newline
+			Операция сдвига:
 \end{document}
