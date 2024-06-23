@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  23 JUN 2024 12:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  23 JUN 2024 13:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -819,49 +819,56 @@ tha/m/n/10 p\OML/cmm/m/it/10 x\U/matha/m/n/10 q\OML/cmm/m/it/10 dx \U/matha/m/n
 /10 q ^^A
  []
 
-[4] [5] [6] [7] (document.aux)
+[4] [5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
+
+ []
+
+[7] [8] (document.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4817 strings out of 474486
- 69591 string characters out of 5743755
- 1951542 words of memory out of 5000000
- 27053 multiletter control sequences out of 15000+600000
- 580589 words of font info for 92 fonts, out of 8000000 for 9000
+ 4819 strings out of 474486
+ 69615 string characters out of 5743755
+ 1952542 words of memory out of 5000000
+ 27054 multiletter control sequences out of 15000+600000
+ 581480 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,10n,65p,1005b,253s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi600\m
-atha8.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/d
-pi600\mathx10.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/public/m
-athabx/dpi600\matha7.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/p
-ublic/mathabx/dpi600\mathb10.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/
-ljfour/public/mathabx/dpi600\matha10.pk> <C:\Users\progr\AppData\Local\MiKTeX\f
-onts/pk/ljfour/lh/lh-t2a/dpi600\larm1000.pk> <C:\Users\progr\AppData\Local\MiKT
-eX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati1000.pk> <C:\Users\progr\AppData\Local\
-MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1000.pk> <C:\Users\progr\AppData\Lo
-cal\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\progr\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\progr\Ap
-pData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\prog
-r\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1728.pk><C:/Users/p
-rogr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C
-:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
-12.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmmi5.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/progr/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/progr/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/progr/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/progr/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/U
-sers/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/ms
-bm7.pfb>
-Output written on document.pdf (7 pages, 262857 bytes).
+ <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labi10
+00.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/public/mathabx/dpi6
+00\matha12.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/public/math
+abx/dpi600\matha8.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/publ
+ic/mathabx/dpi600\mathx10.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljf
+our/public/mathabx/dpi600\matha7.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts
+/pk/ljfour/public/mathabx/dpi600\mathb10.pk> <C:\Users\progr\AppData\Local\MiKT
+eX\fonts/pk/ljfour/public/mathabx/dpi600\matha10.pk> <C:\Users\progr\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1000.pk> <C:\Users\progr\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati1000.pk> <C:\Users\progr\Ap
+pData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1000.pk> <C:\Users\prog
+r\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\
+progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Us
+ers\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C
+:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1728.pk
+><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmmi12.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmmi5.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/progr/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/progr/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/progr/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/progr/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/prog
+r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Use
+rs/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
+s/symbols/msbm7.pfb>
+Output written on document.pdf (8 pages, 278775 bytes).
 PDF statistics:
- 452 PDF objects out of 1000 (max. 8388607)
+ 477 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

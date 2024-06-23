@@ -343,5 +343,47 @@
 			$P\theta(x) = \delta(x)$, функция хевисайда является фундаментольной для  $P(\dfrac{\partial }{\partial dx}) = \dfrac{\partial^n}{\partial x_1 \dots \partial x_n}$
 		\end{sample}
 \section{Преобразование Фурье и свертка обобщённых функций}
-	
+	\subsection{Преобразование Фурье в $K=K_1$}
+		Рассмотрим $\forall \varphi(x) \in K$, $\mathrm{supp}\varphi(x) \subset [-a, a]$.\newline
+		\begin{definition}
+			Преобразованием Фурье функции $\varphi \in K$ называется 
+			\begin{equation*}
+				F[\varphi] \equiv \psi(\sigma) = \int\limits_{-\infty}^{\infty} \varphi(x) e^{i\sigma x} dx = \int\limits_{-a}^{a} \varphi(x) e^{i\sigma x} dx
+			\end{equation*}
+		\end{definition}
+		\begin{definition}
+			Обратным преобразованием Фурье функции $\psi(\sigma)$ называется
+			\begin{equation*}
+				\varphi(x) = \dfrac{1}{2\pi}\int\limits_{-\infty}^{\infty} \psi(\sigma) e^{-i\sigma x} d \sigma
+			\end{equation*}
+			Оно однозначно восстанавливает $\varphi(x)$ по $\psi(\sigma)$.
+		\end{definition}
+		\begin{theorem}
+			(свойства преобразования Фурье)\newline
+			\textbf{I.} Пусть $\varphi(x) \in K$, $\mathrm{supp} \varphi \subset [-a, a]$ для некоторого $ a > 0$. Тогда функцию $\psi(\sigma)$ можно продолжить аналитически на всю комплексную плоскость $\mathbb{C}$, функция $\psi(s), \ s = \sigma + i \tau, \ \sigma, \tau \in \mathbb{R}$ так что $\forall q \in \{0\} \cup \mathbb{N}$ $\exists C_q = const > 0: \ |s^q \psi(s) | \leq c_q e^{a|\tau|} \ (1)$\newline
+			\textbf{II.} Пусть $\psi(s)$ - целая функция на $\mathbb{C}$ и справедлива оценка (1). Тогда $\exists$ функция $\varphi(x) \in K$ , $\mathrm{supp} \varphi \subset [-a, a]$, для которой функции $\psi(\sigma)\ (\sigma = \mathrm{Re} s)$ является её преобразованием Фурье.
+		\end{theorem}
+		\begin{proof}
+			\textbf{I.} Положим  $\psi(s) = \int\limits_{-a}^{a} \varphi(x) e^{isx} dx, \ \forall s = \sigma + i \tau \in \mathbb{C}$. $|\psi(s)| \leq \int\limits_{-a}^{a} |\varphi(x) | |e^{isx}| dx = \int\limits_{-a}^{a} |\varphi(x)| e^{-\tau x} dx \leq C_0 e^{a|\tau|}$, $C_0 = \int\limits_{-a}^{a} |\varphi(x)| dx$, получили оценку для $q = 0$.\newline
+			$\psi^{(l)}(s) = \int\limits_{-a}^{a} \varphi(x) (ix) ^l e^{isx} dx$ - существует, непрерывная $\forall s \in \mathbb{C}$, поэтому $\psi(s)$ - аналитическая функция на $\mathbb{C}$.\newline
+			Чтобы получить оценку (1) нужно q раз интегрировать по частям:
+			\begin{math}
+				\psi(s) = \int\limits_{-a}^{a} \varphi(x) e^{isx} dx = \{\text{по частям}\} = \\
+				= (-1)^q \int\limits_{-a}^{a} \varphi^{(q)}(x) \dfrac{1}{(is)^q} e^{isx} dx \Rightarrow |s^q \psi(s)| \leq C_q e^{a|\tau|}, \ C_q = \int\limits_{-a}^{a} |\varphi^{(q)}(x)| dx
+			\end{math}\newline
+			Попутно установили формулу $F[\varphi^{(1)}(x)] = (-is)^q F[\varphi(x)] \ \ (2)$ \newline
+			\textbf{II.} Рассмотрим функцию $\varphi(x) = \dfrac{1}{2\pi} \int\limits_{-\infty}^{\infty} \psi(\sigma) e^{-i\sigma x} d\sigma \ \ (3)$, эта функция единственна из единственности обратного преобразования Фурье.\newline
+			Пусть в (1) $s = \sigma$ (то есть мнимая часть равна 0) $\Rightarrow$ $|\psi(\sigma)| \leq C_0, \ |\sigma^p \psi(\sigma)| \leq C_q \Rightarrow (1 + |\sigma|^p)|\psi(\sigma)| \leq C, \ \psi(\sigma) \leq \dfrac{C}{1 + |\sigma|^q}, \ \forall q > 1, C = C(q)$\newline
+			$\varphi^{(l)}(x) = \dfrac{1}{2\pi} \int\limits_{-\infty}^{\infty} \psi(\sigma) (-i\sigma)^l e^{-i\sigma x} d\sigma$, пусть $q = l + 2$, тогда интеграл сходится равномерно по $x$ на любом отрезке числовой прямой (по признаку Вейерштрасса) $\Rightarrow$ $ \varphi(x) \in C^\infty(\mathbb{R})$\newline
+			Докажем, что в правой части формулы (3) можно интегрироваь по любой прямой в $\mathbb{C}$ параллельной оси $O\sigma$, то есть $\varphi(x) = \dfrac{1}{2\pi} \int\limits_{-\infty}^{\infty} \psi(\sigma + i\tau) e^{-i(\sigma + i \tau)x} d\sigma, \ \forall \tau \in \mathbb{R} \ \ (4).$ Рассмотрим функцию $f(s) = \psi(s) e^{-isx}$, она целая. Рассмотрим прямоугольник $ \Gamma = (-A)(B)(C)(A), -A = (-\sigma_0, 0), B = (-\sigma_0, \tau_0), C =(\sigma_0, \tau_0), A = (\sigma_0, 0)$. Наша функция аналитична в $\mathbb{C}$, поэтому по теореме Коши $\int\limits_\Gamma f(s) ds = \int\limits_\Gamma \psi(s) e^{-isx} ds = 0, \forall x \in \mathbb{R}$. Теперь распишем интегралы по границам этого прямоугольника:
+			\begin{math}
+				|\int\limits_{AC} \psi(\sigma_0 + i\tau) e^{-(\sigma_0+ i\tau)x} d\tau| = |\int\limits_0^{\tau_0} \psi(\sigma_0 + i\tau) e^{-(\sigma_0 + i \tau)x} d\tau| \leq \left\{|s|^2 |\psi(s)| \leq C e^{a|\tau|}, |\psi(s)| \leq \dfrac{C_1}{|\sigma_0 + i\tau|^2}\right\} \leq \\
+				\leq C_1 \int\limits_0^\tau \dfrac{1}{|\sigma_0 + i\tau|^2}e^{\tau x} d\tau \sim \dfrac{1}{|\sigma_0|} \to 0 \text{ при } \sigma_0 \to \infty.
+			\end{math}
+			То есть по отрезкам (AC) и (-AB)  интеграл стремится к 0 и формула (4) верна.\newline
+			$|\psi(s)| \leq C_0 e^{a|\tau|} |s|^2 |\psi(s)| \leq C_2 e^{a|\tau|} \Rightarrow |\psi(s)| \leq \dfrac{\tilde{C}}{1 + |s|^2}e^{a|\tau|} \leq \dfrac{\tilde{C}}{1 + |\sigma|^2} e^{a|\tau}, \ |s| \geq |\sigma|$.\newline
+			Подставим в (4) для фиксированного $\tau \neq 0$.
+			$|\varphi(x)| \leq \dfrac{1}{2\pi} \int\limits_{-\infty}^{\infty} \dfrac{\tilde{C}}{1 + |\sigma|^2} e^{a|\tau|} e^{\tau x} d \sigma = \tilde{\tilde{C}} e^{a|\tau| + \tau x}$, $\tilde{\tilde{C}}$ не зависит от $\tau$.\newline
+			Пусть $x > a, a - x < 0$, пусть $\tau < 0$ $\Rightarrow \tau = - |\tau|$, $|\varphi(x)|  \leq \tilde{\tilde{C}} e^{|\tau| (a-x)} \to 0 \text{ при } \tau \to \infty$, аналогично для $ x < -a$, то есть показали, что $\mathrm{supp} \varphi(x) \subset [-a,a]$.
+		\end{proof}
 \end{document}
