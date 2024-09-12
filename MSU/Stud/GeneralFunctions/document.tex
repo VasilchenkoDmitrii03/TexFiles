@@ -136,7 +136,7 @@
 				\begin{equation*}
 					(f,\varphi) = \sum\limits_{k=0}^{p} \int\limits_{\mathbb{R}} f_k(x) \varphi^{(k)}(x) dx = \sum\limits_{k=0}^{p} (f_k(x), \varphi^{(k)}(x)), \forall \varphi \in K,  \eqno{(1)}
 				\end{equation*}
-				где $f_1(x), \dots, f_p(x) \in E$
+				где $f_0(x), \dots, f_p(x) \in E$
 			\end{definition}
 			\begin{sample}
 				$f(x) \in E$, тогда регулярная $\Rightarrow p = 0$.
@@ -395,6 +395,69 @@
 			Можно умножать $\psi(s) \in Z$ на функции $G(s)$ -целые, для которых справедлива оценка $|G(s)| \leq C(1 + |s|^m) e^{\sigma |\tau|}$, $\tau = \mathrm{Im}s$, для некоторого $m =0, 1,2, \dots$, $ b \geq 0, b \in \mathbb{R}$. $G(s)\psi(s) \in Z$ так как $|G(s) \psi(s) | \leq C(1 + |s|^m) e^{b|\tau|} |\psi(s)| \leq \tilde{C} e^{(b+a) |\tau|}$.
 			\newline
 			Операциям в $K$ отвечают двойственные операции в $Z$. \newline
-			Производная: $F[\varphi^{(q)}(x)] = (-is)^q F[\varphi(x)] = (-is)^1 \psi(s)$. Обратно $\dfrac{\partial }{\partial s}\psi(s) = \int\limits_{-a}^{a} (ix) \varphi(x) e^{isx} dx$. Операции дифференцирования в $Z$ отвечает операция умножения на $(ix)$ в $K$ и так как $(ix)^q \varphi(x) \in K$, то операция не выводит за пределы $K$ $\Rightarrow$  $\psi^{(q)}(s) \in Z$.\newline
-			Операция сдвига:
+			\textbf{Производная:} $F[\varphi^{(q)}(x)] = (-is)^q F[\varphi(x)] = (-is)^1 \psi(s)$. Обратно $\dfrac{\partial }{\partial s}\psi(s) = \int\limits_{-a}^{a} (ix) \varphi(x) e^{isx} dx$. Операции дифференцирования в $Z$ отвечает операция умножения на $(ix)$ в $K$ и так как $(ix)^q \varphi(x) \in K$, то операция не выводит за пределы $K$ $\Rightarrow$  $\psi^{(q)}(s) \in Z$.\newline
+			\textbf{Операция сдвига:} $\varphi(x) \to \varphi(x-h), \ h \in \mathbb{R}$. Что произойдёт в $Z$? $\psi(s) = \int\limits_{-\infty}^{\infty} \varphi(x-h)e^{isx} dx = \{x -h =y\}= \int\limits_{-\infty}^{\infty} \varphi(y) e^{is(y+h)} dy = e^{ish}\int\limits_{-\infty}^{\infty} \varphi(y) e^{isy} dy = e^{ish} \psi(s)$. То есть сдвигу на $(-h)$ в $K$ отвечает операция умножения на $e^{ish}$ в $Z$. Обратно: В $K$ умножение на $e^{ixh}$: $e^{ixh} \varphi(x): \ \int\limits_{-\infty}^{\infty} e^{ixh} \varphi(x) e^{isx} dx = \int\limits_{-\infty}^{\infty} \varphi(x) e^{i(s+h)x}dx = \psi(s+h)$.  То есть операции умножения на $e^{ixh}$ в $K$ соответствует сдвигу в $Z$ на $h \in \mathbb{C}$. \newline
+			\textbf{Сходимость в $Z$:}
+			\begin{enumerate}
+				\item Рассмотрим $\{\psi_\nu(s)\}, \ \psi_\nu \in Z, \ \psi_\nu = F[\varphi_\nu]], \varphi_\nu \in K.$ $\psi_\nu(s) \to 0$ в $Z$, если $\varphi_nu(x) \to $ в $K$.
+				\item $\psi_\nu(s) \to 0$ в $Z$, если 
+					\begin{enumerate}
+						\item $\exists C_q, q \geq 0, a > 0: \ |s^q \psi_\nu(s)| \leq C_q e^{a|\tau|}, \ \tau = \mathrm{Im} s, c_q, a$ - не зависит от $\nu$.
+						\item $\psi_\nu(\sigma) \rightrightarrows 0$ при $\nu \to \infty$, если на любом конечном отрезке числовой прямой $\sigma$ $\psi(s+h) = \sum\limits_{q=0}^{\infty} \dfrac{\psi^{(q)}(s)}{q!} h^q \ \ (5)$, где ряд сходится в $Z$. Эта запись эквивалентна следующей:
+						\begin{equation*}
+							e^{ixh}\varphi(x) = \sum\limits_{q=0}^{\infty} \dfrac{(ix)^q}{q!} h^q \varphi(x)
+						\end{equation*}
+						То есть $\varphi$ не только бесконечно дифференцируема, но и разложима в ряд Тейлора.
+					\end{enumerate}
+			\end{enumerate}
+		\subsection{Пространство $Z'$}
+			Регулярные обобщённые функции: $g(\sigma)$ - комплекснозначные функции, определнные на $\mathbb{R}$, локально интегрируемые и растущие на бесконечности не быстрее некоторой степени $|\sigma|$. Тогда $\exists (g, \psi) = \int\limits_{-\infty}^{\infty} g(\sigma) \psi(\sigma) d\sigma$. Пусть $|g(\sigma)| \leq C |\sigma|^l$, для некоторого $l \geq 0$. $\psi(\sigma): \ \exists q = l + \varepsilon$ в (1) $C \geq 0$: $|\psi(\sigma)| \leq \dfrac{C}{1 + |\sigma|^{C+2}}$.\newline
+			Сингулярные обобщённые функции:
+			\begin{enumerate}
+				\item $(\delta(s), \psi(s)) = \psi(0)$
+				\item $(\delta(s+h), \psi(s)) = \psi(h)$
+			\end{enumerate}
+			\textbf{Предельный переход в $Z'$:} $\{g_\nu\}, \ g_\nu \in Z', \ g_\nu \to g$ в  $Z'$, $g \in Z'$, если $(g_\nu, \psi) \to (g, \psi), \forall \psi \in Z$.\newline
+			\textbf{Умножение на функцию в $Z'$:} $G(s)$ - целая функция, удовлетворяющая $|G(s)| \leq C(1 + |s|^m)e^{b|\tau|}$, тогда $(G(s)g(s), \psi(s)) = (g(s),\overline{G}(\overline{s})\psi(s))$ \newline
+			\textbf{Дифференциорование в $Z'$:} $(g', \psi) = -(g, \psi'), \forall \psi \in Z$.
+	\subsection{Преобразование Фурье в $K'$}
+		Сначала рассмотрим одномерный случай $K_1'$. 
+		\begin{theorem}
+				(Равенство Парсеваля для интегралов Фурье)\newline
+				Пусть $f(x), \varphi(x) \in L_2(\mathbb{R}), \ g(\sigma), \psi(\sigma)$ - их преобразования Фурье соответственно. 
+				\begin{equation*}
+					\int\limits_{\mathbb{R}} \overline{g}(\sigma) \psi(\sigma) d \sigma = 2\pi \int\limits_{\mathbb{R}} \overline{f(x)} \varphi(x) dx
+				\end{equation*}
+				или в краткой форме $(g, \psi) = 2\pi(f, \varphi)$
+			\end{theorem}
+						\begin{proof}
+				\begin{math}
+					\int\limits_{\mathbb{R}} \overline{f(x)} \varphi(x) dx = \dfrac{1}{2\pi} \int\limits_{\mathbb{R}} \overline{f(x)} \int\limits_{\mathbb{R}} \psi(\sigma) e^{-i\sigma x} d\sigma dx = \{\text{Теорема Фубини}\} = \\
+					= \dfrac{1}{2\pi} \int\limits_{\mathbb{R}} \psi(\sigma) \int\limits_{\mathbb{R}} \overline{f(x)} e^{\overline{i\sigma x}} dx d\sigma = \dfrac{1}{2\pi} \int\limits_{\mathbb{R}} \overline{g}(\sigma) \psi(\sigma) d \sigma
+					\end{math}
+				\end{proof}
+		\begin{definition}
+			Преобразованием Фурье функции $f \in K'$  называется линейный непрерывный функционал $g(\sigma) \in Z'$ над пространством $Z$, такой, что $(g(\sigma), \psi(\sigma)) = 2\pi (f, \varphi), \ \forall \varphi \in K, \psi \in Z$. Обозначение $g(\sigma) = F[f]$.
+		\end{definition}
+		Линейность очевидна, покажем непрерывность: пусть $f_\nu \in K', \ \nu = 1, 2, \dots, \ f_\nu \to f$ в $K'$. Покажем, что $F[f_\nu] \to F[f]$. $(F[f_{\nu}], \psi(\sigma)) = 2\pi (f_\nu, \varphi) \to 2\pi (f, \varphi) = (F[f], \psi(\sigma))$.
+		\begin{sample}
+			$F[1]$ в $K'$. В $E$ $F[1]$ не существует. $(F[1], \psi(\sigma)) = 2\pi(1, \varphi(x)) = 2\pi \int\limits_{-\infty}^{\infty} \varphi(x) e^{i\sigma x} dx = 2\pi \psi(0) = 2\pi (\delta(\sigma), \psi(\sigma)), \forall \psi \in Z \Rightarrow F[1] = 2\pi \delta(\sigma)$ в $Z'$.
+		\end{sample}
+		\begin{sample}
+			$F[\delta(x)]$. $(F[\delta(x)], \psi(\sigma)) = 2\pi(\delta(x), \varphi(x)) = 2\pi \varphi(0) = 2\pi \dfrac{1}{2\pi} \int\limits_{-\infty}^{\infty} \psi(\sigma) e^{-i\sigma 0} d\sigma = \int\limits_{-\infty}^{\infty} \psi(\sigma) d\sigma = (1, \psi(\sigma)), \forall \psi \in Z \Rightarrow F[\delta(x)] = 1$ в $Z'$.
+		\end{sample}
+		\begin{sample}
+			$F[x^m]$. Сперва надо доказать ряд фактов:\newline
+			В $K$ 
+			\begin{enumerate}
+				\item $F[\varphi^{(q)}(x)] = (-i\sigma)^q F[\varphi]\ (1)$
+				\item $\dfrac{d^1}{d\sigma^q}F[\varphi]= F[(ix)^q \varphi(x)] \ (2)$
+			\end{enumerate}		
+			В $K'$
+			\begin{enumerate}
+				\item $F[x^mf(x)] = (-i\dfrac{d}{d\sigma})^m F[f] \ (3)$
+				\item $F[\dfrac{d^m}{dx^m}f(x)] = (-i\sigma)^m F[f] \ (4)$
+			\end{enumerate}
+			
+		\end{sample}
 \end{document}
