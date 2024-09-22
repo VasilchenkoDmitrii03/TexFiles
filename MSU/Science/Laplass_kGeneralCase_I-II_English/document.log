@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  13 SEP 2024 13:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  22 SEP 2024 00:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -501,43 +501,73 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/progr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 130--132
+Underfull \hbox (badness 10000) in paragraph at lines 132--134
 
  []
 
+
+Overfull \hbox (49.30154pt too wide) detected at line 148
+\OT1/cmr/m/n/10.95 = [] [] + \OML/cmm/m/it/10.95 '\OT1/cmr/m/n/10.95 (\OML/cmm/
+m/it/10.95 x\OT1/cmr/m/n/10.95 ) =
+ []
+
+
+Overfull \hbox (93.21317pt too wide) detected at line 151
+\OT1/cmr/m/n/10.95 = [] [] + \OML/cmm/m/it/10.95 '\OT1/cmr/m/n/10.95 (\OML/cmm/
+m/it/10.95 x\OT1/cmr/m/n/10.95 ) =
+ []
+
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 170--172
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
 
  []
 
 [3]
-Overfull \hbox (13.9033pt too wide) in paragraph at lines 243--246
-\T2A/cmr/m/n/10.95 —истема си-ну-сов $[][]$ об-ра-зу-ет ба-зис в $\OML/cmm/m/it
-/10.95 L[]\OT1/cmr/m/n/10.95 (0\OML/cmm/m/it/10.95 ; ^^Y\OT1/cmr/m/n/10.95 )$ \
-T2A/cmr/m/n/10.95 при $\OML/cmm/m/it/10.95 k \OMS/cmsy/m/n/10.95 2 \OT1/cmr/m/n
-/10.95 (\OMS/cmsy/m/n/10.95 ^^@1\OML/cmm/m/it/10.95 ; \OMS/cmsy/m/n/10.95 ^^@\O
-T1/cmr/m/n/10.95 1) \OMS/cmsy/m/n/10.95 [
+Overfull \hbox (58.30067pt too wide) detected at line 212
+[] [][] \OML/cmm/m/it/10.95 dxdy \OT1/cmr/m/n/10.95 = [] [] \OMS/cmsy/m/n/10.95
+ j[]\OML/cmm/m/it/10.95 dy \OT1/cmr/m/n/10.95 = []  [] [] \OML/cmm/m/it/10.95 d
+y \OT1/cmr/m/n/10.95 = 0
  []
 
-[4]
-Overfull \hbox (4.63374pt too wide) detected at line 252
-\OML/cmm/m/it/10.95 h[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10
-.95 ) = [][] [] [] []\OML/cmm/m/it/10.95 B[];  B[] \OT1/cmr/m/n/10.95 = [] \OML
-/cmm/m/it/10.95 C[]C[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/1
-0.95 1)[]\OML/cmm/m/it/10.95 ;  C[] \OT1/cmr/m/n/10.95 = []\OML/cmm/m/it/10.95 
+
+Overfull \hbox (53.4118pt too wide) detected at line 216
+[] [][] \OML/cmm/m/it/10.95 dxdy \OT1/cmr/m/n/10.95 = [] [] \OMS/cmsy/m/n/10.95
+ j[]\OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 = [] [] \OML/cmm/m/it/10.95 dx \O
+T1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@ [] [] \OML/cmm/m/it/10.95 u[]udx
+ []
+
+
+Overfull \hbox (55.18555pt too wide) detected at line 230
+\OML/cmm/m/it/10.95 I \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@ [] [] [] \OM
+L/cmm/m/it/10.95 dxdy \OMS/cmsy/m/n/10.95 ^^@ [] [] [] \OML/cmm/m/it/10.95 udx 
+\OMS/cmsy/m/n/10.95 ^^@ [] [] \OML/cmm/m/it/10.95 ku[]udx \OMS/cmsy/m/n/10.95 ^
+^@ [] []\OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 + [] []\OML/cmm/m/it/10.95 dx
 :
  []
 
-[5]
-Overfull \hbox (14.1421pt too wide) detected at line 303
-[] [] \OML/cmm/m/it/10.95 e[]C[]C[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\
-OT1/cmr/m/n/10.95 1)[] = [] \OML/cmm/m/it/10.95 e[]C[] [] C[]\OT1/cmr/m/n/10.95
- (\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 1)[]\OML/cmm/m/it/10.95 e[] \OT1/cm
-r/m/n/10.95 = (1 + \OML/cmm/m/it/10.95 e[]\OT1/cmr/m/n/10.95 )[](1 \OMS/cmsy/m/
-n/10.95 ^^@ \OML/cmm/m/it/10.95 e[]\OT1/cmr/m/n/10.95 )[]
+
+Overfull \hbox (29.29616pt too wide) detected at line 234
+[] [] [] \OML/cmm/m/it/10.95 dxdy \OT1/cmr/m/n/10.95 + [] [] \OML/cmm/m/it/10.9
+5 u[]dx \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 k[]u[]\OT1/cmr/m/n/10.95 (\OML
+/cmm/m/it/10.95 ^^Y; "\OT1/cmr/m/n/10.95 ) = [] [] [] \OML/cmm/m/it/10.95 udx \
+OT1/cmr/m/n/10.95 + [] [] \OML/cmm/m/it/10.95 u[]dx \OMS/cmsy/m/n/10.95 ^^T
  []
 
-[6] [7] (document.aux)
+
+Overfull \hbox (33.69826pt too wide) detected at line 237
+\OMS/cmsy/m/n/10.95 ^^T f[]g ^^T [] [][] [][] \OT1/cmr/m/n/10.95 + [] [] \OML/c
+mm/m/it/10.95 u[]dx \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 M
+ []
+
+
+Overfull \hbox (24.01125pt too wide) detected at line 245
+[] [] [] \OML/cmm/m/it/10.95 dxdy \OT1/cmr/m/n/10.95 + [] [] \OML/cmm/m/it/10.9
+5 u[]dx \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 k[]u[]\OT1/cmr/m/n/10.95 (\OML
+/cmm/m/it/10.95 ^^Y; "\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^T [][] [] [][]
+ \OML/cmm/m/it/10.95 dx \OT1/cmr/m/n/10.95 + [] [] \OML/cmm/m/it/10.95 u[]dx:
+ []
+
+[4] [5] [6] (document.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -545,16 +575,16 @@ L3 programming layer <2024-01-04>
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 326 ({)
+### simple group (level 1) entered at line 262 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
  4720 strings out of 474486
- 70668 string characters out of 5743755
- 1945542 words of memory out of 5000000
+ 70700 string characters out of 5743755
+ 1948542 words of memory out of 5000000
  26937 multiletter control sequences out of 15000+600000
  577342 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,69p,406b,230s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,7n,69p,515b,230s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
 /dpi600\labx1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
 -t2a/dpi600\lati1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/l
@@ -579,9 +609,9 @@ rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/progr/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/prog
 r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
 
-Output written on document.pdf (7 pages, 253775 bytes).
+Output written on document.pdf (6 pages, 230296 bytes).
 PDF statistics:
- 410 PDF objects out of 1000 (max. 8388607)
+ 372 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

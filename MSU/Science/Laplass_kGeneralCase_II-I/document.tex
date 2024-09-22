@@ -87,7 +87,7 @@ DOI: % Необходимый номер DOI поставит редакция журнала
 	\dfrac{\partial u}{\partial x}(0, y) = 0, \ u(\pi, y) = 0, \ y > 0, 
 \end{equation}
 \begin{equation}
-	\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \left[\dfrac{1}{k}\dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2(0,\pi) ,\ k \in (-\infty, -1) \cup (0,  + \infty),  
+	\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \left[\dfrac{1}{k}\dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2(0,\pi) ,\ k \in (-\infty, 0) \cup (1,  + \infty),  
 \end{equation}
 \begin{equation}
 	u(x,y) \rightrightarrows 0, y \to +\infty. 
@@ -225,9 +225,9 @@ $u_y'(x,y), \vert k\vert>1, $ в статье [1].
 \par
 	\textbf{Теорема 3.} \textit{Пусть $u(x,y)$ - решение задачи $(1)-(4)$ и $|k| > 1$, тогда решение u представимо в виде}
 \begin{equation}
-	u(x,y) = Re \dfrac{1}{\pi} e^{\dfrac{ iz}{2}} \int\limits_0^\pi \dfrac{(\tg{t/2})^{\gamma/\pi}}{\cos{t/2}}  \dfrac{ (1+e^{iz})\sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \left(\dfrac{1+e^{iz}}{1 - e^{iz}}\right)^{\gamma / \pi}  F(t) dt,
+	u(x,y) = Re \dfrac{1}{\pi} e^{\dfrac{ iz}{2}} \int\limits_0^\pi \dfrac{(\tg{t/2})^{\alpha}}{\cos{t/2}}  \dfrac{ (1+e^{iz})\sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \left(\dfrac{1+e^{iz}}{1 - e^{iz}}\right)^{\alpha}  F(t) dt,
 	\end{equation}
-где $z = x + iy, \ F(x) = \dfrac{k}{\sqrt{1+ k^2}}  \left(\int\limits_0^x \varphi(t) dt + \sum\limits_{n=0}^{\infty} A_n\right), \ \gamma = 2\arctg{1/k}$. 
+где $z = x + iy, \ F(x) = \dfrac{k}{\sqrt{1+ k^2}}  \left(\int\limits_0^x \varphi(t) dt + \sum\limits_{n=0}^{\infty} A_n\right), \ \alpha = \dfrac{2\arctg{1/k}}{\pi}$. 
 \par
 Доказательство. Рассмотрим равенство (6).
 \begin{equation*}
@@ -242,7 +242,7 @@ $u_y'(x,y), \vert k\vert>1, $ в статье [1].
  	\sum\limits_{n=0}^{\infty} A_n \cos{\left[\left(n +\dfrac12\right)x  - \arctg{\dfrac{1}{k}}\right]} = F(x), 
  \end{equation*}
  где $F(x) = \dfrac{k}{\sqrt{1+ k^2}}  \left(\int\limits_0^x \varphi(t) dt + \sum\limits_{n=0}^{\infty} A_n\right)$.\newline
- Система синусов $\left\{\cos{\left[\left(n +\dfrac12\right)x - \arctg{1/k}\right]}\right\}_{n=0}^{\infty}$ образует базис в $L_2(0,\pi)$ при $k \in (-\infty, 0) \cup (1, + \infty)$. Поэтому для коэффициентов $A_n$ справедливо следующее представление [2]:
+ Система синусов $\left\{\cos{\left[\left(n +\dfrac12\right)x - \arctg{1/k}\right]}\right\}_{n=0}^{\infty}$ образует базис в $L_2(0,\pi)$ при $k \in (-\infty, -1) \cup (0, + \infty)$. Поэтому для коэффициентов $A_n$ справедливо следующее представление [2]:
 \begin{equation*}
 	A_n\left(n+\dfrac12\right) = \int\limits_0^\pi h_{n+1}(t)F(t) dt, 
 \end{equation*}

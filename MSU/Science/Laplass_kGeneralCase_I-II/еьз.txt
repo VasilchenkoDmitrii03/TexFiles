@@ -1,0 +1,304 @@
+\documentclass[11pt,twoside]{article}
+\usepackage[cp1251]{inputenc}
+\usepackage{amssymb,amsmath,amscd}
+\usepackage{fancyheadings}
+\usepackage[russian]{babel}
+\usepackage{bm}
+\textwidth=165mm
+\oddsidemargin=-4.4mm
+\evensidemargin=-4.4mm
+\textheight=234mm
+\topmargin=-16.6mm
+\headheight=5.0mm
+\headsep=6.6mm
+\footskip=8.1mm
+\renewcommand{\baselinestretch}{0.9}
+\usepackage{graphicx}
+\makeatother
+\usepackage{wrapfig}
+\newcommand{\GOD}{2024}
+\newcommand{\UDK}[1]{\noindent{\footnotesize\sl УДК #1}}
+\newcommand{\Nazva}[1]{\begin{center}\baselineskip=6.0mm{\Large\textbf{#1}}\end{center}\vspace*{0.5mm}}
+\newcommand{\Avtor}[1]{\centerline{\large\textbf{\copyright~\GOD~г. \ #1}}\vspace*{-4.0mm}}
+\newcommand{\AVTOR}{~}
+\newcommand{\NAZVA}{~}
+\newcommand{\lit}[3]{\vspace*{0.7mm}\par\noindent\makebox[5.2mm][r]{#1.~}\parbox[t]{159.8mm}{{\textit{#2}}~{#3}}\hspace*{-1.6mm}}
+\mathsurround=2pt
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\begin{document}
+
+\renewcommand{\abstractname}{}
+
+\centerline{\large\textbf{УРАВНЕНИЯ С ЧАСТНЫМИ ПРОИЗВОДНЫМИ}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% НАЗВАНИЕ РУБРИКИ вставить из следующего списка:
+%
+% ОБЫКНОВЕННЫЕ ДИФФЕРЕНЦИАЛЬНЫЕ УРАВНЕНИЯ
+% УРАВНЕНИЯ С ЧАСТНЫМИ ПРОИЗВОДНЫМИ
+% ИНТЕГРАЛЬНЫЕ УРАВНЕНИЯ
+% ОПТИМАЛЬНОЕ УПРАВЛЕНИЕ
+% ТЕОРИЯ УПРАВЛЕНИЯ
+% ЧИСЛЕННЫЕ МЕТОДЫ
+% УРАВНЕНИЯ В КОНЕЧНЫХ РАЗНОСТЯХ
+% ОБЗОРНЫЕ СТАТЬИ
+% КРАТКИЕ СООБЩЕНИЯ
+% ХРОНИКА
+% НЕКРОЛОГ
+% ЛЮДИ НАУКИ
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{2mm}
+\hrule
+\vspace{2mm}
+
+% УДК
+\UDK{517.956}
+% Название статьи
+\Nazva{О КРАЕВОЙ ЗАДАЧЕ ДЛЯ УРАВНЕНИЯ ЛАПЛАСА СО СМЕШАННЫМИ ГРАНИЧНЫМИ УСЛОВИЯМИ В ПОЛУПОЛОСЕ}
+% Авторы
+\Avtor{ Н.Ю.~Капустин, Д.Д.~Васильченко}
+% Сокращенное название для колонтитула
+\renewcommand{\NAZVA}{ОБ ОДНОЙ ЗАДАЧЕ ГЕЛЛЕРСТЕДТА}
+% Фамилии авторов для колонтитула
+\renewcommand{\AVTOR}{КАПУСТИН, ВАСИЛЬЧЕНКО}
+
+\thispagestyle{empty}
+
+% Текст аннотации
+\begin{abstract}\noindent
+	\par В работе доказаны теоремы существования и единственности решения задачи для
+уравнения Лапласа со смешанными граничными условиями в полуполосе, а также получены интегральные представления для частных
+производных решения.
+\medskip\\
+DOI: % Необходимый номер DOI поставит редакция журнала
+\end{abstract}
+\bigskip
+
+Рассмотрим краевую задачу для уравнения Лапласа
+\begin{equation}
+	\dfrac{\partial^2 u}{\partial x^2} +\dfrac{\partial^2 u}{\partial y^2} = 0
+\end{equation}
+в полуполосе $D = \{(x,y) :\  0 < x < \pi, y > 0\}$	в классе функций $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$ с граничными условиями:
+\begin{equation}
+	u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0, \ y > 0, 
+\end{equation}
+\begin{equation}
+	\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \left[\dfrac{1}{k}\dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2(0,\pi) ,\ k \in (-\infty, -1) \cup (0,  + \infty),  
+\end{equation}
+\begin{equation}
+	u(x,y) \rightrightarrows 0, y \to +\infty. 
+\end{equation}
+
+
+Аналогичная задача рассматривалась как вспомогательная при изучении задачи Трикоми-Неймана
+для уравнения Лаврентьева-Бицадзе с граничными условиями второго рода на боковых сторонах
+полуполосы и коэффициентом $1/k$ при
+$u_y'(x,y), \vert k\vert>1, $ в статье [1].
+На линии изменения типа ставилось условие склеивания нормальных производных
+по Франклю. Случай $k=1$ (классическая задача с непрерывным градиентом)
+не рассматривался и теорема единственности для вспомогательной задачи
+не доказывалась.
+
+На задачу Трикоми с эллиптической частью в виде полуполосы обратил внимание
+А.В. Бицадзе в связи с математическим моделированием плоскопараллельных
+движений газа. В данном случае построение решения конформным отображением
+приводится к краевой задаче относительно аналитической функции в верхней
+полуплоскости [2, стр. 327]. На основании известной формулы Шварца [2, стр. 315]
+А.В. Бицадзе было выписано в квадратурах решение этой краевой задачи. 
+
+В работе [4] получено интегральное представление регулярного решения задачи для уравнения Лапласа
+в полукруге с краевым условием первого рода на полуокружности и двумя различными
+краевыми условиями типа наклонной производной на двух прямолинейных участках границы.
+	\par
+\textbf{Теорема 1.} \textit{ Пусть $k \in (-\infty, -1) \cup (0, +\infty)$, тогда решение задачи (1 - 4) существует, причём его можно представить в виде ряда}
+\begin{equation}
+	u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
+\end{equation}
+\textit{где коэффициенты $A_n, \ n =0,1,2, \dots$ определяются из разложения}
+\begin{equation}
+	\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x +\dfrac{\pi}{2} - \arctg{\dfrac{1}{k}}\right]} = \dfrac{k}{\sqrt{1+k^2}} \varphi(x).
+\end{equation}
+
+\par	
+\textbf{Доказательство.} Докажем существование решения задачи $(1 - 4)$. В силу основного результата работы $[2]$ система 
+$\left\{ \sin{\left[n + \beta/2\right] + \gamma/2}\right\}_{n=1}^{\infty}$
+образует базис Рисса в пространстве $L_2(0, \pi)$ когда $\ -3/2 < \gamma / \pi + \beta <  1/2$. В нашем случае $\gamma = \pi - 2 \arctg{1/k}$, $\beta = -1$, так как в исходной системе индексирование начинается с нуля. Указанные неравенства выполнены при $k\in(-\infty, -1) \cup (0, +\infty)$. Поэтому система  $\left\{\sin{\left[\left(n + 1/2\right)x + \pi/2 - \arctg{1/k} \right]}\right\}_{n=0}^{\infty}$  образует базис Рисса в $L_2(0,1)$ и  справедливо двухстороннее неравенство Бесселя:
+\begin{equation*}
+	C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} ,\ 0 < C_1 < C_2, 
+\end{equation*}
+где $C_1, C_2$ не зависят от $\varphi$. Следовательно, сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$ и сходится равномерно ряд (5). Функция (5) является решением уравнения (1) и удовлетворяет граничным условиям (2) по построению. Условие (4) выполняется, так как  $\sum\limits_{n=0}^{\infty} e^{-\left(n + 1/2\right)y} = e^{-y/2} / (1 - e^{-y})$. Проверим выполнение условия (3).\newline
+
+Согласно разложению (6), условие (3) принимает вид
+\begin{equation*}
+	I(y) = \int\limits_0^\pi \left[\dfrac{1}{k} \dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + \varphi(x)\right]^2 dx, 
+\end{equation*}
+рассмотрим подынтегральное выражение подробнее:
+\begin{equation*}
+	M(x) = \dfrac{1}{k} \dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + \varphi(x) =
+\end{equation*}
+\begin{equation*}
+= \sum\limits_{n=0}^{\infty}  \left[A_n \left(n + \dfrac12 \right)e^{-\left(n+\dfrac12\right)} \left( -\dfrac{1}{k} \sin{\left[\left(n+\dfrac12\right)x\right]} - \cos{\left[\left(n+\dfrac12\right)x\right]} \right) \right] + \varphi(x) = 
+\end{equation*}
+\begin{equation*}
+	= \sum\limits_{n=0}^{\infty}  \left[ \dfrac{\sqrt{1 + k^2}}{k}A_n \left(n + \dfrac12 \right)e^{-\left(n+\dfrac12\right)} \left(-\dfrac{1}{\sqrt{1 + k^2}}\sin{\left[\left(n+\dfrac12\right)x\right]} - \dfrac{k}{\sqrt{1 + k^2}}\cos{\left[\left(n+\dfrac12\right)x\right]} \right) \right] + \varphi(x) = 
+\end{equation*}
+\begin{equation*}
+	= \sum\limits_{n=0}^{\infty}  \left[ \dfrac{\sqrt{1 + k^2}}{k}A_n \left(n + \dfrac12 \right)e^{-\left(n+\dfrac12\right)} \left(- \sin{\left[\arctg{\dfrac{1}{k}}\right]} \sin{\left[\left(n+\dfrac12\right)x\right]} - \cos{\left[\arctg{\dfrac{1}{k}}\right]} \cos{\left[\left(n+\dfrac12\right)x\right]} \right) \right] + \varphi(x) = 
+\end{equation*}
+\begin{equation*}
+	= \sum\limits_{n=0}^{\infty}  \left[ \dfrac{\sqrt{1 + k^2}}{k}A_n \left(n + \dfrac12 \right)e^{-\left(n+\dfrac12\right)} \left( -\cos{\left[\left(n + \dfrac12 \right)x  - \arctg{\dfrac{1}{k}} \right]} \right) \right] + \varphi(x) = 
+\end{equation*}
+\begin{equation*}
+	=  \dfrac{\sqrt{1 + k^2}}{k} \sum\limits_{n=0}^{\infty}  \left[A_n \left(n + \dfrac12 \right) \left(1 - e^{-\left(n+\dfrac12\right)} \right) \cos{\left[\left(n + \dfrac12 \right)x  - \arctg{\dfrac{1}{k}} \right]} \right].
+\end{equation*}
+\begin{equation*}
+	I(y) =  \int\limits_0^\pi \left[M(x) \right]^2 dx.
+\end{equation*}
+
+Докажем, что $I(y) \to 0$ при $y \to 0+0$. Запишем неравенство
+\begin{equation*}
+	I(y) \leq I_1(y) + I_2(y), \text{ где}
+\end{equation*}
+\begin{equation*}
+	I_1(y) = \dfrac{2\sqrt{1 + k^2}}{k}\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( 1- e^{-\left(n+\dfrac12\right)y}\right)\cos{\left[\left(n + \dfrac12 \right)x  - \arctg{\dfrac{1}{k}}\right]} \right]^2 dx, 
+\end{equation*}
+\begin{equation*}
+	I_2(y) = \dfrac{2\sqrt{1 + k^2}}{k}\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left(1 -  e^{-\left(n+\dfrac12\right)y}\right)\cos{\left[\left(n + \dfrac12 \right)x  - \arctg{\dfrac{1}{k}}\right]} \right]^2 dx.
+\end{equation*}
+Зафиксируем  произвольное число $\varepsilon > 0$. В силу левой части неравенства Бесселя имеем оценку
+\begin{equation*}
+	I_2(y) =  \dfrac{2\sqrt{1 + k^2}}{k}\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( 1 -  e^{-\left(n+\dfrac12\right)y} \right) \cos{\left[\left(n + \dfrac12 \right)x  - \arctg{\dfrac{1}{k}}\right]} \right]^2 dx \leq 
+\end{equation*}
+\begin{equation*}
+	\leq  C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 \left(1 - e^{-\left(n+\dfrac12\right)y} \right)^2 \leq C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 < \dfrac{\varepsilon}{2},
+\end{equation*}
+если  $m$ достаточно велико.\newline
+
+Во втором слагаемом мы имеем дело с конечным числом элементов, поэтому:
+\begin{equation*}
+	I_1(y) = \dfrac{2\sqrt{1 + k^2}}{k}\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left(1 -  e^{-\left(n+\dfrac12\right)y} \right)\cos{\left[\left(n + \dfrac12 \right)x  - \arctg{\dfrac{1}{k}}\right]} \right]^2 dx \leq
+\end{equation*}
+\begin{equation*}
+	\leq C_4 \sum\limits_{n=0}^{m} A_n^2 \left(n +\dfrac12\right)^2 \left(1 - e^{-\left(n+\dfrac12\right)y} \right)^2 < \dfrac{\varepsilon}{2}
+\end{equation*}
+при $0 < y < \delta$, если $\delta$ достаточно мало. Условие (3) выполнено. Теорема доказана.
+\par
+\textbf{Теорема 2.} \textit{Пусть $k > 0$, тогда решение задачи (1- 4) единственно}
+\par
+\textbf{Доказательство.} Докажем единственность решения этой задачи. Пусть $u(x,y)$ - решение однородной задачи.
+Введём обозначения $C_\varepsilon = (0, \varepsilon), C_R = (0, R), D_R = (\pi, R), D_\varepsilon = (\pi, \varepsilon)$. $\prod_{R\varepsilon}$ - прямоугольник $C_\varepsilon C_R D_R D_\varepsilon$. Справедливы следующие соотношения:
+\begin{equation*}
+	0 = \iint\limits_{\prod_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy.
+\end{equation*}
+Заметим, что
+\begin{equation*}
+	(R - y) (u_{xx} + u_{yy}) u = \left( \left(R - y\right) u_x u\right)_x  + \left( \left(R - y\right) u_y u\right)_y - \left(R- y\right) \left(u_x^2 + u_y^2\right) +  u_y u = 
+\end{equation*}
+\begin{equation*}
+	= \left(R-y\right) \left(u_{xx} u + u_x^2\right) + \left(-u_y + \left(R-y\right) u_{yy} u + \left(R-y\right)u_y^2\right) - \left(R- y\right) \left(u_x^2 + u_y^2\right)+  u_y u
+\end{equation*}
+Подставим это выражение в интеграл:
+\begin{equation*}
+	I	=	\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  
+	- \iint\limits_{\prod_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right) + \iint\limits_{\prod_{R\varepsilon}} u_y u dx dy.
+\end{equation*}
+Упростим эти интегралы:
+\begin{equation*}
+	\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy = \int\limits_{[\varepsilon, R]} \left[(R-y)u_xu\right] \vert_0^\pi dy = \\ \int\limits_{[\varepsilon, R]} \left[(R-y) u_x(\pi, y)u(\pi,y) - (R-y) u_x(0, y)u(0,y)\right]dy = 0
+\end{equation*} т.к. оба подынтегральных выражения равны нулю в силу условия (2)
+\begin{equation*}
+	\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy = \int\limits_{[0,\pi]} \left[\left(R - y\right) u_y u\right] \vert_\varepsilon^R dx =
+	\int\limits_{[0,\pi]} \left[0 - \left(R - \varepsilon \right) u_y(x, \varepsilon) u(x, \varepsilon) \right] dx =  - \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) u_yu dx
+\end{equation*}
+\begin{equation*}
+	\iint\limits_{\prod_{R\varepsilon}} u_y u dx dy = \iint\limits_{\prod_{R\varepsilon}} \left(\dfrac{u^2}{2}\right)'_ydx dy = \int\limits_{[0,\pi]} \left[\dfrac{u^2(x,R)}{2} - \dfrac{u^2(x, \varepsilon)}{2}\right] dx 
+\end{equation*}
+В итоге получим 
+\begin{equation*}
+	I = - \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy
+	- \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon\right) u_y u dx 
+	-\int\limits_{C_\varepsilon D_\varepsilon} \dfrac{u^2}{2} dx + \int\limits_{C_R D_R} \dfrac{u^2}{2} dx 
+\end{equation*}
+Добавим и вычтем $\int\limits_{C_\varepsilon D_\varepsilon} k\left(R - \varepsilon\right) u_x u dx$, тогда
+\begin{equation*}
+	I = - \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy - 
+	\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_y - ku_x\right)u dx - \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon\right) k u_x u dx - \int\limits_{C_\varepsilon D_\varepsilon}\dfrac{u^2}{2} dx + \int\limits_{C_R D_R} \dfrac{u^2}{2}dx.
+\end{equation*}
+Отсюда следует
+\begin{equation*}
+\iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{2}\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +k\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon)  =\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_y - ku_x\right)u dx + \dfrac12  \int\limits_{C_R D_R} u^2 dx \leq 
+\end{equation*}
+\begin{equation*}
+	\leq \{ \text{Неравенство Коши-Буняковского} \} \leq \left(R - \varepsilon\right) \left[\int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx \right]^{\frac12} \left[\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx \right]^{\frac12} + \dfrac12 \int\limits_{C_RD_R} u^2 dx = M
+\end{equation*}
+Рассмотрим следующее неравенство: $(2ar - b)^2 \geq 0 \Rightarrow ra^2r^2 - 4abr + b^2 \geq 0 \Rightarrow ab \leq ra^2 + b/ (4r)$. Возьмем $a =  \left[\left(R - \varepsilon\right)\int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx \right]^{\frac12}$, $b = \left[\left(R - \varepsilon\right)\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx \right]^{\frac12}$, $r = R - \varepsilon$, тогда
+\begin{equation*}
+	M \leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx + \dfrac14 \int\limits_{C_\varepsilon D_\varepsilon} u^2 dx + \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+\end{equation*}
+Перегруппируем
+\begin{equation*}
+	\iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{4}\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +k\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon) \leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx + \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+\end{equation*}
+В силу (3) имеет место равенство
+\begin{equation*}
+	\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{C_\varepsilon D_\varepsilon} \left(u_y - ku_x\right)^2 dx = 0,
+\end{equation*}
+откуда вытекает соотношение
+\begin{equation*}
+	\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + k\dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+\end{equation*}
+Устремим теперь $R \to \infty$, тогда $\int\limits_{C_RD_R} u^2 dx \to 0$, а в левой части все слагаемы неотрицательны,п отсюда $u(x,y) \equiv 0$ в $\overline{D}$. Теорема доказана.
+\par
+
+
+\par
+	Работа выполнена при финансовой поддержке Министерства науки и высшего образования Российской Федерации в рамках реализации программы Московского центра фундаментальной и прикладной математики по соглашению № 075-15-2022-284.
+	\bigskip
+	
+	\begin{center}{СПИСОК ЛИТЕРАТУРЫ}\end{center}{\small
+	\lit{1}{Моисеев Е.И., Моисеев Т.Е., Вафадорова Г.О.}{Об интегральном представлении задачи Неймана-Трикоми для уравнения Лаврентьева-Бицадзе ~// Дифференциальные уравнения, \textbf{2015} Т. 51. №8. С.1070-1075}
+	\lit{2}{Моисеев Е.И.} {О базисности одной системы синусов ~// Дифференциальные уравнения, \textbf{1987} Т. 23. №1. С.177-189}
+	\lit{3}{Бицадзе А.В.} {Некоторые классы уравнений в частных производных.~ М., Наука,\textbf{1981}, 448 стр. }
+	\lit{4}{Моисеев Т. Е.}{Об интегральном представлении решения уравнения Лапласа со
+		смешанными краевыми условиями ~// Дифференциальные уравнения, \textbf{2011}, т. 47, №10, с.1446-1451. }
+		
+		\newpage
+		
+		УДК 517.956
+		
+		\vskip 24pt  Н.Ю. Капустин, Д.Д. Васильченко О краевой задаче для уравнения Лапласа со смешанными граничными условиями в полуполосе // Дифференциальные уравнения
+		
+		
+		\vskip 10pt
+		
+		В работе доказаны теоремы существования и единственности решения
+	уравнения Лапласа со смешанными граничными условиями в полуполосе, а также получены интегральные представления для частных
+	производных решения.
+		
+		\vskip 10pt
+		    
+		Библиогр. 8 назв.
+		
+		
+		
+		\vskip 30pt
+		
+		
+		
+		Капустин Николай Юрьевич
+		
+		Московский государственный университет им. М.В.Ломоносова.
+		Факультет Вычислительной математики и кибернетики. Профессор. 121467,
+		г.Москва, ул. Молодогвардейская,  д.4, кв. 33, 121467, т. 84959390836 (м).
+		
+		Васильченко Дмитрий Дмитриевич
+		
+		Московский государственный университет им. М.В.Ломоносова.
+		Факультет Вычислительной математики и кибернетики. Студент. 123557,
+		г.Москва, Пер. Тишинский Б., д.2, кв. 68, 123557, т. 89154111973 (м).
+
+\end{document}

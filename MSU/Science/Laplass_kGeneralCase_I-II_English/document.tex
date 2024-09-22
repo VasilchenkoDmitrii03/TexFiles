@@ -1,0 +1,304 @@
+\documentclass[11pt,twoside]{article}
+\usepackage[cp1251]{inputenc}
+\usepackage{amssymb,amsmath,amscd}
+\usepackage{fancyheadings}
+\usepackage[russian]{babel}
+\usepackage{bm}
+\textwidth=165mm
+\oddsidemargin=-4.4mm
+\evensidemargin=-4.4mm
+\textheight=234mm
+\topmargin=-16.6mm
+\headheight=5.0mm
+\headsep=6.6mm
+\footskip=8.1mm
+\renewcommand{\baselinestretch}{0.9}
+\usepackage{graphicx}
+\makeatother
+\usepackage{wrapfig}
+\newcommand{\GOD}{2024}
+\newcommand{\UDK}[1]{\noindent{\footnotesize\sl UDK #1}}
+\newcommand{\Nazva}[1]{\begin{center}\baselineskip=6.0mm{\Large\textbf{#1}}\end{center}\vspace*{0.5mm}}
+\newcommand{\Avtor}[1]{\centerline{\large\textbf{\copyright~\GOD~g. \ #1}}\vspace*{-4.0mm}}
+\newcommand{\AVTOR}{~}
+\newcommand{\NAZVA}{~}
+\newcommand{\lit}[3]{\vspace*{0.7mm}\par\noindent\makebox[5.2mm][r]{#1.~}\parbox[t]{159.8mm}{{\textit{#2}}~{#3}}\hspace*{-1.6mm}}
+\mathsurround=2pt
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\begin{document}
+	
+	\renewcommand{\abstractname}{}
+	
+	\centerline{\large\textbf{PARTIAL DIFFERENTIAL EQUATIONS}}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% Insert the HEADING NAME from the following list:
+	%
+	% ORDINARY DIFFERENTIAL EQUATIONS
+	% PARTIAL DIFFERENTIAL EQUATIONS
+	% INTEGRAL EQUATIONS
+	% OPTIMAL MANAGEMENT
+	% MANAGEMENT THEORY
+	% NUMERICAL METHODS
+	% EQUATIONS IN FINITE DIFFERENCES
+	% REVIEW ARTICLES
+	% SHORT MESSAGES
+	% CHRONICLE
+	% OBITUARY
+	% PEOPLE OF SCIENCE
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\vspace{2mm}
+	\hrule
+	\vspace{2mm}
+	
+	% UDC
+	\UDK{517.956}
+	% Title of the article
+	\Nazva{ON THE BOUNDARY VALUE PROBLEM FOR THE LAPLACE EQUATION WITH MIXED BOUNDARY CONDITIONS IN A HALF-BAND}
+	% Authors
+	\Avtor{ N.Y.~Kapustin, D.D.~Vasilchenko}
+	% Abbreviated name for the footer
+	\renewcommand{\NAZVA}{ABOUT A GELLERSTEDT TASK}
+	% Last names of the authors for the footer
+	\renewcommand{\AVTOR}{KAPUSTIN, VASILCHENKO}
+	
+	\thispagestyle{empty}
+	
+	% Annotation text
+	\begin{abstract}\noindent
+		\par The paper proves the theorems of the existence and uniqueness of the solution of the problem for
+		Laplace equations with mixed boundary conditions in the half-band, and integral representations for partial
+		derivatives of the solution are obtained.
+		\medskip\\
+		DOI: % The required DOI number will be supplied by the editorial board of the journal
+	\end{abstract}
+	\bigskip
+	
+	Consider the boundary value problem for the Laplace equation
+	\begin{equation}
+		\dfrac{\partial^2 u}{\partial x^2} +\dfrac{\partial^2 u}{\partial y^2} = 0
+	\end{equation}
+	in the half-band $D = \{(x,y) :\ 0 <x < \pi, y > 0\}$ in the function class $u(x,y) \in C(\overline{D}) \cap C^1(\overline{D} \cap \{y > 0\}) \cap C^2 (D)$ with boundary conditions:
+	\begin{equation}
+		u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0, \ y > 0, 
+	\end{equation}
+	\begin{equation}
+		\lim\limits_{y \to 0 + 0} \int\limits_0^\pi \left[\dfrac{1}{k}\dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2(0,\pi) ,\ k \in (-\infty, -1) \cup (0,  + \infty),  
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, y \to +\infty. 
+	\end{equation}
+	
+	
+	A similar problem was considered as an auxiliary one in the study of the Tricomi-Neumann problem
+	for the Lavrentiev-Bitsadze equation with boundary conditions of the second kind on the sides
+	of the half-strip and a coefficient of $1/k$ at
+	$u_y'(x,y), \vert k\vert>1, $ in the article [1].
+	The condition for gluing normal Frankl derivatives was set on the type change line
+	. The case of $k=1$ (a classical problem with a continuous gradient)
+	was not considered and the uniqueness theorem for the auxiliary problem
+	was not proved.
+	
+	A.V. Bitsadze drew attention to the Tricomi problem with an elliptical part in the form of a half-strip
+	in connection with the mathematical modeling of plane-parallel
+	gas movements. In this case, the construction of a solution by a conformal mapping
+	is reduced to a boundary value problem with respect to an analytical function in the upper
+	half-plane [2, p. 327]. Based on the well-known Schwarz formula [2, p. 315]
+	, A.V. Bitsadze wrote out the solution of this boundary value problem in quadratures. 
+	
+	In [4], an integral representation of the regular solution of the problem for the Laplace equation
+	in a semicircle with a boundary condition of the first kind on a semicircle and two different
+	boundary conditions such as an inclined derivative on two rectilinear sections of the boundary is obtained.
+	\par
+	\textbf{Theorem 1.} \textit{ Let $k\in (-\infty, -1)\cup (0, +\infty)$, then the solution to the problem (1-4) exists, and it can be represented as a series}
+	\begin{equation}
+		u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
+	\end{equation}
+	\textit{where the coefficients $A_n, \ n =0,1,2, \dots$ are determined from the decomposition}
+	\begin{equation}
+		\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x +\dfrac{\pi}{2} - \arctg{\dfrac{1}{k}}\right]} = \dfrac{k}{\sqrt{1+k^2}} \varphi(x).
+	\end{equation}
+	
+	\par	
+	\textbf{Proof.} Let's prove the existence of a solution to the problem $(1 - 4)$. By virtue of the main result of the $[2]$ system 
+	$\left\{ \sin{\left[n + \beta/2\right] + \gamma/2}\right\}_{n=1}^{\infty}$
+	forms the Riesz basis in the space $L_2(0, \pi)$ when $\ -3/2 < \gamma / \pi + \beta <  1/2$. In our case, $\gamma = \pi - 2 \arctg{1/k}$, $\beta = -1$, since indexing starts from zero in the original system. The specified inequalities are satisfied at $k\in(-\infty, -1)\cup (0, +\infty)$. Therefore, the system $\left\{\sin{\left[\left(n +1/2\right)x+ \pi/2 - \arctg{1/k}\right]}\right\}_{n=0}^{\infty}$ forms the Riesz basis in $L_2(0,1)$ and the two-sided Bessel inequality is valid:
+	\begin{equation*}
+		C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} ,\ 0 < C_1 < C_2, 
+	\end{equation*}
+	where $C_1, C_2$ are independent of $\varphi$. Therefore, the series $\sum\limits_{n=0}^{\infty}|A_n|$ converges and the series (5) converges uniformly. The function (5) is a solution to equation (1) and satisfies the boundary conditions (2) by construction. Condition (4) is satisfied because $\sum\limits_{n=0}^{\infty} e^{-\left(n + 1/2\right)y} = e^{-y/2} / (1 - e^{-y})$. Let's check the fulfillment of condition (3).\newline
+	
+	According to decomposition (6), condition (3) takes the form
+	\begin{equation*}
+		I(y) = \int\limits_0^\pi \left[\dfrac{1}{k} \dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + \varphi(x)\right]^2 dx, 
+	\end{equation*}
+	consider the integrand in more detail:
+	\begin{equation*}
+		M(x) = \dfrac{1}{k} \dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + \varphi(x) =
+	\end{equation*}
+	\begin{equation*}
+		= \sum\limits_{n=0}^{\infty}  \left[A_n \left(n + \dfrac12 \right)e^{-\left(n+\dfrac12\right)} \left( -\dfrac{1}{k} \sin{\left[\left(n+\dfrac12\right)x\right]} - \cos{\left[\left(n+\dfrac12\right)x\right]} \right) \right] + \varphi(x) = 
+	\end{equation*}
+	\begin{equation*}
+		= \sum\limits_{n=0}^{\infty}  \left[ \dfrac{\sqrt{1 + k^2}}{k}A_n \left(n + \dfrac12 \right)e^{-\left(n+\dfrac12\right)} \left(-\dfrac{1}{\sqrt{1 + k^2}}\sin{\left[\left(n+\dfrac12\right)x\right]} - \dfrac{k}{\sqrt{1 + k^2}}\cos{\left[\left(n+\dfrac12\right)x\right]} \right) \right] + \varphi(x) = 
+	\end{equation*}
+	\begin{equation*}
+		= \sum\limits_{n=0}^{\infty}  \left[ \dfrac{\sqrt{1 + k^2}}{k}A_n \left(n + \dfrac12 \right)e^{-\left(n+\dfrac12\right)} \left(- \sin{\left[\arctg{\dfrac{1}{k}}\right]} \sin{\left[\left(n+\dfrac12\right)x\right]} - \cos{\left[\arctg{\dfrac{1}{k}}\right]} \cos{\left[\left(n+\dfrac12\right)x\right]} \right) \right] + \varphi(x) = 
+	\end{equation*}
+	\begin{equation*}
+		= \sum\limits_{n=0}^{\infty}  \left[ \dfrac{\sqrt{1 + k^2}}{k}A_n \left(n + \dfrac12 \right)e^{-\left(n+\dfrac12\right)} \left( -\cos{\left[\left(n + \dfrac12 \right)x  - \arctg{\dfrac{1}{k}} \right]} \right) \right] + \varphi(x) = 
+	\end{equation*}
+	\begin{equation*}
+		=  \dfrac{\sqrt{1 + k^2}}{k} \sum\limits_{n=0}^{\infty}  \left[A_n \left(n + \dfrac12 \right) \left(1 - e^{-\left(n+\dfrac12\right)} \right) \cos{\left[\left(n + \dfrac12 \right)x  - \arctg{\dfrac{1}{k}} \right]} \right].
+	\end{equation*}
+	\begin{equation*}
+		I(y) =  \int\limits_0^\pi \left[M(x) \right]^2 dx.
+	\end{equation*}
+	
+	Let's prove that $I(y)\to 0$ for $y\to 0+0$. Let's write down the inequality
+	\begin{equation*}
+		I(y) \leq I_1(y) + I_2(y), \text{where}
+	\end{equation*}
+	\begin{equation*}
+		I_1(y) = \dfrac{2\sqrt{1 + k^2}}{k}\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( 1- e^{-\left(n+\dfrac12\right)y}\right)\cos{\left[\left(n + \dfrac12 \right)x  - \arctg{\dfrac{1}{k}}\right]} \right]^2 dx, 
+	\end{equation*}
+	\begin{equation*}
+		I_2(y) = \dfrac{2\sqrt{1 + k^2}}{k}\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left(1 -  e^{-\left(n+\dfrac12\right)y}\right)\cos{\left[\left(n + \dfrac12 \right)x  - \arctg{\dfrac{1}{k}}\right]} \right]^2 dx.
+	\end{equation*}
+	Let's fix an arbitrary number $\varepsilon > 0$. By virtue of the left-hand side of the Bessel inequality, we have an estimate
+	\begin{equation*}
+		I_2(y) =  \dfrac{2\sqrt{1 + k^2}}{k}\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( 1 -  e^{-\left(n+\dfrac12\right)y} \right) \cos{\left[\left(n + \dfrac12 \right)x  - \arctg{\dfrac{1}{k}}\right]} \right]^2 dx \leq 
+	\end{equation*}
+	\begin{equation*}
+		\leq  C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 \left(1 - e^{-\left(n+\dfrac12\right)y} \right)^2 \leq C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 < \dfrac{\varepsilon}{2},
+	\end{equation*}
+	if $m$ is large enough.\newline
+	
+	In the second term, we are dealing with a finite number of elements, therefore:
+	\begin{equation*}
+		I_1(y) =\dfrac{2\sqrt{1+ k^2}}{k}\int\limits_0^\pi \left[\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left(1 - e^{-\left(n+\dfrac12\right)y} \right)\cos{\left[\left(n + \dfrac12 \right)x  - \arctg{\dfrac{1}{k}}\right]} \right]^2 dx \leq
+	\end{equation*}
+	\begin{equation*}
+		\leq C_4 \sum\limits_{n=0}^{m} A_n^2 \left(n +\dfrac12\right)^2 \left(1 - e^{-\left(n+\dfrac12\right)y} \right)^2 < \dfrac{\varepsilon}{2}
+	\end{equation*}
+	at $0 < y < \delta$, if $\delta$ is small enough. Condition (3) is fulfilled. The theorem has been proved.
+	\par
+	\textbf{Theorem 2.} \textit{Let $k > 0$, then the solution of the problem (1-4) is unique}
+	\par
+	\textbf{Proof.} Let's prove the uniqueness of the solution to this problem. Let $u(x,y)$ be the solution of a homogeneous problem.
+	Let's introduce the notation $C_\varepsilon = (0,\varepsilon), C_R= (0, R), D_R= (\pi, R), D_\varepsilon = (\pi, \varepsilon)$. $\prod_{R\varepsilon}$ is a rectangle $C_\varepsilon C_R D_R D_\varepsilon$. The following ratios are valid:
+	\begin{equation*}
+		0 = \iint\limits_{\prod_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy.
+	\end{equation*}
+	Note that
+	\begin{equation*}
+		(R - y) (u_{xx} + u_{yy}) u = \left( \left(R - y\right) u_x u\right)_x  + \left( \left(R - y\right) u_y u\right)_y - \left(R- y\right) \left(u_x^2 + u_y^2\right) +  u_y u = 
+	\end{equation*}
+	\begin{equation*}
+		= \left(R-y\right) \left(u_{xx} u + u_x^2\right) + \left(-u_y + \left(R-y\right) u_{yy} u + \left(R-y\right)u_y^2\right) - \left(R- y\right) \left(u_x^2 + u_y^2\right)+  u_y u
+	\end{equation*}
+	Substitute this expression into the integral:
+	\begin{equation*}
+		I	=	\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  
+		- \iint\limits_{\prod_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right) + \iint\limits_{\prod_{R\varepsilon}} u_y u dx dy.
+	\end{equation*}
+	Let's simplify these integrals:
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy = \int\limits_{[\varepsilon, R]} \left[(R-y)u_xu\right] \vert_0^\pi dy = \\ \int\limits_{[\varepsilon, R]} \left[(R-y) u_x(\pi, y)u(\pi,y) - (R-y) u_x(0, y)u(0,y)\right]dy = 0
+	\end{equation*} because both integrands are equal to zero due to condition (2)
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy = \int\limits_{[0,\pi]} \left[\left(R - y\right) u_y u\right] \vert_\varepsilon^R dx =
+		\int\limits_{[0,\pi]} \left[0 - \left(R - \varepsilon \right) u_y(x, \varepsilon) u(x, \varepsilon) \right] dx =  - \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) u_yu dx
+	\end{equation*}
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} u_y u dx dy = \iint\limits_{\prod_{R\varepsilon}} \left(\dfrac{u^2}{2}\right)'_ydx dy = \int\limits_{[0,\pi]} \left[\dfrac{u^2(x,R)}{2} - \dfrac{u^2(x, \varepsilon)}{2}\right] dx 
+	\end{equation*}
+	As a result, we get 
+	\begin{equation*}
+		I = - \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy
+		- \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon\right) u_y u dx 
+		-\int\limits_{C_\varepsilon D_\varepsilon} \dfrac{u^2}{2} dx + \int\limits_{C_R D_R} \dfrac{u^2}{2} dx 
+	\end{equation*}
+	Add and subtract $\int\limits_{C_\varepsilon D_\varepsilon} k\left(R - \varepsilon\right) u_x u dx$, then
+	\begin{equation*}
+		I = - \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy - 
+		\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_y - ku_x\right)u dx - \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon\right) k u_x u dx - \int\limits_{C_\varepsilon D_\varepsilon}\dfrac{u^2}{2} dx + \int\limits_{C_R D_R} \dfrac{u^2}{2}dx.
+	\end{equation*}
+	It follows from this
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{2}\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +k\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon)  =\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_y - ku_x\right)u dx + \dfrac12  \int\limits_{C_R D_R} u^2 dx \leq 
+	\end{equation*}
+	\begin{equation*}
+		\leq \{ \text{Cauchy-Bunyakovsky inequality}\} \leq\left(R - \varepsilon\right)\left[\int\limits_{C_\varepsilon D_\varepsilon}\left(u_y - ku_x\right)^2 dx \right]^{\frac12} \left[\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx \right]^{\frac12} + \dfrac12 \int\limits_{C_RD_R} u^2 dx = M
+	\end{equation*}
+	Consider the following inequality: $(2ar - b)^2 \geq 0 \Rightarrow ra^2r^2 - 4abr+ b^2 \geq 0 \Rightarrow ab\leq ra^2 +b/ (4r)$. Take $a = \left[\left(R - \varepsilon\right)\int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx \right]^{\frac12}$, $b = \left[\left(R - \varepsilon\right)\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx \right]^{\frac12}$, $r =R - \varepsilon$, then
+	\begin{equation*}
+		M \leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx + \dfrac14 \int\limits_{C_\varepsilon D_\varepsilon} u^2 dx + \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+	\end{equation*}
+	Let's regroup
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{4}\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +k\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon) \leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx + \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+	\end{equation*}
+	By virtue of (3) there is equality
+	\begin{equation*}
+		\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{C_\varepsilon D_\varepsilon} \left(u_y - ku_x\right)^2 dx = 0,
+	\end{equation*}
+	where does the ratio come from
+	\begin{equation*}
+		\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + k\dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+	\end{equation*}
+	Now let's aim $R\to \infty$, then $\int\limits_{C_RD_R} u^2 dx\to 0$, and in the left part all the terms are non-negative,n hence $u(x,y) \equiv 0$ in $\overline{D}$. The theorem has been proved.
+	\par
+	
+	
+	\par
+	The work was carried out with the financial support of the Ministry of Science and Higher Education of the Russian Federation as part of the implementation of the program of the Moscow Center for Fundamental and Applied Mathematics under Agreement No. 075-15-2022-284.
+	\bigskip
+	
+	\begin{center}{REFERENCES}\end{center}{\small
+		\lit{1}{Moiseev E.I., Moiseev T.E., Vafadorova G.O.}{On the integral representation of the Neumann-Tricomi problem for the Lavrentiev-Bitsadze equation ~// Differential equations, \textbf{2015} Vol. 51. No.8. pp.1070-1075}
+		\lit{2}{Moiseev E.I.} {On the basis of one sine system ~// Differential equations, \textbf{1987} Vol. 23. No.1. pp.177-189}
+		\lit{3}{Bitsadze A.V.} {Some classes of partial differential equations.~ M., Nauka,\textbf{1981}, 448 p. }
+		\lit{4}{Moiseev T. E.}{On the integral representation of the solution of the Laplace equation with
+			mixed boundary conditions ~// Differential equations, \textbf{2011}, vol. 47, No. 10, pp.1446-1451. }
+		
+		\newpage
+		
+		UDC 517.956
+		
+		\vskip 24pt N.Y. Kapustin, D.D. Vasilchenko On the boundary value problem for the Laplace equation with mixed boundary conditions in a half-band // Differential equations
+		
+		
+		In this
+		
+		paper, the theorems of the existence and uniqueness of the solution
+		of the Laplace equation with mixed boundary conditions in the half-band are proved, and integral representations for partial
+		derivatives of the solution are obtained.
+		
+		\vskip 10pt
+		
+		Bibliogr. 8 titles.
+		
+		
+		
+		\vskip 30pt
+		
+		
+		
+		Kapustin Nikolay Yurievich
+		
+		Lomonosov Moscow State University.
+		Faculty of Computational Mathematics and Cybernetics. Professor. 121467,
+		Moscow, Molodogvardeyskaya str., 4, sq. 33, 121467, t. 84959390836 (m).
+		
+		Vasilchenko Dmitry Dmitrievich
+		
+		Lomonosov Moscow State University.
+		Faculty of Computational Mathematics and Cybernetics. Student. 123557,
+		Moscow, Trans. Tishinsky B., 2, sq. 68, 123557, t. 89154111973 (m).
+		
+	\end{document}
