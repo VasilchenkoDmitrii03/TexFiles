@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  23 SEP 2024 17:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  24 SEP 2024 14:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -487,12 +487,12 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 71.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
 
  (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 71.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
 
 
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -501,17 +501,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/progr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 140--142
+Underfull \hbox (badness 10000) in paragraph at lines 142--144
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 163--165
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
 
  []
 
-[2] [3]
-Overfull \hbox (4.63374pt too wide) detected at line 236
+[3]
+Overfull \hbox (4.63374pt too wide) detected at line 238
 \OML/cmm/m/it/10.95 h[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10
 .95 ) = [][] [] [] []\OML/cmm/m/it/10.95 B[];  B[] \OT1/cmr/m/n/10.95 = [] \OML
 /cmm/m/it/10.95 C[]C[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/1
@@ -520,7 +520,7 @@ Overfull \hbox (4.63374pt too wide) detected at line 236
  []
 
 [4]
-Overfull \hbox (1.29886pt too wide) detected at line 285
+Overfull \hbox (1.29886pt too wide) detected at line 287
 [] \OML/cmm/m/it/10.95 e[]B[] \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 e[] [
 ] C[]C[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 1)[] = []
  [] \OML/cmm/m/it/10.95 e[]C[]C[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\OT
@@ -530,7 +530,7 @@ Overfull \hbox (1.29886pt too wide) detected at line 285
  []
 
 
-Overfull \hbox (25.70041pt too wide) detected at line 288
+Overfull \hbox (25.70041pt too wide) detected at line 290
 [] [] \OML/cmm/m/it/10.95 e[]C[]C[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 ^^@\
 OT1/cmr/m/n/10.95 1)[] = [] \OML/cmm/m/it/10.95 e[]C[] [] C[]\OT1/cmr/m/n/10.95
  (\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 1)[]\OML/cmm/m/it/10.95 e[] \OT1/cm
@@ -539,18 +539,38 @@ n/10.95 ^^@ \OML/cmm/m/it/10.95 e[]\OT1/cmr/m/n/10.95 )[] =
  []
 
 [5]
-Overfull \hbox (21.44823pt too wide) in paragraph at lines 321--322
+Overfull \hbox (21.44823pt too wide) in paragraph at lines 328--329
 []\T2A/cmr/m/n/10 1. Мо-и-се-ев, Е.И. Об ин-те-граль-ном пред-став-ле-нии за-да
 -чи Неймана-Трикоми для урав-не-ния Лаврентьева-
  []
 
 [6]
-Overfull \hbox (25.29108pt too wide) in paragraph at lines 343--347
+Overfull \hbox (25.29108pt too wide) in paragraph at lines 349--353
 \T2A/cmr/m/n/10 boundary conditions in a semiband have been proven in the work.
  Additionally, integral representations
  []
 
-[7] [8] (kapustin_vasilchenko.aux)
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
+
+ []
+
+[8] (kapustin_vasilchenko.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -558,16 +578,16 @@ L3 programming layer <2024-01-04>
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 319 ({)
+### simple group (level 1) entered at line 326 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 4741 strings out of 474486
- 71073 string characters out of 5743755
+ 4753 strings out of 474486
+ 71218 string characters out of 5743755
  1943542 words of memory out of 5000000
- 26950 multiletter control sequences out of 15000+600000
- 581457 words of font info for 94 fonts, out of 8000000 for 9000
+ 26959 multiletter control sequences out of 15000+600000
+ 583922 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,69p,432b,222s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,6n,69p,432b,224s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
 /dpi600\labx1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
 -t2a/dpi600\labx1095.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/l
@@ -593,9 +613,9 @@ a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/pro
 gr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/U
 sers/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/ms
 am10.pfb>
-Output written on kapustin_vasilchenko.pdf (8 pages, 321894 bytes).
+Output written on kapustin_vasilchenko.pdf (8 pages, 321921 bytes).
 PDF statistics:
- 578 PDF objects out of 1000 (max. 8388607)
+ 576 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

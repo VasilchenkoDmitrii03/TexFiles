@@ -1,0 +1,128 @@
+\documentclass[9pt]{article}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[%
+left=1.00in,%
+right=1.00in,%
+top=1.0in,%
+bottom=1.0in,%
+paperheight=11in,%
+paperwidth=8.5in%
+]{geometry}%
+\title{Задача Трикоми для уравнения Лаврентьева-Бицадзе с полуполосой в эллиптической части}
+\author{Капустин Н.Ю., Васильченко Д.Д.}
+\begin{document}
+	\maketitle
+	\section{Постановка задачи}
+	
+	Рассматривается задача Трикоми для уравнения Лавертьева-Бицадзе
+	\begin{equation}
+		\left(sgn (y)\right) \dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+	\end{equation}
+	в области $D = D^{+} \cup D^{-}$, где $D^{+} = \left\{(x,y): \ 0 < x < \pi, \ 0 < y < + \infty \right\}, \ D^{-} = \left\{(x,y): \ -y < x < y + \pi, \ -\pi/2 < y < 0\right\}$ в классе функций $u(x,y) \in C^2(D^{+}) \cap C^2(D^{-}) \cap C(\overline{D^{+} \cup D^{-}})$ с граничными условиями
+	\begin{equation}
+		u(0,y) = 0, \ u(\pi, y) = 0, \ 0 < y < + \infty,
+	\end{equation}
+	\begin{equation}
+		u(x,-x) = f(x) , \ 0 \leq x \leq \pi/2, \ f(0) = 0, 
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, \ y \to +\infty
+	\end{equation}
+	и условием склеивания Франкля 
+	\begin{equation}
+		\dfrac1{k} \dfrac{\partial u}{\partial y}(x, +0) = \dfrac{\partial u}{\partial y} (x, -0), \ 0 < x < \pi, 
+	\end{equation}
+	где $k \in (-\infty, +\infty), k \neq 0$.
+	\section{Основные результаты}
+		\textbf{Теорема 1.} \textit{Решение задачи (1) - (5) единственно.}
+		
+	\textbf{Доказательство.} 
+	Пусть существуют два решения $u_1(x,y), u_2(x,y)$ задачи (1)-(5). Тогда $u(x,y) = u_1(x,y) - u_2(x,y)$ есть решение задачи (1)-(5) с функцией $f(x) \equiv 0$. В этом случае $u(x,y) = F(x+y) - F(0)$.
+	
+	Отсюда следует, что равенство $\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} = 0$ выполняется для всех точек x и y из области гиперболичности. Используя условие склеивания  (5) будем иметь
+	\begin{equation}
+		\dfrac1{k} \dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x}\vert_{y=0+0} = 0.
+	\end{equation}
+	В результате получаем задачу для нахождения гармонической функции $u(x,y)$ в области $D^{+}$ с граничными условиями (2),(4),(6).
+	
+	В силу принципа Зарембы-Жиро и равенства (6) экстремум не может достигаться на интервале $\{(x,y):\ 0 < x < \pi, \ y = 0\}$. На замкнутых боковых сторонах и на бесконечности экстремум не может достигаться в силу условий (2) и (4). Теорема доказана.
+	
+	Известно, что общее решение в $D^{-}$  уравнения (1) имеет вид 
+	\begin{equation}
+		u(x,y) = F(x+y) + f(\dfrac{x-y}{2}) - F(0).
+	\end{equation}
+	Продифференцируем равенство (7):
+	\begin{equation*}
+		\dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) \vert_{y=0+0} = -f'\left(\dfrac{x}2\right), \ 0 < x < \pi.
+	\end{equation*}
+	Используя условие склеивания (5), приходим к равенству
+	\begin{equation*}
+		\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x, 0+0) - \dfrac{\partial u}{\partial x}(x, 0 + 0) = - f'\left(\dfrac{x}2\right), \ 0 < x < \pi. 
+	\end{equation*}
+	
+	Тогда получим в области $D^{+}$ вспомогательную задачу для оператора Лапласа 
+	\begin{equation}
+		\dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+	\end{equation}
+	с граничными условиями 
+	\begin{equation}
+		u(0,y) = 0, \ u(\pi, y) = 0, \ 0 < y < +\infty, 
+	\end{equation}
+	\begin{equation}
+		\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x,0+0) - \dfrac{\partial u}{\partial x}(x,0+0) = -f'\left(\dfrac{x}{2}\right),
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, \ y \to +\infty 
+	\end{equation}
+	\textbf{Теорема 2.} \textit{Пусть $|k| < 1, \ k \neq 0$, $f(x) \in C[0, \pi/2] \cap C^2(0, \pi/2)$, $f'(x) \in L_2(0, \pi/2)$. Тогда решение задачи (8)-(11) существует и представимо в виде ряда
+	\begin{equation*}
+		u(x,y) = \sum\limits_{n=1}^{\infty} A_n e^{-ny} \sin{nx},
+		\end{equation*}}
+	причем условие (10) понимается в интегральном смысле
+	\begin{equation*}
+		\int\limits_0^\pi \left[	\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) + f'\left(\dfrac{x}{2}\right)\right]^2 dx \to 0, \ y \to 0 + 0,
+	\end{equation*}
+	а коэффициенты $A_n$ определяется из равенства
+	\begin{equation}
+		\sum\limits_{n=1}^{\infty} n A_n \sin{\left[nx + \arctg{k}\right]} = \dfrac{k}{\sqrt{1 + k^2}} f'\left(\dfrac{x}{2}\right) 
+	\end{equation}
+	\textbf{Доказательство.} 
+	
+	Система $\left\{\sin{\left[nx + \arctg{k}\right]} \right\}_{n=1}^{\infty}$ образует базис Рисса в $L_2(0,\pi)$ при $k \in (-\infty, 1)$ в силу основного результата работы [2]. Поэтому справедливо двустороннее неравенство Бесселя
+	\begin{equation*}
+		C_1\|f'\|_{L_2(0,\pi)} \leq \sum\limits_{n=1}^{\infty} n^2 A_n^2 \leq C_2\|f'\|_{L_2(0,\pi)}, \ 0 < C_1 < C_2,
+	\end{equation*}
+	где константы $C_1, C_2$ не зависят от $f'$. Поэтому ряд $\sum\limits_{n=1}^{\infty} |A_n|$ сходится и сходится равномерно ряд (12). Функция (12) удовлетворяет уравнению (8) с граничными условиями (9) по построению. Условие (11) выполняется так как $\sum\limits_{n=1}^{\infty} e^{-ny} = \frac{e^{-y}}{1 - e^{-y}} = \frac{1}{e^y - 1}$. Проверим выполнение условия (10). Пусть
+	\begin{equation*}
+		M(x) = \dfrac{1}{k}\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + f'\left(\dfrac{x}{2}\right)
+	\end{equation*}
+	\begin{math}
+		M(x) = -\dfrac{1}{k} \sum\limits_{n=1}^{\infty} n A_n e^{-ny} \sin{nx} - \sum\limits_{n=1}^{\infty} n A_n e^{-ny} \cos{nx} + f'\left(\dfrac{x}{2}\right) = \\
+		= -\sum\limits_{n=1}^{\infty} nA_n e^{-ny} \left[\dfrac{1}{k} \sin{nx} + \cos{nx}\right] + f'\left(\dfrac{x}{2}\right) = \\
+		= -\dfrac{\sqrt{1 + k^2}}{k}\sum\limits_{n=1}^{\infty} nA_n e^{-ny} \left[\dfrac{1}{\sqrt{1 + k^2}} \sin{nx} + \dfrac{k}{\sqrt{1 + k^2}}\cos{nx}\right] + f'\left(\dfrac{x}{2}\right) = \\ 
+		= -\dfrac{\sqrt{1 + k^2}}{k}\sum\limits_{n=1}^{\infty} nA_n e^{-ny} \sin{\left[nx + \arctg{k}\right]} + f'\left(\dfrac{x}{2}\right) = \\
+		= \dfrac{\sqrt{1 + k^2}}{k}\sum\limits_{n=1}^{\infty} nA_n \left(1 - e^{-ny} \right) \sin{\left[nx + \arctg{k}\right]} .
+	\end{math}
+	
+	Покажем, что $\lim\limits_{y \to 0 + 0} I(y) = 0$.
+	\begin{equation*}
+		I(y)  = \int\limits_0^\pi M(x)^2 dx \leq I_1(y) + I_2(y),
+	\end{equation*}
+	\begin{equation*}
+		I_1(y) = \dfrac{2\sqrt{1 + k^2}}{k} \int\limits_0^\pi\left[\sum\limits_{n=1}^{m} n A_n \sin{\left[nx + \arctg{k}\right]} \left(1 - e^{-ny}\right)\right]^2 dx
+	\end{equation*}
+	\begin{equation*}
+		I_2(y) = \dfrac{2\sqrt{1 + k^2}}{k} \int\limits_0^\pi\left[\sum\limits_{n=m+1}^{+\infty} n A_n \sin{\left[nx + \arctg{k}\right]} \left(1 - e^{-ny}\right)\right]^2 dx
+	\end{equation*}
+	Зафиксируем произвольное положительное $\varepsilon$, тогда
+	\begin{equation*}
+		I_2(y) \leq C_3 \sum\limits_{n=m+1}^{\infty} n^2 A_n^2 (1 - e^{-ny})^2 \leq C_3 \sum\limits_{n=m+1}^{\infty} n^2 A_n^2 < \dfrac{\varepsilon}{2}.
+	\end{equation*}
+	Это верно, если m достаточно велико, т.к. ряд сходящийся.
+	\begin{equation*}
+		I_1(y) \leq C_4 \sum\limits_{n=1}^{m} n^2 A_n^2 (1 - e^{-ny})^2 < \dfrac{\varepsilon}{2}
+	\end{equation*}
+	Это верно при $0 < y < \delta$, если $\delta$ достаточно мало. Теорема доказана.
+	\end{document}
