@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  11 OCT 2024 22:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  12 OCT 2024 02:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -390,7 +390,8 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \c@lemma=\count277
 \c@example=\count278
 \c@corollary=\count279
-\c@definition=\count280
+\c@notabene=\count280
+\c@definition=\count281
 
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2023/10/27 v2.16 Sectioning titles
@@ -404,12 +405,12 @@ Package: titlesec 2023/10/27 v2.16 Sectioning titles
 \titlewidthlast=\dimen156
 \titlewidthfirst=\dimen157
 )
-\c@remark=\count281
+\c@remark=\count282
 
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count282
+\l__color_backend_stack_int=\count283
 \l__pdf_internal_box=\box54
 ) (book.aux
 LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 5
@@ -420,37 +421,37 @@ File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
 \openout1 = `book.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Info: Redefining \th on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Info: Redefining \th on input line 34.
 
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count283
+\scratchcounter=\count284
 \scratchdimen=\dimen158
 \scratchbox=\box55
-\nofMPsegments=\count284
-\nofMParguments=\count285
+\nofMPsegments=\count285
+\nofMParguments=\count286
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count286
+\MPscratchCnt=\count287
 \MPscratchDim=\dimen159
-\MPnumerator=\count287
-\makeMPintoPDFobject=\count288
+\MPnumerator=\count288
+\makeMPintoPDFobject=\count289
 \everyMPtoPDFconversion=\toks33
 )
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -463,12 +464,12 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
 
  (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
 
 
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -482,13 +483,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
 [3] [4]
-Overfull \hbox (1.0325pt too wide) in paragraph at lines 99--100
+Overfull \hbox (1.0325pt too wide) in paragraph at lines 100--101
 []\T2A/cmr/m/n/10 Хорошо, непре-рыв-ность сле-ду-ет из диф-фе-рен-ци-ру-е-мо-ст
 и, но мо-жет быть
  []
 
 [5]
-Overfull \hbox (32.349pt too wide) detected at line 143
+Overfull \hbox (32.349pt too wide) detected at line 144
 \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 10[](\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^F 
 \OT1/cmr/m/n/10 10[])\OMS/cmsy/m/n/10 g ^^@ f\OT1/cmr/m/n/10 10[]\OML/cmm/m/it/
 10 x\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 0\OM
@@ -503,11 +504,21 @@ Overfull \hbox (31.99132pt too wide) has occurred while \output is active
 cmr/m/n/10 7
  []
 
-[7] [8
-
-]
+[7] [8]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
-[9] [10
+
+Overfull \hbox (25.1094pt too wide) in paragraph at lines 196--197
+\T2A/cmr/m/it/10 ли в ка-че-стве $\OML/cmm/m/it/10 M$ \T2A/cmr/m/it/10 взять $\
+OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1) \OMS/cmsy/m/n/10 [ \OT1/
+cmr/m/n/10 (3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5)$\T2A/cmr/m/it/10 . То-гда $\
+OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy
+/m/n/10 ^^Q \OT1/cmr/m/n/10 1$ \T2A/cmr/m/it/10 и $\OML/cmm/m/it/10 G\OT1/cmr/m
+/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = []$
+ []
+
+[9
+
+] [10
 
 ]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
@@ -522,10 +533,10 @@ L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4726 strings out of 474486
- 69899 string characters out of 5743755
+ 4738 strings out of 474486
+ 70128 string characters out of 5743755
  1935542 words of memory out of 5000000
- 26962 multiletter control sequences out of 15000+600000
+ 26974 multiletter control sequences out of 15000+600000
  575534 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,65p,1523b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -549,9 +560,9 @@ r7.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy7.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on book.pdf (13 pages, 214686 bytes).
+Output written on book.pdf (13 pages, 223965 bytes).
 PDF statistics:
- 404 PDF objects out of 1000 (max. 8388607)
+ 414 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
