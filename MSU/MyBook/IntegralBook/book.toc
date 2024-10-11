@@ -1,0 +1,5 @@
+\babel@toc {russian}{}\relax 
+\contentsline {chapter}{\numberline {1}Введение}{5}{}%
+\contentsline {chapter}{\numberline {2}Неопределенный интеграл}{7}{}%
+\contentsline {chapter}{\numberline {3}Определенный интеграл Римана}{9}{}%
+\contentsline {chapter}{\numberline {4}Интеграл Лебега}{11}{}%
