@@ -1,0 +1,119 @@
+\documentclass{beamer}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amssymb}
+
+\title{Задача Трикоми для уравнения Лаврентьева-Бицадзе}
+\author{Капустин Н.Ю., Васильченко Д.Д.}
+\date{}
+
+\begin{document}
+	
+	\frame{\titlepage}
+	
+	\begin{frame}
+		\frametitle{Постановка задачи}
+		Рассматривается задача Трикоми для уравнения Лаврентьева-Бицадзе:
+		\[
+		\left(\text{sgn}(y)\right) \frac{\partial^2 u}{\partial x^2}(x,y) + \frac{\partial^2 u}{\partial y^2}(x,y) = 0 \eqno{(1)}
+		\]
+		в области $D = D^+ \cup D^-$, где:
+		\[
+		D^+ = \left\{(x,y): 0 < x < \pi, 0 < y < +\infty\right\}
+		\]
+		\[
+		D^- = \left\{(x,y): -y < x < y + \pi, -\pi/2 < y < 0\right\}
+		\]
+		В классе функций 
+		\[
+		u(x,y) \in C^2(D^+)\cap C^2(D^-)\cap C(\overline{D^+\cup D^-})
+		\]
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Граничные условия}
+		\[
+		u(0, y) = 0, \quad u(\pi, y) = 0, \quad 0 < y < +\infty \eqno{(2)}
+		\]
+		\[
+		u(x, -x) = f(x), \quad 0 \leq x \leq \pi/2, \quad f(0) = 0 \eqno{(3)}
+		\]
+		\[
+		u(x, y) \rightrightarrows 0, \text{при} y \to +\infty, \eqno{(4)}
+		\]
+		\[
+		\frac{1}{k} \frac{\partial u}{\partial y}(x, +0) = \frac{\partial u}{\partial y}(x, -0), \quad 0 < x < \pi, \eqno{(5)}
+		\]
+		\[
+		  k\in (-\infty, +\infty), \ k \neq 0
+		\]
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Основные результаты}
+		\textbf{Теорема 1:} Решение задачи (1) - (5) единственно.
+		Преобразуем условие склеивания (5) в 
+		\[
+			\dfrac{1}{k}\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} \vert_{y = 0+0} = 0. \eqno{(6)}
+		\]
+		Используя общую формулу решения уравнения (1) в области $D^-$, получим
+		\[
+			\dfrac{1}{k}\dfrac{\partial u}{\partial y}(x, 0+0) - \dfrac{\partial u}{\partial x}(x, 0+0) = - f'(\dfrac{x}{2}), \ 0 < x < \pi
+		\]
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Основные результаты}
+		Получаем в $D^+$ вспомогательную задачу
+		\[
+			\dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0 \eqno{(8)}
+		\]
+		с граничными условиями
+		\[
+			u(0,y) = 0, \ u(\pi, y) = 0, \ 0 < y < +\infty, \eqno{(9)}
+		\]
+		\[
+			\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x,0+0) - \dfrac{\partial u}{\partial x}(x,0+0) = -f'\left(\dfrac{x}{2}\right), \eqno{(10)}
+		\]
+		\[
+			u(x,y) \rightrightarrows 0, \ y \to +\infty. \eqno{(11)}
+		\]
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Основные результаты}
+			\textbf{Теорема 2.} \textit{Пусть $|k| < 1, \ k \neq 0$, $f(x) \in C[0, \pi/2] \cap C^2(0, \pi/2)$, $f'(x) \in L_2(0, \pi/2)$. Тогда решение задачи (8)-(11) существует и представимо в виде ряда
+				\begin{equation*}
+					u(x,y) = \sum\limits_{n=1}^{\infty} A_n e^{-ny} \sin{nx},
+			\end{equation*}}
+			причем условие (10) понимается в интегральном смысле
+			\[
+				\int\limits_0^\pi \left[	\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) + f'\left(\dfrac{x}{2}\right)\right]^2 dx \to 0, \ y \to 0 + 0,
+			\]
+			а коэффициенты $A_n$ определяется из равенства
+			\[
+				\sum\limits_{n=1}^{\infty} n A_n \sin{\left[nx + \arctg{k}\right]} = \dfrac{k}{\sqrt{1 + k^2}} f'\left(\dfrac{x}{2}\right) 
+			\]
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Основные результаты}
+		\textbf{Теорема 3.} \textit{Пусть $k > 0$, тогда решение задачи (8) - (11) единственно}
+		
+\textbf{Теорема 4.} \textit{Пусть $|k| < 1\  , k \neq 0$ и $u(x,y)$  - решение задачи (8) - (11), тогда $u_x, u_y$ представимы в виде}
+\begin{equation*}
+	u_y(x,y) = -\dfrac{2k}{\pi\sqrt{1+k^2}} \mathrm{Im}\ \left(\dfrac{1- e^{iz}}{1 + e^{iz}} \right)^{\gamma/\pi} e^{iz}\int\limits_0^\pi M(t,z) f'(\dfrac{t}{2}) dt, 
+\end{equation*}
+\begin{equation*}
+	u_x(x,y) = \dfrac{2k}{\pi\sqrt{1+k^2}} \mathrm{Re}\ \left(\dfrac{1- e^{iz}}{1 + e^{iz}} \right)^{\gamma/\pi} e^{iz}\int\limits_0^\pi M(t,z)  f'(\dfrac{t}{2}) dt,
+\end{equation*}
+где $M(t,z) = \dfrac{1}{(\tg{t/2})^{\gamma/\pi}}  \dfrac{ \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}$,$\gamma = 2\arctg{k}$, $z = x + iy$.
+	\end{frame}
+	
+	
+	\begin{frame}
+		\frametitle{Заключение}
+		В работе решена задача Трикоми для уравнения Лаврентьева-Бицадзе в области с полуполосой в эллиптической части. Были доказаны теоремы об существовании и единственности решений при различных значениях параметра $k$ и найдены интегральные представления для производных решения вспомогательной задачи.
+	\end{frame}
+	
+\end{document}
