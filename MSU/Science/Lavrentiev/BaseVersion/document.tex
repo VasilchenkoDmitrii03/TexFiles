@@ -12,6 +12,7 @@ paperwidth=8.5in%
 ]{geometry}%
 \title{Задача Трикоми для уравнения Лаврентьева-Бицадзе с полуполосой в эллиптической части}
 \author{Капустин Н.Ю., Васильченко Д.Д.}
+\date{}
 \begin{document}
 	\maketitle
 	\section{Постановка задачи}
@@ -125,4 +126,59 @@ paperwidth=8.5in%
 		I_1(y) \leq C_4 \sum\limits_{n=1}^{m} n^2 A_n^2 (1 - e^{-ny})^2 < \dfrac{\varepsilon}{2}
 	\end{equation*}
 	Это верно при $0 < y < \delta$, если $\delta$ достаточно мало. Теорема доказана.
+	\par
+	\textbf{Теорема 2.} \textit{Решение задачи (8) - (11) единственно}
+	\par
+	\textbf{Доказательство.} Докажем единственность решения этой задачи. Пусть $u(x,y)$ - решение однородной задачи.
+	Введём обозначения $C_\varepsilon = (0, \varepsilon), C_R = (0, R), D_R = (\pi, R), D_\varepsilon = (\pi, \varepsilon)$. $\prod_{R\varepsilon}$ - прямоугольник $C_\varepsilon C_R D_R D_\varepsilon$. Справедливы следующие соотношения:
+	\begin{equation*}
+		0 = \iint\limits_{\prod_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy = 
+	\end{equation*}
+	\begin{equation*}
+		=	\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  
+		- \iint\limits_{\prod_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right)dxdy + \iint\limits_{\prod_{R\varepsilon}} u_y u dx dy = 
+	\end{equation*}
+	\begin{equation*}
+		= - \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy - 
+		\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_y - u_x\right)u dx - \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon\right) u_x u dx - \int\limits_{C_\varepsilon D_\varepsilon}\dfrac{u^2}{2} dx +
+	\end{equation*}
+	\begin{equation*}
+		+ \int\limits_{C_R D_R} \dfrac{u^2}{2}dx.
+	\end{equation*}
+	Отсюда следует цепочка неравенств
+	\begin{equation*}
+		\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_x - u_y\right)u dx + \dfrac12  \int\limits_{C_R D_R} u^2 dx \leq
+	\end{equation*}
+	\begin{equation*}
+		\leq \left(R - \varepsilon\right) \left[\int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - u_x\right)^2 dx \right]^{\frac12} \left[\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx \right]^{\frac12} + \dfrac12 \int\limits_{C_RD_R} u^2 dx \leq
+	\end{equation*}
+	\begin{equation*}
+		\leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - u_x\right)^2 dx + \dfrac14 \int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +\dfrac12 \int\limits_{C_RD_R} u^2 dx, 
+	\end{equation*}
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{4}\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon) \leq 
+	\end{equation*}
+	\begin{equation*}
+		\leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - u_x\right)^2 dx  +\dfrac12 \int\limits_{C_RD_R} u^2 dx.
+	\end{equation*}
+	В силу (3) имеет место равенство
+	\begin{equation*}
+		\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{C_\varepsilon D_\varepsilon} \left(u_y - u_x\right)^2 dx = 0,
+	\end{equation*}
+	откуда вытекает соотношение
+	\begin{equation*}
+		\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + \dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+	\end{equation*}
+	Устремим теперь $R \to \infty$, тогда $\int\limits_{C_RD_R} u^2 dx \to 0$, отсюда $u(x,y) \equiv 0$ в $\overline{D}$. Теорема доказана.
+	\begin{center}{ФИНАНСИРОВАНИЕ РАБОТЫ}\end{center}
+	\par
+	Работа выполнена при финансовой поддержке Министерства науки и высшего образования Российской Федерации в рамках реализации программы Московского центра фундаментальной и прикладной математики по соглашению № 075-15-2022-284.
+	\bigskip
+	
+		\smallskip
+	\begin{center}{СПИСОК ЛИТЕРАТУРЫ}\end{center}{\small
+		
+		1. Моисеев,~Е.И. Об интегральном представлении задачи Неймана-Трикоми для уравнения Лаврентьева-Бицадзе/~Моисеев,~Е.И., Моисеев~Т.Е., Вафадорова~Г.О. //~Дифференц. уравнения. ~--- 2015.~--- Т.~51, №~8~---. С.~1070--1075.
+		
+		2. Моисеев,~Е.И.  О базисности одной системы синусов /~Е.И. Моисеев //~Дифференц. уравнения. ~--- 1987.~---Т.~23,  №~1~--- С.~177--189.
 	\end{document}
