@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  25 OCT 2024 13:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  27 OCT 2024 23:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1202,20 +1202,20 @@ LaTeX Info: Redefining \th on input line 9.
  (document.nav) [1
 
 {C:/Users/progr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
 
 
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
 
 
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 30.
+ut line 33.
 
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mathk
 erncmss.fd
@@ -1223,7 +1223,11 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 ) [2
 
-] [3
+]
+Overfull \vbox (4.3385pt too high) detected at line 48
+ []
+
+[3
 
 ] [4
 
@@ -1234,8 +1238,6 @@ thkerncmss.
 ] [7
 
 ] [8
-
-] [9
 
 ]
 \tf@nav=\write6
@@ -1256,13 +1258,13 @@ Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23046 strings out of 474486
- 442384 string characters out of 5743755
+ 23038 strings out of 474486
+ 442238 string characters out of 5743755
  1937542 words of memory out of 5000000
- 44833 multiletter control sequences out of 15000+600000
- 570630 words of font info for 67 fonts, out of 8000000 for 9000
+ 44829 multiletter control sequences out of 15000+600000
+ 570030 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,14n,123p,573b,574s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,14n,123p,435b,574s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lasi10
 95.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
 sx1095.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
@@ -1271,18 +1273,18 @@ pi600\lass1440.pk><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/cm/cmex10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/progr/AppData/Local/Programs/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/progr/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/progr/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/progr/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/
-progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb>
-<C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-ssi8.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmsy8.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/symbols/msam10.pfb>
-Output written on document.pdf (9 pages, 210855 bytes).
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/progr/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/progr/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/User
+s/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb
+><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+msy10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/symbols/msam10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on document.pdf (8 pages, 199323 bytes).
 PDF statistics:
- 458 PDF objects out of 1000 (max. 8388607)
- 19 named destinations out of 1000 (max. 500000)
+ 444 PDF objects out of 1000 (max. 8388607)
+ 17 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

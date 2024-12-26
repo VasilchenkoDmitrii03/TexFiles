@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  5 NOV 2024 12:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  11 DEC 2024 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -391,23 +391,23 @@ File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Info: Redefining \th on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Info: Redefining \th on input line 16.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -443,63 +443,45 @@ LaTeX Info: Redefining \th on input line 15.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
 
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
 
 
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (54.33946pt too wide) in paragraph at lines 22--24
-\T2A/cmr/m/n/10 в об-ла-сти $\OML/cmm/m/it/10 D \OT1/cmr/m/n/10 = \OML/cmm/m/it
-/10 D[] \OMS/cmsy/m/n/10 [ \OML/cmm/m/it/10 D[]$\T2A/cmr/m/n/10 , где $\OML/cmm
-/m/it/10 D[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 ;  D[] \OT1/cmr/m/n/10 = []$
+Underfull \hbox (badness 10000) in paragraph at lines 18--20
 
  []
 
 [1
 
-{C:/Users/progr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-[3] (document.aux)
+{C:/Users/progr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+(document.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4002 strings out of 474486
- 59786 string characters out of 5743755
- 1940542 words of memory out of 5000000
- 26272 multiletter control sequences out of 15000+600000
- 570132 words of font info for 69 fonts, out of 8000000 for 9000
+ 3983 strings out of 474486
+ 59497 string characters out of 5743755
+ 1926542 words of memory out of 5000000
+ 26259 multiletter control sequences out of 15000+600000
+ 565118 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,65p,576b,221s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati10
+ 57i,6n,65p,334b,221s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm10
 00.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
-bx1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
-0\larm1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/d
-pi600\labx1440.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
-2a/dpi600\larm1200.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
-lh-t2a/dpi600\larm1728.pk><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/progr/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/progr/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/progr/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/p
-rogr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/
-Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.p
-fb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmsy5.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmsy7.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on document.pdf (3 pages, 194601 bytes).
+rm1200.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
+0\larm1728.pk>
+Output written on document.pdf (1 page, 32461 bytes).
 PDF statistics:
- 282 PDF objects out of 1000 (max. 8388607)
+ 105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
