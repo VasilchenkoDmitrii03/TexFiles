@@ -1,5 +1,10 @@
 \babel@toc {russian}{}\relax 
 \contentsline {chapter}{\numberline {1}Введение}{5}{}%
-\contentsline {chapter}{\numberline {2}Неопределенный интеграл}{7}{}%
-\contentsline {chapter}{\numberline {3}Определенный интеграл Римана}{9}{}%
-\contentsline {chapter}{\numberline {4}Интеграл Лебега}{11}{}%
+\contentsline {section}{\numberline {1.1}Требования к читателю}{5}{}%
+\contentsline {section}{\numberline {1.2}О функциях}{5}{}%
+\contentsline {section}{\numberline {1.3}О физических и иных приложениях изучаемого понятия}{9}{}%
+\contentsline {chapter}{\numberline {2}Неопределенный интеграл}{11}{}%
+\contentsline {section}{\numberline {2.1}Строгое определение}{11}{}%
+\contentsline {section}{\numberline {2.2}Свойства неопределённого интеграла}{12}{}%
+\contentsline {chapter}{\numberline {3}Определенный интеграл Римана}{17}{}%
+\contentsline {chapter}{\numberline {4}Интеграл Лебега}{19}{}%

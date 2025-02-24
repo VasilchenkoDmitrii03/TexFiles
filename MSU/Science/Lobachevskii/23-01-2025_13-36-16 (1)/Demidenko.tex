@@ -1,0 +1,690 @@
+\documentclass[
+11pt,%
+tightenlines,%
+twoside,%
+onecolumn,%
+nofloats,%
+nobibnotes,%
+nofootinbib,%
+superscriptaddress,%
+noshowpacs,%
+centertags]%
+{revtex4}
+\usepackage{ljm}
+\begin{document}
+
+\titlerunning{LIMIT THEOREMS FOR ONE CLASS OF LARGE-DIMENSIONAL SYSTEMS} % for running heads
+\authorrunning{Demidenko} % for running heads
+%\authorrunning{First-Author, Second-Author} % for running heads
+
+\title{Limit Theorems for One Class of Large-Dimensional Systems of~Ordinary Differential Equations
+}
+% Splitting into lines is performed by the command \\
+% The title is written in accordance with the rules of capitalization.
+
+\author{\firstname{G.~V.}~\surname{Demidenko}}
+\email[E-mail: ]{demidenk@math.nsc.ru} \affiliation{Sobolev
+Institute of Mathematics, Novosibirsk, 630090 Russia}
+\affiliation{Novosibirsk State University, Novosibirsk, 630090
+Russia}
+
+\firstcollaboration{(Submitted by A. B. Muravnik)} % Add if you know submitter.
+%\lastcollaboration{ }
+
+
+\received{June 28, 2024; revised July 15, 2024; accepted July 26, 2024} % The date of receipt to the editor, i.e. December 06, 2017
+
+
+\begin{abstract} % You shouldn't use formulas and citations in the abstract.
+Large-dimensional systems of ordinary differential equations simulating
+multistage synthesis are considered. New limit theorems are proved,
+connections between solutions to these systems and delay equations are established.
+\end{abstract}
+
+\subclass{34A45, 34K07} % Enter 2010 Mathematics Subject Classification.
+
+\keywords{large-dimensional systems of ordinary differential equations,
+limit theorems, delay equations, Sobolev spaces
+} % Include keywords separeted by comma.
+
+\maketitle
+
+% Text of article starts here.
+
+\section{Introduction}
+
+In this paper, we continue to study connections between solutions to
+the Cauchy problem for systems of ordinary differential equations of
+the following form
+\begin{equation}\label{eq1}
+\displaystyle{\frac{d{x}}{dt}} = {A}_{n} {x} + F(t,{x}), \qquad t > 0,
+\end{equation}
+\begin{equation}\label{eq2}
+{A}_{n}=\!\left(\!
+  \begin{array}{ccccc}
+      \displaystyle-\frac{n-1}{\tau} & 0 & \cdots
+      & \cdots & 0
+  \\ [10pt]
+      \ \ \displaystyle\frac{n-1}{\tau}
+      & \displaystyle-\frac{n-1}{\tau} & \ddots
+      & \ddots & \vdots
+  \\ [10pt]
+      0 & \ddots & \ddots & \ddots & \vdots
+  \\ [10pt]
+      \vdots & \ddots & \ddots
+      & \displaystyle-\frac{n-1}{\tau} & 0
+  \\ [10pt]
+      0  & \cdots & 0
+      & \ \ \displaystyle\frac{n-1}{\tau} & - \theta
+  \end{array}
+\right),
+\qquad n \gg 1,
+\end{equation}
+$$
+{x}(t) = ({x}_1(t), {x}_2(t), \dots, {x}_n(t))^{\rm T},
+\quad
+F(t,{x}) = (g(t,{x}_{n}), 0, \dots, 0)^{\rm T}, \quad \tau, \ \theta > 0,
+$$
+and solutions to initial value problems for the delay equation
+\begin{equation}\label{eq3}
+\frac{dy(t)}{dt} = -\theta y(t) + g(t-\tau,y(t-\tau)), \qquad t > \tau.
+\end{equation}
+
+Remind that for the first time such connections were established in \cite{1}
+when solving the problem of large dimension for multistage substance synthesis
+modeled by \eqref{eq1}. The component
+${x}_i(t)$
+of the vector-function
+${x}(t)$
+defines the concent\-ration of the substance at the $i$th stage,
+$\tau >0$
+is the total duration time of the stages from the first stage to the $n$th stage,
+$\theta > 0$
+is the dissipation parameter. The first equation defines the initiation law,
+while the last one determines the utilization law of the substance, intermediate equations
+describe dynamics of the substance synthesis (see, for example, \cite{2, 3, 4}).
+Note that processes of substance synthesis can have hundreds of thousands
+of intermediate stages. In the substance synthesis problem, first of all biologists
+are interested in finding the concentration of the final product. Therefore, solving
+the Cauchy problem for \eqref{eq1}, \eqref{eq2}, researchers may encounter serious
+difficulties, since obtaining analytical formulas for solutions, with rare exceptions,
+is impossible due to nonlinearity of the function
+$g(t,z)$.
+Direct solving \eqref{eq1}, \eqref{eq2} by a computer may be unrealistic
+due to enormous dimension
+$n \gg 1$.
+Thus, a large-dimensional problem arises when modeling biological processes.
+
+A solution to this problem was obtained in \cite{1} by finding approximate
+values of the last component
+$x_n(t)$
+of solutions to the Cauchy problem
+\begin{equation}\label{eq4}
+\displaystyle{\frac{d{x}}{dt}} = {A}_{n} {x} + F(t,{x}), \quad x|_{t=0} = x^0,
+\end{equation}
+for $n \gg 1$. The basis for this method was V.A.~Likhoshvai's
+hypothesis about possible connections between two different
+approaches of biologists when modeling processes of multistage
+substance synthesis with very large number of intermediate stages.
+The first approach is based on the use of systems of the form
+\eqref{eq1} and \eqref{eq2}, the second one is based on the use of
+delay equations of the form \eqref{eq3}. Note that these approaches
+give, generally speaking, different results for small $n$. Numerical
+experiments conducted by S.I.~Fadeev for several systems showed that
+differences decrease with increasing $n$. The analytical proof of
+this hypothesis for $n \gg 1$ was given by the author in \cite{1}.
+
+Below we briefly describe the idea of the proof of the hypothesis.
+We indefinitely increase the number $n$ of the equations in
+\eqref{eq1} and consider the series of the Cauchy problems of the
+form \eqref{eq4}. If the function $g(t,u)$ satisfies the Lipschitz
+condition of $u,$ then, for every fixed $n$, the problem \eqref{eq4}
+is uniquely solvable on a certain segment. Then, we get the sequence
+of the functions $\{x_n^n(t)\}$ consisting of the last components of
+the solutions to the sequence of the Cauchy problems of the form
+\eqref{eq4}. In \cite{1}, the following statement on the convergence
+of this sequence was proved.
+
+\begin{theorem}
+\label{th1}
+Let
+$x^0 = (0,\ldots,0)^{\rm T}$, $F(t,x) = (g(x_n),0,\ldots,0)^{\rm T}$,
+$$
+|g(u)| \le G < \infty, \quad |g(u_1)-g(u_2)| \le L|u_1-u_2|,
+$$
+and let the sequence $\{x_n^n(t)\}$ consist of the last components
+of the solutions to the series of the Cauchy problems \eqref{eq4}
+for \eqref{eq1}. Then, there exists $t_0 > \tau$ such that the
+sequence $\{x_n^n(t)\}$ converges uniformly on the segment $[0,
+t_0]$
+\begin{equation}\label{eq5}
+x^n_n(t) \to y(t), \quad n \to \infty,
+\end{equation}
+and the limit function
+$y(t)$
+is the solution to the initial value problem for the delay equation
+\begin{equation}\label{eq6}
+\frac{dy(t)}{dt} = -\theta y(t) + g(y(t-\tau)), \quad t > \tau,
+\end{equation}
+\begin{equation}\label{eq7}
+y(t) = 0, \quad 0 \le t \le \tau, \quad y(\tau+0) = 0.
+\end{equation}
+\end{theorem}
+
+
+
+limit theorems were proved for some classes of high-dimensional
+systems of ordinary differential equations.
+
+In this paper, we present a number of more general limit theorems for non-autonomous
+
+$F(t,x) = (g(t,x_n),0,\ldots,0)^{\rm T}$
+which is not bounded.
+
+
+
+\section{Limit theorems}
+
+ $F(t,x) =
+(g(t,x_n),0,\ldots,0)^{\rm T}$ which is not bounded. We assume that
+$g(t,u)$ is a continuous function in $R^2_+$ such that
+\begin{equation}\label{eq8}
+|g(t,u)| \le G(1 + |u|) < \infty, \ \ t \ge 0, \ \ u \in R, \ \ |g(t,u_1)-g(t,u_2)| \le L|u_1-u_2|,
+\end{equation}
+where $G$ and  $L$ are constants.
+
+\begin{theorem}
+\label{th2} Let the sequence $\{x_n^n(t)\}$ consist of the last
+components of the solutions to the series of the Cauchy problems
+
+continuous vector-function $F(t,x) = (g(t,x_n),0,\ldots,0)^{\rm T}$
+
+uniformly on any segment $[0, T]$, $T > \tau$
+$$
+x^n_n(t) \to y(t), \quad n \to \infty,
+$$
+and the limit function
+$y(t)$
+is the solution to the initial value problem for the delay equation
+$$
+\left\{%
+\begin{array}{l}
+\displaystyle
+\frac{dy(t)}{dt} = -\theta y(t) + g(t-\tau,y(t-\tau)), \quad t > \tau,
+\\
+y(t) = 0, \quad 0 \le t \le \tau, \quad y(\tau+0) = 0.
+\end{array}%
+\right.
+$$
+\end{theorem}
+
+By analogy with Theorem~\ref{th1}, Theorem~\ref{th2} provides a mathematical justification
+for approximate calculating the concentration
+$x_n(t)$
+of the resulting substance on any segment
+$[0, T]$
+for
+$n \gg 1$
+under less restrictive conditions on the nonlinear function
+$g(t,u)$.
+
+We now give a number of limit theorems for the Cauchy
+
+
+the last components of the initial vectors are nonzero and all other
+components are zero; i.e., the initial vectors have the form
+\begin{equation}\label{eq9}
+x^n|_{t=0} = x^{n,0} = (0,\dots,0,a)^{\rm T}.
+\end{equation}
+Indefinitely increasing the number of the equations and considering
+only the last components of the solutions to each of the Cauchy
+
+
+\begin{theorem}
+
+$\{x^n_n(t)\}$ converges uniformly on any segment $[0,T]$, $T >
+\tau$
+\begin{equation}\label{eq10}
+x^n_n(t) \to y(t), \quad n \to \infty.
+\end{equation}
+The limit function
+$y(t)$
+is the solution to the initial value problem for the delay equation
+\begin{equation}\label{eq11}
+\left\{%
+  \begin{array}{l}
+     \displaystyle{\frac{dy(t)}{dt}}=-\theta y(t)
+       + g(t-\tau,y(t-\tau)),   \quad t > \tau,   \\
+     y(t)=a e^{-\theta t}, \quad  t \in [0, \tau], \\
+     y(\tau+0)=a e^{-\theta \tau},
+  \end{array}%
+\right.
+\end{equation}
+and the inequality holds
+\begin{equation}\label{eq12}
+\max\limits_{t\in[0,T]}|x^n_n(t)-y(t)| \le \frac{c}{\sqrt{n}},
+\quad n \ge n_0(\theta, \tau),
+\end{equation}
+where the constant
+$c > 0$
+does not depend on
+$n$.
+\end{theorem}
+
+
+initial conditions.
+
+Let
+$n = 2l + 1$
+and let the initial vector have the form
+\begin{equation}\label{eq13}
+x^{n,0} = (x_1^{n,0},\dots,x_n^{n,0})^{\rm T}, \quad x_{l+1}^{n,0} = a, \quad x_j^{n,0} = 0
+\ \hbox{ for } \ j \neq l+1.
+\end{equation}
+Under such initial conditions, the sequence
+$\{x^n_n(t)\}$
+also converges, but in this case the convergence is not uniform.
+The following theorems are valid.
+
+\begin{theorem}
+
+space $L_1(0,T)$, $T > \tau$:
+\begin{equation}\label{eq14}
+\|x^n_n(t)-y(t), L_1(0,T)\| \to 0, \quad n \to \infty.
+\end{equation}
+The limit function
+$y(t)$
+belongs to the Sobolev space
+$W^1_1(\tau,T)$
+and it is a generalized solution to the initial value problem for the delay equation
+\begin{equation}\label{eq15}
+\left\{%
+\begin{array}{l}
+    \displaystyle{\frac{dy(t)}{dt}}=-\theta y(t)
+       + g(t-\tau,y(t-\tau)), \quad t > \tau,    \\
+    y(t)=0, \qquad  \qquad \quad t \in [0, \tau/2),    \\
+    y(t)=a e^{-\theta(t-\tau/2)}, \quad t \in (\tau/2,\tau], \\
+    y(\tau+0)=a e^{-\theta\tau/2}.
+\end{array}%
+\right.
+\end{equation}
+\end{theorem}
+
+\begin{theorem}
+\label{th5}
+Let
+$n = ml + 1$,
+let $s$ be integer,
+$0 \le s < m$,
+
+$$
+x^{n,0} = (x_1^{n,0},\dots,x_n^{n,0})^{\rm T},
+\quad x_{sl+1}^{n,0} = a,
+\quad x_j^{n,0} = 0 \mbox{ \ \ for \ \ } j \neq sl+1.
+$$
+Then,  holds for the sequence $\{x^n_n(t)\}$ for any $T
+> \tau$. The limit function $y(t)$ belongs to the space
+$W^1_1(\tau,T)$ and it is a generalized solution to the initial
+value problem
+$$
+\left\{%
+\begin{array}{l}
+    \displaystyle{\frac{dy(t)}{dt}} = -\theta y(t) + g(t-\tau,y(t-\tau)),
+        \quad  t > \tau,
+     \\
+    y(t) = 0, \quad  t \in \left[0, \frac{m-s}{m}\tau\right),
+     \\
+    y(t) = a e^{-\theta\left(t-\frac{m-s}{m}\tau\right)} ,
+       \quad  t \in \left(\frac{m-s}{m}\tau,\tau\right],\\
+    y(\tau+0) = a e^{-\theta\frac{s}{m}\tau}.
+\end{array}%
+\right.
+$$
+\end{theorem}
+
+\begin{theorem}
+\label{th6}
+Let
+$i \in \mathbb{N}$
+be fixed and let the initial vector in have the form
+$$
+x^{n,0} = (a_1, \dots,a_i, 0, \dots, 0)^{\rm T}.
+$$
+the sequence
+$\{x^n_n(t)\}$
+for any
+$T > \tau$.
+The limit function
+$y(t)$
+belongs to the space
+$W^1_1(\tau,T)$
+and it is a generalized solution to the initial value problem
+$$
+\left\{%
+  \begin{array}{l}
+    \displaystyle{\frac{dy(t)}{dt}}=-\theta y(t)
+       + g(t-\tau, y(t-\tau)), \quad t > \tau, \\
+    y(t)=0, \quad  t \in [0, \tau), \\
+    y(\tau+0)=a_1+ \dots +a_i.
+  \end{array}%
+\right.
+$$
+\end{theorem}
+
+
+{\bf Remark.} In comparison with Theorems~\ref{th1} and \ref{th2}, Theorems~\ref{th3}--\ref{th6}
+establish convergence in Lebesgue spaces, since, as will be seen,
+there is no uniform convergence there.
+We emphasize that the limit function
+$y(t)$
+in these theorems is a generalized solution to the delay equati
+
+
+
+\section{Proof of limit theorems}
+
+In this section, we prove the limit theorems formulated in the previous section.
+To study the convergence of
+$\{x^n_n(t)\}$,
+we need to know properties of functions used in the following lemma (see \cite{5}).
+
+\begin{lemma}
+\label{lm1}
+The integral relation is valid for the last component of the solution to the Cauchy
+
+\begin{equation}\label{eq16}
+x^n_n(t) = \sum\limits_{k=1}^n x^{n,0}_k \hat{\psi}^n_{n-k+1} (t) +
+\int\limits_0^t \hat{\psi}^n_n(t-s) g(s,x^n_n(s)) ds,
+\end{equation}
+where
+$x^{n,0}_k$
+is the $k$th component of the initial vector 
+\begin{equation}\label{eq17}
+\hat{\psi}^n_1(t) = e^{-\theta t}, \quad
+\hat{\psi}^n_k(t) = \frac{e^{-\theta t}}{\left(1-\frac{\theta
+\tau}{n-1}\right)^{k-1}} \left(1-e^{-\omega_n
+t}\sum\limits_{j=0}^{k-2}\frac{(\omega_n t)^j}{j!}\right),
+\quad
+k =2, \dots,n,
+\end{equation}
+$$
+\omega_n=\frac{n-1}{\tau}-\theta.
+$$
+\end{lemma}
+
+
+Proving the limit theorems, we will use asymptotic properties of the sequence
+of the functions
+$\{\hat{\psi}^n_k(t)\}$
+for different
+$k$.
+The following lemmas are valid.
+
+
+\begin{lemma}
+\label{lm2}
+For any
+$T > \tau$
+and any small
+$\varepsilon > 0$,
+the uniform convergence holds
+$$
+\hat{\psi}^n_n(t) \to \left\{%
+\displaystyle
+\begin{array}{rl}
+       0,   &   t \in [0, \tau(1-\varepsilon)], \\
+    e^{-\theta(t-\tau)}, & t \in [\tau(1+\varepsilon), T],
+\end{array}%
+\right.
+\quad
+n \to \infty.
+$$
+\end{lemma}
+
+
+\begin{lemma}
+\label{lm3}
+Let
+$i \in \mathbb{N}$
+be fixed. Then, for any
+$T > \tau$
+and any small
+$\varepsilon > 0$,
+the uniform convergence holds
+$$
+\hat{\psi}^n_{n-i}(t) \to \left\{%
+\begin{array}{rlr}
+    0, & t \in [0, \tau(1-\varepsilon)], &  \\
+      & & \quad n\to \infty.\\
+    e^{-\theta(t-\tau)}, & t \in [\tau(1+\varepsilon), T],&   \\
+\end{array}%
+\right.
+$$
+\end{lemma}
+
+
+\begin{lemma}
+\label{lm4}
+Let
+$k \in \mathbb{N}$
+be fixed. Then, for any
+$T > \tau$
+and any small
+$\varepsilon > 0$,
+the uniform convergence holds
+$$
+\hat{\psi}^{n}_{k}(t) \to e^{-\theta t},
+\quad t \in [\varepsilon, T],
+\quad n \to \infty.
+$$
+\end{lemma}
+
+
+\begin{lemma}
+\label{lm5}
+Let
+$n = ml+1$, $s > 0$,
+let $k$
+be integer,
+$1 \le sl+k \le ml+1$,
+and let
+$m$, $s$, $k$
+be fixed.
+Then, for any
+$T > \tau$
+and any small
+$\varepsilon > 0$,
+the uniform convergence holds
+$$
+\hat{\psi}^{ml+1}_{sl+k}(t) \to \left\{%
+  \begin{array}{rlr}
+    0, &  t \in [0, \frac{s\tau}{m}(1-\varepsilon)],&   \\
+      && l \to \infty. \\
+    e^{-\theta\left(t-\frac{s\tau}{m}\right)},
+             & t \in [\frac{s\tau}{m}(1+\varepsilon), T],&\\
+  \end{array}%
+\right.
+$$
+\end{lemma}
+
+Lemma~\ref{lm2} was proved by the author in \cite{1}, proofs of Lemmas~\ref{lm3}--\ref{lm5}
+are carried out similarly.
+
+Hereafter we assume that
+$T > \tau$
+and
+$n \ge n_1 > \theta \tau + 1$,
+where
+$n_1$
+is a number such that
+$$
+\left(1 - \frac{\theta \tau}{k-1}\right)^k \ge \frac{1}{2} e^{-\theta \tau}, \quad
+{\mbox{for}} \quad k \ge n_1.
+$$
+Then, from the definition of the function $\hat{\psi}^n_n(t)$ it
+follows that
+\begin{equation}\label{eq18}
+0 < \hat{\psi}^n_n(t) < 2e^{-\theta(t-\tau)}, \quad t > 0,
+\end{equation}
+for
+$n \ge n_1$.
+
+\begin{proof}[Proof of Theorem~\ref{th3}.]
+
+\begin{equation}\label{eq19}
+x^n_n(t) = a e^{-\theta t} + \int\limits_0^t \hat{\psi}^n_n(t-s) g(s, x^n_n(s))ds,
+\quad t > 0.
+\end{equation}
+
+\begin{equation}\label{eq20}
+|x^n_n(t)| \le c(a,T,G,L) < \infty, \quad t \in [0, T], \quad n \ge n_1.
+\end{equation}
+
+For solutions to the initial problem e also have the formula
+$$
+y(t) = a e^{-\theta t} + \int\limits_0^{t-\tau} e^{-\theta (t - s - \tau)} g(s, y(s)) ds,
+\quad t > \tau.
+$$
+Consequently, we get
+$$
+x^n_n(t) - y(t) = \int\limits_0^{t-\tau} \biggl(\hat{\psi}^n_n(t-s) g(s, x^n_n(s))
+- e^{-\theta (t - s - \tau)} g(s, y(s))\biggr)ds
+$$
+\begin{equation}\label{eq21}
++ \int\limits_{t-\tau}^t \hat{\psi}^n_n(t-s) g(s, x^n_n(s))ds = I^1_n(t) + I^2_n(t),
+\quad t > \tau.
+\end{equation}
+
+Consider the second summand in Obviously, we have
+$$
+I^2_n(t) = \int\limits_0^{\tau} \hat{\psi}^n_n(\xi) g(t-\xi, x^n_n(t-\xi))d\xi.
+$$
+By, this integral can be estimated as follows
+$$
+|I^2_n(t)| \le G(1 + c(a,T,G,L)) \int\limits_0^{\tau} \hat{\psi}^n_n(\xi) d\xi.
+$$
+By, from \cite{7} we have
+\begin{equation}\label{eq22}
+\int\limits_0^{\tau} \hat{\psi}^n_n(\xi) d\xi
+\le \frac{2\tau}{\sqrt{n}} \left(1 + e^{\frac{\theta\tau}{\sqrt{n}}}\right), \quad n \ge n_1.
+\end{equation}
+Hence,
+\begin{equation}\label{eq23}
+|I^2_n(t)| \le G(1 + c(a,T,G,L))\frac{2\tau}{\sqrt{n}}
+\left(1 + e^{\frac{\theta\tau}{\sqrt{n}}}\right), \quad t \in [\tau, T], \quad n \ge n_1.
+\end{equation}
+
+Consider the first summand in. Clearly, we have
+$$
+I^1_n(t) = \int\limits_0^{t-\tau} \left(\hat{\psi}^n_n(t-s) - e^{-\theta(t-s-\tau)}\right)
+g(s,x^n_n(s)) ds
+%$$
+%$$
++ \int\limits_0^{t-\tau} e^{-\theta(t-s-\tau)}
+\left(g(s,x^n_n(s)) - g(s,y(s))\right) ds.
+$$
+
+$$
+|I^1_n(t)|
+\le G(1 + c(a,T,G,L)) \int\limits_0^{t-\tau} \left|\hat{\psi}^n_n(t-s) - e^{-\theta(t-s-\tau)}\right| ds
++ L\int\limits_0^{t-\tau} \left|x^n_n(s) - y(s)\right| ds
+$$
+$$
+= G(1 + c(a,T,G,L)) \int\limits_{\tau}^t \left|\hat{\psi}^n_n(\xi) - e^{-\theta(\xi-\tau)}\right| d\xi
++ L\int\limits_0^{t-\tau} \left|x^n_n(s) - y(s)\right| ds.
+$$
+$$
+
+
+
+
+
+\section{Funding}
+The study was carried out within the framework of the state contract
+of the Sobolev Institute of Mathematics (project
+no.~FWNF-2022-0008).
+\section{Conflict of interest}
+The author declares no conflict of interest.
+%
+% The Bibliography
+%
+
+\begin{thebibliography}{99}
+
+\bibitem{1}
+\refitem{article} V.~A.~Likhoshvai, S.~I.~Fadeev, G.~V.~Demidenko,
+and Yu.~G. Matushkin, \textquotedblleft Modeling multistage
+synthesis without branching by a delay equation\textquotedblright \
+Sibir. Zh. Industr. Mat. \textbf{7} (1), 73--94 (2004).
+
+\bibitem{2}
+\refitem{article}
+B.~C.~Goodwin,
+\textquotedblleft Oscillatory behavior of enzymatic control processes\textquotedblright \
+Adv. Enzyme Reg. \textbf{3},  425--439 (1965).
+
+\bibitem{3}
+\refitem{book}
+J.~D.~Murray,
+\emph{Lectures on Nonlinear-Differential-Equation Models in Biology}
+(Clarendon Press, Oxford, 1977).
+
+\bibitem{4}
+\refitem{article}
+G.~V.~Demidenko, N.~A.~Kolchanov, V.~A.~Likhoshvai, Yu.~G.~Matushkin, and S.~I.~Fadeev,
+\textquotedblleft Mathematical modeling of regular contours of gene networks\textquotedblright \
+Comput. Math. Math. Phys. \textbf{44} (12), 2166--2183 (2004).
+
+\bibitem{5}
+\refitem{article}
+G.~V.~Demidenko and I.~A.~Mel'nik,
+\textquotedblleft On a method of approximation of solutions to delay differential equations\textquotedblright \
+Sib. Math. J. \textbf{51} (3), 419--434 (2010).
+
+\bibitem{6}
+\refitem{article}
+G.~V.~Demidenko and I.~A.~Uvarova,
+\textquotedblleft A class of systems of ordinary differential equations of large dimension\textquotedblright \
+J. Appl. Ind. Math. \textbf{10} (2), 179--191 (2016).
+
+\bibitem{7}
+\refitem{article}
+G.~V.~Demidenko,
+\textquotedblleft A method for solving a biological problem of large dimension\textquotedblright \
+J. Appl. Ind. Mat. \textbf{16} (4), 621--631 (2022).
+
+\bibitem{8}
+\refitem{article}
+G.~V.~Demidenko, V.~A.~Likhoshvai, T.~V.~Kotova, and Yu.~E.~Khropova,
+\textquotedblleft
+On one class of systems of differential equations and on retarded equations\textquotedblright \
+Sib. Math. J. \textbf{47} (1), 45--54 (2006).
+
+\bibitem{9}
+\refitem{article}
+G.~V.~Demidenko,
+\textquotedblleft Systems of differential equations of higher dimension and delay equations\textquotedblright \
+Sib. Math. J. \textbf{53} (6), 1021--1028 (2012).
+
+\bibitem{10}
+\refitem{article}
+I.~I.~Matveeva and I.~A.~Mel’nik,
+\textquotedblleft On the properties of solutions to a class of nonlinear systems of differential
+equations of large dimension\textquotedblright \
+Sib. Math. J. \textbf{53} (2), 248--258 (2012).
+
+\bibitem{11}
+\refitem{article} V. V. Ivanov, \textquotedblleft Euler--Dirac
+integrals and monotone functions in models of cyclic
+synthesis\textquotedblright \ Sib. Math. J. \textbf{57} (6),
+1011--1028 (2016).
+
+\bibitem{12}
+\refitem{book}
+Ch.~Blatter,
+\emph{Wavelets -- Eine Einf\"uhrung}
+(Friedr. Vieweg and Sohn, 2003).
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,296 @@
+
+\documentclass[9pt]{article}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[%
+left=1.00in,%
+right=1.00in,%
+top=1.0in,%
+bottom=1.0in,%
+paperheight=11in,%
+paperwidth=8.5in%
+]{geometry}%
+\title{Tricomi Problem for the Lavrentiev-Bitsadze Equation with a Semi-Strip in the Elliptic Part}
+\author{Kapustin N.Yu., Vasilchenko D.D.}
+\date{}
+\begin{document}
+	\maketitle
+	\section{Problem Statement}
+	
+	The Tricomi problem for the Lavrentiev-Bitsadze equation is considered
+	\begin{equation}
+		\left(sgn (y)\right) \dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+	\end{equation}
+	in the domain $D = D^{+} \cup D^{-}$, where $D^{+} = \left\{(x,y): \ 0 < x < \pi, \ 0 < y < + \infty \right\}, \ D^{-} = \left\{(x,y): \ -y < x < y + \pi, \ -\pi/2 < y < 0\right\}$ in the class of functions $u(x,y) \in C^2(D^{+}) \cap C^2(D^{-}) \cap C(\overline{D^{+} \cup D^{-}})$ with boundary conditions
+	\begin{equation}
+		u(0,y) = 0, \ u(\pi, y) = 0, \ 0 < y < + \infty,
+	\end{equation}
+	\begin{equation}
+		u(x,-x) = f(x) , \ 0 \leq x \leq \pi/2, \ f(0) = 0,
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, \ y \to +\infty
+	\end{equation}
+	and the Frankl matching condition
+	\begin{equation}
+		\dfrac1{k} \dfrac{\partial u}{\partial y}(x, +0) = \dfrac{\partial u}{\partial y} (x, -0), \ 0 < x < \pi,
+	\end{equation}
+	where $k \in (-\infty, +\infty), k \neq 0$.
+	\section{Main Results}
+	\textbf{Theorem 1.} \textit{The solution to the problem (1) - (5) is unique.}
+	
+	\textbf{Proof.}
+	Suppose there exist two solutions $u_1(x,y), u_2(x,y)$ to the problem (1)-(5). Then $u(x,y) = u_1(x,y) - u_2(x,y)$ is a solution to the problem (1)-(5) with the function $f(x) \equiv 0$. In this case, $u(x,y) = F(x+y) - F(0)$.
+	
+	From this, it follows that the equality $\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} = 0$ holds for all points $x$ and $y$ in the domain of hyperbolicity. Using the matching condition (5), we get
+	\begin{equation}
+		\dfrac1{k} \dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x}\vert_{y=0+0} = 0.
+	\end{equation}
+	As a result, we obtain the problem of finding a harmonic function $u(x,y)$ in the domain $D^{+}$ with boundary conditions (2),(4),(6).
+	
+	By the Zaremba-Giraud principle and equality (6), the extremum cannot be attained on the interval $\{(x,y):\ 0 < x < \pi, \ y = 0\}$. On the closed lateral sides and at infinity, the extremum cannot be attained due to conditions (2) and (4). The theorem is proved.
+	
+	It is known that the general solution in $D^{-}$ of equation (1) has the form
+	\begin{equation}
+		u(x,y) = F(x+y) + f(\dfrac{x-y}{2}) - F(0).
+	\end{equation}
+	Differentiate equality (7):
+	\begin{equation*}
+		\dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) \vert_{y=0+0} = -f'\left(\dfrac{x}2\right), \ 0 < x < \pi.
+	\end{equation*}
+	Using the matching condition (5), we arrive at the equality
+	\begin{equation*}
+		\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x, 0+0) - \dfrac{\partial u}{\partial x}(x, 0 + 0) = - f'\left(\dfrac{x}2\right), \ 0 < x < \pi.
+	\end{equation*}
+	
+	Then we obtain in the domain $D^{+}$ the auxiliary problem for the Laplace operator
+	\begin{equation}
+		\dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+	\end{equation}
+	with boundary conditions
+	\begin{equation}
+		u(0,y) = 0, \ u(\pi, y) = 0, \ 0 < y < +\infty,
+	\end{equation}
+	\begin{equation}
+		\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x,0+0) - \dfrac{\partial u}{\partial x}(x,0+0) = -f'\left(\dfrac{x}{2}\right),
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, \ y \to +\infty
+	\end{equation}
+	\textbf{Theorem 2.} \textit{Let $|k| < 1, \ k \neq 0$, $f(x) \in C[0, \pi/2] \cap C^2(0, \pi/2)$, $f'(x) \in L_2(0, \pi/2)$. Then the solution to the problem (8)-(11) exists and can be represented as a series
+		\begin{equation}
+			u(x,y) = \sum\limits_{n=1}^{\infty} A_n e^{-ny} \sin{nx},
+	\end{equation}}
+	where the condition (10) is understood in the integral sense
+	\begin{equation*}
+		\int\limits_0^\pi \left[	\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) + f'\left(\dfrac{x}{2}\right)\right]^2 dx \to 0, \ y \to 0 + 0,
+	\end{equation*}
+	and the coefficients $A_n$ are determined from the equality
+	\begin{equation}
+		\sum\limits_{n=1}^{\infty} n A_n \sin{\left[nx + \arctan{k}\right]} = \dfrac{k}{\sqrt{1 + k^2}} f'\left(\dfrac{x}{2}\right)
+	\end{equation}
+	\textbf{Proof.}
+	
+	The system $\left\{\sin{\left[nx + \arctan{k}\right]} \right\}_{n=1}^{\infty}$ forms a Riesz basis in $L_2(0,\pi)$ for $k \in (-1, 1)$ according to the main result of [2]. Therefore, the two-sided Bessel inequality holds
+	\begin{equation*}
+		C_1\|f'\|^2_{L_2(0,\pi)} \leq \sum\limits_{n=1}^{\infty} n^2 A_n^2 \leq C_2\|f'\|^2_{L_2(0,\pi)}, \ 0 < C_1 < C_2,
+	\end{equation*}
+	where the constants $C_1, C_2$ do not depend on $f'$. Therefore, the series $\sum\limits_{n=1}^{\infty} |A_n|$ converges and the series (12) converges uniformly. The function (12) satisfies equation (8) with boundary conditions (9) by construction. Condition (11) is satisfied since $\sum\limits_{n=1}^{\infty} e^{-ny} = \frac{e^{-y}}{1 - e^{-y}} = \frac{1}{e^y - 1}$. Let's check the fulfillment of condition (10). Let
+	\begin{equation*}
+		M(x) = \dfrac{1}{k}\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + f'\left(\dfrac{x}{2}\right)
+	\end{equation*}
+	\begin{math}
+		M(x) = -\dfrac{1}{k} \sum\limits_{n=1}^{\infty} n A_n e^{-ny} \sin{nx} - \sum\limits_{n=1}^{\infty} n A_n e^{-ny} \cos{nx} + f'\left(\dfrac{x}{2}\right) = \\
+		= -\sum\limits_{n=1}^{\infty} nA_n e^{-ny} \left[\dfrac{1}{k} \sin{nx} + \cos{nx}\right] + f'\left(\dfrac{x}{2}\right) = \\
+		= -\dfrac{\sqrt{1 + k^2}}{k}\sum\limits_{n=1}^{\infty} nA_n e^{-ny} \left[\dfrac{1}{\sqrt{1 + k^2}} \sin{nx} + \dfrac{k}{\sqrt{1 + k^2}}\cos{nx}\right] + f'\left(\dfrac{x}{2}\right) = \\
+		= -\dfrac{\sqrt{1 + k^2}}{k}\sum\limits_{n=1}^{\infty} nA_n e^{-ny} \sin{\left[nx + \arctg{k}\right]} + f'\left(\dfrac{x}{2}\right) = \\
+		= \dfrac{\sqrt{1 + k^2}}{k}\sum\limits_{n=1}^{\infty} nA_n \left(1 - e^{-ny} \right) \sin{\left[nx + \arctg{k}\right]} .
+	\end{math}
+	
+	Let's show that $\lim\limits_{y \to 0 + 0} I(y) = 0$.
+	\begin{equation*}
+		I(y)  = \int\limits_0^\pi M(x)^2 dx \leq I_1(y) + I_2(y),
+	\end{equation*}
+	\begin{equation*}
+		I_1(y) = \dfrac{2\sqrt{1 + k^2}}{k} \int\limits_0^\pi\left[\sum\limits_{n=1}^{m} n A_n \sin{\left[nx + \arctg{k}\right]} \left(1 - e^{-ny}\right)\right]^2 dx
+	\end{equation*}
+	\begin{equation*}
+		I_2(y) = \dfrac{2\sqrt{1 + k^2}}{k} \int\limits_0^\pi\left[\sum\limits_{n=m+1}^{+\infty} n A_n \sin{\left[nx + \arctg{k}\right]} \left(1 - e^{-ny}\right)\right]^2 dx
+	\end{equation*}
+	Fix an arbitrary positive $\varepsilon$, then
+	\begin{equation*}
+		I_2(y) \leq C_3 \sum\limits_{n=m+1}^{\infty} n^2 A_n^2 (1 - e^{-ny})^2 \leq C_3 \sum\limits_{n=m+1}^{\infty} n^2 A_n^2 < \dfrac{\varepsilon}{2}.
+	\end{equation*}
+	This is true if $m$ is sufficiently large, since the series is convergent.
+	\begin{equation*}
+		I_1(y) \leq C_4 \sum\limits_{n=1}^{m} n^2 A_n^2 (1 - e^{-ny})^2 < \dfrac{\varepsilon}{2}
+	\end{equation*}
+	This is true for $0 < y < \delta$, if $\delta$ is sufficiently small. The theorem is proved.
+	\par
+	\textbf{Theorem 3.} \textit{Let $k > 0$, then the solution to the problem (8) - (11) is unique}
+	\par
+	\textbf{Proof.} Let's prove the uniqueness of the solution to this problem. Let $u(x,y)$ be a solution to the homogeneous problem.
+	Introduce the notation $C_\varepsilon = (0, \varepsilon), C_R = (0, R), D_R = (\pi, R), D_\varepsilon = (\pi, \varepsilon)$. $\prod_{R\varepsilon}$ is the rectangle $C_\varepsilon C_R D_R D_\varepsilon$. The following relations hold:
+	\begin{equation*}
+		0 = \iint\limits_{\prod_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy.
+	\end{equation*}
+	Note that
+	\begin{equation*}
+		(R - y) (u_{xx} + u_{yy}) u = \left( \left(R - y\right) u_x u\right)_x  + \left( \left(R - y\right) u_y u\right)_y - \left(R- y\right) \left(u_x^2 + u_y^2\right) +  u_y u =
+	\end{equation*}
+	\begin{equation*}
+		= \left(R-y\right) \left(u_{xx} u + u_x^2\right) + \left(-u_y + \left(R-y\right) u_{yy} u + \left(R-y\right)u_y^2\right) - \left(R- y\right) \left(u_x^2 + u_y^2\right)+  u_y u
+	\end{equation*}
+	Substitute this expression into the integral:
+	\begin{equation*}
+		I	=	\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy
+		- \iint\limits_{\prod_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right) + \iint\limits_{\prod_{R\varepsilon}} u_y u dx dy.
+	\end{equation*}
+	Simplify these integrals:
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy = \int\limits_{[\varepsilon, R]} \left[(R-y)u_xu\right] \vert_0^\pi dy = \\ \int\limits_{[\varepsilon, R]} \left[(R-y) u_x(\pi, y)u(\pi,y) - (R-y) u_x(0, y)u(0,y)\right]dy = 0
+	\end{equation*}
+	since both integrands are zero due to condition (9)
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy = \int\limits_{[0,\pi]} \left[\left(R - y\right) u_y u\right] \vert_\varepsilon^R dx =
+		\int\limits_{[0,\pi]} \left[0 - \left(R - \varepsilon \right) u_y(x, \varepsilon) u(x, \varepsilon) \right] dx =  - \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) u_yu dx
+	\end{equation*}
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} u_y u dx dy = \iint\limits_{\prod_{R\varepsilon}} \left(\dfrac{u^2}{2}\right)'_ydx dy = \int\limits_{[0,\pi]} \left[\dfrac{u^2(x,R)}{2} - \dfrac{u^2(x, \varepsilon)}{2}\right] dx
+	\end{equation*}
+	In the end, we get
+	\begin{equation*}
+		I = - \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy
+		- \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon\right) u_y u dx
+		-\int\limits_{C_\varepsilon D_\varepsilon} \dfrac{u^2}{2} dx + \int\limits_{C_R D_R} \dfrac{u^2}{2} dx
+	\end{equation*}
+	Add and subtract $\int\limits_{C_\varepsilon D_\varepsilon} k\left(R - \varepsilon\right) u_x u dx$, then
+	\begin{equation*}
+		I = - \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy -
+		\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_y - ku_x\right)u dx - \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon\right) k u_x u dx - \int\limits_{C_\varepsilon D_\varepsilon}\dfrac{u^2}{2} dx + \int\limits_{C_R D_R} \dfrac{u^2}{2}dx.
+	\end{equation*}
+	From this, it follows that
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{2}\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +k\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon)  =\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_y - ku_x\right)u dx + \dfrac12  \int\limits_{C_RD_R} u^2 dx \leq
+	\end{equation*}
+	\begin{equation*}
+		\leq \{ \text{Cauchy-Bunyakovsky Inequality} \} \leq \left(R - \varepsilon\right) \left[\int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx \right]^{\frac12} \left[\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx \right]^{\frac12} + \dfrac12 \int\limits_{C_RD_R} u^2 dx = M
+	\end{equation*}
+	Consider the following inequality: $(2ar - b)^2 \geq 0 \Rightarrow ra^2r^2 - 4abr + b^2 \geq 0 \Rightarrow ab \leq ra^2 + b/ (4r)$. Let $a =  \left[\left(R - \varepsilon\right)\int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx \right]^{\frac12}$, $b = \left[\left(R - \varepsilon\right)\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx \right]^{\frac12}$, $r = R - \varepsilon$, then
+	\begin{equation*}
+		M \leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx + \dfrac14 \int\limits_{C_\varepsilon D_\varepsilon} u^2 dx + \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+	\end{equation*}
+	Regroup
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{4}\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +k\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon) \leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx + \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+	\end{equation*}
+	Due to (10), the equality holds
+	\begin{equation*}
+		\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{C_\varepsilon D_\varepsilon} \left(u_y - ku_x\right)^2 dx = 0,
+	\end{equation*}
+	from which it follows that
+	\begin{equation*}
+		\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + k\dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+	\end{equation*}
+	Now let $R \to \infty$, then $\int\limits_{C_RD_R} u^2 dx \to 0$, and in the left part all terms are non-negative, hence $u(x,y) \equiv 0$ in $\overline{D}$. The theorem is proved.
+	\par
+	\textbf{Theorem 4.} \textit{Let $|k| < 1\  , k \neq 0$ and $u(x,y)$ be a solution to the problem (8) - (11), then $u_x, u_y$ can be represented as}
+	\begin{equation*}
+		u_y(x,y) = -\dfrac{2k}{\pi\sqrt{1+k^2}} \mathrm{Im}\ \left(\dfrac{1- e^{iz}}{1 + e^{iz}} \right)^{\gamma/\pi} e^{iz}\int\limits_0^\pi \dfrac{1}{(\tg{t/2})^{\gamma/\pi}}  \dfrac{ \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  f'(\dfrac{t}{2}) dt,
+	\end{equation*}
+	\begin{equation*}
+		u_x(x,y) = \dfrac{2k}{\pi\sqrt{1+k^2}} \mathrm{Re}\ \left(\dfrac{1- e^{iz}}{1 + e^{iz}} \right)^{\gamma/\pi} e^{iz}\int\limits_0^\pi \dfrac{1}{(\tg{t/2})^{\gamma/\pi}}  \dfrac{ \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  f'(\dfrac{t}{2}) dt,
+	\end{equation*}
+	where $\gamma = 2\arctg{k}$, $z = x + iy$.
+	\par
+	\textbf{Proof.} Consider equality (12). The system of sines $\left\{\sin{\left[nx + \arctg{k}\right]}\right\}_{n=1}^{\infty}$ forms a basis in $L_2(0,\pi)$ for $k \in (-1, 1)$. Therefore, for the coefficients $nA_n$, the following representation holds [2]:
+	\begin{equation*}
+		nA_n = \int\limits_0^\pi h_{n}(t) F(t)dt,
+	\end{equation*}
+	where
+	\begin{equation*}
+		F(x) = \dfrac{k}{\sqrt{1+k^2}} f'(\dfrac{x}{2})\ , h_n(t) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^n \sin{kt} B_{n-k}, \ B_{l} = \sum\limits_{m=0}^{l} C_{\gamma/\pi}^{l-m} C_{-\gamma / \pi -l}^{m} (-1)^{l-m}, \ C_l^n = \dfrac{l(l-1)\dots (l-n+1)}{n!}.
+	\end{equation*}
+	\par
+	Let $u(x,y)$ be a solution to the problem $(8) - (11)$, then
+	\begin{equation*}
+		u(x,y) = \sum\limits_{n=1}^{\infty} A_n e^{-ny} \sin{\left[nx\right]}
+	\end{equation*}
+	and accordingly
+	\begin{equation*}
+		u_y(x,y) = -\sum\limits_{n=1}^{\infty} nA_n e^{-ny} \sin{\left[nx\right]}=
+	\end{equation*}
+	\begin{equation*}
+		= - \sum\limits_{n=1}^{\infty}  \int\limits_0^\pi F(t)  h_{n}(t)  e^{-ny} \sin{\left[nx\right]} dt,
+	\end{equation*}
+	or
+	\begin{equation*}
+		u_y(x,y) = -  Im \ \sum\limits_{n=1}^{\infty}  \int\limits_0^\pi F(t)  h_{n}(t)  e^{-ny} e^{inx} dt =
+	\end{equation*}
+	\begin{equation*}
+		= -  Im \ \sum\limits_{n=1}^{\infty}  \int\limits_0^\pi F(t)  h_{n}(t)  e^{inz}  dt
+	\end{equation*}
+	Swap the order of integration and summation
+	\begin{equation*}
+		u_y(x,y)  = -  \mathrm{Im}  \int\limits_0^\pi F(t)  \sum\limits_{n=1}^{\infty}   h_{n}(t)  e^{in z}  dt.
+	\end{equation*}
+	Introduce new notation:
+	\begin{equation*}
+		I(t,z) = \sum\limits_{n=1}^{\infty}  h_{n}(t)  e^{in z}
+	\end{equation*}
+	\begin{equation*}
+		I(t,z) =\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{n=1}^{\infty}   \sum\limits_{k=1}^n \sin{kt} B_{n-k} e^{inz} =
+		\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{n=k}^{\infty} e^{inz} B_{n-k}
+	\end{equation*}
+	and new index $m = n - k$
+	\begin{equation*}
+		I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m =0 }^{\infty} e^{i(m+k)z} B_{m} =
+		\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} \sum\limits_{m =0 }^{\infty} e^{imz} B_{m},
+	\end{equation*}
+	\begin{equation*}
+		\sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} =  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}
+	\end{equation*}
+	Consider the second series:
+	\begin{equation*}
+		\sum\limits_{l =0 }^{\infty} e^{ilz} B_{l} = \sum\limits_{l =0 }^{\infty} e^{ilz} \sum\limits_{m=0}^{l} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = \sum\limits_{m=0}^{\infty} \sum\limits_{l=m}^{\infty} e^{ilz} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = |k = l - m| =
+	\end{equation*}
+	\begin{equation*}
+		\sum\limits_{m=0}^{\infty} \sum\limits_{k=0}^{\infty} e^{i(m+k)z} C^{k}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{k} = \sum\limits_{m=0}^{\infty} e^{imz} C^{m}_{-\gamma/\pi - \beta} \sum\limits_{k=0}^{\infty}  C^{k}_{\gamma/\pi} (-1)^k e^{ikz} = (1 + e^{iz})^{-\gamma/\pi - \beta} (1- e^{iz})^{\gamma/\pi}
+	\end{equation*}
+	since in our case $\beta = 0, \ \gamma = 2\arctg{k}$.
+	Finally, we obtain the formula
+	\begin{equation*}
+		u_y(x,y) = - \mathrm{Im}\ \int\limits_0^\pi F(t) I(t,z) dt =
+	\end{equation*}
+	\begin{equation*}
+		= - \mathrm{Im}\ \int\limits_0^\pi \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tg{t/2})^{\gamma/\pi}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} (1 + e^{iz})^{-\gamma/\pi - \beta} (1- e^{iz})^{\gamma/\pi} F(t) dt =
+	\end{equation*}
+	\begin{equation*}
+		= -\dfrac{2}{\pi} \mathrm{Im}\ \left(\dfrac{1- e^{iz}}{1 + e^{iz}} \right)^{\gamma/\pi} e^{iz}\int\limits_0^\pi \dfrac{1}{(\tg{t/2})^{\gamma/\pi}}  \dfrac{ \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  F(t) dt =
+	\end{equation*}
+	\begin{equation*}
+		= -\dfrac{2k}{\pi\sqrt{1+k^2}} \mathrm{Im}\ \left(\dfrac{1- e^{iz}}{1 + e^{iz}} \right)^{\gamma/\pi} e^{iz}\int\limits_0^\pi \dfrac{1}{(\tg{t/2})^{\gamma/\pi}}  \dfrac{ \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  f'(\dfrac{t}{2}) dt
+	\end{equation*}
+	i.e., the representation:
+	\begin{equation*}
+		u_y(x,y) = -\dfrac{2k}{\pi\sqrt{1+k^2}} \mathrm{Im}\ \left(\dfrac{1- e^{iz}}{1 + e^{iz}} \right)^{\gamma/\pi} e^{iz}\int\limits_0^\pi \dfrac{1}{(\tg{t/2})^{\gamma/\pi}}  \dfrac{ \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  f'(\dfrac{t}{2}) dt.
+	\end{equation*}
+	By similar reasoning, we obtain the representation
+	\begin{equation*}
+		u_x(x,y) = \dfrac{2k}{\pi\sqrt{1+k^2}} \mathrm{Re}\ \left(\dfrac{1- e^{iz}}{1 + e^{iz}} \right)^{\gamma/\pi} e^{iz}\int\limits_0^\pi \dfrac{1}{(\tg{t/2})^{\gamma/\pi}}  \dfrac{ \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  f'(\dfrac{t}{2}) dt.
+	\end{equation*}
+	The theorem is proved.
+	
+	\begin{center}{FINANCING OF THE WORK}\end{center}
+	\par
+	The work was carried out with the financial support of the Ministry of Science and Higher Education of the Russian Federation as part of the implementation of the program of the Moscow Center for Fundamental and Applied Mathematics under agreement № 075-15-2022-284.
+	\bigskip
+	
+	\smallskip
+	\begin{center}{REFERENCES}\end{center}{\small
+		
+		1. Moiseev,~E.I. On the integral representation of the Neumann-Tricomi problem for the Lavrentiev-Bitsadze equation/~Moiseev,~E.I., Moiseev~T.E., Vafadorova~G.O. //~Differential Equations. ~--- 2015.~--- Vol.~51, No.~8~---. P.~1070--1075.
+		
+		2. Moiseev,~E.I. On the basis of a certain system of sines /~E.I. Moiseev //~Differential Equations. ~--- 1987.~---Vol.~23, No.~1~--- P.~177--189.
+	\end{document}

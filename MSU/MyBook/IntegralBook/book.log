@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  12 OCT 2024 02:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.21)  25 JAN 2025 08:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -464,12 +464,12 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
 
  (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
 
 
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -481,15 +481,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/progr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2
 
 ]
+(book.toc)
+\tf@toc=\write3
+\openout3 = `book.toc'.
+
+ [3] [4
+
+]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
-[3] [4]
-Overfull \hbox (1.0325pt too wide) in paragraph at lines 100--101
+[5] [6]
+Overfull \hbox (1.0325pt too wide) in paragraph at lines 103--104
 []\T2A/cmr/m/n/10 ’орошо, непре-рыв-ность сле-ду-ет из диф-фе-рен-ци-ру-е-мо-ст
 и, но мо-жет быть
  []
 
-[5]
-Overfull \hbox (32.349pt too wide) detected at line 144
+[7]
+Overfull \hbox (32.349pt too wide) detected at line 147
 \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 10[](\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^F 
 \OT1/cmr/m/n/10 10[])\OMS/cmsy/m/n/10 g ^^@ f\OT1/cmr/m/n/10 10[]\OML/cmm/m/it/
 10 x\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 0\OM
@@ -498,16 +505,16 @@ L/cmm/m/it/10 ; a[]a[] [] \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[] \OMS/cmsy/m/n/1
 r/m/n/10 0\OML/cmm/m/it/10 ; a[]a[]a[] [] \OMS/cmsy/m/n/10 g
  []
 
-[6]
+[8]
 Overfull \hbox (31.99132pt too wide) has occurred while \output is active
 \T2A/cmr/m/sl/10 1.3.  ќ ‘»«»„≈— »’ » »Ќџ’ ѕ–»Ћќ∆≈Ќ»я’ »«”„ј≈ћќ√ќ ѕќЌя“»я \T2A/
-cmr/m/n/10 7
+cmr/m/n/10 9
  []
 
-[7] [8]
+[9] [10]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
 
-Overfull \hbox (25.1094pt too wide) in paragraph at lines 196--197
+Overfull \hbox (25.1094pt too wide) in paragraph at lines 201--202
 \T2A/cmr/m/it/10 ли в ка-че-стве $\OML/cmm/m/it/10 M$ \T2A/cmr/m/it/10 вз€ть $\
 OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1) \OMS/cmsy/m/n/10 [ \OT1/
 cmr/m/n/10 (3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5)$\T2A/cmr/m/it/10 . “о-гда $\
@@ -516,37 +523,79 @@ OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy
 /n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = []$
  []
 
-[9
+[11
 
-] [10
+]
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+
+ []
+
+
+Overfull \hbox (21.63986pt too wide) in paragraph at lines 242--247
+\T2A/cmr/m/n/10 ѕусть $\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT
+1/cmr/m/n/10 ) = \OML/cmm/m/it/10  [] f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\O
+T1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^F \OML/cmm/m/it/10 ^^L [] f[]\OT1/cmr/m/n/10
+ (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 dx$\T2A/cmr/m/n/10 . “о-г
+да $\OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = 
+\OML/cmm/m/it/10  [][] \OMS/cmsy/m/n/10 ^^F \OML/cmm/m/it/10 ^^L [][]$\T2A/cmr
+/m/n/10 .
+ []
+
+[12] [13]
+Overfull \hbox (87.05612pt too wide) detected at line 296
+[] [] \OML/cmm/m/it/10 xxdx \OT1/cmr/m/n/10 = [](\OMS/cmsy/m/n/10 ^^@ [] \OML/c
+mm/m/it/10 x\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 xdx \OT1/cmr/m/n/10 = \OMS/cmsy
+/m/n/10 ^^@\OML/cmm/m/it/10 x [] x \OT1/cmr/m/n/10 + [] \OML/cmm/m/it/10 x[] []
+ xdx \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 x [] x \OT1/cmr/m/n
+/10 + [] [] \OML/cmm/m/it/10 xdx \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm
+/m/it/10 x [] x \OT1/cmr/m/n/10 + [] \OML/cmm/m/it/10 x \OT1/cmr/m/n/10 + \OML/
+cmm/m/it/10 C
+ []
+
+
+Overfull \hbox (86.5145pt too wide) detected at line 301
+[] []\OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = [] []\OML/cmm/m/it/10 dx \OT1/cmr/m/
+n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 = []\OML/cmm/m/it/1
+0 ; dx \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ady\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10
+ = [] [] []\OML/cmm/m/it/10 dy \OT1/cmr/m/n/10 = [] [] \OML/cmm/m/it/10 y \OT1/
+cmr/m/n/10 = [] [] []
+ []
+
+[14]
+Overfull \hbox (127.28253pt too wide) detected at line 347
+[] \OML/cmm/m/it/10 e[]dx \OT1/cmr/m/n/10 = [] = \OMS/cmsy/m/n/10 f[]g \OT1/cmr
+/m/n/10 = []
+ []
+
+[15] [16
 
 ]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
-[11] [12
+[17] [18
 
 ]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
-[13] (book.aux)
+[19] (book.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4738 strings out of 474486
- 70128 string characters out of 5743755
- 1935542 words of memory out of 5000000
- 26974 multiletter control sequences out of 15000+600000
- 575534 words of font info for 76 fonts, out of 8000000 for 9000
+ 4752 strings out of 474486
+ 70407 string characters out of 5743755
+ 1936542 words of memory out of 5000000
+ 26984 multiletter control sequences out of 15000+600000
+ 576342 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,65p,1523b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati10
 00.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
-sl1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
-0\labx1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/d
-pi600\labx1440.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
-2a/dpi600\labx2488.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
-lh-t2a/dpi600\labx2074.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour
+bx1440.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
+0\labx2074.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/d
+pi600\lasl1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
+2a/dpi600\labx1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
+lh-t2a/dpi600\labx2488.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour
 /lh/lh-t2a/dpi600\larm1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/lj
 four/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/p
 k/ljfour/lh/lh-t2a/dpi600\larm1728.pk><C:/Users/progr/AppData/Local/Programs/Mi
@@ -560,9 +609,9 @@ r7.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy7.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on book.pdf (13 pages, 223965 bytes).
+Output written on book.pdf (19 pages, 257283 bytes).
 PDF statistics:
- 414 PDF objects out of 1000 (max. 8388607)
+ 460 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

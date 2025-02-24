@@ -1,0 +1,289 @@
+\documentclass[9pt]{article}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{indentfirst,amssymb,amsthm,graphicx}
+\usepackage{fancyhdr}
+\usepackage{stackrel}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage[%
+left=1.50in,%
+right=1.50in,%
+top=1.0in,%
+bottom=1.0in,%
+paperheight=11in,%
+paperwidth=8.5in%
+]{geometry}%
+
+\title{Задача Трикоми для уравнения Лаврентьева-Бицадзе с полуполосой в эллиптической части}
+\author{Капустин Н.Ю., Васильченко Д.Д.}
+\date{}
+\begin{document}
+	\maketitle
+	\section*{Постановка задачи}
+	\par
+	Рассматривается задача Трикоми для уравнения Лаврентьева-Бицадзе 
+	$$
+		\mathrm{sgn}y \dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0 \eqno{(1)}
+	$$
+	
+	в области
+	$D = D^{+} \cup D^-$,  где $D^+ = \{(x,y) \vert 0 < x < \pi, y > 0\}$, $D^- = \{(x,y) \vert -y < x < y+ \pi, -\pi/2 < y < 0\}$ в классе функций $u(x,y) \in C^2(D^+)\cap C^2(D^-) \cap C(\overline{D^+ \cap D^-})$ с граничными условиями
+	$$
+		u(0, y) = 0, \ \dfrac{\partial u}{\partial x} (\pi, y) = 0, \ y > 0 \eqno{(2)}
+	$$
+	$$
+	 u(x,-x) = f(x),\ 0 \leq x \leq \pi/2, \ f(0) = 0 \eqno{(3)}
+	$$
+	$$
+	u(x,y) \rightrightarrows 0, \ y \to 0 \eqno{(4)}
+	$$
+	и условием склеивания Франкля
+	$$
+	\dfrac1{k} \dfrac{\partial u}{\partial y}(x, +0) = \dfrac{\partial u}{\partial y}(x, -0), \ 0 < x < \pi, \eqno{(5)}
+	$$
+	где $k \in \mathbb{R} \backslash \{0\}.$
+	
+	\section*{Основные результаты}
+	\textbf{Теорема 1.} \textit{Решение задачи (1)-(5) единственно.}
+	
+	\textbf{Доказательство.}
+	Пусть $u_1(x,y), u_2(x,y)$ - решения задачи (1)-(5), тогда $u(x,y) = u_1(x,y) - u_2(x,y)$ - решение однородной задачи. В гиперболической части решение имеет вид
+	$$
+		u(x,y) = F(x+y) + f(\dfrac{x-y}{2}) - F(0), \eqno{(6)}
+	$$
+	в нашем случае $f \equiv 0$, продифференцируем это равенство и получим, что равенство $\dfrac{\partial u}{\partial x} = \dfrac{\partial u}{\partial y}$ выполняется в $D^-$. Используя условие (5), получим
+	$$
+	\dfrac{1}{k}\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} \vert_{y = 0+0} = 0. \eqno{(7)}
+	$$
+	
+	Таким обазом, получили задачу о нахождении гармонической функции в области $D^+$ с граничными условиями (2), (4), (7).
+	
+	В силу принципа Зарембы-Жиро и равенства (7) экстремум не может достигаться на интервале $\{(x,y) \vert 0 < x < \pi, y = 0\}$, на замкнутых боковых границах и на бесконечности экстремум не может достикаться в силу (2), (4). Теорема доказана.
+	
+	Продифференцируем формулу для общего вида решения уравнения (6) в $D^-$, получим
+	$$
+	\dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) \vert_{y=0+0} = - f'(\dfrac{x}{2}), \ 0 < x < \pi.
+	$$
+	Учитывая условие (5), получим
+	$$
+	\dfrac{1}{k}\dfrac{\partial u}{\partial y}(x, 0+0) - \dfrac{\partial u}{\partial x}(x, 0+0) = - f'(\dfrac{x}{2}), \ 0 < x < \pi.
+	$$
+	Получаем в $D^+$ вспомогательную задачу
+	$$
+		\dfrac{\partial^2 u}{\partial x^2} + \dfrac{\partial^2 u}{\partial y^2} = 0, \eqno{(8)}
+	$$
+	$$
+		u(0,y) = 0, \ \dfrac{\partial u}{\partial x}(\pi, y) = 0, \ y > 0 \eqno{(9)}
+	$$
+	$$
+		\lim\limits_{y\to 0+0} \int\limits_0^\pi \left[\dfrac1{k} \dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} + f'(\dfrac{x}2)\right]^2 = 0 \eqno{(10)}
+	$$
+	$$
+		u(x,y) \rightrightarrows 0, \ y \to \infty \eqno{(11)}	
+	$$
+	
+	\textbf{Теорема 2.}\textit{Пусть $k \in (-\infty, -1) \cup (0, + \infty)$, $f(x) \in C[0,\pi/2] \cap C^2(0, \pi/2)$ и $f'(x) \in L_2(0,\pi/2)$. Тогда решение задачи (8)-(11) существует и представимо в виде ряда
+	$$
+	u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n+\dfrac12\right)y} \sin{\left[n+\dfrac12\right]x}, \eqno{(12)}
+	$$
+	коэффициенты $A_n$ определяются из равенства
+	$$
+	\sum\limits_{n=0}^{\infty} A_n\left(n+ \dfrac12\right) \sin{\left[\left(n+\dfrac12\right)x + \mathrm{arctg}\dfrac{1}{k}\right]} = - \dfrac{\sqrt{1 + k^2}}{k} f'(\dfrac{x}{2}). \eqno{(13)}
+	$$}
+	
+	\textbf{Доказательство.} 
+	В силу основного результата работы [2] система $\left\{\sin{\left[\left(n+\dfrac12\right)x + \mathrm{arctg}\dfrac{1}{k}\right]} \right\}_{n=0}^{\infty}$ образует базис Рисса в протранстве $L_2(0,\pi/2)$ при $k \in (-\infty, -1) \cup (0, \infty)$. Поэтому справедливо двустороннее неравенство Бесселя
+	$$	
+		C_1  \|f'\|_{L_2(0,\pi/2)}^2 \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n+ \dfrac12\right)^2 \leq C_2 \|f'\|_{L_2(0,\pi/2)}^2,
+	$$ 
+	где $C_1, C_2$ не зависят от $f'$. Тогда ряд $\sum\limits_{n=0}^{\infty} |A_n|$ сходится и сходится равномерно (12). Ряд (12) удовлетворяет граничным условиям (9), (11) по посторению. Проверим выполнение условия (10).
+	
+	Подставим выражение для $f'(\dfrac{x}{2})$ в условие (10), тогда получим
+	$$
+	I = \dfrac{\sqrt{1+k^2}}{k} \int\limits_0^\pi \left\{\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n+\dfrac12\right)x + \mathrm{arctg}\dfrac{1}{k}\right] }  \left(1 - e^{-\left(n+\dfrac12 \right)y}\right)\right\}^2 dx.
+	$$
+	Запишем $I \leq I_1 + I_2$,где 
+	$$
+	I_1 = \dfrac{2\sqrt{1+k^2}}{k} \int\limits_0^\pi \left\{\sum\limits_{n=0}^{m} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n+\dfrac12\right)x + \mathrm{arctg}\dfrac{1}{k}\right] }  \left(1 - e^{-\left(n+\dfrac12 \right)y}\right)\right\}^2 dx,
+	$$
+	$$
+	I_2 = \dfrac{2\sqrt{1+k^2}}{k} \int\limits_0^\pi \left\{\sum\limits_{n=m+1}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n+\dfrac12\right)x + \mathrm{arctg}\dfrac{1}{k}\right] }  \left(1 - e^{-\left(n+\dfrac12 \right)y}\right)\right\}^2 dx.
+	$$
+	При $0 < y < \delta$ справедливо
+	$$
+	I_1 \leq C_3 \sum\limits_{n=0}^{m} A_n^2 \left(n+\dfrac12\right)^2 \left(1 - e^{-\left(n+\dfrac12\right)y}\right)^2 < \dfrac{\varepsilon}{2}.
+	$$
+	В силу сходимости ряда $\exists N(\varepsilon) \in \mathbb{N}$ такое, что при $m \geq N$ справедливо
+	$$
+	I_2 \leq C_4 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 \left(1 - e^{-\left(n+\dfrac12\right)y}\right)^2  \leq C_4 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 < \dfrac{\varepsilon}{2}.
+	$$
+	Показали, что $\forall \varepsilon > 0 \Rightarrow I < \varepsilon$ при $y \to 0+0$. Теорема доказана.
+	
+	\textbf{Теорема 3.} \textit{Пусть $k > 0$, тогда решение задачи (8) - (11) единственно}
+	\par
+	\textbf{Доказательство.} Докажем единственность решения этой задачи. Пусть $u(x,y)$ - решение однородной задачи.
+	Введём обозначения $C_\varepsilon = (0, \varepsilon), C_R = (0, R), D_R = (\pi, R), D_\varepsilon = (\pi, \varepsilon)$. $\prod_{R\varepsilon}$ - прямоугольник $C_\varepsilon C_R D_R D_\varepsilon$. Справедливы следующие соотношения:
+	\begin{equation*}
+		0 = \iint\limits_{\prod_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy.
+	\end{equation*}
+	Заметим, что
+	\begin{equation*}
+		(R - y) (u_{xx} + u_{yy}) u = \left( \left(R - y\right) u_x u\right)_x  + \left( \left(R - y\right) u_y u\right)_y - \left(R- y\right) \left(u_x^2 + u_y^2\right) +  u_y u = 
+	\end{equation*}
+	\begin{equation*}
+		= \left(R-y\right) \left(u_{xx} u + u_x^2\right) + \left(-u_y + \left(R-y\right) u_{yy} u + \left(R-y\right)u_y^2\right) - \left(R- y\right) \left(u_x^2 + u_y^2\right)+  u_y u
+	\end{equation*}
+	Подставим это выражение в интеграл:
+	\begin{equation*}
+		I	=	\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy  
+		- \iint\limits_{\prod_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right) + \iint\limits_{\prod_{R\varepsilon}} u_y u dx dy.
+	\end{equation*}
+	Упростим эти интегралы:
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy = \int\limits_{[\varepsilon, R]} \left[(R-y)u_xu\right] \vert_0^\pi dy = \\ \int\limits_{[\varepsilon, R]} \left[(R-y) u_x(\pi, y)u(\pi,y) - (R-y) u_x(0, y)u(0,y)\right]dy = 0
+	\end{equation*} т.к. оба подынтегральных выражения равны нулю в силу условия (2)
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy = \int\limits_{[0,\pi]} \left[\left(R - y\right) u_y u\right] \vert_\varepsilon^R dx =
+		\int\limits_{[0,\pi]} \left[0 - \left(R - \varepsilon \right) u_y(x, \varepsilon) u(x, \varepsilon) \right] dx =  - \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) u_yu dx
+	\end{equation*}
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} u_y u dx dy = \iint\limits_{\prod_{R\varepsilon}} \left(\dfrac{u^2}{2}\right)'_ydx dy = \int\limits_{[0,\pi]} \left[\dfrac{u^2(x,R)}{2} - \dfrac{u^2(x, \varepsilon)}{2}\right] dx 
+	\end{equation*}
+	В итоге получим 
+	\begin{equation*}
+		I = - \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy
+		- \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon\right) u_y u dx 
+		-\int\limits_{C_\varepsilon D_\varepsilon} \dfrac{u^2}{2} dx + \int\limits_{C_R D_R} \dfrac{u^2}{2} dx 
+	\end{equation*}
+	Добавим и вычтем $\int\limits_{C_\varepsilon D_\varepsilon} k\left(R - \varepsilon\right) u_x u dx$, тогда
+	\begin{equation*}
+		I = - \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy - 
+		\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_y - ku_x\right)u dx - \int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon\right) k u_x u dx - \int\limits_{C_\varepsilon D_\varepsilon}\dfrac{u^2}{2} dx + \int\limits_{C_R D_R} \dfrac{u^2}{2}dx.
+	\end{equation*}
+	Отсюда следует
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{2}\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +k\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon)  =\int\limits_{C_\varepsilon D_\varepsilon} \left(R - \varepsilon \right) \left(u_y - ku_x\right)u dx + \dfrac12  \int\limits_{C_R D_R} u^2 dx \leq 
+	\end{equation*}
+	\begin{equation*}
+		\leq \{ \text{Неравенство Коши-Буняковского} \} \leq \left(R - \varepsilon\right) \left[\int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx \right]^{\frac12} \left[\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx \right]^{\frac12} + \dfrac12 \int\limits_{C_RD_R} u^2 dx = M
+	\end{equation*}
+	Рассмотрим следующее неравенство: $(2ar - b)^2 \geq 0 \Rightarrow ra^2r^2 - 4abr + b^2 \geq 0 \Rightarrow ab \leq ra^2 + b/ (4r)$. Возьмем $a =  \left[\left(R - \varepsilon\right)\int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx \right]^{\frac12}$, $b = \left[\left(R - \varepsilon\right)\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx \right]^{\frac12}$, $r = R - \varepsilon$, тогда
+	\begin{equation*}
+		M \leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx + \dfrac14 \int\limits_{C_\varepsilon D_\varepsilon} u^2 dx + \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+	\end{equation*}
+	Перегруппируем
+	\begin{equation*}
+		\iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{4}\int\limits_{C_\varepsilon D_\varepsilon} u^2 dx +k\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon) \leq \left(R - \varepsilon\right)^2 \int\limits_{C_\varepsilon D_\varepsilon} \left( u_y - ku_x\right)^2 dx + \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+	\end{equation*}
+	В силу (3) имеет место равенство
+	\begin{equation*}
+		\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{C_\varepsilon D_\varepsilon} \left(u_y - ku_x\right)^2 dx = 0,
+	\end{equation*}
+	откуда вытекает соотношение
+	\begin{equation*}
+		\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{\prod_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + k\dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{C_RD_R} u^2 dx.
+	\end{equation*}
+	Устремим теперь $R \to \infty$, тогда $\int\limits_{C_RD_R} u^2 dx \to 0$, а в левой части все слагаемы неотрицательны,п отсюда $u(x,y) \equiv 0$ в $\overline{D}$. Теорема доказана.
+	
+	\textbf{Теорема 4.} \textit{
+		Пусть $u(x,y)$ - решение задачи $(1)-(4)$, тогда $u_x, u_y$ представимы в виде
+		\begin{equation}
+			u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+		\end{equation}
+		\begin{equation}
+			u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt.
+		\end{equation}}
+	\textbf{Доказательство. }
+		\newline
+		Рассмотрим уравнение (6). Система синусов $\sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]}$ образует базис в $L_2(0,\pi)$. Поэтому для коэффициентов $A_n\left(n+\dfrac12\right)$ справедливо следующее представление:
+		\begin{equation*}
+			A_n\left(n+\dfrac12\right) = \int\limits_0^\pi h_{n+1}(t) \dfrac{\varphi(t)}{\sqrt2} dt, 
+		\end{equation*}
+		где
+		\begin{equation*}
+			h_n(t) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^n \sin{kt} B_{n-k}
+		\end{equation*}
+		Пусть $u(x,y)$ - решение задачи (1)-(4), тогда
+		\begin{equation*}
+			u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}
+		\end{equation*}
+		и соотвественно
+		\begin{equation*}
+			u_y(x,y) = -\sum\limits_{n=0}^{\infty} A_n \left(n +\dfrac12\right) e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}
+		\end{equation*}
+		Здесь как раз возникает нужный нам коэффициент $A_n \left(n+\dfrac12\right)$, поэтому
+		\begin{equation*}
+			u_y(x,y)  = - \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]} dt
+		\end{equation*}
+		$\sin{\left[\left(n + \dfrac12\right)x\right]} = Im \ e^{i\left(n + \dfrac12\right)x}$, поэтому
+		\begin{equation*}
+			u_y(x,y)  = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{-\left(n + \dfrac12\right)y} e^{i\left(n + \dfrac12\right)x} dt
+		\end{equation*}
+		Обозначим $z = x + iy$
+		\begin{equation*}
+			u_y(x,y)  = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{i\left(n+\dfrac12\right) z}  dt
+		\end{equation*}
+		Для дальнейших операций нам было бы удобно, чтобы суммирование начинолось от 1, а не 0, поэтому сделаем замену $m = n +1$
+		\begin{equation*}
+			u_y(x,y)  = -  Im \ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{i\left(m-\dfrac12\right) z}  dt
+		\end{equation*}
+		\begin{equation*}
+			u_y(x,y)  = -  Im \ e^{-\dfrac{iz}{2}}\ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{im z}  dt
+		\end{equation*}
+		Поменяем местами знаки интергирования и суммирования
+		\begin{equation*}
+			u_y(x,y)  = -  Im \ e^{-\dfrac{iz}{2}}\  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  \sum\limits_{m=1}^{\infty}   h_{m}(t)  e^{im z}  dt
+		\end{equation*}
+		Введём новое обозначение:
+		\begin{equation*}
+			I(t,z) = \sum\limits_{m=1}^{\infty}  h_{m}(t)  e^{im z}
+		\end{equation*}
+		\begin{equation*}
+			I(t,z) =\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{n=1}^{\infty}   \sum\limits_{k=1}^n \sin{kt} B_{n-k} e^{inz} = 
+			\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{n=k}^{\infty} e^{inz} B_{n-k}
+		\end{equation*}
+		Введём новый индекс $m = n - k$
+		\begin{equation*}
+			I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m =0 }^{\infty} e^{i(m+k)z} B_{m} = 
+			\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} \sum\limits_{m =0 }^{\infty} e^{imz} B_{m}
+		\end{equation*}
+		Первый ряд можем вычислить по формуле суммы бесконечно убывающей геометрической прогрессии
+		\begin{equation*}
+			\sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} =  \sum\limits_{k=1}^{\infty} e^{ikz}\dfrac{1}{2i}\left(e^{ikt} - e^{-ikt}\right) = \dfrac1{2i} \left(\dfrac{1}{1 - e^{i(z+t)}} -  \dfrac{1}{1 - e^{i(z-t)}}\right) = 
+		\end{equation*}
+		\begin{equation*}
+			= \dfrac{1}{2i}  \dfrac{e^{i(z+t)} - e^{i(z-t)}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} =  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}
+		\end{equation*}
+		Рассмотрим второй ряд:
+		\begin{equation*}
+			\sum\limits_{l =0 }^{\infty} e^{ilz} B_{l} = \sum\limits_{l =0 }^{\infty} e^{ilz} \sum\limits_{m=0}^{l} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = \sum\limits_{m=0}^{\infty} \sum\limits_{l=m}^{\infty} e^{ilz} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = 
+		\end{equation*}
+		Введём новый индекс суммирования $k = l -m$
+		\begin{equation*}
+			\sum\limits_{m=0}^{\infty} \sum\limits_{k=0}^{\infty} e^{i(m+k)z} C^{k}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{k} = \sum\limits_{m=0}^{\infty} e^{imz} C^{m}_{-\gamma/\pi - \beta} \sum\limits_{k=0}^{\infty}  C^{k}_{\gamma/\pi} (-1)^k e^{ikz} = (1 + e^{iz})^{-\gamma/\pi - \beta} (1- e^{iz})^{\gamma/\pi} 
+		\end{equation*}
+		В нашем случае $\beta = -1, \gamma = \pi/2$, поэтому
+		\begin{equation*}
+			= (1 + e^{iz})^{1/2} (1- e^{iz})^{1/2} =\sqrt{1 - e^{i2z}} 
+		\end{equation*}
+		Собираем все решение:
+		\begin{equation*}
+			u_y(x,y) = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2} I(t,z) dt 
+		\end{equation*}
+		\begin{equation*}
+			u_y(x,y) = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt
+		\end{equation*}
+		Подставляя $\beta$ и $\gamma$ получим
+		\begin{equation*}
+			u_y(x,y) = - Im\  \dfrac{2}{\pi} e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{1}{2\cos{t/2} \sqrt{\tan{t/2}}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt
+		\end{equation*}
+		\begin{equation*}
+			u_y(x,y) = - Im\  \dfrac{e^{\dfrac{+iz}{2}}}{\pi}  \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}} \sqrt{1 - e^{i2z}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+		\end{equation*}
+		Теорема доказана.
+\end{document}
