@@ -1,0 +1,461 @@
+\documentclass[9pt]{article}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amssymb} % Пакеты для работы с математикой
+\usepackage{amsthm} % Пакет для определения теорем
+\usepackage[%
+left=1.00in,%
+right=1.00in,%
+top=1.0in,%
+bottom=1.0in,%
+paperheight=11in,%
+paperwidth=8.5in%
+]{geometry}%
+
+\newtheorem{theorem}{Теорема} % Нумерация теорем по главам
+\newtheorem{lemma}{Лемма} % Нумерация лемм по главам
+\newtheorem{example}{Пример} % Нумерация примеров по главам
+\newtheorem{corollary}{Следствие} % Нумерация следствий по главам
+\newtheorem{notabene}{Замечание}
+\newtheorem{definition}{Определение}
+\newtheorem*{corollary*}{Следствие}
+\title{ЦФиРЭ}
+
+\author{Васильченко Д.Д.}
+\date{}
+\begin{document}
+	\maketitle
+	\section{ Порядок и тип целой функции. Примеры.}
+		
+		\begin{theorem} (Неравенство Коши)\newline
+			$|a_k| \leq \dfrac{M(r)}{r^k}$
+		\end{theorem}
+		\begin{theorem} (Лиувилля)\newline
+			Пусть $M(r) = \max\limits_{|z| = r} |f(z)|$  и $M(r) \leq Ar^q$, тогда $f(z)$ - многочлен.
+		\end{theorem}
+		\begin{definition}
+			$f(z) \in A(\mathbb{C})$. $f(z)$ - целая функция конечного порядка, если $\exists \mu > 0: \ \forall r > R \ M(r) < \exp{r^\mu}$. Точняя нижняя грань множества $\{\mu\}$ называется порядком целой функции
+		\end{definition}
+		\begin{definition}
+			Пусть $f(z)$ - целая функция конечного порядка $\rho$. Говорят, что $f(z)$ имеет конечный тип при порядке $\rho$, если $\exists a > 0: \ M(r) < \exp{ar^\rho}, \ r > R$. Нижняя грань $\sigma$ множества $\{a\}$ называется типом функции $f(z)$ при порядке $\rho$.
+		\end{definition}
+	\section{Связь порядка и типа целой функции с коэффициентами ряда Тейлора.}
+		\begin{lemma}
+			Пусть $M(r) < \exp{ar^\mu}, \ r > r_0 \Rightarrow \sqrt[n]{|a_n|} < \left(\dfrac{a\mu e}{n}\right)^{1/\mu}, \ n > n_0$.
+		\end{lemma}
+		В некотором смысле обратное утверждение
+		\begin{lemma}
+			Пусть $\sqrt[n]{|a_n|} < \left(\dfrac{a\mu e}{n}\right)^{1/\mu} , \ n > n_0 \Rightarrow M(r) < \exp{[(a+\varepsilon) r^\mu]}, \ r > r_0(\varepsilon), \forall \varepsilon > 0 $.
+		\end{lemma}
+		\begin{theorem}
+			Порядок $\rho$ функции $f(z) = \sum\limits_{k=0}^{\infty} a_k z^k$ вычислятеся по формуле 
+			
+			$$
+			\rho = \overline{\lim\limits_{n\to \infty}} \dfrac{n \ln{n}}{\ln{|\dfrac{1}{a_n}|}}.
+			$$
+			Если функция $f(z)$ имеет порядок $0 < \rho < \infty$, то её тип вычисляется по формуле 
+			$$
+			(\sigma e \rho)^{1/\rho} = \overline{\lim\limits_{n\to\infty}} n^{1/\rho} \sqrt[n]{|a_n|}
+			$$
+		\end{theorem}
+		\begin{theorem}
+			У функции $f(z)$ и её производной порядки и типы одинаковы
+		\end{theorem}
+	\section{ Показатель сходимости последовательности нулей и порядок целой функции. Теоремы един
+		ственности.}
+		\begin{theorem}
+			Пусть $F(z) \in A(\{|z| \leq R\})$ и имеет (по меньшей мере) $n$ нулей $a_1, \dots, a_n$ в открытом круге $\{|z| < R\}$. Тогда, если $F(0) \neq 0$, $\dfrac{R^n}{|a_1 * \dots * a_n|} \leq \dfrac{M(R)}{|F(0)|}$.(нули могут быть кратными, тогда $a_1 = a_2 = \dots$)
+		\end{theorem}
+		\begin{definition}
+			Пусть $\lambda_1, \dots, \lambda_n, \dots$  - последовательность чисел $|\lambda_n|\uparrow \infty, \ \lambda_1 \neq 0$. Допустим, что $\exists \alpha > 0$ - конечное: $\sum\limits_{n=1}^{\infty} \dfrac{1}{|\lambda_n|^\alpha} < +\infty$. Точная нижняя грань $\tau$ множества $\{\alpha\}$ называется показателем сходимости последовательности $\{\lambda_n\}$.
+		\end{definition}
+		\begin{theorem}
+			Пусть $f(z)$ - целая функция конечного порядка и у неё имеется бесконечно много нулей $\lambda_1, \dots, \lambda_n, \dots, \ |\lambda_n| \uparrow \infty, \ \lambda_1 \neq 0$. Тогда показатель $\tau$ последовательности $\{\lambda_n\}$ не превосходит $\rho$.
+		\end{theorem}
+		\begin{theorem}
+			Пусть $f(z) \in A(\mathbb{C})$ и $\rho(f) = \rho$, $\sigma(f) = \sigma$, $0 < \rho < \infty, \ \sigma < \infty$ и у неё бесконечно много нулей $\lambda_1, \dots, \lambda_n, \dots, \ \lambda_1 \neq 0$. Тогда 
+			$$
+			\overline{\lim\limits_{n\to\infty}} \dfrac{n}{|\lambda_n|^\rho} \leq \sigma e\rho
+			$$
+		\end{theorem}
+		\begin{theorem}
+			Пусть $F(z) \neq 0$ регулярна в круге $\{|z| < 1\}$ и ограничена по модулю в этом круге. Если у $F(z)$ имеется бесконечно много нулей $a_1, \dots , a_n, \dots, \ 0 < |a_n| \uparrow R$, то 
+			$$
+			\sum\limits_{n=1}^{\infty} \left(1 - |a_n|\right) < \infty.
+			$$
+		\end{theorem}
+		\subsection*{Теоремы единственности}
+			\begin{theorem}
+				Пусть $f(z) \in A(\mathbb{C})$ имеет порядок не больший $\rho$. Если $f(z)$ обращается в 0 в точках $\lambda_1, \dots, \lambda_n, \dots$ причём показатель сходимости $\tau$ последовательности $\{\lambda_n\}$ больше $\rho$, то $f(z) \equiv 0$.
+			\end{theorem}
+			\begin{theorem}
+				Пусть $f(z) \in A(\mathbb{C}), \ |\lambda_k| \uparrow +\infty$ - её нули, $\rho(f) \leq \rho$, а при порядке $\rho$ $\sigma(f)$ не выше $\sigma$ причем $\overline{\lim\limits_{n\to\infty}}\dfrac{n}{|\lambda_n|^\rho} > \sigma e \rho$. Тогда $f(z) \equiv 0$.			
+			\end{theorem}
+			\begin{theorem}
+				Пусть $F(z) \in C(\{|z| < 1\})$ и там по модулю ограничена. Если $F(z)$ обращается в 0 в точках $a_1, a_2, \dots, \ |a_n| \uparrow 1$, и $\sum\limits_{n=1}^{\infty} (1 - |a_n|) = \infty$, то $F(z) \equiv 0$.
+			\end{theorem}
+	\section{ Разложение целой функции конечного порядка в бесконечное произведение.}
+		Введём функцию
+		$$
+			E(u,k) = \begin{cases}
+				1-u, \ k = 0 \\
+				(1-u) \exp{\left(u+ \dfrac{u^2}{2} + \dots + \dfrac{u^k}{k}\right)}, k > 0
+			\end{cases}
+		$$
+		\begin{lemma}
+			Верны неравенства
+			$$
+			|\ln{|E(u,n)|}| \leq | \ln{E(u,n)} | \leq 2 |u|^{n+1}, \text{при } |u| \leq \dfrac12
+			$$
+			$$
+			|\ln{|\exp{\left(u+ \dfrac{u^2}{2} + \dots + \dfrac{u^n}{n}\right)}|}| \leq \left(2|u|\right)^n, \text{при } |u| \geq \dfrac12
+			$$
+		\end{lemma}
+		\begin{theorem}
+			Пусть $|z_1| \leq |z_2| \leq \dots, \ \lim\limits_{n\to\infty} z_n = \infty$ и $p_n \in \mathbb{Z}: \ \sum\limits_{n=1}^{\infty} \left(\dfrac{r}{r_n}\right)^{p_n} < \infty, \ r_n = |z_n|, \ \forall r$. Тогда произведение $\prod\limits_{n=1}^{\infty} E(\dfrac{z}{z_n}, p_n -1) = \prod\limits_{n=1}^{\infty} \left(1 - \dfrac{z}{z_n}\right) \exp{\left[\dfrac{z}{z_n} + \dfrac{z^2}{p_1 z_n^2} + \dots + \dfrac{z^{p_{n-1}}}{(p_{n-1}) z_n^{p_{n-1}}}\right]}$ сходится во всей плоскости и представляет целую функцию $F(z)$, которая имеет нули в точках $z_1, z_2, \dots, $и только в них.
+		\end{theorem}
+		\begin{theorem}
+			Пусть $f(z) \in A(\mathbb{C})$ и $z_1, z_2, \dots,$ - её нули (с учётом кратности), отличные от начала координат. Подберём $p_n$ так, чтобы $\sum\limits_{n=1}^{\infty} \left(\dfrac{r}{r_n}\right)^{p_n} < \infty, \forall r$. Тогда $f(z) = z^\lambda e^{h(z)} \prod\limits_{n=1}^{\infty} E(\dfrac{z}{z_n}, p_{n-1})$, где $h(z) \in A(\mathbb{C})$.	
+		\end{theorem}
+		\begin{definition}
+			Каноническое произведение: $F(z) = \prod\limits_{m=1}^{\infty} \left(1 - \dfrac{z}{z_m}\right) \exp{\left(\dfrac{z}{z_m} + \dots + \dfrac{z^k}{kz_m^k}\right)}$	
+		\end{definition}
+		\begin{theorem}
+			Порядок канонического произведения равен $\tau$, причём если $\sum\limits_{m=1}^{\infty} \dfrac{1}{|z_m|^\tau} < \infty,$ то $F(z)$ - целая функция порядка $\tau$ конечного типа. ($\tau$ - показатель сходимости нулей функции $f(z)$).
+		\end{theorem}
+		\subsection*{Оценка канонического произведения снизу}
+			\begin{lemma}
+				Вне кружков $|z-z_m| < |z_m|^{-h}, h > \rho$ имеет место оценка $|F(z)| > \exp{-r^{\rho + \varepsilon}}, \ |z| > r_0(\varepsilon), \forall \varepsilon > 0$.
+			\end{lemma}
+			\begin{lemma}
+				Пусть $f(z) = \sum\limits_{n=0}^{\infty} c_nz^n$ регулярна в круге $|z| < R$ и удовлетворяет в этом круге условию $\mathrm{Re} F(z) \leq u$. Тогда $|c_n| \leq \dfrac{2(u-\mathrm{Re}c_0)}{R^n}, \ n \geq 1$.
+			\end{lemma}
+			\begin{theorem}(Адамара)\newline
+				$f \in A(\mathbb{C}), \ \rho(f) < + \infty, \ 0 < |z_m| \uparrow +\infty$ - нули $f(z)$. Тогда $f(z) = z^\lambda e^{h(z)} F(z)$, где $\lambda$ - кратность корня $z=0$. $F(z)$ - каноническое произведение $h(z)$ - полином степени не выше $\rho$.
+			\end{theorem}
+			\begin{theorem} (Бореля)
+				Пусть $f(z)$ - целая функция конечного порядка $\rho$, $z_1, z_2, \dots , $ - её нули, $\tau$ - показатель сходимости $\{z_n\}$, $k$ - наименьшее целое число, удовлетворяющее $\sum\limits_{m=1}^{\infty} \dfrac{1}{|z_m|^{k+1}} < \infty$. Тогда имеет место представление 
+				$$
+				f(z) = z^\lambda e^{h(z)} \prod_{m=1}^{\infty} \left(1 - \dfrac{z}{z_m}\right) \exp{\left(\dfrac{z}{z_m} + \dfrac{z^2}{2z_m^2} + \dots + \dfrac{z^k}{kz_m^k}\right)},
+				$$
+				где $h(z)$ - многочлен и $\rho = \max(h, \tau)$, где $h = \mathrm{deg}h$.
+			\end{theorem}
+			
+		\section{ A-точки целой функции конечного порядка.}
+		\begin{definition}
+			Точки $a_1, a_2, \dots, $ удовлетворяющие условию $f(z) = A$, называются A-точками.
+		\end{definition}
+		\begin{theorem}
+			Пусть $f(z)$ - целая функция конечного порядка $\rho$. Если $\rho$ - не целое, то последовательность A-точек имеет показатель сходимости $\tau_A = \rho$ $\forall A$. Если $\rho$ - целое, то последовательность А-точек имеет показатель сходимости $\tau_A = \rho$  для всех $A$  за исключением может быть одного значения $A$.
+		\end{theorem}
+		
+		\section{Оценки снизу произвольной аналитической функции.}
+			\subsection*{Функции, которые не обращаются в 0}
+			\begin{lemma}
+				Пусть $f(z) \in A(\{|z| \leq R_0\})$ и пусть $n(r)$ - число нулей $f(z)$ в круге $|z| < r < R_0$. Если $f(0) = 1$, то $n(r) \leq \ln{M(er)}, \ er \leq R_0$.
+			\end{lemma}
+			\begin{lemma}
+				Пусть $f(z) \in A(\{|z| < R\})$ и в этом круге $\mathrm{Re}f(z) \leq A(R)$. Тогда $M(r) \leq \left[	A(R) - \mathrm{Re} f(0)\right]\dfrac{2r}{R-r} + |f(0)|, \ 0 < r < R$.
+			\end{lemma}
+			\begin{lemma}
+				Пусть $f(z) \in A(\{|z| \leq R\}), \ f(0) = 1$ и $f(z)$ не обращается в 0 в круге $|z| < R$. Тогда $\ln{|f(z)|} \geq -\dfrac{2r}{R-r} \ln{M(r)}, \ |z| \leq r < R$.
+			\end{lemma}
+			\begin{theorem} (Картана)\newline
+				Каковы бы не были число $H$ и комплексные числа $a_1, a_2, \dots, a_n$ можно найти в комплексной плоскости такую систему кружков с общей суммой радиусов $2H$, что для всякой точки $z$, лежащей вне этих кружков выполняется неравенство
+				$$
+				|(z-a_1) \dots (z-a_n)| > \left(\dfrac{H}{e}\right)^n
+				$$
+			\end{theorem}
+			\subsection*{Оценка снизу произвольной аналитической функции}
+			\begin{theorem}
+				Пусть $f(z) \in A(\{|z| \leq 2eR\}), \ f(0) = 1$ и $0 < \mu < \dfrac32 e$. Тогда внутри круга $|z| \leq R$, но вне исключающих кружков с общей суммой радиусов равное $r\mu R$, $$\ln{|f(z)|} > - H(\mu) \ln{M(2eR)}, \ H(\mu) = 2 + \ln{\dfrac{3e}{2\mu}}$$
+			\end{theorem}
+		\section{Целые функции экспоненциального типа. Опорные функции и сопряжённые диаграммы.}
+			\begin{definition}
+				Целая функция $f(z)$ называется функцией экспоненциального типа, если её порядок $\rho < 1$ или $\rho = 1$, но тогда и тип конечен.
+			\end{definition}
+			Обычно записывают в виде $f(z) = \sum\limits_{k=0}^{\infty} \dfrac{a_k}{k!} z^k$.
+			\begin{definition}
+				Функция $\gamma(t) = \sum\limits_{k=0}^{\infty} \dfrac{a_k}{t^{k+1}}$ назыается функцией, ассоциированной по Борелю с $f(z)$. (Ряд сходится при $|t| > \sigma$)
+			\end{definition}
+			Примеры:
+			\begin{enumerate}
+				\item $Ae^z \doteqdot \dfrac{A}{t-a}$
+				\item $\sin{z} \doteqdot \dfrac{1}{t^2 + 1}$
+				\item $\cos{z}  \doteqdot \dfrac{t}{t^2+1}$
+			\end{enumerate}
+			\begin{definition}
+				Пусть $\overline{G}$ - ограниченное выпуклое замкнутое множество. Опорной функцией множества $\overline{G}$ называется функция $K(\varphi) = \max\limits_{z \in \overline{G}} \mathrm{Re}(z e^{-i\varphi}), \ 0 \leq \varphi \leq 2\pi$.
+			\end{definition}
+			Геометрический смысл: $\mathrm{Re}(z e^{-i\varphi})$ - проекция вектора $z$ на направление $\mathrm{arg} z = \varphi$. $K(\varphi)$ - максимальная из таких проекций при $z \in \overline{G}$. Возьмём вдали от начала координат прямую $l$, перпендикулярную лучу $\mathrm{arg} z= \varphi$ и будем перемещать её параллельно самой себе до соприкосновения с множеством $\overline{G}$. Пусть в момет соприкосновения она занимает положение $l_0$. Расстояние от начала координат до прямой $l_0$ и есть $K(\varphi)$. Пусть $z_0$ - тчока соприкосновения $l_0$ c $\overline{G}$. Тогда $K(\varphi) = \mathrm{Re} (z_0 e^{-i\varphi})$. Прямая $l_0$ - опорная к множеству $\overline{G}$.
+			
+			Для круга опорная функция $K(\varphi) = \sigma$. Для отрезка $[-\sigma i, \sigma i]$ $K(\varphi) = \sigma |\sin{\varphi}|$.
+			
+			Если $K(\varphi)$ - опорная функция множества  $\overline{G}$, то $K(\varphi) + \varepsilon$ - опорная функция $\varepsilon$-расширения $G$.
+			
+			\begin{theorem}
+				Опорная функция $K(\varphi)$ непрерывна. Если опорные функции выпуклых множеств $\overline{G_1}, \overline{G_2}$ равны, то $\overline{G_1} \equiv \overline{G_2}$.
+			\end{theorem}
+			\subsection{Сопряженные диаграммы}
+				\begin{definition}
+					Пусть $M$ - ограниченное множество на плоскости. Пересечение $\overline{G}$ всех замкнутых выпуклых множеств, содержащих $M$, называется выпуклой оболочкой множества $M$.
+				\end{definition}
+				
+				\begin{definition}
+					Пусть $f(z) \in A(\mathbb{C})$ и $f(z)  \doteqdot \gamma(t)$. Выпуклая оболчка множества особенностей $\gamma(t)$ называется сопряженной диаграммой функции $f(z)$. Будем её обозначать $\overline{D}$.
+				\end{definition}
+				
+				Если $f(z)$ имеет тип $\sigma$, то на окружности $|t| = \sigma$ у $\gamma(t)$ имеются особенности, поэтому $\overline{D}\subset \{|t| < \sigma\}$.
+				На каждой опорной прямой к множеству $\overline{D}$ имеется хотя бы одна особенность.
+				Свойства:
+				\begin{enumerate}
+					\item $\max{K(\varphi)} = \sigma$ и если $z_0 = \sigma e^{i\varphi_0} \in \overline{D}$, то этот максимум равено $K(\varphi_0)$.
+					\item $k(\varphi) \geq - \sigma$.
+				\end{enumerate}
+				Примеры:
+				\begin{enumerate}
+					\item $Ae^z \doteqdot \dfrac{A}{t-a}$. $\overline{D}$ - точка $t = a$.
+					\item $\sin{z} \doteqdot \dfrac{1}{t^2 + 1}$. $\overline{D}$ - отрезок $[-i, i]$.
+				\end{enumerate}
+			\section{Функция, ассоциированная по Борелю. Интегральное представление целой функции экспоненциального типа.}
+			\begin{theorem}
+				Пусть $f(z)$ - целая экспоненциального типа, $f(z) \doteqdot \gamma(t)$, $\overline{D}$ - сопряженная диаграмма $f(z)$. Тогда
+				$$
+					f(z) = \dfrac1{2\pi i} \int\limits_C \gamma(t) e^{zt} dt,
+				$$
+				где $C$ - замкнутый контур, охватывающий  $\overline{D}$.
+			\end{theorem}
+			\begin{corollary*}
+				Пусть $K(\varphi)$ - опорная функция множества $\overline{D}$. Тогда $|f(re^{i\varphi})| < A(\varepsilon) e^{\left[K(-\varphi)+\varepsilon\right]r}, \ \forall \varepsilon > 0$.
+			\end{corollary*}
+			\begin{lemma}
+				Пусть $f(z)$ нерперывна на луче $l$, $\mathrm{arg} z = \varphi_0$ и удовлетворяет условию $|f(z)| \leq A e^{a|z|}, z \in l$. Тогда в полуплоскости $\mathrm{Re} (t e^{i\varphi_0}) > a + \delta, \delta >0$  интеграл сходится, представляет собой аналитическую функцию и имеет оценку $|F(t)| < \dfrac{A}{\delta}$.	
+			\end{lemma}
+			
+			\begin{definition}
+				Функция $h(\varphi) = \overline{\lim\limits_{r \to \infty}}\dfrac{\ln{|f(re^{i\varphi})|}}{r}, \ 0 \leq \varphi \leq 2\pi$ называется индикатрисой роста функции $f(z)$. Характеризует рост функции вдоль лучей.
+			\end{definition}
+			\begin{theorem}
+				Пусть $f(z)$ - целая функция экспоненциального типа с индикатрисой роста $h(\varphi)$, $f(z) \doteqdot \gamma(t)$. В полуплоскости $\mathrm{Re}(te^{i\varphi_0}) > h(\varphi_0)$ функция $\gamma(t)$ - аналитическая и 
+				$$
+				\gamma(t) = \int\limits_0^\infty f(z) e^{-zt} dz
+				$$
+			\end{theorem}
+			\begin{theorem}(Полиа)\newline
+				Пусть $f(z)$  - целая экспоненциального типа с индикатрисой роста $h(\varphi)$ и $\overline{D}$ - сопряженная диаграмма, $K(\varphi)$ - опорная функция $\overline{D}$. Тогда $h(\varphi) = K(-\varphi)$.
+			\end{theorem}
+		\section{Примеры использования операционного исчисления для решения дифференциальных уравнений.}
+		Рассмотрим дифференциальное уравнение с постоянными коэффициентами
+		$$
+		a_0 y^{(n)}(x) + \dots + a_ny(x) = \varphi(x), \ \ y(0) = \alpha_0, \dots , y^{(n-1)}(0) = \alpha_n
+		$$
+		\begin{theorem}
+			Если $f(z) \doteqdot \gamma(t)$, то $f^{(m)}(z) = t^m \gamma(t) - t^{m-1} f(0) - \dots - f^{(m-1)}(0)$.
+		\end{theorem}
+		Пусть $\varphi(x) \doteqdot \gamma_1(t)$. Решение ищем в виде функции экспоненциального типа и пусть $y(x) \doteqdot \gamma(t)$. Переходя к функциям, ассоциированным по Борелю получим алгебраическое уравнение относительно $t$, решая его найдём искомую функцию.
+		\begin{example}
+			$y''(x) -2y'(x)+y(x) = 0, \ y(0) = 0, y'(0) = 1$. \newline $y(x) \doteqdot \gamma(t)$,\ $y'(x) \doteqdot t \gamma(t)$, $y''(x) \doteqdot t^2 \gamma(t) -1$. Тогда получим\newline
+			$t^2 \gamma(t) - 1 - 2t\gamma(t) + \gamma(t) = 0$ следовательно $y(t) = \dfrac{1}{(t-1)^2}$. Получаем $y(x) = xe^x$.
+		\end{example}
+		\section{ Критерий Маркушевича полноты систем аналитических функций в области.}
+		\begin{lemma}
+			Пусть $f_1(z), f_2(z), \dots$ - последовательность функций аналитических в замкнутом круге $|z| \leq R < \infty$ и пусть эта последовательность сходится в $L_2$ на $|z| = R$ ($\int\limits_{|z|=R} |f_n(z) - f_m(z)|^2 dz < \varepsilon , \ n,m > N(\varepsilon)$). Тогда $\{f_n(z)\}$ сходится равномерно внутри круга $|z| < R$.
+		\end{lemma}
+		\begin{definition}
+			Пусть $D$ - односвязная область, $\varphi_n \in A(D)$. Множество $M = \{\varphi: \varphi(z) = \lim\limits_{\nu \to \infty} \sum\limits_{k=1}^{\nu} a_{k,\nu} \varphi_k(z)\}$ называется линейной оболочкой $\{\varphi_n\}$ ($\mathrm{span}\{\varphi_n\}$).
+			\end{definition}
+		\begin{theorem}
+			Пусть $\mathrm{span}\{\varphi_n\} \neq A(D) \Rightarrow \exists$ функционал $l(\varphi): \ l(\varphi) = \dfrac{1}{2\pi i} \int\limits_{C} \gamma(t) \varphi(t) dt, \ \gamma \in A(\overline{\mathrm{ext}C}), \ \gamma(\infty) = 0, \ l(\varphi_k) = 0, k \in \mathbb{N}, l(A) \neq 0, \ A \in A(D) \backslash \mathrm{span}\{\varphi_n\}$.
+		\end{theorem}
+		\begin{definition}
+			Пуст $D$ - односвязная область. $\{\varphi_k\}$ полна в $A(D)$, если $\mathrm{span}\{\varphi_n\} = A(D)$.
+		\end{definition}
+		\begin{theorem} (Критерий Маркушевича)\newline
+			$\{\varphi_k(z)\}$ полна в $D$ $\Leftrightarrow$ из равенств $\dfrac{1}{2\pi i} \int\limits_C \gamma(t) \varphi_k(t) dt = 0, (k \in \mathbb{N})$, С - замкнутый контур, лежащий в $D$, $\gamma(t) \in A(\overline{\mathrm{ext} C}), \gamma(\infty) = 0$ всегда вытекает $y(t) \equiv 0$.
+		\end{theorem}
+		\begin{theorem} (Гельфонда)\newline
+			Пусть $f(z) \in A(\mathbb{C}), \ \rho(f) < + \infty, \ f(z) = \sum\limits_{k=0}^{+\infty} a_kz^k, \ a_k \neq 0, k \in \mathbb{N}$. $\{\lambda_k\}$ имеет показатель сходимости $\tau > \rho(f)$. Тогда $\{f(\lambda_kz)\}$ полна в $A(\mathbb{C})$.
+		\end{theorem}
+		\begin{theorem}(Маркушевича)\newline
+			Пусть $f \in A(\mathbb{C}), \ 0 < \rho = \rho (f) < + \infty, \ \sigma = \sigma(f), \ f(z) = \sum\limits_{k=0}^{\infty} a_kt^k, a_k \neq 0, k\in \mathbb{N}$. $\{\lambda_k\}: \ \lim\limits_{k\to+\infty} \dfrac{k}{|\lambda|^\rho} = \tau$. Тогда $\{f(\lambda_k z)\}$ полна в $A\left(\left\{|z| < R_0 = \left(\dfrac{\tau}{\sigma e \rho}\right)^{1/\rho}\right\}\right)$.
+		\end{theorem}
+		\begin{theorem}(Мюнтца)\newline
+			Пусть $0 < \lambda_k \uparrow \infty$. Есил $\sum\limits_{k=1}^{\infty} \lambda_k^{-1} = \infty$, то система $1 \cup \{x^{\lambda_k}\}, k \geq 1$ полна на $[0,1]$.		
+		\end{theorem}
+		
+		
+		\section{Ряды Дирихле: абсциссы простой, равномерной, абсолютной сходимости, теорема единственности.}
+			\begin{lemma}(Преобразование Абеля)
+				$$
+				\sum\limits_{n=p}^{q} A_nB_n = \sum\limits_{n=p}^{q-1} (B_n - B_{n+1})C_n + B_q C_q, \ C_n = A_p + \dots + A_n
+				$$
+			\end{lemma}
+			\begin{definition}
+				Ряд Дирихле $\sum\limits_{n=1}^{\infty} a_n e^{-\lambda_n z}$, у которого $\lambda_n > 0$, $0 < \lambda_n \uparrow \infty$. (показатели вещсетсвенны).
+			\end{definition}
+			\begin{lemma}
+				Пусть ряд Дирихле сходится в точке $z_0$, тогда он сходится (вообще говоря не абсолютно) в полуплоскости $\mathrm{Re}z > \mathrm{Re}z_0$. В каждом секторе $|\mathrm{arg}(z - z_0)| \leq \theta < \dfrac\pi2$  он сходится равномерно.
+			\end{lemma}
+			\subsection{Асимптотика суммы ряда. Разложения}
+				\begin{lemma}
+					Разложение в ряд Дирихле единсвтенно. В указанном выше секторе при $ x \to +\infty$ $f(z) \approx a_1 e^{-\lambda_1 z}, a_1 \neq 0.$
+				\end{lemma}
+			\subsection{ Абсциссы}
+				Ряд Дирихле или всюду сходится, или всюду расходится, или $\exists с \in \mathbb{R}$: сходится при $\mathrm{Re z} > c$ и расходится при $\mathrm{Re}z < c$. $\mathrm{Re}z = c$ - прямая сходимости. $c$ - абсцисса сходимости.
+				
+				Ряд Дирихле или сходится во всей плоскости, или нигде не сходится абсолютно, или $\exists a \in \mathbb{R}$: ряд асболютно сходится в $\mathrm{Re}z > a$, не сходится абсолютно в $\mathrm{Re}z < a$. $a$ -абсцисса абсолютной сходимости.
+				
+				Если $a < + \infty$, то $\forall \varepsilon > 0$ в полуплоскости $\mathrm{Re}z > a + \varepsilon$ ряд сходится равномерно. Точная нижняя грань $r$ чисел $\{\alpha\}$ таких, что в $\mathrm{Re} z > \alpha$ ряд сходится равномерно называется абсциссой равномерной сходимости. 
+				
+				$$
+					c \leq r \leq a
+				$$
+				\begin{theorem}
+					Пусть $L = \overline{\lim\limits_{k\to\infty}} \dfrac{\ln{n}}{\lambda_n}$. Тогда $a-c \leq L$.
+				\end{theorem}
+				\begin{theorem}
+					В случае $L = 0$ абсцисса сходимсоти вычисляется по формуле $a = \overline{\lim\limits_{k\to\infty}} \dfrac{\ln{|a_k|}}{\lambda_k}$.	
+				\end{theorem}
+			\section{Ряды с комплексными показателями. Область абсолютной сходимости, область сходимости.}
+			Будем рассматривать ряд $\sum\limits_{n=1}^{\infty} a_ne^{\lambda_nz}$, где $\lambda_n \in \mathbb{C}$.
+			\begin{theorem}
+				Множество точек абсолютной сходимости ряда (указан выше) выпукло.
+			\end{theorem}
+			\begin{theorem}
+				Пусть $D$ - открытая область, состоящая только из внутренних точек множества $M$ абсолютной сходимости ряда. Внутри $D$ ряд сходится равномерно.		
+			\end{theorem}
+			\subsection*{Множество точек простой сходимости ряда}
+				Пусть $0 < |\lambda_1| \leq |\lambda_2| \leq \dots, \ \lim\limits_{n\to\infty} |\lambda_n| = \infty$ и $\overline{\lim\limits_{n\to\infty}} \dfrac{\ln{n}}{|\lambda_n|} = H < \infty$.
+				\begin{theorem}
+					Пусть ряд сходится в области $E$. Если точка $z_0 \in E$ такова, что она удалена от границы $E$ на расстояние, большее $H$, то в ней ряд сходится абсолютно.
+				\end{theorem}
+				\begin{corollary*}
+					Если ряд сходится во всей плоскости, то при условии $\overline{\lim\limits_{n\to\infty}} \dfrac{\ln{n}}{|\lambda_n|} = H < \infty$ он сходится абсолютно во всей плоскости.
+				\end{corollary*}
+				\begin{corollary*}
+					При $H=0$ открытая область сходимости ряда совпадает с открытой областью абсолютной сходимости ряда.
+				\end{corollary*}
+			\section{Биортогональная система функций. Необходимые и достаточные условия существования}
+			\begin{definition}
+				Система функций $\psi_\nu$ называется биортогональной к системе функций $e^{\lambda_1 z}, e^{\lambda_2 z}, \dots, $ где $\lambda_i$ различные комплексные числа и $0 \leq |\lambda_1| \leq |\lambda_2| \leq \dots$, если
+				\begin{enumerate}
+					\item $\psi_\nu (z) \in A(\{|z| \geq r_0\}), \ \psi_\nu (\infty) = 0$
+					\item $\dfrac{1}{2\pi i} \int\limits_{|t| = r_0} e^{\lambda_\mu t}\psi_\nu(t) dt = \delta_{\nu\mu}$
+				\end{enumerate}		
+			\end{definition}
+			\begin{lemma}
+				При условии $\overline{\lim\limits_{n\to\infty}} \dfrac{n}{|\lambda_n|} = \tau < \infty$ выполняется соотношение $\overline{\lim\limits_{r \to\infty}} \dfrac{1}{r} \ln{\prod_{n=1}^{\infty}\left(1 + \dfrac{r^2}{|\lambda_n|^2}\right) }\leq \pi \tau$.
+			\end{lemma}
+			\begin{theorem}
+				Для существования системы $\{\psi_\nu(t)\}$ биортогональной к $\{e^{\lambda_\mu z}\}$ необходимо и достаточно, чтобы выполнялось условие $\overline{\lim\limits_{n\to\infty}} \dfrac{n}{|\lambda_n|} = \tau < \infty$.
+			\end{theorem}
+			\begin{theorem}
+				При условии $\overline{\lim\limits_{n\to\infty}} \dfrac{n}{|\lambda_n|} = \tau < \infty$ система фукнций
+				$$
+					\psi_\nu(t) = \dfrac{1}{L'(\lambda_\nu)}\int\limits_0^{\infty e^{i\varphi_0}} \dfrac{L(\lambda)}{\lambda - \lambda_\nu}e^{-\lambda t} d\lambda, \ \mathrm{Re}(te^{i\varphi_0}) > h(\varphi_0),
+				$$
+				где $h(\varphi)$ - индикатриса роста $L(\lambda)$.
+			\end{theorem}
+			\section{Формула для коэффициентов ряда $\sum\limits_{k=1}^{+\infty} a_k e^{\lambda_k z}$}
+			$\overline{D}$ - сопряженная диаграмма к $L(\lambda)$. $\overline{D}_\alpha$ - сдвиг $\overline{D}$ на вектор $\alpha$.
+			\begin{theorem}
+				Пусть $\lambda_1, \lambda_2, \dots $ - простые нули функции $L(\lambda)$, 	$\overline{D}$ - сопряженная диаграмма $L(\lambda)$, $\psi_k(t)$ - функции: $\psi_k(t) = \dfrac{1}{L'(\lambda_k)}\int\limits_0^{\infty e^{i\varphi_0}} \dfrac{L(\lambda)}{\lambda - \lambda_0} e^{-\lambda t} d\lambda$. Если ряд $f(z) = \sum\limits_{k=1}^{\infty} a_k e^{\lambda_k z}$ сходится в области $G$, которая содержит в себе некоторую  $\overline{D}_\alpha$, то
+				$$
+				a_k = e^{-\alpha \lambda_k} \dfrac{1}{2\pi i} \int\limits_{C} \psi_k(t) f(t + \alpha) dt, \ k \geq 1,
+				$$
+				где $C$ - замкнутый контур, охватывающий $\overline{D}$  и выбран так, чтобы переменная $(t + \alpha)$ , когда $t \in C$ находилась бы в $G$.
+			\end{theorem}
+			\subsection{Уточнение формулы}
+				\begin{lemma}
+					Пусть $H$ - область, в которой функция регулярна, и пусть $E$ - область такая, что $\forall \alpha \in E$ множество $\overline{D}_\alpha \subset H$. Тогда в области $E$ функция  $A(\alpha)  = \dfrac{1}{2\pi i} \int\limits_{C} \psi_k(t) f(t + \alpha) dt $ - аналитическая.
+				\end{lemma}
+				\begin{theorem}
+					Пусть ряд $f(z) = \sum\limits_{k=1}^{\infty} a_k e^{\lambda_k z}$ сходится в области $G$ и $\overline{D}_{\alpha_0} \subset G$, а сумма ряда $f(z)$ регулярна в области $H$, $G \subset H$. Пусть далее, $E$ - область: $\alpha \in E$, если $\overline{D}_\alpha \subset H$ и $\alpha_0 \in E$.Тогда
+					$$
+						a_k = e^{-\alpha \lambda_k} \dfrac{1}{2 \pi i} \int\limits_C \psi_k(t) f(t + \alpha) dt, \ k \geq 1, \ \alpha \in E.
+					$$
+				\end{theorem}
+			\section{ Случай, когда показатели имеют нулевую плотность. Теоремы Полиа и Фабри}
+				В качестве $L(\lambda)$ берём $L(\lambda) = \prod_{k=1}^{\infty'} (1 - \dfrac{\lambda^2}{\lambda^2_k})$.
+				
+				\begin{theorem}
+					Пусть $\lim\limits_{k\to\infty} \dfrac{k}{|\lambda_k|} = 0, \ \delta = \lim\limits_{k\to\infty} \dfrac{1}{|\lambda_k|} \ln{|\dfrac{1}{L'(\lambda_k)|}} = 0$. Пусть далее ряд $f(z) = \sum\limits_{k=1}^{\infty} a_k e^{\lambda_k z}$ сходится в некоторой области $G$. Тогда область сходимости ряда и область $H$ регулярности суммы ряда совпадают.
+				\end{theorem}
+				\begin{theorem}
+					Пусть $\tau = 0$, $|\lambda_{k+1}| - |\lambda_k| \geq h = \mathrm{const} > 0 $. Тогда область сходимости ряда $\sum\limits_{k=1}^{\infty} a_ke^{\lambda_k z}$ и область регулярности суммы совпадают. Область  $H$ - выпукла.
+				\end{theorem}
+				\begin{theorem}
+					Пусть $0 < \lambda_k \uparrow \infty, \ \lim\limits_{k\to\infty}\dfrac{k}{\lambda_k} = 0$ и $\delta = \lim\limits_{k\to\infty} \dfrac{1}{\lambda_k} \ln{|\dfrac{1}{L'(\lambda_k)}|} = 0$, $L(\lambda) = \prod_{k=1}^{\infty'} \left(1  - \dfrac{\lambda^2}{\lambda_k^2}\right)$. Пусть далее ряд $F(z) = \sum\limits_{k=1}^{\infty} a_k e^{-\lambda_k z}$ сходится в полуплоскости $\mathrm{Re} z > a$,  $- \infty < a < + \infty$. Тогда прямая сходимости $\mathrm{Re}z = a$ - естественная граница для суммы ряда $F(z)$.
+				\end{theorem}
+				\begin{theorem}(Полиа)\newline
+					Пусть $0 < \lambda_n \uparrow +\infty, \ \tau = 0$, $\lambda_{n+1} - \lambda_n \geq h > 0$. Тогда $\mathrm{Re} z= a$ - естественная граница для $f(z)$.
+				\end{theorem}
+				\begin{theorem}(Фабри)\newline
+					$f(z) = \sum\limits_{k=1}^{\infty} a_k e^{\lambda_k z}$, $\lambda_k \in \mathbb{N}$, $\tau = 0$ сходится при $|z| < R$. Тогда $\{|z| = R\}$ - естественная граница для суммы ряда $f(z)$.
+				\end{theorem}
+			\section{ Случай, когда показатели положительны и имеют ненулевую плотность. Теорема Полиа. Теоремы для степенных рядов.}
+				Считаем, что $0 < \lambda_k \uparrow + \infty$ и $\exists$ конечный $\lim\limits_{k\to\infty} \dfrac{k}{\lambda_k} = \sigma$. $\sigma$ - плотность последовательности. Полагаем $L(\lambda) = \prod_{k=1}^{\infty} \left(1 - \dfrac{\lambda^2}{\lambda_k^2}\right)$. Сопряженная диаграмма $\overline{D} = [-\pi \sigma i, \pi \sigma i]$.
+				
+				\begin{theorem}
+					Пусть  $0 < \lambda_k \uparrow + \infty$,  $\lim\limits_{k\to\infty} \dfrac{k}{\lambda_k} = \sigma$ и пусть ряд $f(z) = \sum\limits_{k=1}^{\infty} a_k e^{\lambda_k z}$ сходится в полуплоскости $\mathrm{Re} z < a, \ -\infty < a < + \infty$. Если $\delta  = \overline{\lim\limits_{k\to\infty}} \dfrac{1}{\lambda_k} \ln{|\dfrac{1}{L'(\lambda_k)}|} = 0$, то в каждом отрезке длины $2\pi \sigma$ прямой сходимости $\mathrm{Re} z = a$ у суммы ряда имеется хотя бы одна особенность.
+				\end{theorem}
+				\begin{theorem}(Полиа)\newline
+					Пусть  $0 < \lambda_k \uparrow + \infty$,  $\lim\limits_{k\to\infty} \dfrac{k}{\lambda_k} = \sigma$ и $\lambda_{k+1} - \lambda_{k} \geq h > 0$. Пусть далее ряд $f(z) = \sum\limits_{k=1}^{\infty} a_k e^{\lambda_k z}$ сходится в полуплоскости $\mathrm{Re} z < a, \ -\infty < a < + \infty$. Тогда в каждом отрезке длины $2\pi \sigma$ прямой сходимости $\mathrm{Re} z = a$ у суммы ряда имеется хотя бы одна особенность.
+				\end{theorem}
+				\begin{theorem}(про степенные ряды)\newline
+					Пусть $\lambda_k, \ k\geq1$ - целые положительные числа и $\lim\limits_{k\to\infty}\dfrac{k}{\lambda_k} = \sigma$. Пусть далее степенной ряд $F(z) = \sum\limits_{k=1}^{\infty} a_k z^{\lambda_k}$  имеет конечный радиус сходимости $R$, $0 < R < \infty$. Тогда на каждой замкнутой дуге окружности $|z| = R$, опирающейся на центральный угол, равный $2\pi \sigma$, у функции $F(z)$ имеется по меньшей мере одна особенность.
+					
+				\end{theorem}
+			\section{Свойства функций $\Phi(z) = \dfrac{1}{2\pi i} \int\limits_{\Gamma} \dfrac{e^{-zt}}{L(t)}dt$, $F(z) = \dfrac{1}{2\pi i} \int\limits_{\Gamma} \dfrac{e^{-zt}}{L(t)(t - \beta)} dt, \beta > 0$ }
+			Как и ранее $L(\lambda) = \prod\limits_{k=1}^{\infty} \left(1 - \dfrac{\lambda^2}{\lambda_k^2}\right)$. $\Gamma$ - граница угла $|\mathrm{arg} t| < \varphi_0 < \dfrac\pi2$. Полагаем $ 0 < \lambda_k \uparrow \infty$ и $\lim\limits_{k\to\infty} \dfrac{k}{\lambda_k} = \sigma$.
+			
+			\begin{theorem}
+				Исследуемая функция обладает следующими свойствами:
+				\begin{enumerate}
+					\item при $\sigma = 0$ регулярна в полуплоскости $\mathrm{Re} z > 0$;  при $\sigma > 0$ в плоскости с разрезами по отрезкам $(-i\infty, -i\pi\sigma], [i\pi\sigma, +i\infty)$
+					\item В полуплоскости $\mathrm{Re} z > 0$ она представима в виде
+					$$
+					\Phi(z) = \lim\limits_{k\to\infty} \sum\limits_{\lambda_\nu < r_k} \dfrac{e^{-\lambda_\nu z}}{L'(\lambda_\nu)}, \ r_k \to \infty
+					$$
+					при $\sigma > 0$ в полуплоскости  $\mathrm{Re} z < 0$ представима в виде
+					$$
+					\Phi(z) = \lim\limits_{k\to\infty} \sum\limits_{\lambda_\nu < r_k} \dfrac{e^{\lambda_\nu z}}{L'(\lambda_\nu)}, \ r_k \to \infty
+					$$
+					\item При $\sigma < \infty$ функция $\Phi(z)$  в полуплоскости $\mathrm{Re} z > 0$ представляется рядом
+					$$
+					\Phi(z) = \sum\limits_{\nu=1}^{\infty} \dfrac{e^{-\lambda_\nu z}}{L'(\lambda_\nu)}
+					$$
+									\end{enumerate}
+			\end{theorem}
+			
+			\begin{theorem}
+				Пусть $ 0 < \lambda_k \uparrow \infty$ и $\lim\limits_{k\to\infty} \dfrac{k}{\lambda_k} = \sigma$, тогда фукнция $F(z) = \dfrac{1}{2\pi i} \int\limits_{\Gamma} \dfrac{e^{-zt}}{L(t)(t - \beta)} dt, \beta > 0$, $L(\lambda) = \prod\limits_{k=1}^{\infty} \left(1 - \dfrac{\lambda^2}{\lambda_k^2}\right)$, где $\Gamma$ - граница угла $|\mathrm{arg} t| < \varphi_0 < \dfrac\pi2$ обладает следующими свойствами:
+				\begin{enumerate}
+					\item при $\sigma = 0$ она регулярна в $\mathrm{Re} z > 0$, при $\sigma > 0$  в плоскости с разрезами по отрезкам $(-i\infty, -i\pi\sigma], [i\pi\sigma, +i\infty)$
+					\item в $\mathrm{Re} z > 0$ представима в виде
+					$$
+					F(z) = \dfrac{e^{-\beta z}}{L(\beta)} + \lim\limits_{k\to\infty} \sum\limits_{\lambda_\nu < r_k} \dfrac{e^{-\lambda_\nu}}{(\lambda_\nu - \beta)L'(\lambda_\nu)},
+					$$
+					а при $\sigma > 0$ в $\mathrm{Re}z < 0$ представима в виде
+					$$
+					F(z) = -\lim\limits_{k\to\infty}\sum\limits_{\lambda_\nu < r_k} \dfrac{e^{\lambda_\nu z}}{(\lambda_\nu + \beta) L'(\lambda_\nu)}
+					$$
+				\end{enumerate}
+			\end{theorem}
+		\section{Оценка полинома из экспонент в полуплоскости. Полнота систем функций в криволинейном угле.}
+			\begin{theorem}
+				Пусть $0 < \lambda_ \uparrow +\infty$, $\lim\limits_{k\to\infty} \dfrac{k}{\lambda_k} = \sigma$ и величина $\delta$ конечна. Пусть, далее, $E$-односвязная область, содержащая в себе замкнутой вертикальный отрезок длина $2\pi\sigma$ с серединой в точке $z_0$. Если $P(z) = \sum\limits_{k=1}^{n} a_k e^{\lambda_k z}$, то в полуплоскости $\mathrm{Re} z < \mathrm{Re} z_0 - \delta + \varepsilon, \ \varepsilon > 0$.Тогда $\sum\limits_{k=1}^{n} |a_ke^{\lambda_k z}| \leq A \max\limits_{t \in \overline{E}} |P(t)|$, где $A = const$, не зависит от $P(z)$.
+			\end{theorem}
+			\begin{theorem}
+				Пусть $\lambda_k, \ k \geq 1$ - целые положительные числа, $\lim\limits_{k\to\infty} \dfrac{k}{\lambda_k} = \sigma$. Пусть, далее, $\Gamma_1$ - непрерывная кривая, идучая из начала координат в $\infty$, пересекающаяся с каждой окружностью $|z| = r$, $0 < r < \infty$ в единственной точке. $\Gamma_2$ - кривая, получення поворотом $\Gamma_1$ вокруг начала координат на угол $2\pi\sigma$. $D$ - угловая область, ограниченная кривыми $\Gamma_1, \Gamma_2$. Тогда система $\{z^{\lambda_k}\}$ полна в области $D$.		
+			\end{theorem}
+			
+		\section{Полнота системы степеней в области, содержащей начало координат. Теорема Коревара.	Полнота системы экспонент в криволинейной полосе.}
+			Класс функций, аналитических в $D$ и имеющих в окрестности начала координат разложение вида $f(z) = \sum\limits_{k=1}^{\infty} a_k z^{\lambda_k}$, обозначим $H\{\lambda_k\}$.
+			\begin{theorem}(Кореавара)\newline
+				Пусть $D$ - односвязная область, $0 \in D$, $\lambda_k , \ k \geq 1$ - целые положительные числа. Если плотность $\sigma = \lim\limits_{k\to\infty}\dfrac{k}{\lambda_k}$ равна 0 или 1, то система $\{z^{\lambda_k}\}$  полна в области $D$ в классе $H\{\lambda_k\}$.
+			\end{theorem}
+			Пусть $y = f(x)$ - непрерывная кривая, определённая на всей вещественной оси, и  $f(x) < y < f(x) + 2\pi\sigma, \ -\infty < x < \infty$ - криволинейная полоса
+			\begin{theorem}
+				TЕсли $\{\lambda_k\}$ имеет плотность $\sigma$, то система $\{e^{\lambda_k}z\}$ полна в указанной выше полосе.
+			\end{theorem}
+\end{document}

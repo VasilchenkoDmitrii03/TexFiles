@@ -1,0 +1,379 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{amsthm,amsfonts,amsmath,amssymb,amscd}
+\usepackage[T2A]{fontenc}                         
+\usepackage[utf8]{inputenc}                      
+\usepackage[english, russian]{babel}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{cite} 
+\usepackage{psfrag}
+
+\IfFileExists{pscyr.sty}{\usepackage{pscyr}}{}
+
+\usepackage[top=2cm,bottom=2cm,left=3.5cm,right=1.5cm]{geometry}
+
+\linespread{1.5}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\includegraphics[width=8cm, height=4cm]{msu}
+\end{center}
+\begin{center}
+Московский государственный университет имени М.В. Ломоносова\\
+\vspace{0.1 cm}
+Факультет вычислительной математики и кибернетики\\
+\vspace{0.1 cm}
+Кафедра общей математики
+
+\vspace{3cm}
+{\Large Васильченко Дмитрий Дмитриевич }\\
+\vspace{1cm}
+
+{\bf\LARGE Тема выпускной квалификационной работы}\\ \vspace{2cm}
+ВЫПУСКНАЯ КВАЛИФИКАЦИОННАЯ РАБОТА
+
+\end{center}
+\vspace{2cm}
+\begin{flushright}
+
+{\bf Научный руководитель:}\\
+д.ф.-м.н., профессор\\ 
+Н.\,Ю. Капустин
+
+\end{flushright}
+
+ \vspace{4.0cm}
+
+\centerline {Москва, 2025}
+
+\end{titlepage}
+\setcounter{page}{2}
+\tableofcontents
+\newpage
+\section{Введение}
+Смешанные уравнения представляют собой класс уравнений, которые включают элементы как обыкновенных дифференциальных уравнений, так и уравнений с частными производными. Эти уравнения возникают в различных приложениях, где необходимо учитывать как временные, так и пространственные изменения системы. Например, они могут описывать процессы в биологии, такие как распространение веществ в тканях, или в физике, где необходимо учитывать как временные, так и пространственные изменения полей.
+
+Исследование смешанных уравнений началось с работ таких ученых, как Трикоми, Франкль и Геллерстедта, которые заложили основы для дальнейшего развития этой области. В частности, Трикоми ввел понятие смешанного типа уравнений и разработал первые методы их решения. Впоследствии другие ученые, такие как Моисеев, продолжили развитие этой темы, предложив новые подходы и методы для решения смешанных уравнений.
+
+Одной из основных трудностей при решении смешанных уравнений является необходимость учитывать специфические особенности этих уравнений, такие как наличие граничных условий и начальных данных. Это требует разработки специальных численных методов, которые могли бы эффективно справляться с этими особенностями. В настоящее время активно исследуются различные подходы к решению смешанных уравнений, включая методы конечных разностей, конечных элементов и спектральные методы.
+
+Таким образом, исследование смешанных уравнений является важной и актуальной задачей, которая требует дальнейшего развития и совершенствования методов их решения. В данной работе будут рассмотрены основные подходы к решению смешанных уравнений и проанализированы их применения в различных областях науки и техники.
+\newpage
+\section{Акутальность}
+В последние годы наблюдается значительный рост интереса к исследованию смешанного типа уравнений, которые сочетают в себе элементы как обыкновенных, так и дифференциальных уравнений с частными производными. Это связано с тем, что такие уравнения находят широкое применение в различных областях науки и техники, включая математическое моделирование, физику, биологию и инженерию. Смешанные уравнения позволяют более точно описывать сложные процессы, которые не могут быть полностью охвачены традиционными методами.
+
+Одной из ключевых причин актуальности данной темы является необходимость разработки новых методов для решения смешанных уравнений, которые могли бы учитывать специфические особенности этих уравнений и обеспечивать высокую точность и эффективность вычислений. В настоящее время существует множество подходов к решению таких уравнений, однако каждый из них имеет свои ограничения и требует дальнейшего совершенствования.
+
+Кроме того, смешанные уравнения часто возникают при моделировании различных процессов естествознания, например, при изучении дифференциальных операторов, которые описывают физические явления. Это делает данную тему особенно важной для дальнейшего развития науки и техники.
+\section{Основные результаты}
+\subsection{Постановка задачи}
+	Рассматривается задача Трикоми для уравнения Лавертьева-Бицадзе
+\begin{equation}
+	\left(sgn (y)\right) \dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+\end{equation}
+в области $D = D^{+} \cup D^{-}$, где $D^{+} = \left\{(x,y): \ 0 < x < \pi, \ 0 < y < + \infty \right\}$, \newline
+$D^{-} = \left\{(x,y): \ -y < x < y + \pi, \ -\pi/2 < y < 0\right\}$ в классе функций $u(x,y) \in C^2(D^{+}) \cap C^2(D^{-}) \cap C(\overline{D^{+} \cup D^{-}})$ с граничными условиями
+\begin{equation}
+	u(0,y) = 0, \ \dfrac{\partial u}{\partial x}(\pi, y) = 0, \ 0 < y < + \infty,
+\end{equation}
+\begin{equation}
+	u(x,-x) = f(x) , \ 0 \leq x \leq \pi/2, \ f(0) = 0, 
+\end{equation}
+\begin{equation}
+	u(x,y) \rightrightarrows 0, \ y \to +\infty
+\end{equation}
+и условием склеивания Франкля 
+\begin{equation}
+ \dfrac{\partial u}{\partial y}(x, +0) = \dfrac{\partial u}{\partial y} (x, -0), \ 0 < x < \pi.
+\end{equation}
+\subsection{Теорема единственности}
+\textbf{Теорема 1.} \textit{Решение задачи (1) - (5) единственно.}
+
+\textbf{Доказательство.} 
+Пусть существуют два решения $u_1(x,y), u_2(x,y)$ задачи (1)-(5). Тогда $u(x,y) = u_1(x,y) - u_2(x,y)$ есть решение задачи (1)-(5) с функцией $f(x) \equiv 0$. В этом случае $u(x,y) = F(x+y) - F(0)$.
+
+Отсюда следует, что равенство $\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x} = 0$ выполняется для всех точек x и y из области гиперболичности. Используя условие склеивания  (5) будем иметь
+\begin{equation}
+	\dfrac{\partial u}{\partial y} - \dfrac{\partial u}{\partial x}\vert_{y=0+0} = 0.
+\end{equation}
+В результате получаем задачу для нахождения гармонической функции $u(x,y)$ в области $D^{+}$ с граничными условиями (2),(4),(6).
+
+В силу принципа Зарембы-Жиро и равенства (6) экстремум не может достигаться на интервале $\{(x,y):\ 0 < x < \pi, \ y = 0\}$. На замкнутых боковых сторонах и на бесконечности экстремум не может достигаться в силу условий (2) и (4). Теорема доказана.
+
+Известно, что общее решение в $D^{-}$  уравнения (1) имеет вид 
+\begin{equation}
+	u(x,y) = F(x+y) + f(\dfrac{x-y}{2}) - F(0).
+\end{equation}
+Продифференцируем равенство (7):
+\begin{equation*}
+	\dfrac{\partial u}{\partial y}(x,y) - \dfrac{\partial u}{\partial x}(x,y) \vert_{y=0+0} = -f'\left(\dfrac{x}2\right), \ 0 < x < \pi.
+\end{equation*}
+Используя условие склеивания (5), приходим к равенству
+\begin{equation*}
+	\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x, 0+0) - \dfrac{\partial u}{\partial x}(x, 0 + 0) = - f'\left(\dfrac{x}2\right), \ 0 < x < \pi. 
+\end{equation*}
+
+\subsection{Постановка вспомогательной задачи}
+	Получим в области $D^{+}$ вспомогательную задачу для оператора Лапласа 
+\begin{equation}
+	\dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+\end{equation}
+с граничными условиями 
+\begin{equation}
+	u(0,y) = 0, \ \dfrac{\partial u}{\partial x}(\pi, y) = 0, \ 0 < y < +\infty, 
+\end{equation}
+\begin{equation}
+	\dfrac{\partial u}{\partial y}(x,0+0) - \dfrac{\partial u}{\partial x}(x,0+0) = -f'\left(\dfrac{x}{2}\right),
+\end{equation}
+\begin{equation}
+	u(x,y) \rightrightarrows 0, \ y \to +\infty 
+\end{equation}
+
+
+\subsection{Существование и единственность решения вспомогательной задачи}
+
+\textbf{Теорема 2.} \textit{	Решение задачи (8) - (11) существует, причём его можно представить в виде ряда
+	\begin{equation}
+		u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
+	\end{equation}
+	где коэффициенты $A_n, \ n =0,1,2, \dots$ находятся из разложения
+	\begin{equation}
+		\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]} = \dfrac{\varphi(x)}{\sqrt2}
+\end{equation}}
+
+\textbf{Доказательство.} 
+
+	
+	Докажем существование решения задачи $(1) - (4)$. В силу основного результата работы $[2]$ система $\left\{\sin\left[\left(n+\beta/2\right)x + \gamma/2\right]\right\}_{n=1}^{\infty}$ образует базис Рисса в пространствен $L_2(0,\pi)$, если $-\dfrac12 < \gamma/\pi < \dfrac32$ и $-\dfrac32 < \gamma/\pi + \beta < \dfrac12$ . В нашем случае $\{\sin{\left[\left(n + \dfrac12\right)x + \dfrac\pi4\right]}\}_{n=0}^{\infty}$ образует базис Рисса в пространстве $L_2(0, \pi)$ т.к. $\gamma = \pi/2$, $\beta=-1$. Поэтому коэффициенты разложения в формуле (6) удовлетворяют неравенствам Бесселя
+	\begin{equation*}
+		C_1 \|\varphi \|_{L_2(0,\pi)} \leq \sum\limits_{n=0}^{\infty} A_n^2 \left(n + \dfrac12\right)^2 \leq C_2 \|\varphi \|_{L_2(0,\pi)} , 0 < C_1 < C_2, 
+	\end{equation*}
+	а значит сходится ряд $\sum\limits_{n=0}^{\infty} |A_n|$ и сходится равномерно ряд (5). То, что функция (5) при $y > 0$ - решение уравнения (1), удовлетворяющее условиям (2) - это очевидно. В силу равенства $\sum\limits_{n=0}^{\infty} e^{-\left(n + \frac12\right)y} = \dfrac{e^{-y/2}}{1 - e^{-y}}$, также очевидно, что выполнено условие (4). Проверим выполнение условия (3).\newline
+	Выразим функцию $\varphi(x)$ из представления (6) и подставим в условие (3)
+	\begin{equation*}
+		I(y) =  2 \int\limits_0^\pi \left[	\sum\limits_{n=0}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx
+	\end{equation*}
+	Докажем, что $I(y) \to 0$ при $y \to 0+0$. 
+	\begin{equation*}
+		I(y) \leq 4\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx + 
+	\end{equation*}
+	\begin{equation*}
+		+ 4\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx
+	\end{equation*}
+	В силу левой части неравенства Бесселя имеем оценку
+	\begin{equation*}
+		\int\limits_0^\pi \left[	\sum\limits_{n=m+1}^{\infty} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq 
+	\end{equation*}
+	\begin{equation*}
+		\leq  C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 \leq C_3 \sum\limits_{n=m+1}^{\infty} A_n^2 \left(n+\dfrac12\right)^2 < \dfrac{\varepsilon}{2}
+	\end{equation*}
+	Это верно $\forall \varepsilon > 0$, если $m \geq N =N(\varepsilon)$\newline
+	Во втором слагаемом мы имеем дело с конечным числом элементов, поэтому:
+	\begin{equation*}
+		\int\limits_0^\pi \left[	\sum\limits_{n=0}^{m} A_n\left(n+\dfrac12\right) \left( e^{-\left(n+\dfrac12\right)y} - 1\right) \sin{\left[\left(n+\dfrac12\right) x  + \dfrac\pi4\right]} \right]^2 dx \leq
+	\end{equation*}
+	\begin{equation*}
+		\leq C_4 \sum\limits_{n=0}^{m} A_n^2 \left(n +\dfrac12\right)^2 \left(e^{-\left(n+\dfrac12\right)y} - 1\right)^2 < \dfrac{\varepsilon}{2}
+	\end{equation*}
+	Это верно, если $0 < y < \delta$ (m зафиксировано в зависимости от N). Условие (3) выполнено. Теорема доказана.
+
+\textbf{Теорема 3.} \textit{Решение задачи (8) - (11) единственно.}
+
+\textbf{Доказательство.} 
+	Докажем единственность решения этой задачи. Пусть $u(x,y)$ - разность двух решений - решение задачи с $\varphi(x) \equiv 0$. Необходимо получить выражение, где слева будет входить модуль или чётная степень функции u, а справа будет 0.\newline
+	Введём обозначения $A_\varepsilon = (0, \varepsilon), A_R = (0, R), B_R = (\pi, R), B_\varepsilon = (\pi, \varepsilon)$. $D_{R\varepsilon}$ - прямоугольник $A_\varepsilon A_R B_R B_\varepsilon$. Справедливы следующие соотношения:
+	\begin{equation*}
+		0 = \iint\limits_{D_{R\varepsilon}} (R-y) (u_{xx} + u_{yy}) dx dy = I
+	\end{equation*}
+	Заметим, что 
+	\begin{equation*}
+		(R - y) (u_{xx} + u_{yy}) u = \left( \left(R - y\right) u_x u\right)_x  + \left( \left(R - y\right) u_y u\right)_y - \left(R- y\right) \left(u_x^2 + u_y^2\right) +  u_y u = 
+	\end{equation*}
+	\begin{equation*}
+		= \left(R-y\right) \left(u_{xx} u + u_x^2\right) + \left(-u_y + \left(R-y\right) u_{yy} u + \left(R-y\right)u_y^2\right) - \left(R- y\right) \left(u_x^2 + u_y^2\right)+  u_y u
+	\end{equation*}
+	\newline Подставим это выражение в интеграл
+	\begin{equation*}
+		I	=	\iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy  + \iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy   
+		- \iint\limits_{D_{R\varepsilon}} \left(R- y\right) \left(u_x^2 + u_y^2\right) + \iint\limits_{D_{R\varepsilon}} u_y u dx dy
+	\end{equation*}
+	Упростим теперь эти интегралы:\newline
+	\begin{equation*}
+		\iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_x u\right)_x dx dy = \int\limits_{[\varepsilon, R]} \left[(R-y)u_xu\right] \vert_0^\pi dy =  
+	\end{equation*}
+	\begin{equation*}
+	 = \int\limits_{[\varepsilon, R]} \left[(R-y) u_x(\pi, y)u(\pi,y) - (R-y) u_x(0, y)u(0,y)\right]dy = 0
+	\end{equation*}
+	т.к. оба подынтегральных выражения равны нулю в силу условия (2), поэтому \newline
+	\begin{equation*}
+		\iint\limits_{D_{R\varepsilon}} \left( \left(R - y\right) u_y u\right)_y dx dy = \int\limits_{[0,\pi]} \left[\left(R - y\right) u_y u\right] \vert_\varepsilon^R dx =
+		\int\limits_{[0,\pi]} \left[0 - \left(R - \varepsilon \right) u_y(x, \varepsilon) u(x, \varepsilon) \right] dx = 
+	\end{equation*} 
+	\begin{equation*}
+		= - \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) u_yu dx, 
+	\end{equation*}
+	\begin{equation*}
+		\iint\limits_{D_{R\varepsilon}} u_y u dx dy = \iint\limits_{D_{R\varepsilon}} \left(\dfrac{u^2}{2}\right)'_ydx dy = \int\limits_{[0,\pi]} \left[\dfrac{u^2(x,R)}{2} - \dfrac{u^2(x, \varepsilon)}{2}\right] dx 
+	\end{equation*}
+	\newline
+	В итоге получим
+	\begin{equation*}
+		= - \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy
+		- \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_y u dx 
+		-\int\limits_{A_\varepsilon B_\varepsilon} \dfrac{u^2}{2} dx + \int\limits_{A_R B_R} \dfrac{u^2}{2} dx = 
+	\end{equation*}
+	Добавим и вычтем $\int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_x u dx$, тогда
+	\begin{equation*}
+		= - \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy - 
+		\int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) \left(u_y - u_x\right)u dx - \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon\right) u_x u dx - \int\limits_{A_\varepsilon B_\varepsilon}\dfrac{u^2}{2} dx +
+	\end{equation*}
+	\begin{equation*}
+		+ \int\limits_{A_R B_R} \dfrac{u^2}{2}dx
+	\end{equation*}
+	Отсюда следует
+	\begin{equation*}
+		\iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{2}\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon)  =
+	\end{equation*}
+	\begin{equation*}
+		= \int\limits_{A_\varepsilon B_\varepsilon} \left(R - \varepsilon \right) \left(u_x - u_y\right)u dx + \dfrac12  \int\limits_{A_R B_R} u^2 dx \leq \{ \text{Неравенство Коши-Буняковского} \}
+	\end{equation*}
+	\begin{equation*}
+		\leq \left(R - \varepsilon\right) \left[\int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx \right]^{\frac12} \left[\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx \right]^{\frac12} + \dfrac12 \int\limits_{A_RB_R} u^2 dx = I
+	\end{equation*}
+	Рассмотрим следующее неравенство: \begin{math}
+		\left(2ar -b\right)^2 \geq 0 \Rightarrow 4a^2 r^2 - 4 abr + b^2 \geq 0 \Rightarrow ab \leq r a^2 + \frac{b}{4r}
+	\end{math}
+	\newline
+	Возьмём $ a = \left[ \left(R - \varepsilon \right) \int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx \right]^{\frac12}$, $ b = \left[\left(R - \varepsilon\right)\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx \right]^{\frac12}$, $ r = R - \varepsilon$, тогда
+	
+	\begin{equation*}
+		I \leq \left(R - \varepsilon\right)^2 \int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx + \dfrac14 \int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac12 \int\limits_{A_RB_R} u^2 dx, 
+	\end{equation*}
+	\begin{equation*}
+		\iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2\right) dx dy + \dfrac{1}{4}\int\limits_{A_\varepsilon B_\varepsilon} u^2 dx +\dfrac{R - \varepsilon}{2}u^2(\pi, \varepsilon) \leq 
+	\end{equation*}
+	\begin{equation*}
+		\leq \left(R - \varepsilon\right)^2 \int\limits_{A_\varepsilon B_\varepsilon} \left( u_y - u_x\right)^2 dx  +\dfrac12 \int\limits_{A_RB_R} u^2 dx
+	\end{equation*}
+	Устремим $\varepsilon \to 0 + 0$, тогда в силу условия (3)
+	\begin{equation*}
+		\lim\limits_{\varepsilon \to 0 + 0} \int\limits_{A_\varepsilon B_\varepsilon} \left(u_y - u_x\right)^2 dx = 0
+	\end{equation*}
+	и получим соотношение
+	\begin{equation*}
+		\lim\limits_{\varepsilon \to 0 + 0} \iint\limits_{D_{R\varepsilon}} \left(R - y\right) \left(u_x^2 + u_y^2 \right) dx dy + \dfrac14 \int\limits_0^\pi u^2(x,0) dx + \dfrac{R}{2}u^2(\pi,0) \leq \dfrac12 \int\limits_{A_RB_R} u^2 dx
+	\end{equation*}
+	Устремим теперь $R \to \infty$, тогда  в силу условия (4) $\int\limits_{A_RB_R} u^2 dx \to 0$, тем самым, это возможно только в случае $u(x,y) \equiv 0$ в $\overline{D}$.
+\subsection{Интегральное представление первых частных производных решения вспомогательной задачи}
+\textbf{Теорема 4.} \textit{	Пусть $u(x,y)$ - решение задачи $(8)-(11)$, тогда $u_x, u_y$ представимы в виде
+	\begin{equation}
+		u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+	\end{equation}
+	\begin{equation}
+		u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+\end{equation}}
+
+\textbf{Доказательство.} 
+	\newline
+	Рассмотрим уравнение (6). Система синусов $\sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]}$ образует базис в $L_2(0,\pi)$. Поэтому для коэффициентов $A_n\left(n+\dfrac12\right)$ справедливо следующее представление:
+	\begin{equation*}
+		A_n\left(n+\dfrac12\right) = \int\limits_0^\pi h_{n+1}(t) \dfrac{\varphi(t)}{\sqrt2} dt, 
+	\end{equation*}
+	где
+	\begin{equation*}
+		h_n(t) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^n \sin{kt} B_{n-k}
+	\end{equation*}
+	Пусть $u(x,y)$ - решение задачи (1)-(4), тогда
+	\begin{equation*}
+		u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}
+	\end{equation*}
+	и соотвественно
+	\begin{equation*}
+		u_y(x,y) = -\sum\limits_{n=0}^{\infty} A_n \left(n +\dfrac12\right) e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]}
+	\end{equation*}
+	Здесь как раз возникает нужный нам коэффициент $A_n \left(n+\dfrac12\right)$, поэтому
+	\begin{equation*}
+		u_y(x,y)  = - \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]} dt
+	\end{equation*}
+	$\sin{\left[\left(n + \dfrac12\right)x\right]} = Im \ e^{i\left(n + \dfrac12\right)x}$, поэтому
+	\begin{equation*}
+		u_y(x,y)  = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{-\left(n + \dfrac12\right)y} e^{i\left(n + \dfrac12\right)x} dt
+	\end{equation*}
+	Обозначим $z = x + iy$
+	\begin{equation*}
+		u_y(x,y)  = -  Im \ \sum\limits_{n=0}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{n+1}(t)  e^{i\left(n+\dfrac12\right) z}  dt
+	\end{equation*}
+	Для дальнейших операций нам было бы удобно, чтобы суммирование начинолось от 1, а не 0, поэтому сделаем замену $m = n +1$
+	\begin{equation*}
+		u_y(x,y)  = -  Im \ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{i\left(m-\dfrac12\right) z}  dt
+	\end{equation*}
+	\begin{equation*}
+		u_y(x,y)  = -  Im \ e^{-\dfrac{iz}{2}}\ \sum\limits_{m=1}^{\infty}  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  h_{m}(t)  e^{im z}  dt
+	\end{equation*}
+	Поменяем местами знаки интергирования и суммирования
+	\begin{equation*}
+		u_y(x,y)  = -  Im \ e^{-\dfrac{iz}{2}}\  \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2}  \sum\limits_{m=1}^{\infty}   h_{m}(t)  e^{im z}  dt
+	\end{equation*}
+	Введём новое обозначение:
+	\begin{equation*}
+		I(t,z) = \sum\limits_{m=1}^{\infty}  h_{m}(t)  e^{im z}
+	\end{equation*}
+	\begin{equation*}
+		I(t,z) =\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{n=1}^{\infty}   \sum\limits_{k=1}^n \sin{kt} B_{n-k} e^{inz} = 
+		\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{n=k}^{\infty} e^{inz} B_{n-k}
+	\end{equation*}
+	Введём новый индекс $m = n - k$
+	\begin{equation*}
+		I(t,z) = \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} \sin{kt} \sum\limits_{m =0 }^{\infty} e^{i(m+k)z} B_{m} = 
+		\dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}} \sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} \sum\limits_{m =0 }^{\infty} e^{imz} B_{m}
+	\end{equation*}
+	Первый ряд можем вычислить по формуле суммы бесконечно убывающей геометрической прогрессии
+	\begin{equation*}
+		\sum\limits_{k=1}^{\infty} e^{ikz}\sin{kt} =  \sum\limits_{k=1}^{\infty} e^{ikz}\dfrac{1}{2i}\left(e^{ikt} - e^{-ikt}\right) = \dfrac1{2i} \left(\dfrac{1}{1 - e^{i(z+t)}} -  \dfrac{1}{1 - e^{i(z-t)}}\right) = 
+	\end{equation*}
+	\begin{equation*}
+		= \dfrac{1}{2i}  \dfrac{e^{i(z+t)} - e^{i(z-t)}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} =  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}
+	\end{equation*}
+	Рассмотрим второй ряд:
+	\begin{equation*}
+		\sum\limits_{l =0 }^{\infty} e^{ilz} B_{l} = \sum\limits_{l =0 }^{\infty} e^{ilz} \sum\limits_{m=0}^{l} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = \sum\limits_{m=0}^{\infty} \sum\limits_{l=m}^{\infty} e^{ilz} C^{l - m}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{l-m} = 
+	\end{equation*}
+	Введём новый индекс суммирования $k = l -m$
+	\begin{equation*}
+		\sum\limits_{m=0}^{\infty} \sum\limits_{k=0}^{\infty} e^{i(m+k)z} C^{k}_{\gamma/\pi} C^{m}_{-\gamma/\pi - \beta} (-1)^{k} = \sum\limits_{m=0}^{\infty} e^{imz} C^{m}_{-\gamma/\pi - \beta} \sum\limits_{k=0}^{\infty}  C^{k}_{\gamma/\pi} (-1)^k e^{ikz} = 
+	\end{equation*}
+	\begin{equation*}
+		= (1 + e^{iz})^{-\gamma/\pi - \beta} (1- e^{iz})^{\gamma/\pi} 
+	\end{equation*}
+	В нашем случае $\beta = -1, \gamma = \pi/2$, поэтому
+	\begin{equation*}
+		= (1 + e^{iz})^{1/2} (1- e^{iz})^{1/2} =\sqrt{1 - e^{i2z}} 
+	\end{equation*}
+	Собираем все решение:
+	\begin{equation*}
+		u_y(x,y) = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{\varphi(t)}{\sqrt2} I(t,z) dt 
+	\end{equation*}
+	\begin{equation*}
+		u_y(x,y) = - Im\ e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{2}{\pi}\dfrac{(2\cos{t/2})^\beta}{(\tan{t/2})^{\gamma/\pi}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt
+	\end{equation*}
+	Подставляя $\beta$ и $\gamma$ получим
+	\begin{equation*}
+		u_y(x,y) = - Im\  \dfrac{2}{\pi} e^{\dfrac{-iz}{2}} \int\limits_0^\pi \dfrac{1}{2\cos{t/2} \sqrt{\tan{t/2}}}  \dfrac{e^{iz} \sin{t}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)} \sqrt{1 - e^{i2z}} \dfrac{\varphi(t)}{\sqrt2} dt
+	\end{equation*}
+	\begin{equation*}
+		u_y(x,y) = - Im\  \dfrac{e^{\dfrac{+iz}{2}}}{\pi}  \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}} \sqrt{1 - e^{i2z}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+	\end{equation*}
+	Теорема доказана.
+
+
+\newpage
+\begin{thebibliography}{30}
+
+\bibitem{Watson}
+{\it Ватсон Дж. Н.} Теория бесселевых функций. М.: Издательство иностранной литературы, 1949. -- 798 с.
+\bibitem{Keldysh}
+{\it Келдыш М. В.} О некоторых случаях вырожденных уравнений эллиптического типа на границе области // Доклады АН СССР. 1951. Т. 77, \textnumero 2. С. 181-183.
+
+\end{thebibliography}
+\end{document} 
