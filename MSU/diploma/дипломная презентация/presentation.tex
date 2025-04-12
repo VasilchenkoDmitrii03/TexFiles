@@ -1,0 +1,303 @@
+\documentclass[10pt,pdf,hyperref={unicode}]{beamer}
+\usetheme[]{Szeged}
+\usecolortheme{beaver}
+\setbeamercolor*{palette secondary}{bg=white}
+\setbeamercolor*{palette tertiary}{bg=blue!20}
+\setbeamercolor*{palette quaternary}{bg=blue!20}
+\setbeamercolor{alerted text}{use=structure,fg=black}
+\setbeamercolor{frametitle}{bg=white,fg=black}
+\setbeamercolor{titlelike}{parent=structure, fg=black}
+\setbeamertemplate{itemize item}{\color{black}$\bullet$}
+
+\usepackage{tikz}
+\newcommand{\tikzcircle}[2][red,fill=red]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+\usetikzlibrary{shapes.geometric, arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amssymb,amsmath}
+\usepackage{nicematrix}
+\usefonttheme{professionalfonts}
+\usefonttheme[onlymath]{serif} 
+\usepackage{helvet}
+\institute{МГУ им. М.В.Ломоносова}
+\title[]{Корректная реализация алгоритма регуляризующего разложения для рациональных матриц на языке MATLAB}
+\author[Ковч Н.С.]{Ковч Николай Сергеевич, 409 группа}
+
+
+
+\date{2024}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}{}
+
+\usepackage{wasysym}
+\usepackage{booktabs}
+\usepackage{amsthm}
+
+
+\providecommand\rightarrowRHD{\relbar\joinrel\mathrel\RHD}
+\providecommand\rightarrowrhd{\relbar\joinrel\mathrel\rhd}
+\providecommand\longrightarrowRHD{\relbar\joinrel\relbar\joinrel\mathrel\RHD}
+\providecommand\longrightarrowrhd{\relbar\joinrel\relbar\joinrel\mathrel\rhd}
+
+\makeatletter
+\providecommand*\xrightarrowRHD[2][]{\ext@arrow 0055{\arrowfill@\relbar\relbar\longrightarrowRHD}{#1}{#2}}
+\providecommand*\xrightarrowrhd[2][]{\ext@arrow 0055{\arrowfill@\relbar\relbar\longrightarrowrhd}{#1}{#2}}
+\makeatother
+
+\makeatletter
+\newcommand\xleftrightarrow[2][]{%
+  \ext@arrow 9999{\longleftrightarrowfill@}{#1}{#2}}
+\newcommand\longleftrightarrowfill@{%
+  \arrowfill@\leftarrow\relbar\rightarrow}
+\makeatother
+
+\begin{document}
+\tikzstyle{decision} = [diamond, aspect=2, draw, text centered, minimum height=2em]
+\tikzstyle{process} = [rectangle, draw, text centered, minimum height=2em]
+\tikzstyle{data}=[trapezium, draw, text centered, trapezium left angle=60, trapezium right angle=120, minimum height=2em]
+\tikzstyle{terminator} = [rectangle, draw, text centered, rounded corners, minimum height=2em]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\begin{frame}
+\begin{center}%
+Московский государственный университет имени М.\,В.~Ломоносова
+    
+    Факультет вычислительной математики и кибернетики
+    
+    Кафедра общей математики
+  \end{center}%
+  \vfill%
+  \begin{center}%
+    \large%
+    Ковч Николай Сергеевич
+    
+    \vspace{.5cm}
+    
+    \Large
+    \textbf{Корректная реализация алгоритма регуляризующего разложения для рациональных матриц на языке MATLAB}
+  \end{center}%
+  \vfill
+  \vfill%
+  \vfill%
+  \begin{flushright}%
+    \begin{tabular}{@{}l@{}}
+      \textbf{Научный руководитель:} \\
+      \qquad
+      \begin{tabular}{@{}l@{}}
+        д.ф.-м.н., профессор \\
+        Икрамов~Х.\,Д.
+      \end{tabular} \\
+    \end{tabular}
+  \end{flushright}%
+  \vfill%
+  \vfill%
+  \begin{center}%
+    Москва, 2024%
+  \end{center}%
+\end{frame}
+
+\section{Введение}
+\begin{frame}{Конгруэнтные преобразования}
+    Рассматриваются квадратные матрицы порядка $n$ над полями $\mathbb{Q}$ или $\mathbb{Q}(i) = \{z \mid z = p + i\cdot q,~\text{где}~p,q\in\mathbb{Q}\}$ (поле рациональных гауссовых чисел).
+
+    Существует два типа конгруэнтных преобразований:
+    \begin{enumerate}
+        \item T-конгруэнции (для матриц над полем $\mathbb{Q}$)
+        \begin{equation*}
+            A \mapsto S^TAS,
+        \end{equation*}
+        \item *-конгруэнции (для матриц над полем $\mathbb{Q}(i)$)
+        \begin{equation*}
+            A \mapsto S^*AS.
+        \end{equation*}
+    \end{enumerate}
+
+
+
+В этих формулах $S$ -- произвольная невырожденная матрица данного порядка $n$.
+\end{frame}
+\begin{frame}{Конгруэнтные матрицы}
+    Две произвольные квадратные матрицы $A$ и $B$ порядка $n$ называются \textit{конгруэнтными} , если существует невырожденная матрица $S$ порядка $n$, такая что 
+\begin{equation*}
+    A = S^TBS, \, (A = S^*BS).
+\end{equation*}
+Как проверить две матрицы на конгруэнтность?
+
+\end{frame}
+\section{Известные результаты}
+\begin{frame}{Невырожденный случай}
+    Матрицы $A$ и $B$ невырожденные и их элементы суть рациональные числа. \newline
+    
+    Проверка конгруэнтности матриц $A$ и $B$ сводится к проверке подобия \textit{коквадратов} данных матриц $C_A$ и $C_B$:
+    \begin{equation*}
+        C_A = A^{-T}A, \quad C_B = B^{-T}B.
+    \end{equation*}
+\end{frame}
+\begin{frame}{Регуляризующее разложение}
+    Пусть $P$ и $Q$ -- квадратные матрицы. Введем следующие обозначения:
+    \begin{equation*}
+        P \oplus Q := \left[\begin{array}{c|c} 
+            P & 0 \\ 
+            \hline 
+            0 & Q 
+        \end{array}\right],
+    \end{equation*}
+    \begin{equation*}
+        P^{[k]} := P \oplus \dots \oplus P \;(k \text{ раз}).
+    \end{equation*}
+    \newline
+    Статья \guillemotleft A regularization algorithm for matrices of bilinear and sesquilinear forms\guillemotright~Р. Хорн и В. Сергейчук (далее [1]):
+    \begin{equation*}
+        A_R \oplus M,\quad M = J_1^{[m_1-m_2]} \oplus J_2^{[m_2-m_3]} \oplus \dots \oplus J_{q-1}^{[m_{q-1}-m_q]} \oplus J_q^{[m_q]}.
+    \end{equation*}
+    Здесь $A_R$ -- невырожденная матрица, целые числа  $m_1 \geq m_2 \geq \dots \geq m_q > 0$.
+\end{frame}
+\begin{frame}{Вырожденный случай}
+    Матрицы $A$ и $B$ вырожденные и их элементы суть рациональные числа.
+    \begin{enumerate}
+        \item Построить регуляризующие разложения для матриц $A$ и $B$:
+        \begin{equation*}
+            A_R \oplus M, \quad B_R \oplus N.
+        \end{equation*}
+        \item Если $M \neq N$, то $A$ и $B$ не конгруэнтны.
+        \item Если $M = N$, то для конгруэнтности матриц $A$ и $B$ необходимо и достаточно подобия коквадратов $A_R$ и $B_R$.
+    \end{enumerate}
+\end{frame}
+\section{Постановка задачи}
+\begin{frame}{Постановка задачи}
+    Требовалось:
+    \begin{enumerate}
+        \item Изучить статью [1].
+        \item Проверить предложенный авторами алгоритм на корректность.
+        \item Реализовать данный алгоритм на языке MATLAB.
+        \item Привести численные результаты работы алгоритма
+    \end{enumerate}
+\end{frame}
+\section{Основная часть}
+\begin{frame}{Алгоритм}
+    \begin{center}\begin{tikzpicture}[scale=0.8, every node/.style={scale=0.8}]
+    \node [terminator] (start) {Aлгоритм};
+    \node [data, below=of start] (input) {$A$};
+    \node [process, below=of input] (stage1) {Step 1};
+    \node [process, below=of stage1] (stage2) {Step 2};
+    \node [process, right=of stage2] (false) {f = false};
+    \node [decision, right=of false] (while) {f = false?};
+    \node [decision, above=of while] (forward) {forward};
+    \node [process, left=of forward] (lemma5) {Step 4};
+    \node [process, above=of forward] (case2) {Case 2};
+    \node [process, left=of case2] (case1) {Case 1};
+    \node [process, right=of case2] (case3) {Case 3};
+    \node [process, above=of case2] (true) {f = true};
+    \node [data, right=of while] (output) {$A_R \oplus M,~S$};
+
+    \draw [arrow] (start) -- (input);
+    \draw [arrow] (input) -- (stage1);
+    \draw [arrow] (stage1) -- (stage2);
+    \draw [arrow] (stage2) -- (false);
+    \draw [arrow] (false) -- (while);
+    \draw [arrow] (while) -- node[right]{Да} (forward);
+    
+    \draw [arrow] (forward) -- (case1);
+    \draw [arrow] (case1) -- (true);
+    
+    \draw [arrow] (forward) -- (case2);
+    \draw [arrow] (case2) -- (true);
+    
+    \draw [arrow] (forward) -- (case3);
+    \draw [arrow] (case3) -- (true);
+    \draw [arrow] (true.east) to[out=0,in=90] (10, -1) to[out=-90,in=0] (while.north east);
+    \draw [arrow] (forward) -- (lemma5);
+    \draw [arrow] (lemma5.south) to [bend right=30] (while.north west);
+    
+    \draw [arrow] (while) -- node[above]{Нет} (output);
+\end{tikzpicture}
+\end{center}
+\begin{equation*}
+    A \mapsto S^TAS = A_R \oplus M
+\end{equation*}
+\end{frame}
+\begin{frame}{Недочеты в статье [1]}
+    \begin{equation*}
+        \begin{bmatrix}
+            A_{(3)} & B'' & 0 & 0 & 0 & SP_1 & 0 \\
+            0 & 0_{m_6} & [I_{m_6}~0] & 0 & 0 & SP_2 & 0 \\
+            0 & 0 & 0_{m_5} & B'_3 & 0 & SP_3 & 0 \\
+            0 & 0 & 0 & 0_{m_4} & [I_{m_4}~0] & SP_4 & 0 \\
+            0 & 0 & 0 & 0 & 0_{m_3} & [I_{m_3}~0] & 0 \\
+            0 & 0 & 0 & 0 & 0 & 0_{m_2} & [I_{m_2}~0] \\
+            0 & 0 & 0 & 0 & 0 & 0 & 0_{m_1} \\
+        \end{bmatrix}
+    \end{equation*}
+    \newline
+    Появление блоков $SP_k$ не предусмотрено авторами статьи [1].
+\end{frame}
+\section{Результаты}
+\begin{frame}{Полученные результаты}
+    \begin{enumerate}
+        \item Найдены и устранены недочеты, допущенные авторами при описании алгоритма.
+        \item Реализован корректный алгоритм на языке MATLAB.
+    \end{enumerate}
+\end{frame}
+\begin{frame}{Пример для $\mathbb{Q}$}
+    \begin{equation*}
+        X = \begin{bmatrix}
+            2 & 3 \\
+            1 & 2
+        \end{bmatrix} \oplus J_2 \oplus J_2
+    \end{equation*}
+    \\
+    \begin{equation*}
+        A =
+        \begin{bmatrix}
+             7 & -1 &  8 & -7 &  4 & -2 \\
+             0 &  0 &  0 &  0 &  0 &  0 \\
+             9 &  1 &  8 & -9 &  2 & -4 \\
+            -7 &  0 & -8 &  7 & -4 &  3 \\
+             4 & -1 &  5 & -4 &  3 & -1 \\
+            -6 & -1 & -5 &  6 & -1 &  3 \\ 
+        \end{bmatrix} \mapsto 
+        \left[\begin{array}{cc|cc|cc}
+             32 & -10 &  0 &  0 &  0 &  0 \\
+             -6 &   2 &  0 &  0 &  0 &  0 \\
+             \hline
+              0 &   0 &  0 &  1 &  0 &  0 \\
+              0 &   0 &  0 &  0 &  0 &  0 \\
+              \hline
+              0 &   0 &  0 &  0 &  0 &  1 \\
+              0 &   0 &  0 &  0 &  0 &  0 \\ 
+        \end{array}\right]
+    \end{equation*}
+\end{frame}
+\begin{frame}{Пример для $\mathbb{Q}(i)$}
+    \begin{equation*}
+        X = \begin{bmatrix}
+            2 + i & 3 \\ -i & 2
+        \end{bmatrix} \oplus J_4
+    \end{equation*}
+    \\
+    \begin{equation*}
+        A = \begin{bmatrix}
+          4 - i &   3 - 4i & 5 + 3i &        3 &        4i & - 5 - 3i\\
+  1 - 2i &   2 - i &     6i & - 1 + 2i &  - 5 - 5i &   3 + 3i\\
+      -2 & - 3 + i & 5 + 7i & - 3 + 7i & - 10 + 6i &   5 - 5i\\
+- 4 - i &   2 - 2i & 7 + 4i &   2 + 5i &  - 9 + 2i &   3 - 2i\\
+- 6 + 6i & - 2 - 5i & 9 - 8i &   6 - 3i &    5 + 6i & - 7 + 3i\\
+       4 &       2i &     -8 & - 4 - 3i &    1 - 5i &        3\\
+        \end{bmatrix} \mapsto  
+    \end{equation*}
+    \begin{equation*}
+        \mapsto
+        \left[\begin{array}{cc|cccc}
+          11 + 21i/2 & - 23 - i  & 0 & 0 & 0 & 0 \\
+          20 + 5i    &  15 + 20i & 0 & 0 & 0 & 0 \\
+          \hline
+                   0 &         0 & 0 & 1 & 0 & 0 \\
+                   0 &         0 & 0 & 0 & 1 & 0 \\
+                   0 &         0 & 0 & 0 & 0 & 1 \\
+                   0 &         0 & 0 & 0 & 0 & 0 \\  
+        \end{array}\right]
+    \end{equation*}
+\end{frame}
+\end{document}

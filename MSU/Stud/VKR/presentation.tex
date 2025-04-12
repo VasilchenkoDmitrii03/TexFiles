@@ -1,0 +1,245 @@
+\documentclass[10pt,pdf,hyperref={unicode}]{beamer}
+\usetheme[]{Szeged}
+\usecolortheme{beaver}
+\setbeamercolor*{palette secondary}{bg=white}
+\setbeamercolor*{palette tertiary}{bg=blue!20}
+\setbeamercolor*{palette quaternary}{bg=blue!20}
+\setbeamercolor{alerted text}{use=structure,fg=black}
+\setbeamercolor{frametitle}{bg=white,fg=black}
+\setbeamercolor{titlelike}{parent=structure, fg=black}
+\setbeamertemplate{itemize item}{\color{black}$\bullet$}
+
+\usepackage{tikz}
+\newcommand{\tikzcircle}[2][red,fill=red]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+\usetikzlibrary{shapes.geometric, arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usepackage{tikz}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amssymb,amsmath}
+\usepackage{nicematrix}
+\usefonttheme{professionalfonts}
+\usefonttheme[onlymath]{serif} 
+\usepackage{helvet}
+\institute{МГУ им. М.В.Ломоносова}
+\title[]{Корректная реализация алгоритма регуляризующего разложения для рациональных матриц на языке MATLAB}
+\author[Васильченко  Д.Д.]{Васильченко Дмитрий Дмитриевич, 409 группа}
+
+
+
+\date{2024}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}{}
+
+\usepackage{wasysym}
+\usepackage{booktabs}
+\usepackage{amsthm}
+
+
+\providecommand\rightarrowRHD{\relbar\joinrel\mathrel\RHD}
+\providecommand\rightarrowrhd{\relbar\joinrel\mathrel\rhd}
+\providecommand\longrightarrowRHD{\relbar\joinrel\relbar\joinrel\mathrel\RHD}
+\providecommand\longrightarrowrhd{\relbar\joinrel\relbar\joinrel\mathrel\rhd}
+
+\makeatletter
+\providecommand*\xrightarrowRHD[2][]{\ext@arrow 0055{\arrowfill@\relbar\relbar\longrightarrowRHD}{#1}{#2}}
+\providecommand*\xrightarrowrhd[2][]{\ext@arrow 0055{\arrowfill@\relbar\relbar\longrightarrowrhd}{#1}{#2}}
+\makeatother
+
+\makeatletter
+\newcommand\xleftrightarrow[2][]{%
+  \ext@arrow 9999{\longleftrightarrowfill@}{#1}{#2}}
+\newcommand\longleftrightarrowfill@{%
+  \arrowfill@\leftarrow\relbar\rightarrow}
+\makeatother
+
+\begin{document}
+\tikzstyle{decision} = [diamond, aspect=2, draw, text centered, minimum height=2em]
+\tikzstyle{process} = [rectangle, draw, text centered, minimum height=2em]
+\tikzstyle{data}=[trapezium, draw, text centered, trapezium left angle=60, trapezium right angle=120, minimum height=2em]
+\tikzstyle{terminator} = [rectangle, draw, text centered, rounded corners, minimum height=2em]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\begin{frame}
+\begin{center}%
+Московский государственный университет имени М.\,В.~Ломоносова
+    
+    Факультет вычислительной математики и кибернетики
+    
+    Кафедра общей математики
+  \end{center}%
+  \vfill%
+  \begin{center}%
+    \large%
+    Васильченко Дмитрий Дмитриевич
+    
+    \vspace{.5cm}
+    
+    \Large
+    \textbf{О задаче Трикоми для уравнения Лаврентьева-Бицадзе с условием Франкля на линии склеивания типа.}
+  \end{center}%
+  \vfill
+  \vfill%
+  \vfill%
+  \begin{flushright}%
+    \begin{tabular}{@{}l@{}}
+      \textbf{Научный руководитель:} \\
+      \qquad
+      \begin{tabular}{@{}l@{}}
+        д.ф.-м.н., профессор \\
+        Капустин~Н.\,Ю.
+      \end{tabular} \\
+    \end{tabular}
+  \end{flushright}%
+  \vfill%
+  \vfill%
+  \begin{center}%
+    Москва, 2025%
+  \end{center}%
+\end{frame}
+
+\section{Введение}
+\begin{frame}{Постановка задачи}
+		Рассматривается задача Трикоми для уравнения Лавертьева-Бицадзе
+	\begin{equation}
+		\left(sgn (y)\right) \dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+	\end{equation}
+	в области $D = D^{+} \cup D^{-}$, где $D^{+} = \left\{(x,y): \ 0 < x < \pi, \ 0 < y < + \infty \right\}$, \newline
+	$D^{-} = \left\{(x,y): \ -y < x < y + \pi, \ -\pi/2 < y < 0\right\}$ в классе функций $u(x,y) \in C^2(D^{+}) \cap C^2(D^{-}) \cap C(\overline{D^{+} \cup D^{-}})$ с граничными условиями
+	\begin{equation}
+		u(0,y) = 0, \ \dfrac{\partial u}{\partial x}(\pi, y) = 0, \ 0 < y < + \infty,
+	\end{equation}
+	\begin{equation}
+		u(x,-x) = f(x) , \ 0 \leq x \leq \pi/2, \ f(0) = 0, 
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, \ y \to +\infty
+	\end{equation}
+	и условием склеивания Франкля 
+	\begin{equation}
+		\dfrac{\partial u}{\partial y}(x, +0) = \dfrac{\partial u}{\partial y} (x, -0), \ 0 < x < \pi.
+	\end{equation}
+\end{frame}
+\begin{frame}
+	\begin{tikzpicture}
+		% Оси
+		\draw[->] (-1,0) -- (8,0) node[right] {$x$};
+		\draw[->] (0,-3.2) -- (0,5) node[above] {$y$};
+		
+		% Полуполоса
+		\fill[gray!20] (0,0) -- (0,5) -- (6.28,5) -- (6.28,0) -- cycle;
+		\fill[blue!20] (0,0) -- (3.14,-3.14) -- (6.28,0) -- cycle;
+		% Подписи
+		\node[rotate=90] at (-0.5,2) {$u(0, y) = 0$};
+		\node[rotate=90] at (6.9,2) {$\dfrac{\partial u}{\partial x}(\pi, y) = 0$};
+		\node at (-0.2, -0.3) {$0$};
+		\node at (6.28, -0.3) {$\pi$};
+		
+		% Линии границ
+		\draw[thick] (0,0) -- (0,5);
+		\draw[thick] (6.28,0) -- (6.28,5);
+		
+		% Равнобедренный треугольник под полуполосой
+		\draw[thick] (0,0) -- (3.14,-3.14) -- (6.28,0) -- cycle;
+		
+		% Пунктирная линия
+		\draw[dashed, thick] (0,-3.14) -- (3.14,-3.14);
+		\node at (0.8, -2.9) {$y= -\pi/2$};
+		
+		\node[rotate=315] at (1.2,-1.6) {$u(x,-x) = f(x)$};
+		\node at (3.14, 5.2) {$u(x,y) \rightrightarrows 0$};
+		\node at (3.14, 0.45) {$\dfrac{\partial u}{\partial y}(x, +0)$};
+		\node[rotate=90, font=\large] at (3.14, 0) {$=$};
+		\node at (3.14, -0.45) {$\dfrac{\partial u}{\partial y} (x, -0)$};
+		
+		\node[font=\LARGE] at(3.14,2.5) {$\Delta u = 0$};
+		\node[font=\LARGE] at(3.14,-1.5) {$u_{xx} = u_{yy}$};
+	\end{tikzpicture}
+	
+	
+\end{frame}
+\section{Общее решение}
+\begin{frame}{Основные результаты}
+	\textbf{Теорема 1.} \textit{Решение задачи (1) - (5) единственно.}
+	\newline
+	\newline
+	Используя известную формулу общего решения задачи (1) - (5) в области $D^-$ 
+	\begin{equation*}
+			u(x,y) = F(x+y) + f(\dfrac{x-y}{2}) - F(0).
+	\end{equation*}
+	Продифференцируем это равенство и получим следующее соотношение
+	\begin{equation*}
+		\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x, 0+0) - \dfrac{\partial u}{\partial x}(x, 0 + 0) = - f'\left(\dfrac{x}2\right), \ 0 < x < \pi. 
+	\end{equation*}
+\end{frame}
+\section{Вспомогательная задача}
+\begin{frame}{Постановка вспомогательной задачи в $D^+$}
+	Получим в области $D^{+}$ вспомогательную задачу для оператора Лапласа 
+	\begin{equation}
+		\dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+	\end{equation}
+	с граничными условиями 
+	\begin{equation}
+		u(0,y) = 0, \ \dfrac{\partial u}{\partial x}(\pi, y) = 0, \ 0 < y < +\infty, 
+	\end{equation}
+	\begin{equation}
+		\dfrac{\partial u}{\partial y}(x,0+0) - \dfrac{\partial u}{\partial x}(x,0+0) = -f'\left(\dfrac{x}{2}\right),
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, \ y \to +\infty 
+	\end{equation}
+	
+\end{frame}
+\begin{frame}
+	\begin{tikzpicture}
+		% Оси
+		\draw[->] (-1,0) -- (8,0) node[right] {$x$};
+		\draw[->] (0,-1) -- (0,5) node[above] {$y$};
+		
+		% Полуполоса
+		\fill[gray!20] (0,0) -- (0,5) -- (6.28,5) -- (6.28,0) -- cycle;
+		% Подписи
+		\node[rotate=90] at (-0.5,2) {$u(0, y) = 0$};
+		\node[rotate=90] at (6.9,2) {$\dfrac{\partial u}{\partial x}(\pi, y) = 0$};
+		\node at (-0.2, -0.3) {$0$};
+		\node at (6.45, -0.3) {$\pi$};
+		
+		% Линии границ
+		\draw[thick] (0,0) -- (0,5);
+		\draw[thick] (6.28,0) -- (6.28,5);
+		
+		\node at (3.14, 5.2) {$u(x,y) \rightrightarrows 0$};
+		\node at (3.14, -0.55) {$\dfrac{\partial u}{\partial y}(x,0+0) - \dfrac{\partial u}{\partial x}(x,0+0) = -f'\left(\dfrac{x}{2}\right)$};
+		
+		\node[font=\LARGE] at(3.14,2.5) {$\Delta u = 0$};
+	\end{tikzpicture}
+	
+	
+\end{frame}
+\begin{frame}{Существование и единственность решения вспомогательной задачи}
+	\textbf{Теорема 2.} \textit{	Решение задачи (8) - (11) существует, причём его можно представить в виде ряда
+		\begin{equation}
+			u(x,y) = \sum\limits_{n=0}^{\infty} A_n e^{-\left(n + \dfrac12\right)y} \sin{\left[\left(n + \dfrac12\right)x\right]},
+		\end{equation}
+		где коэффициенты $A_n, \ n =0,1,2, \dots$ находятся из разложения
+		\begin{equation}
+			\sum\limits_{n=0}^{\infty} A_n \left(n + \dfrac12 \right) \sin{\left[\left(n +\dfrac12\right)x + \dfrac\pi4\right]} = \dfrac{\varphi(x)}{\sqrt2}
+	\end{equation}}
+	
+	\textbf{Теорема 3.} \textit{Решение задачи (8) - (11) единственно.}
+\end{frame}
+\begin{frame} {Интегральное представление производных решения}
+	\textbf{Теорема 4.} \textit{	Пусть $u(x,y)$ - решение задачи $(8)-(11)$, тогда $u_x, u_y$ представимы в виде
+		\begin{equation}
+			u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+		\end{equation}
+		\begin{equation}
+			u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt,
+	\end{equation}
+	где $z = x + iy$.
+}
+	
+\end{frame}
+
+\end{document}
