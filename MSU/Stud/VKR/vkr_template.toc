@@ -1,9 +1,9 @@
 \babel@toc {russian}{}\relax 
 \contentsline {section}{\numberline {1}Введение}{3}{}%
 \contentsline {section}{\numberline {2}Акутальность}{4}{}%
-\contentsline {section}{\numberline {3}Основные результаты}{4}{}%
-\contentsline {subsection}{\numberline {3.1}Постановка задачи}{4}{}%
-\contentsline {subsection}{\numberline {3.2}Теорема единственности}{5}{}%
-\contentsline {subsection}{\numberline {3.3}Постановка вспомогательной задачи}{5}{}%
-\contentsline {subsection}{\numberline {3.4}Существование и единственность решения вспомогательной задачи}{6}{}%
-\contentsline {subsection}{\numberline {3.5}Интегральное представление первых частных производных решения вспомогательной задачи}{9}{}%
+\contentsline {section}{\numberline {3}Основные результаты}{6}{}%
+\contentsline {subsection}{\numberline {3.1}Постановка задачи}{6}{}%
+\contentsline {subsection}{\numberline {3.2}Теорема единственности}{6}{}%
+\contentsline {section}{\numberline {4}Постановка вспомогательной задачи}{7}{}%
+\contentsline {subsection}{\numberline {4.1}Существование и единственность решения вспомогательной задачи}{8}{}%
+\contentsline {subsection}{\numberline {4.2}Интегральное представление первых частных производных решения вспомогательной задачи}{11}{}%
