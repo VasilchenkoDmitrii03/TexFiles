@@ -1,0 +1,120 @@
+\documentclass[9pt]{article}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[%
+left=1.00in,%
+right=1.00in,%
+top=1.0in,%
+bottom=1.0in,%
+paperheight=11in,%
+paperwidth=8.5in%
+]{geometry}%
+\title{Попытки доказать единственность задачи для \[k < 0\]}
+\author{ Васильченко Д.Д.}
+\date{}
+\begin{document}
+	\maketitle
+	\section{Постановка задачи I-I}
+	Рассмотрим в области $D^{+} = (0, \pi) \times (0, \infty)$ вспомогательную задачу для оператора Лапласа 
+	\begin{equation}
+		\dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+	\end{equation}
+	с граничными условиями 
+	\begin{equation}
+		u(0,y) = 0, \ u(\pi, y) = 0, \ 0 < y < +\infty, 
+	\end{equation}
+	\begin{equation}
+		\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x,0+0) - \dfrac{\partial u}{\partial x}(x,0+0) = \varphi(x) \in L_2(0,\pi),
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, \ y \to +\infty 
+	\end{equation}
+	
+	\par
+	\textbf{Теорема 1.}\textit{Решение задачи (1) - (4) единственно $\forall k \neq 0$.}
+	
+	\textbf{Доказательство.} \newline
+	Пусть $u(x,y)$ - решение однородной задачи с $\varphi \equiv 0$. 
+	Рассмотрим прямоугольник $D_{R\varepsilon} = (0, \pi) \times (\varepsilon, R) \subset D^+$. Справедливо следующее равенство
+	\begin{equation*}
+		u\Delta u = \nabla (u \nabla u) - |\nabla u|^2
+	\end{equation*}
+	Это верно так как 
+	\begin{equation*}
+		\nabla \left(uu'_x, uu'_y\right) - \left(u'_x\right)^2 - \left(u'_y\right)^2 = u \Delta u
+	\end{equation*}
+	Воспользуемся теоремой Гаусса-Остроградского
+	\begin{equation*}
+		\iint\limits_{D_{R\varepsilon}} u \Delta u dx dy = 	\iint\limits_{D_{R\varepsilon}} \nabla (u \nabla u) dx dy - 	\iint\limits_{D_{R\varepsilon}} |\nabla u|^2 dx dy = \iint\limits_{\partial D_{R\varepsilon}} u \dfrac{\partial u}{\partial \eta} ds  - 	\iint\limits_{D_{R\varepsilon}} |\nabla u|^2 dx dy
+	\end{equation*}
+	В силу условия (1) получаем
+	\begin{equation*}
+		\iint\limits_{D_{R\varepsilon}} |\nabla u|^2 dx dy = \iint\limits_{\partial D_{R\varepsilon}} u \dfrac{\partial u}{\partial \eta} ds
+	\end{equation*}
+	Интеграл в правой части разбивается на 4 интеграла
+	\begin{equation*}
+		\iint\limits_{\partial D_{R\varepsilon}} u \dfrac{\partial u}{\partial \eta} ds = -\int\limits_{\varepsilon}^{R}  u(0, y) u'_x(0,y) dy +  \int\limits_{\varepsilon}^{R} u(\pi, y) u'_x(\pi, y) dy + \int\limits_0^\pi u(x, R) u_y(x,R) dx - \int\limits_0^\pi u(x, \varepsilon) u'_y(x, \varepsilon) dx
+	\end{equation*}
+	Первые 2 интеграла обращаются в 0 в силу граничных условий (2). Третий обращается в 0 при $R \to \infty$ в силу условия (4) (т.к. $u_y$ ограничена). Рассмотрим подробнее последний интеграл
+	\begin{equation*}
+		\int\limits_0^\pi u(x, \varepsilon) u'_y(x, \varepsilon) dx = 
+		 \int\limits_0^\pi u(x, \varepsilon) \left[ u'_y(x, \varepsilon) - k u'_x(x, \varepsilon) \right] dx + \int\limits_0^\pi k u(x,\varepsilon) u'_x(x, \varepsilon) dx  = 
+	\end{equation*}
+	\begin{equation*}
+		=\int\limits_0^\pi u(x, \varepsilon) \left[ u'_y(x, \varepsilon) - k u'_x(x, \varepsilon) \right] dx + \dfrac{k}{2} \int\limits_0^\pi  \left(u^2(x, \varepsilon)\right)_x dx  = 
+		\int\limits_0^\pi u(x, \varepsilon) \left[ u'_y(x, \varepsilon) - k u'_x(x, \varepsilon) \right] dx + \dfrac{k}{2}\left[u^2(\pi, \varepsilon) - u^2(0, \varepsilon)\right]
+	\end{equation*}
+	Интеграл стремится к нулю при $\varepsilon \to 0$, а последние два члена равны 0 в силу граничных условий (2). Получаем, что 
+	\begin{equation*}
+			\iint\limits_{D^+} |\nabla u|^2 dx dy = 0
+	\end{equation*}
+	и на левой границе функция $u$ равна 0, следовательно $u \equiv 0$ в $D^+$. Теорема доказана.
+	
+	
+	\section{Задача I-II}
+		Рассмотрим в области $D^{+} = (0, \pi) \times (0, \infty)$ вспомогательную задачу для оператора Лапласа 
+	\begin{equation}
+		\dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+	\end{equation}
+	с граничными условиями 
+	\begin{equation}
+		u(0,y) = 0, \ \dfrac{\partial u}{\partial x}(\pi, y) = 0, \ 0 < y < +\infty, 
+	\end{equation}
+	\begin{equation}
+		\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x,0+0) - \dfrac{\partial u}{\partial x}(x,0+0) = \varphi(x) \in L_2(0,\pi),
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, \ y \to +\infty 
+	\end{equation}
+	
+	В данном случае попытки доказать единственность решения задачи при $k < 0$ методами, схожими с тем, что использовал выше, приводят к неудачам. Но ранее была показана единственность решения данной задачи для $k > 0$, попробуем теперь с помощью симметрии показать, что решение будет единственно и для $ k < 0$.
+	
+		\textbf{Теорема 2.}\textit{Решение задачи (5) - (8) единственно $\forall k \neq 0$.}
+		
+		
+	\textbf{Доказательство.} \newline
+	Рассмотрим однородную задачу с отрицательным параметром $k$. 
+	Проведём замену переменных $x = -t$. Все условия нашей задачи кроме условия (7) инвариантны к такому преобразованию и мы получим прежнюю задачу, но в другой области.  Определим новую функцию $v(t,y) := u(-t, y)$.
+	
+	А в условии (7) возникает знак минус, что как раз и делает наш коэффициент $k$ положительным.
+	Таким образом получим задачу
+	\begin{equation*}
+		\begin{cases}
+			v''_{tt} + v''_{yy} = 0, t \in (-\pi, 0), y > 0 \\
+			v(0, y) = 0, \dfrac{\partial v}{\partial t} (-\pi, y) = 0, 0 < y < \infty \\
+				\dfrac{1}{k} \dfrac{\partial v}{\partial y}(t,0+0) + \dfrac{\partial v}{\partial t}(t,0+0) = 0 \\
+					v(t,y) \rightrightarrows 0, \ y \to +\infty 
+		\end{cases}
+	\end{equation*}
+	Сделаем теперь замену переменной $s = -t$ и введём обозначение $w(s, y) := v(-s, y) = u(s,y)$, тогда
+		\begin{equation*}
+		\begin{cases}
+			w''_{ss} + w''_{yy} = 0, s \in (0, \pi), y > 0 \\
+			w(0, y) = 0, \dfrac{\partial w}{\partial s} (\pi, y) = 0, 0 < y < \infty \\
+			\dfrac{1}{-k} \dfrac{\partial w}{\partial y}(s,0+0) - \dfrac{\partial w}{\partial s}(s,0+0) = 0 \\
+			w(s,y) \rightrightarrows 0, \ y \to +\infty 
+		\end{cases}
+	\end{equation*}
+	Для этой задачи $-k > 0$ поэтому решение задачи единственно, а значит единственно и решение исходной задачи с $ k < 0$. Теорема доказана.
+\end{document}

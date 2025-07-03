@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.13)  6 MAY 2025 23:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.13)  1 JUN 2025 09:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -564,69 +564,80 @@ Non-PDF special ignored!
 <special> header=psfrag.pro
 
 {C:/Users/progr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./msu-eps-co
-nverted-to.pdf>] (vkr_template.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
-
-(C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
-
-(C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+nverted-to.pdf>] (vkr_template.toc)
 \tf@toc=\write4
 \openout4 = `vkr_template.toc'.
 
 
 
 [2]
-
-[3]
-
-[4]
-Overfull \hbox (0.60785pt too wide) in paragraph at lines 87--88
-[]\T2A/cmr/m/n/12 Формальная по-ста-нов-ка кра-е-вой за-да-чи для урав-не-ния Л
-ав-рен-тье-ва^^UБицадзе так-
+Overfull \hbox (18.06407pt too wide) in paragraph at lines 55--56
+[]\T2A/cmr/m/n/12 В ра-бо-те рас-смат-ри-ва-ет-ся клас-си-че-ская за-да-ча Три-
+ко-ми для урав-не-ния Лаврентьева-
  []
 
 
 
+[3]
+
+[4]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
+
+ (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
+
+
+(C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
 [5]
+Overfull \hbox (4.73976pt too wide) in paragraph at lines 140--143
+\T2A/cmr/m/n/12 в об-ла-сти $\OML/cmm/m/it/12 D[] \OT1/cmr/m/n/12 = []$ \T2A/cm
+r/m/n/12 в клас-се функ-ций $\OML/cmm/m/it/12 u\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
+2 x; y\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 
+(\OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 \
+ []
+
+
 
 [6]
 
-LaTeX Warning: Command \CYRS invalid in math mode on input line 163.
-
-Missing character: There is no С in font cmr12!
-
-
 [7]
+Overfull \hbox (22.84615pt too wide) detected at line 189
+\OT1/cmr/m/n/12 = [] [] + \OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x
+\OT1/cmr/m/n/12 ) =
+ []
+
+
 
 [8]
-
-[9]
-Overfull \hbox (17.52051pt too wide) detected at line 249
+Overfull \hbox (17.52051pt too wide) detected at line 243
 \OML/cmm/m/it/12 I \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 dxdy \OT1/cmr/m/n
 /12 + [] [][] \OML/cmm/m/it/12 dxdy \OMS/cmsy/m/n/12 ^^@ [] [] [] \OT1/cmr/m/n/
 12 + [] \OML/cmm/m/it/12 u[]udxdy
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--251
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--258
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
 
  []
 
 
-Overfull \hbox (21.00795pt too wide) detected at line 279
-\OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] [] \OML/cmm/m/it/12 dxdy \OMS/cmsy
-/m/n/12 ^^@ [] [] [] \OML/cmm/m/it/12 udx \OMS/cmsy/m/n/12 ^^@ [] [] \OML/cmm/m
-/it/12 u[]udx \OMS/cmsy/m/n/12 ^^@ [] []\OML/cmm/m/it/12 dx\OT1/cmr/m/n/12 +
+Overfull \hbox (30.46689pt too wide) detected at line 273
+\OML/cmm/m/it/12 I \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@ [] [] [] \OML/cmm/m/i
+t/12 dxdy \OMS/cmsy/m/n/12 ^^@ [] [] [] \OML/cmm/m/it/12 udx \OMS/cmsy/m/n/12 ^
+^@ [] [] \OML/cmm/m/it/12 u[]udx \OMS/cmsy/m/n/12 ^^@ [] []\OML/cmm/m/it/12 dx\
+OT1/cmr/m/n/12 +
  []
 
 
@@ -636,7 +647,7 @@ Overfull \hbox (21.00795pt too wide) detected at line 279
 [11]
 
 [12]
-Overfull \hbox (3.28078pt too wide) detected at line 379
+Overfull \hbox (3.28078pt too wide) detected at line 374
 \OML/cmm/m/it/12 I\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t; z\OT1/cmr/m/n/12 ) = [][
 ] [] [] [] [] \OML/cmm/m/it/12 e[]B[] \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/1
 2 e[] [] [] [] e[]B[]
@@ -647,7 +658,7 @@ Overfull \hbox (3.28078pt too wide) detected at line 379
 [13]
 
 [14]
-Overfull \hbox (3.28078pt too wide) detected at line 457
+Overfull \hbox (3.28078pt too wide) detected at line 452
 \OML/cmm/m/it/12 I\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t; z\OT1/cmr/m/n/12 ) = [][
 ] [] [] [] [] \OML/cmm/m/it/12 e[]B[] \OT1/cmr/m/n/12 = [][] [] \OML/cmm/m/it/1
 2 e[] [] [] [] e[]B[]
@@ -656,10 +667,18 @@ Overfull \hbox (3.28078pt too wide) detected at line 457
 
 
 [15]
+Overfull \hbox (4.52019pt too wide) in paragraph at lines 494--495
+[]\T2A/cmr/m/n/12 В дан-ной ра-бо-те ис-сле-до-ва-на за-да-ча Три-ко-ми для ура
+в-не-ния Лаврентьева-Бицадзе
+ []
+
+
 
 [16]
 
-[17] (vkr_template.aux)
+[17]
+
+[18] (vkr_template.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -670,36 +689,35 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5548 strings out of 473530
- 86856 string characters out of 5714794
- 496160 words of memory out of 5000000
- 28691 multiletter control sequences out of 15000+600000
- 571649 words of font info for 64 fonts, out of 8000000 for 9000
+ 5547 strings out of 473530
+ 86879 string characters out of 5714794
+ 498163 words of memory out of 5000000
+ 28692 multiletter control sequences out of 15000+600000
+ 570025 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,65p,1286b,256s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,7n,65p,1861b,210s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati12
 00.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
-bx1440.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
-0\labx1728.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/d
-pi600\labx1200.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
-2a/dpi600\labx2074.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
-lh-t2a/dpi600\larm1728.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour
-/lh/lh-t2a/dpi600\larm1200.pk><C:/Users/progr/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/progr/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/progr/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/progr/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/
-progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C
-:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmr6.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr8.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/progr/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on vkr_template.pdf (17 pages, 280221 bytes).
+bx1728.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
+0\labx1200.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/d
+pi600\labx2074.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
+2a/dpi600\larm1728.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
+lh-t2a/dpi600\larm1200.pk><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/progr/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/progr/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/prog
+r/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Us
+ers/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pf
+b><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr6.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on vkr_template.pdf (18 pages, 281766 bytes).
 PDF statistics:
- 421 PDF objects out of 1000 (max. 8388607)
+ 415 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

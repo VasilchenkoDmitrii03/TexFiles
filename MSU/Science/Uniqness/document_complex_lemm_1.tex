@@ -1,0 +1,275 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- PREAMBLE ---
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+% Page layout
+\geometry{
+	a4paper,
+	left=2.5cm,
+	right=2.5cm,
+	top=2.5cm,
+	bottom=2.5cm
+}
+
+\author{Васильченко Д.Д.}
+% --- DOCUMENT ---
+\begin{document}
+	
+	\begin{center}
+		\Large\bfseries
+		Доказательство единственности решения задачи для уравнения Лапласа в случае граничных условий I-I  и II-II.
+	\end{center}
+	
+		\begin{center}
+		\large Васильченко Д.Д.
+	\end{center}
+	\vspace{1cm}
+	
+	\section{Задача I-I}
+	Рассмотрим в области $D^+ = \{(x,y): x \in (0,\pi), y > 0\}$ следующую задачу.
+	\begin{equation}
+		\dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+	\end{equation}
+	с граничными условиями 
+	\begin{equation}
+		u(0,y) = 0, \ u(\pi, y) = 0, \ 0 < y < +\infty, 
+	\end{equation}
+	\begin{equation}
+		\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x,0+0) - \dfrac{\partial u}{\partial x}(x,0+0) = \varphi(x), \,\varphi(x) \in L_2(0,\pi),
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, \ y \to +\infty 
+	\end{equation}
+			\textbf{Лемма 1.} \textit{Пусть $u(x,y)$ - решение задачи (1)-(4), тогда $u_y(x,y) \rightrightarrows 0$ при $ y \to \infty$}.
+	
+	\textbf{Доказательство.}
+	Рассмотрим комплексное отображение $w(z) = e^{iz}$, где $z = x+iy$. Это отображение является конформным в области $D^+ = \{(x,y): x \in (0,\pi), y > 0\}$. Анализируем, как данное отображение преобразует нашу полуполосу:
+	\begin{itemize}
+		\item \textbf{Внутренность полуполосы $x \in (0,\pi), y > 0$:} Отображается на верхнюю половину открытого единичного круга $\Omega_{int} = \{w = \sigma + i\tau : \sigma^2 + \tau^2 < 1, \tau > 0\}$.
+		\item \textbf{Нижняя граница $y=0, x \in [0,\pi]$:} При $y=0$, $w = e^{ix} = \cos x + i\sin x$. Поскольку $x$ изменяется от $0$ до $\pi$, эта часть границы переходит в верхнюю полуокружность единичного круга, соединяющую точки $w=1$ (при $x=0$) и $w=-1$ (при $x=\pi$). Обозначим её $\partial \Omega_1 = \{w : |w|=1, \mathrm{Im}(w) \ge 0\}$.
+		\item \textbf{Левая боковая граница $x=0, y \ge 0$:} При $x=0$, $w = e^{-y}$. Поскольку $y \ge 0$, $e^{-y}$ изменяется от $1$ (при $y=0$) до $0$ (при $y \to +\infty$). Эта часть границы переходит в отрезок $[0,1]$ вещественной оси.
+		\item \textbf{Правая боковая граница $x=\pi, y \ge 0$:} При $x=\pi$, $w = e^{-y}(\cos\pi + i\sin\pi) = -e^{-y}$. Поскольку $y \ge 0$, $-e^{-y}$ изменяется от $-1$ (при $y=0$) до $0$ (при $y \to +\infty$). Эта часть границы переходит в отрезок $[-1,0]$ вещественной оси.
+		\item \textbf{"Бесконечность" полуполосы $y \to +\infty$:} При $y \to +\infty$, $e^{-y} \to 0$, следовательно $w \to 0$. Таким образом, вся "бесконечность" полуполосы отображается в единственную точку $w=0$ (начало координат) в плоскости $w$.
+	\end{itemize}
+	Область $\overline{D^+}$ (включая границы и точку на бесконечности) переходит в замкнутый верхний полудиск $\overline{\Omega} = \{w = \sigma + i\tau : \sigma^2 + \tau^2 \le 1, \tau \ge 0\}$.
+	
+	Функция $u(x,y)$ является гармонической в $D^+$. При конформном отображении гармонические функции остаются гармоническими. Следовательно, функция $U(w)$, определенная как $U(w(z)) = u(z)$, является гармонической в открытой области $\Omega_{int}$.
+	
+	Рассмотрим граничные условия для $U(w)$:
+	\begin{itemize}
+		\item Из условия (4) $u(x,y) \rightrightarrows 0$ при $y \to +\infty$ следует, что $U(w) \to 0$ при $w \to 0$. Это соответствует значению функции в центре полудиска.
+		\item Из условий (2) $u(0,y) = 0$ и $u(\pi,y) = 0$ для $y>0$ следует, что $U(w)=0$ на отрезках $[0,1)$ и $(-1,0]$ вещественной оси соответственно. Включая точки $w=\pm 1$ (которые соответствуют $(0,0)$ и $(\pi,0)$ в $z$-плоскости, где $u$ также равна нулю), получаем, что $U(w) = 0$ для всех $w \in [-1,1]$ на вещественной оси.
+	\end{itemize}
+	Таким образом, для функции $U(w)$ имеем:
+	\begin{equation*}
+		\begin{cases}
+			\Delta U(w) = 0, & w \in \Omega_{int} \\
+			U(w) = 0, & w \in (-1, 1) \\
+			U(w) \to 0, & w \to 0
+		\end{cases}
+	\end{equation*}
+	
+	Теперь выразим $u_y(x,y)$ через производные функции $U(\sigma, \tau)$. Из соотношений $\sigma = e^{-y}\cos x$ и $\tau = e^{-y}\sin x$:
+	$$\frac{\partial \sigma}{\partial y} = -e^{-y}\cos x = -\sigma$$
+	$$\frac{\partial \tau}{\partial y} = -e^{-y}\sin x = -\tau$$
+	Применяя правило дифференцирования сложной функции:
+	$$u_y(x,y) = \frac{\partial}{\partial y} U(\sigma(x,y), \tau(x,y)) = \frac{\partial U}{\partial \sigma} \frac{\partial \sigma}{\partial y} + \frac{\partial U}{\partial \tau} \frac{\partial \tau}{\partial y}$$
+	$$u_y(x,y) = \frac{\partial U}{\partial \sigma} (-\sigma) + \frac{\partial U}{\partial \tau} (-\tau) = - \left( \sigma \frac{\partial U}{\partial \sigma} + \tau \frac{\partial U}{\partial \tau} \right)$$
+	
+	Для исследования предела $u_y(x,y)$ при $y \to +\infty$, рассмотрим поведение производных $\frac{\partial U}{\partial \sigma}$ и $\frac{\partial U}{\partial \tau}$ при $w \to 0$.
+	Функция $U(w)$ гармонична в $\Omega_{int}$ и обращается в ноль на отрезке $(-1,1)$ вещественной оси. Мы можем использовать \textbf{принцип Шварца-отражения}. Определим функцию $U^*(w)$ в диске $B(0,1) = \{w: |w|<1\}$ следующим образом:
+	$$ U^*(w) = \begin{cases}
+		U(w), & \mathrm{Im}(w) \geq 0 \\
+		-U(\overline{w}), & \mathrm{Im}(w) < 0
+	\end{cases} $$
+	Поскольку $U(w)$ непрерывна вплоть до границы $\mathrm{Im}(w)=0$ и $U(w)=0$ на этой части границы, функция $U^*(w)$ является гармонической во всём открытом диске $B(0,1)$.
+	Гармонические функции бесконечно дифференцируемы в своей области определения. Поскольку $w=0$ является внутренней точкой диска $B(0,1)$, частные производные $\frac{\partial U^*}{\partial \sigma}$ и $\frac{\partial U^*}{\partial \tau}$ существуют, непрерывны и конечны в точке $w=0$. Следовательно, пределы:
+	$$\lim_{w \to 0} \frac{\partial U}{\partial \sigma} = \frac{\partial U^*}{\partial \sigma}(0) \quad \text{и} \quad \lim_{w \to 0} \frac{\partial U}{\partial \tau} = \frac{\partial U^*}{\partial \tau}(0)$$
+	существуют и конечны. Обозначим эти предельные значения $C_1 = \frac{\partial U^*}{\partial \sigma}(0)$ и $C_2 = \frac{\partial U^*}{\partial \tau}(0)$.
+	
+	Теперь вернемся к выражению для $u_y(x,y)$:
+	$$u_y(x,y) = - \left( \sigma \frac{\partial U}{\partial \sigma} + \tau \frac{\partial U}{\partial \tau} \right) = - \left( e^{-y}\cos x \frac{\partial U}{\partial \sigma} + e^{-y}\sin x \frac{\partial U}{\partial \tau} \right)$$
+	$$u_y(x,y) = - e^{-y} \left( \cos x \frac{\partial U}{\partial \sigma} + \sin x \frac{\partial U}{\partial \tau} \right)$$
+	Рассмотрим предел при $y \to +\infty$:
+	$$\lim_{y \to +\infty} u_y(x,y) = \lim_{y \to +\infty} \left[ - e^{-y} \left( \cos x \frac{\partial U}{\partial \sigma}(w(x,y)) + \sin x \frac{\partial U}{\partial \tau}(w(x,y)) \right) \right]$$
+	При $y \to +\infty$, $w(x,y) \to 0$. Значения $\frac{\partial U}{\partial \sigma}(w)$ и $\frac{\partial U}{\partial \tau}(w)$ стремятся к конечным значениям $C_1$ и $C_2$ соответственно. Выражение в скобках $(\cos x \cdot C_1 + \sin x \cdot C_2)$ является конечным и ограниченным (поскольку $\cos x$ и $\sin x$ ограничены).
+	Множитель $e^{-y}$ экспоненциально стремится к нулю.
+	Следовательно, произведение также стремится к нулю:
+	$$\lim_{y \to +\infty} u_y(x,y) = 0$$. Лемма доказана.
+	
+	
+	\textbf{Теорема 2.} \textit{Решение задачи (1)-(4) единственно для $k \in \mathbb{R}  \backslash \{0\}$}.
+	
+	\textbf{Доказательство.} Используем энергетический метод.
+	Пусть $u(x,y)$ - решение однородной задачи (1)-(4) ($\varphi(x) \equiv 0$). Рассмотрим прямоугольник $D_{\varepsilon R} = (0, \pi) \times (\varepsilon, R) \subset D^+$. Справедливо следующее равенство.
+	\begin{equation*}
+		u\Delta u = \nabla (u \nabla u) - |\nabla u|^2.
+	\end{equation*}
+	Воспользуемся теоремой Гаусса-Остроградского для выражения
+	\begin{equation*}
+		\iint\limits_{D_{\varepsilon R}} u\Delta u dx dy = \iint\limits_{D_{\varepsilon R}} \nabla (u \nabla u) dx dy  - \iint\limits_{D_{\varepsilon R}}|\nabla u|^2 dx dy.
+	\end{equation*}
+	Получим
+	\begin{equation*}
+		\iint\limits_{D_{\varepsilon R}} u\Delta u dx dy =  \iint\limits_{\partial D_{\varepsilon R}}u \dfrac{\partial u}{\partial \eta} ds -  \iint\limits_{D_{\varepsilon R}}|\nabla u|^2 dx dy.
+	\end{equation*}
+	В силу условия (1) получаем
+	\begin{equation*}
+		\iint\limits_{\partial D_{\varepsilon R}}u \dfrac{\partial u}{\partial \eta} ds = \iint\limits_{D_{\varepsilon R}}|\nabla u|^2 dx dy.
+	\end{equation*}
+	Интеграл по границе вычисляется следующим образом
+	\begin{equation*}
+		\iint\limits_{\partial D_{\varepsilon R}}u \dfrac{\partial u}{\partial \eta} ds = - \int\limits_{\varepsilon}^{R} u(0,y) u'_x(0,y) dy + \int\limits_{\varepsilon}^R u(\pi, y) u'_x(\pi, y) dy + \int\limits_0^\pi u(x,R) u_y(x,R) dx - \int\limits_0^\pi u(x,\varepsilon) u'_y(x, \varepsilon) dx.
+	\end{equation*}
+	В силу граничных условий (2) первый и второй интеграл обращается в 0. В силу выше доказанной леммы и условия (4) третий интеграл также обращается в 0 при стремлении R к $+\infty$. Рассмотрим последний интеграл
+	\begin{equation*}
+		\int\limits_0^\pi u(x,\varepsilon) u'_y(x, \varepsilon) dx = \int\limits_0^\pi u(x,\varepsilon) \left[ u'_y(x,\varepsilon) - k u'_x(x, \varepsilon) \right] dx + \int\limits_0^\pi ku(x,\varepsilon) u'_x(x, \varepsilon) dx
+	\end{equation*}
+	\begin{equation*}
+		=\int\limits_0^\pi u(x,\varepsilon) \left[ u'_y(x,\varepsilon) - k u'_x(x, \varepsilon) \right] dx+ \dfrac{k}{2} \int\limits_0^\pi \left(u^2(x,\varepsilon) \right)'_x dx =
+	\end{equation*}
+	\begin{equation*}
+		=  \int\limits_0^\pi u(x,\varepsilon) \left[ u'_y(x,\varepsilon) - k u'_x(x, \varepsilon) \right] dx + \dfrac{k}{2} \left[u^2(\pi, \varepsilon) - u^2(0, \varepsilon) \right].
+	\end{equation*}
+	Устремим $\varepsilon \to 0+0$, тогда интграл обращается в 0 в силу условия (3) и получаем итоговое выражение
+	\begin{equation*}
+		\iint\limits_{D^+}|\nabla u|^2 dx dy = \dfrac{k}{2} \left[u^2(\pi, \varepsilon) - u^2(0, \varepsilon) \right],
+	\end{equation*}
+	в силу граничных условий (2) получаем
+	\begin{equation*}
+		\iint\limits_{D^+}|\nabla u|^2 dx dy = 0.
+	\end{equation*}
+	Значит 
+	\begin{equation*}
+		\dfrac{\partial u}{\partial x} = \dfrac{\partial u}{\partial y} = 0, (x,y) \in D^+,
+	\end{equation*}
+	т.к. $u(0, y) = 0, \forall y > 0$ получаем, что $u(x,y) \equiv 0$ в $D^+$. Теорема доказана.
+	
+	
+	\section{Задача II-II}
+		Рассмотрим в области $D^+ = \{(x,y): x \in (0,\pi), y > 0\}$ следующую задачу.
+	\begin{equation}
+		\dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+	\end{equation}
+	с граничными условиями 
+	\begin{equation}
+		\dfrac{\partial u}{\partial x}(0,y) = 0, \ \dfrac{\partial u}{\partial x}(\pi, y) = 0, \ 0 < y < +\infty, 
+	\end{equation}
+	\begin{equation}
+		\dfrac{1}{k} \dfrac{\partial u}{\partial y}(x,0+0) - \dfrac{\partial u}{\partial x}(x,0+0) = \varphi(x), \,\varphi(x) \in L_2(0,\pi),
+	\end{equation}
+	\begin{equation}
+		u(x,y) \rightrightarrows 0, \ y \to +\infty 
+	\end{equation}
+	
+		\textbf{Лемма 2.} \textit{Пусть $u(x,y)$ - решение однородной задачи (1)-(4), тогда $u(0,0) = u(\pi,0)$}.
+	
+	\textbf{Доказательство.}
+	Воспользуемся теоремой Гаусса-Остроградского для векторного поля $\vec{F} = \nabla u$. Тогда $\mathrm{div} \vec{F} = \Delta u$. Рассмотрим прямоугольник $D_R = (0,\pi) \times (0, R) \subset D^+$. 
+	\begin{equation*}
+		\iint_{D_R} \Delta u dx dy = \iint\limits_{\partial D_R} \nabla u \cdot \vec{n} ds  = \oint\limits_{\partial D_R} \dfrac{\partial u}{\partial n} ds.
+	\end{equation*}
+	Следовательно в силу (5)
+	\begin{equation*}
+		\oint\limits_{\partial D_R} \dfrac{\partial u}{\partial n} ds = 0
+	\end{equation*}
+	Рассмотрим этот интеграл подробнее
+	\begin{equation*}
+			\oint\limits_{\partial D_R} \dfrac{\partial u}{\partial n} ds  =  -\int\limits_0^\pi \dfrac{\partial u}{\partial y}(x,0) dx  + \int\limits_0^\pi  \dfrac{\partial u}{\partial y}(x,R) dx  + \int\limits_0^R \dfrac{\partial u}{\partial x}(\pi, y) dy - \int\limits_0^R \dfrac{\partial u}{\partial x}(0, y) dy
+	\end{equation*}
+	В силу условий (6) третий и четвертый интегралы обнуляются, при стремлении $R \to + \infty$  в силу леммы 1 второй интеграл стремится к 0. Получаем (аналогично теореме 2)
+	\begin{equation*}
+		0 = \oint\limits_{\partial D_R} \dfrac{\partial u}{\partial n} ds = -\int\limits_0^\pi \dfrac{\partial u}{\partial y}(x,0) dx = - k \int\limits_0^\pi \dfrac{\partial u}{\partial x}(x,0)dx = u(0,0) - u(\pi, 0).
+	\end{equation*}
+	Лемма доказана.
+	
+	
+		\textbf{Теорема 3.} \textit{Решение задачи (5)-(8) единственно для $k \in \mathbb{R}  \backslash \{0\}$}.
+	
+	\textbf{Доказательство.} Аналогично доказательству теоремы 2. Используем энергетический метод.
+	Пусть $u(x,y)$ - решение однородной задачи (5)-(8) ($\varphi(x) \equiv 0$). Рассмотрим прямоугольник $D_{\varepsilon R} = (0, \pi) \times (\varepsilon, R) \subset D^+$. Справедливо следующее равенство.
+	\begin{equation*}
+		u\Delta u = \nabla (u \nabla u) - |\nabla u|^2.
+	\end{equation*}
+	Воспользуемся теоремой Гаусса-Остроградского для выражения
+	\begin{equation*}
+		\iint\limits_{D_{\varepsilon R}} u\Delta u dx dy = \iint\limits_{D_{\varepsilon R}} \nabla (u \nabla u) dx dy  - \iint\limits_{D_{\varepsilon R}}|\nabla u|^2 dx dy.
+	\end{equation*}
+	Получим
+	\begin{equation*}
+		\iint\limits_{D_{\varepsilon R}} u\Delta u dx dy =  \iint\limits_{\partial D_{\varepsilon R}}u \dfrac{\partial u}{\partial \eta} ds -  \iint\limits_{D_{\varepsilon R}}|\nabla u|^2 dx dy.
+	\end{equation*}
+	В силу условия (1) получаем
+	\begin{equation*}
+		\iint\limits_{\partial D_{\varepsilon R}}u \dfrac{\partial u}{\partial \eta} ds = \iint\limits_{D_{\varepsilon R}}|\nabla u|^2 dx dy.
+	\end{equation*}
+	Интеграл по границе вычисляется следующим образом
+	\begin{equation*}
+		\iint\limits_{\partial D_{\varepsilon R}}u \dfrac{\partial u}{\partial \eta} ds = - \int\limits_{\varepsilon}^{R} u(0,y) u'_x(0,y) dy + \int\limits_{\varepsilon}^R u(\pi, y) u'_x(\pi, y) dy + \int\limits_0^\pi u(x,R) u_y(x,R) dx - \int\limits_0^\pi u(x,\varepsilon) u'_y(x, \varepsilon) dx.
+	\end{equation*}
+	В силу граничных условий (6) первый и второй интеграл обращается в 0. В силу леммы 1 и условия (8) третий интеграл также обращается в 0 при стремлении R к $+\infty$. Рассмотрим последний интеграл
+	\begin{equation*}
+		\int\limits_0^\pi u(x,\varepsilon) u'_y(x, \varepsilon) dx = \int\limits_0^\pi u(x,\varepsilon) \left[ u'_y(x,\varepsilon) - k u'_x(x, \varepsilon) \right] dx + \int\limits_0^\pi ku(x,\varepsilon) u'_x(x, \varepsilon) dx
+	\end{equation*}
+	\begin{equation*}
+		=\int\limits_0^\pi u(x,\varepsilon) \left[ u'_y(x,\varepsilon) - k u'_x(x, \varepsilon) \right] dx+ \dfrac{k}{2} \int\limits_0^\pi \left(u^2(x,\varepsilon) \right)'_x dx =
+	\end{equation*}
+	\begin{equation*}
+		=  \int\limits_0^\pi u(x,\varepsilon) \left[ u'_y(x,\varepsilon) - k u'_x(x, \varepsilon) \right] dx + \dfrac{k}{2} \left[u^2(\pi, \varepsilon) - u^2(0, \varepsilon) \right].
+	\end{equation*}
+	Устремим $\varepsilon \to 0+0$, тогда интграл обращается в 0 в силу условия (3) и получаем итоговое выражение
+	\begin{equation*}
+		\iint\limits_{D^+}|\nabla u|^2 dx dy = \dfrac{k}{2} \left[u^2(\pi, 0+0) - u^2(0, 0+0) \right],
+	\end{equation*}
+	в силу леммы 2 получаем
+	\begin{equation*}
+		\iint\limits_{D^+}|\nabla u|^2 dx dy = 0.
+	\end{equation*}
+	Значит 
+	\begin{equation*}
+		\dfrac{\partial u}{\partial x} = \dfrac{\partial u}{\partial y} = 0, (x,y) \in D^+,
+	\end{equation*}
+	т.к. $u(x,y) \rightrightarrows 0$ при $y \to +\infty$  получаем, что $u(x,y) \equiv 0$ в $D^+$. Теорема доказана.
+	
+	
+	\section{Задача I-II}
+	
+	
+	\textbf{Теорема 4.} \textit{Решение задачи (9)-(13) единственно для $k \in \mathbb{R}  \backslash \{0\}$}.
+	
+	\textbf{Доказательство.}
+	Случай $k>0$ рассмотрен в предыдущей работе. Рассмотрим только случай $k < 0$.
+	Как и ранее $D_{\varepsilon R} = (0, \pi) \times (\varepsilon, R)$, заметим что
+	\begin{equation*}
+		\iint\limits_{D_{\varepsilon R}} e^{-k x} u \Delta u dx dy = 0.
+	\end{equation*}
+	Рассмотрим это выражение подробнее
+	\begin{equation*}
+		\iint\limits_{D_{\varepsilon R}} e^{-kx} u u_{xx} dx dy = -\int\limits_{\varepsilon}^{R} u(0, y) u_x(0, y) dy + \int\limits_{\varepsilon}^{R} e^{-k\pi} u(\pi, y) u_x(\pi, y) dy - \iint\limits_{D_{\varepsilon R}} e^{-kx} \left(u_x^2 -k u u_x\right) dx dy  = 
+	\end{equation*}
+	\begin{equation*}
+		= - \iint\limits_{D_{\varepsilon R}} e^{-kx} \left(u_x^2 -k u u_x\right) dx dy,
+	\end{equation*}
+	\begin{equation*}
+		\iint\limits_{D_{\varepsilon R}} e^{-kx} u u_{yy} dx dy = -\int\limits_{0}^{\pi} e^{-kx} u(x,\varepsilon) u_y(x, \varepsilon) dx + \int\limits_{0}^{\pi} e^{-kx} u(x, R) u_y(x, R) dx - \iint\limits_{D_{\varepsilon R}} e^{-kx} u_y^2 dx dy.
+	\end{equation*}
+	Устремим $R \to + \infty$ и $\varepsilon \to 0+0$, тогда
+		\begin{equation*}
+	\int\limits_{0}^{\pi} e^{-kx} u(x, R) u_y(x, R) dx  \to 0,
+	\end{equation*}
+	\begin{equation*}
+		\int\limits_{0}^{\pi} e^{-kx} u(x,\varepsilon) u_y(x, \varepsilon) dx = k \int\limits_0^\pi e^{-kx} u(x,0+0) u_x(x, 0+0) dx.
+	\end{equation*}
+	Собираем исходное выражение
+	\begin{equation*}
+		0 = - \iint\limits_{D_{\varepsilon R}} e^{-kx} \left(u_x^2 -k u u_x\right) dx dy + 
+	\end{equation*}
+	
+
+\end{document}
+

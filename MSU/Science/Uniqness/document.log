@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.13)  26 JUN 2025 23:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.13)  29 MAY 2025 01:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./lob.tex
-(lob.tex
+**./document.tex
+(document.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -383,14 +383,14 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [9pt].
 
-(lob.aux
+(document.aux
 LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 5
 .
 
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
-\openout1 = `lob.aux'.
+\openout1 = `document.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
@@ -455,11 +455,11 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
 (C:\Users\progr\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (54.33946pt too wide) in paragraph at lines 23--25
-\T2A/cmr/m/n/10 в об-ла-сти $\OML/cmm/m/it/10 D \OT1/cmr/m/n/10 = \OML/cmm/m/it
-/10 D[] \OMS/cmsy/m/n/10 [ \OML/cmm/m/it/10 D[]$\T2A/cmr/m/n/10 , где $\OML/cmm
-/m/it/10 D[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 ;  D[] \OT1/cmr/m/n/10 = []$
-
+Overfull \hbox (39.5644pt too wide) detected at line 67
+\OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; "\O
+T1/cmr/m/n/10 ) [] \OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 + [] [] [][] \OML/cmm/m/
+it/10 dx \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (\OML/cmm/m/it/
+10 x; "\OT1/cmr/m/n/10 ) [] \OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 + [] []
  []
 
 
@@ -468,94 +468,43 @@ Overfull \hbox (54.33946pt too wide) in paragraph at lines 23--25
 
 {C:/Users/progr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
-[2]
-Overfull \hbox (15.11276pt too wide) detected at line 152
-[] [][] \OML/cmm/m/it/10 dxdy \OT1/cmr/m/n/10 = [] [] \OMS/cmsy/m/n/10 j[]\OML/
-cmm/m/it/10 dy \OT1/cmr/m/n/10 = []  [] [] \OML/cmm/m/it/10 dy \OT1/cmr/m/n/10 
-= 0
- []
-
-
-Overfull \hbox (11.4999pt too wide) detected at line 156
-[] [][] \OML/cmm/m/it/10 dxdy \OT1/cmr/m/n/10 = [] [] \OMS/cmsy/m/n/10 j[]\OML/
-cmm/m/it/10 dx \OT1/cmr/m/n/10 = [] [] \OML/cmm/m/it/10 dx \OT1/cmr/m/n/10 = \O
-MS/cmsy/m/n/10 ^^@ [] [] \OML/cmm/m/it/10 u[]udx
- []
-
-
-
-[3]
-Overfull \hbox (14.1848pt too wide) detected at line 170
-\OML/cmm/m/it/10 I \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@ [] [] [] \OML/cmm/m/i
-t/10 dxdy \OMS/cmsy/m/n/10 ^^@ [] [] [] \OML/cmm/m/it/10 udx \OMS/cmsy/m/n/10 ^
-^@ [] [] \OML/cmm/m/it/10 ku[]udx \OMS/cmsy/m/n/10 ^^@ [] []\OML/cmm/m/it/10 dx
- \OT1/cmr/m/n/10 + [] []\OML/cmm/m/it/10 dx:
- []
-
-
-Overfull \hbox (7.83789pt too wide) detected at line 177
-\OMS/cmsy/m/n/10 ^^T f[]g ^^T [] [][] [][] \OT1/cmr/m/n/10 + [] [] \OML/cmm/m/i
-t/10 u[]dx \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M
- []
-
-
-
-[4]
-Overfull \hbox (72.54726pt too wide) detected at line 212
-\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = []\OML
-/cmm/m/it/10 f[]\OT1/cmr/m/n/10 ([]) \OML/cmm/m/it/10 ; h[]\OT1/cmr/m/n/10 (\OM
-L/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = [][] [] [] []\OML/cmm/m/it/10 B[];  B[] \OT1
-/cmr/m/n/10 = [] \OML/cmm/m/it/10 C[]C[]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^@\O
-T1/cmr/m/n/10 1)[]\OML/cmm/m/it/10 ;  C[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 
-:
- []
-
-
-
-[5]
-
-[6] (lob.aux)
+[2] (document.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
- )
-(\end occurred inside a group at level 1)
-
-### simple group (level 1) entered at line 290 ({)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 4033 strings out of 473530
- 60212 string characters out of 5714794
- 481034 words of memory out of 5000000
- 27238 multiletter control sequences out of 15000+600000
- 573613 words of font info for 73 fonts, out of 8000000 for 9000
+ 4027 strings out of 473530
+ 60229 string characters out of 5714794
+ 472950 words of memory out of 5000000
+ 27236 multiletter control sequences out of 15000+600000
+ 572446 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,65p,571b,221s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
-/dpi600\larm0900.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
--t2a/dpi600\lati1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/l
-h/lh-t2a/dpi600\labx1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfo
-ur/lh/lh-t2a/dpi600\larm1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/
-ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts
-/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\progr\AppData\Local\MiKTeX\f
-onts/pk/ljfour/lh/lh-t2a/dpi600\larm1728.pk><C:/Users/progr/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/progr/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/pro
-gr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
-Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.
-pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmmi7.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmr10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmr5.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmr7.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/progr/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/progr/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/progr/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on lob.pdf (6 pages, 242203 bytes).
+ 57i,8n,65p,582b,216s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati10
+00.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
+bx1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
+0\larm1000.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/d
+pi600\labx1440.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
+2a/dpi600\larm1200.pk> <C:\Users\progr\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
+lh-t2a/dpi600\larm1728.pk><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/progr/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/progr/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/progr/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/
+progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
+:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmr5.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr7.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><C:/Users/progr/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/progr/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on document.pdf (2 pages, 176198 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
+ 238 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

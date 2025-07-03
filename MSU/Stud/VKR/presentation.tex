@@ -77,7 +77,7 @@
     \vspace{.5cm}
     
     \Large
-    \textbf{О задаче Трикоми для уравнения Лаврентьева-Бицадзе с условием Франкля на линии склеивания типа.}
+    \textbf{ Об интегральном представлении производных решения задачи для уравнения Лапласа с интегральным граничным условием.}
   \end{center}%
   \vfill
   \vfill%
@@ -103,7 +103,7 @@
 \begin{frame}{Постановка задачи}
 		Рассматривается задача Трикоми для уравнения Лавертьева-Бицадзе
 	\begin{equation}
-		\left(sgn (y)\right) \dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+		sgn (y) \dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
 	\end{equation}
 	в области $D = D^{+} \cup D^{-}$, где $D^{+} = \left\{(x,y): \ 0 < x < \pi, \ 0 < y < + \infty \right\}$, \newline
 	$D^{-} = \left\{(x,y): \ -y < x < y + \pi, \ -\pi/2 < y < 0\right\}$ в классе функций $u(x,y) \in C^2(D^{+}) \cap C^2(D^{-}) \cap C(\overline{D^{+} \cup D^{-}})$ с граничными условиями
@@ -116,7 +116,7 @@
 	\begin{equation}
 		u(x,y) \rightrightarrows 0, \ y \to +\infty
 	\end{equation}
-	и условием склеивания Франкля 
+	и условием непрерывности градиента
 	\begin{equation}
 		\dfrac{\partial u}{\partial y}(x, +0) = \dfrac{\partial u}{\partial y} (x, -0), \ 0 < x < \pi.
 	\end{equation}
@@ -191,6 +191,25 @@
 	\end{equation}
 	
 \end{frame}
+
+\begin{frame}{Постановка вспомогательной задачи в $D^+$}
+Рассматривается уравнение
+\begin{equation}
+	\dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
+\end{equation}
+в области $D^{+} = \left\{(x,y): \ 0 < x < \pi, \ 0 < y < + \infty \right\}$ в классе функций $u(x,y) \in  C^2(D^+) \cap C^1(\overline{D^+} \cap \{y > 0\}) \cap C(\overline{D^+})$ 
+с граничными условиями 
+\begin{equation}
+	u(0,y) = 0, \ \dfrac{\partial u}{\partial x}(\pi, y) = 0, \ 0 < y < +\infty, 
+\end{equation}
+\begin{equation}
+	\lim\limits_{y \to 0+0} \int\limits_0^\pi \left[\dfrac{\partial u}{\partial y}(x, y) - \dfrac{\partial u}{\partial x}(x,y) + \varphi(x) \right]^2   dx = 0, \ \varphi(x) \in L_2(0, \pi)
+\end{equation}
+\begin{equation}
+	u(x,y) \rightrightarrows 0, \ y \to +\infty 
+\end{equation}
+	
+\end{frame}
 \begin{frame}
 	\begin{tikzpicture}
 		% Оси
@@ -210,28 +229,10 @@
 		\draw[thick] (6.28,0) -- (6.28,5);
 		
 		\node at (3.14, 5.2) {$u(x,y) \rightrightarrows 0$};
-		\node at (3.14, -0.55) {$\dfrac{\partial u}{\partial y}(x,0+0) - \dfrac{\partial u}{\partial x}(x,0+0) = -f'\left(\dfrac{x}{2}\right)$};
+		\node at (3.14, -0.55) {$ \int\limits_0^\pi \left[\dfrac{\partial u}{\partial y}(x, y) - \dfrac{\partial u}{\partial x}(x,y) + \varphi(x) \right]^2   dx \to 0$};
 		
 		\node[font=\LARGE] at(3.14,2.5) {$\Delta u = 0$};
 	\end{tikzpicture}
-	
-	
-\end{frame}
-\begin{frame}
-		Получим в области $D^{+}$ вспомогательную задачу для оператора Лапласа 
-	\begin{equation}
-		\dfrac{\partial^2 u}{\partial x^2}(x,y) + \dfrac{\partial^2 u}{\partial y^2}(x,y) = 0
-	\end{equation}
-	с граничными условиями 
-	\begin{equation}
-		u(0,y) = 0, \ \dfrac{\partial u}{\partial x}(\pi, y) = 0, \ 0 < y < +\infty, 
-	\end{equation}
-	\begin{equation}
-		\lim\limits_{\varepsilon \to 0 + 0} \int_0^\pi \left[\dfrac{\partial ^2 u}{\partial y^2} - \dfrac{\partial^2 u}{\partial x^2} + \varphi(x) \right]^2 dx = 0, \ \varphi(x) \in L_2[0,\pi]
-	\end{equation}
-	\begin{equation}
-		u(x,y) \rightrightarrows 0, \ y \to +\infty 
-	\end{equation}
 	
 	
 \end{frame}
@@ -248,27 +249,30 @@
 	\textbf{Теорема 3.} \textit{Решение задачи (10) - (13) единственно.}
 \end{frame}
 \begin{frame} {Интегральное представление производных решения}
-	\textbf{Теорема 4.} \textit{	Пусть $u(x,y)$ - решение задачи $(10)-(13)$, тогда $u_x, u_y$ представимы в виде
+	\textbf{Теорема 4.} \textit{	Пусть $u(x,y)$ - решение задачи $(10)-(13)$, тогда в $D^+$ $u_x, u_y$ представимы в виде
 		\begin{equation}
-			u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
+			u_y(x,y) = - Im\  \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt
 		\end{equation}
 		\begin{equation}
-			u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{+iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt,
+			u_x(x,y) = Re\   \dfrac{ \sqrt{1 - e^{i2z}} }{\pi} e^{\dfrac{iz}{2}} \int\limits_0^\pi  \dfrac{\sqrt{\sin{t}}}{\left(1 - e^{i(z+t)} \right) \left(1 - e^{i(z-t)}\right)}  \varphi(t) dt,
 	\end{equation}
 	где $z = x + iy$.
 }
 	
 \end{frame}
 \begin{frame}{Список литературы}
-			
-	1. Моисеев,~Е.И. Об интегральном представлении задачи Неймана-Трикоми для уравнения Лаврентьева-Бицадзе/~Моисеев,~Е.И., Моисеев~Т.Е., Вафадорова~Г.О. //~Дифференц. уравнения. ~--- 2015.~--- Т.~51, №~8~---. С.~1070--1075.
-	
-	2. Моисеев,~Е.И.  О базисности одной системы синусов /~Е.И. Моисеев //~Дифференц. уравнения. ~--- 1987.~---Т.~23,  №~1~--- С.~177--189.
-	
-	3. Бицадзе ~А.В.  Некоторые классы уравнений в частных производных /~А.В.~Бицадзе.~--- М.~: Наука, 1981.~--- 448~c.
-	
-	4 Моисеев,~Т. Е.  Об интегральном представлении решения уравнения Лапласа со
-	смешанными краевыми условиями /~Т.Е. Моисеев //~Дифференц. уравнения. ~--- 2011.~---Т.~47, №~10, С.~1446--1451. 
+\begin{thebibliography}{30}
+	\bibitem{Bitsadze}
+	{\it Бицадзе А.В.} Некоторые классы уравнений в частных производных. М.:Наука, 1981. -- 448 с.
+	\bibitem{Moiseev}
+	{\it Моисеев Е.И., Моисевв Т.Е., Вафадорова Г.О.} Об интегральном представлении задачи Неймана-Трикоми для уравнения Лаврентьева-Бицадзе // Дифференциальные уравнения. 2015. Т. 51 \textnumero 8. C. 1070-1075.
+	\bibitem{Moiseev}
+	{\it Моисеев Е.И.} О базисности одной системы синусов // Дифференциальные уравнения. 1987. Т. 23 \textnumero 1. C. 177-189.
+	\bibitem{Kapustin}
+	{\it Капустин Н.Ю., Васильченко Д.Д.} Краевая задача для уравнения Лапласа со смешанными граничными условиями в полуполосе // Дифференциальные уравнения. 2024. Т. 60 \textnumero 12. C. 1713-1718.
+	\bibitem{Moiseev}
+	{\it Моисеев Т.Е.} Об интегральном представлении решения уравнения Лапласа со смешанными краевыми условиями // Дифференциальные уравнения. 2011. Т. 47 \textnumero 10. C. 1446-1451.
+\end{thebibliography}
 \end{frame}
 
 
